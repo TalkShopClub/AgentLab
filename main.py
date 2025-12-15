@@ -18,28 +18,33 @@ from agentlab.agents.generic_agent import (
     AGENT_37_SONNET,
     AGENT_CLAUDE_SONNET_35,
     AGENT_GPT5_MINI,
+    GenericAgentArgs
 )
 from agentlab.experiments.study import Study
+from agentlab.llm.chat_api import OpenRouterModelArgs
+from agentlab.agents.generic_agent.generic_agent_prompt import GenericPromptFlags
+from agentlab.agents import dynamic_prompting as dp
+from agentlab.agents.hint_use_agent.agent_configs import AGENT_GPT5
 
 logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
-agent_args = [AGENT_4o_MINI]
+agent_args = [AGENT_GPT5]
 # agent_args = [AGENT_4o]
 
 
 # ## select the benchmark to run on
-benchmark = "miniwob_tiny_test"
+# benchmark = "miniwob_tiny_test"
 # benchmark = "miniwob"
 # benchmark = "workarena_l1"
 # benchmark = "workarena_l2"
-# benchmark = "workarena_l3"
+benchmark = "workarena_l3_agent_curriculum_eval"
 # benchmark = "webarena"
 
 # Set reproducibility_mode = True for reproducibility
 # this will "ask" agents to be deterministic. Also, it will prevent you from launching if you have
 # local changes. For your custom agents you need to implement set_reproducibility_mode
-reproducibility_mode = False
+reproducibility_mode = True
 
 # Set relaunch = True to relaunch an existing study, this will continue incomplete
 # experiments and relaunch errored experiments
