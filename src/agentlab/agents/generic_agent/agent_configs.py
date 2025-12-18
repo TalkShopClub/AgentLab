@@ -395,6 +395,19 @@ AGENT_GPT5_MINI = GenericAgentArgs(
     flags=GPT5_MINI_FLAGS,
 )
 
+GEMINI3_FLAGS = BASE_FLAGS.copy()
+GEMINI3_FLAGS.action = dp.ActionFlags(
+    action_set=HighLevelActionSetArgs(
+        subsets=["bid"],
+        multiaction=False,
+    )
+)
+
+AGENT_GEMINI3 = GenericAgentArgs(
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openrouter/google/gemini-3-pro-preview"],
+    flags=GEMINI3_FLAGS,
+)
+
 DEFAULT_RS_FLAGS = GenericPromptFlags(
     flag_group="default_rs",
     obs=dp.ObsFlags(

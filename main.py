@@ -18,6 +18,7 @@ from agentlab.agents.generic_agent import (
     AGENT_37_SONNET,
     AGENT_CLAUDE_SONNET_35,
     AGENT_GPT5_MINI,
+    AGENT_GEMINI3,
     GenericAgentArgs
 )
 from agentlab.experiments.study import Study
@@ -29,7 +30,7 @@ from agentlab.agents.hint_use_agent.agent_configs import AGENT_GPT5
 logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
-agent_args = [AGENT_GPT5]
+agent_args = [AGENT_GEMINI3]
 # agent_args = [AGENT_4o]
 
 
@@ -51,8 +52,8 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 1  # Make sure to use 1 job when debugging in VSCode
-# n_jobs = -1  # to use all available cores
+# n_jobs = 1  # Make sure to use 1 job when debugging in VSCode
+n_jobs = -1  # to use all available cores
 
 
 if __name__ == "__main__":  # necessary for dask backend

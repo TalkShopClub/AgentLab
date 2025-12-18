@@ -375,4 +375,12 @@ CHAT_MODEL_ARGS_DICT = {
         max_new_tokens=4_000,
         temperature=1e-1,
     ),
+    "openrouter/google/gemini-3-pro-preview": OpenRouterModelArgs(
+        model_name="google/gemini-3-pro-preview",
+        max_total_tokens=1_000_000,
+        max_input_tokens=1_000_000 - 8_000,
+        max_new_tokens=8_000,
+        temperature=1e-1,
+        vision_support=True,
+    ),
 }
