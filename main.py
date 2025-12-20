@@ -53,7 +53,7 @@ relaunch = False
 
 ## Number of parallel jobs
 # n_jobs = 1  # Make sure to use 1 job when debugging in VSCode
-n_jobs = 6  # Using 8 cores (leaving 2 for system and Ray overhead)
+n_jobs = 2  # Using 8 cores (leaving 2 for system and Ray overhead)
 
 
 if __name__ == "__main__":  # necessary for dask backend
