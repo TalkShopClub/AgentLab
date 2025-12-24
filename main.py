@@ -26,6 +26,7 @@ from agentlab.llm.chat_api import OpenRouterModelArgs
 from agentlab.agents.generic_agent.generic_agent_prompt import GenericPromptFlags
 from agentlab.agents import dynamic_prompting as dp
 from agentlab.agents.hint_use_agent.agent_configs import AGENT_GPT5
+from agentlab.benchmarks.custom_workarena import workarena_l3_single_seed
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -39,7 +40,8 @@ agent_args = [AGENT_GEMINI3]
 # benchmark = "miniwob"
 # benchmark = "workarena_l1"
 # benchmark = "workarena_l2"
-benchmark = "workarena_l3_agent_curriculum_eval"
+# benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
+benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
 # benchmark = "webarena"
 
 # Set reproducibility_mode = True for reproducibility
