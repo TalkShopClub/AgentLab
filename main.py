@@ -53,7 +53,7 @@ reproducibility_mode = False
 
 # Set relaunch = True to relaunch an existing study, this will continue incomplete
 # experiments and relaunch errored experiments
-relaunch = True
+relaunch = False
 
 ## Number of parallel jobs
 n_jobs = 3  # Sequential execution for testing
