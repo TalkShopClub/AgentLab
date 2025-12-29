@@ -125,6 +125,13 @@ class GenericAgent(Agent):
             # cause it to be too long
 
             chat_messages = Discussion([system_prompt, human_prompt])
+
+            # Save full prompt for debugging (only on first step)
+            if len(self.actions) == 0:
+                import json
+                with open("workarena_full_prompt.json", "w") as f:
+                    json.dump(list(chat_messages), f, indent=2)
+
             ans_dict = retry(
                 self.chat_llm,
                 chat_messages,

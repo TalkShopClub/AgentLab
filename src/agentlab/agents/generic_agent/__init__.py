@@ -44,6 +44,7 @@ from .agent_configs import (
     GenericAgentArgs,
     AGENT_GPT5_MINI,
     AGENT_GEMINI3,
+    AGENT_GPT5
 )
 
 __all__ = [
@@ -82,4 +83,5 @@ __all__ = [
     "AGENT_CLAUDE_SONNET_35_VISION",
     "AGENT_GPT5_MINI",
     "AGENT_GEMINI3",
+    "AGENT_GPT5"
 ]

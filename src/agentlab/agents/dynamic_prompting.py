@@ -661,7 +661,20 @@ elements in the page is through bid which are specified in your observations.
 
 
 class Think(PromptElement):
-    _prompt = ""
+    _prompt = """
+# Thinking Process
+
+Before taking each action, you MUST think through your reasoning step-by-step inside <think> tags.
+
+Your thinking should include:
+1. Analysis of the current page state and what you observe
+2. Reflection on what your previous action accomplished (did it work as expected?)
+3. Reasoning about what needs to be done next to accomplish the goal
+4. Any calculations, coordinate computations, or element ID selections
+5. Potential issues or edge cases to be aware of
+
+Be thorough and analytical in your thinking. Do NOT just restate the action - explain WHY you're taking it.
+"""
 
     _abstract_ex = """
 <think>
@@ -671,10 +684,20 @@ that your previous action had on the current content of the page.
 """
     _concrete_ex = """
 <think>
-From previous action I tried to set the value of year to "2022",
-using select_option, but it doesn't appear to be in the form. It may be a
-dynamic dropdown, I will try using click with the bid "a324" and look at the
-response from the page.
+Current state: I'm looking at a form with several fields. I can see textboxes for "Name" and "Email",
+and what appears to be a year selector.
+
+Previous action reflection: I tried to set the year to "2022" using select_option on bid "year_select",
+but the action failed. Looking at the error log, it says the element doesn't support select_option.
+
+Analysis: This suggests the year field might be a custom dropdown or a text input disguised as a selector,
+not a standard HTML select element. I can see there's a clickable element with bid "a324" near the year field.
+
+Next step reasoning: I should click on bid "a324" to see if it opens a dropdown menu or reveals the actual
+year input mechanism. This is a common pattern for custom date pickers.
+
+Potential issues: If clicking doesn't reveal options, I may need to try typing the year directly as text,
+or look for navigation arrows to change the year value.
 </think>
 """
 

@@ -19,6 +19,7 @@ from agentlab.agents.generic_agent import (
     AGENT_CLAUDE_SONNET_35,
     AGENT_GPT5_MINI,
     AGENT_GEMINI3,
+    AGENT_GPT5,
     GenericAgentArgs
 )
 from agentlab.experiments.study import Study
@@ -31,7 +32,8 @@ from agentlab.benchmarks.custom_workarena import workarena_l3_single_seed
 logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
-agent_args = [AGENT_GEMINI3]
+# agent_args = [AGENT_GEMINI3] 
+agent_args = [AGENT_GPT5]
 # agent_args = [AGENT_4o]
 
 
@@ -51,11 +53,10 @@ reproducibility_mode = False
 
 # Set relaunch = True to relaunch an existing study, this will continue incomplete
 # experiments and relaunch errored experiments
-relaunch = False
+relaunch = True
 
 ## Number of parallel jobs
-# n_jobs = 1  # Make sure to use 1 job when debugging in VSCode
-n_jobs = 3  # Using 8 cores (leaving 2 for system and Ray overhead)
+n_jobs = 3  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend

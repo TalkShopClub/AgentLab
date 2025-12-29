@@ -94,7 +94,7 @@ def workarena_l3_single_seed(n_repeats=1):
             level="l3",
             task_category_filter=None,
             meta_seed=42,
-            max_steps=50,
+            max_steps=25,
             curriculum_type="agent",
         ),
         task_metadata=task_metadata("workarena"),
