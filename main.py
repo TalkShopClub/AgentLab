@@ -40,8 +40,8 @@ agent_args = [AGENT_GPT5]
 # benchmark = "miniwob_tiny_test"
 # benchmark = "miniwob"
 # benchmark = "workarena_l1"
-# benchmark = "workarena_l2_agent_curriculum_eval"
-benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
+benchmark = "workarena_l2_agent_curriculum_eval"
+# benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
 # benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
 # benchmark = "webarena"
 
