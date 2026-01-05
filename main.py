@@ -22,27 +22,31 @@ from agentlab.agents.generic_agent import (
     AGENT_GPT5,
     GenericAgentArgs
 )
+from agentlab.agents.visual_agent import (
+    VISUAL_AGENT_GPT5,
+    VISUAL_AGENT_QWEN3_VL_30B_A3B_INSTRUCT,
+)
 from agentlab.experiments.study import Study
 from agentlab.llm.chat_api import OpenRouterModelArgs
 from agentlab.agents.generic_agent.generic_agent_prompt import GenericPromptFlags
 from agentlab.agents import dynamic_prompting as dp
-from agentlab.benchmarks.custom_workarena import workarena_l3_single_seed
+from agentlab.benchmarks.custom_workarena import workarena_l3_single_seed, workarena_l2_single_seed 
 
 logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
 # agent_args = [AGENT_GEMINI3] 
-agent_args = [AGENT_GPT5]
-# agent_args = [AGENT_4o]
+agent_args = [VISUAL_AGENT_GPT5]
 
 
 # ## select the benchmark to run on
 # benchmark = "miniwob_tiny_test"
 # benchmark = "miniwob"
 # benchmark = "workarena_l1"
-benchmark = "workarena_l2_agent_curriculum_eval"
+# benchmark = "workarena_l2_agent_curriculum_eval"
 # benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
 # benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
+benchmark = workarena_l2_single_seed()  # Custom: only 1 seed per task type
 # benchmark = "webarena"
 
 # Set reproducibility_mode = True for reproducibility
@@ -56,6 +60,9 @@ relaunch = False
 
 ## Number of parallel jobs
 n_jobs = 4  # Sequential execution for testing
+
+# Run on 1st task only from benchmark list 
+benchmark.env_args_list = benchmark.env_args_list[:1]
 
 
 if __name__ == "__main__":  # necessary for dask backend
