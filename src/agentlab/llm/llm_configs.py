@@ -383,4 +383,12 @@ CHAT_MODEL_ARGS_DICT = {
         temperature=1e-1,
         vision_support=True,
     ),
+    "openrouter/qwen/qwen3-vl-30b-a3b-instruct": OpenRouterModelArgs(
+        model_name="qwen/qwen3-vl-30b-a3b-instruct",
+        max_total_tokens=200_000,
+        max_input_tokens=30_000,
+        max_new_tokens=200_000 - 30_000,
+        temperature=1e-1,
+        vision_support=True,
+    ),
 }

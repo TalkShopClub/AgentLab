@@ -1,0 +1,9 @@
+from .agent_configs import (
+    VISUAL_AGENT_GPT5,
+    VISUAL_AGENT_QWEN3_VL_30B_A3B_INSTRUCT,
+)
+
+__all__ = [
+    "VISUAL_AGENT_GPT5",
+    "VISUAL_AGENT_QWEN3_VL_30B_A3B_INSTRUCT",
+]

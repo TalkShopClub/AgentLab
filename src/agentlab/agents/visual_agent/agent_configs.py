@@ -44,3 +44,13 @@ VISUAL_AGENT_CLAUDE_3_5 = VisualAgentArgs(
     chat_model_args=CHAT_MODEL_ARGS_DICT["openrouter/anthropic/claude-3.5-sonnet:beta"],
     flags=DEFAULT_PROMPT_FLAGS,
 )
+
+VISUAL_AGENT_GPT5 = VisualAgentArgs(
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openai/gpt-5-2025-08-07"],
+    flags=DEFAULT_PROMPT_FLAGS,
+)
+
+VISUAL_AGENT_QWEN3_VL_30B_A3B_INSTRUCT = VisualAgentArgs(
+    chat_model_args=CHAT_MODEL_ARGS_DICT["openrouter/qwen/qwen3-vl-30b-a3b-instruct"],
+    flags=DEFAULT_PROMPT_FLAGS,
+)
