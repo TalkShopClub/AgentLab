@@ -63,9 +63,11 @@ class MainPrompt(dp.Shrinkable):
         previous_plan: str,
         step: int,
         flags: GenericPromptFlags,
+        model_name: str = "",
     ) -> None:
         super().__init__()
         self.flags = flags
+        self.model_name = model_name
         self.history = dp.History(obs_history, actions, memories, thoughts, flags.obs)
         if self.flags.enable_chat:
             self.instructions = dp.ChatInstructions(
@@ -94,7 +96,13 @@ class MainPrompt(dp.Shrinkable):
             )
 
         self.be_cautious = dp.BeCautious(visible=time_for_caution)
-        self.think = dp.Think(visible=lambda: flags.use_thinking)
+
+        # Use ThinkGemini for Gemini models, otherwise use standard Think
+        if "gemini" in model_name.lower():
+            self.think = dp.ThinkGemini(visible=lambda: flags.use_thinking)
+        else:
+            self.think = dp.Think(visible=lambda: flags.use_thinking)
+
         self.hints = dp.Hints(visible=lambda: flags.use_hints)
         self.plan = Plan(previous_plan, step, lambda: flags.use_plan)  # TODO add previous plan
         self.criticise = Criticise(visible=lambda: flags.use_criticise)
@@ -147,6 +155,11 @@ Make sure to follow the template with proper tags:
 {self.action_prompt.concrete_ex}\
 """
             )
+        
+        # Save prompt for observation
+        # import json 
+        # with open("prepared_prompt.json", "w") as f:
+        #     json.dump(prompt['content'], f, indent=2)
         return self.obs.add_screenshot(prompt)
 
     def shrink(self):

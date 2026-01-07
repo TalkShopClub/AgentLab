@@ -423,7 +423,7 @@ GPT5_FLAGS = GenericPromptFlags(
     use_plan=False,
     use_criticise=False,
     use_thinking=True,
-    use_memory=False,
+    use_memory=True,
     use_concrete_example=True,
     use_abstract_example=True,
     use_hints=True,
@@ -438,13 +438,8 @@ AGENT_GPT5 = GenericAgentArgs(
     flags=GPT5_FLAGS,
 )
 
-GEMINI3_FLAGS = BASE_FLAGS.copy()
-GEMINI3_FLAGS.action = dp.ActionFlags(
-    action_set=HighLevelActionSetArgs(
-        subsets=["bid"],
-        multiaction=False,
-    )
-)
+GEMINI3_FLAGS = GPT5_FLAGS.copy()
+# GEMINI3_FLAGS.use_memory = True # Turn on memory for Gemini 3
 
 AGENT_GEMINI3 = GenericAgentArgs(
     chat_model_args=CHAT_MODEL_ARGS_DICT["openrouter/google/gemini-3-pro-preview"],

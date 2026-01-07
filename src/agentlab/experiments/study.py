@@ -237,6 +237,7 @@ class Study(AbstractStudy):
     ignore_dependencies: bool = False
     avg_step_timeout: int = 60
     demo_mode: bool = False
+    save_som: bool = True
 
     def __post_init__(self):
         """Initialize the study. Set the uuid, and generate the exp_args_list."""
@@ -259,6 +260,7 @@ class Study(AbstractStudy):
             logging_level_stdout=self.logging_level_stdout,
             ignore_dependencies=self.ignore_dependencies,
             demo_mode=self.demo_mode,
+            save_som=self.save_som
         )
 
     def find_incomplete(self, include_errors=True):
@@ -448,6 +450,7 @@ class Study(AbstractStudy):
         logging_level: int = logging.INFO,
         logging_level_stdout: int = logging.INFO,
         ignore_dependencies=False,
+        save_som: bool = True,
     ):
         """Run one or multiple agents on a benchmark.
 
@@ -499,6 +502,7 @@ class Study(AbstractStudy):
                     env_args=env_args,
                     logging_level=logging_level,
                     logging_level_stdout=logging_level_stdout,
+                    save_som=save_som,
                 )
                 exp_args_list.append(exp_args)
 

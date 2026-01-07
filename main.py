@@ -36,7 +36,8 @@ logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
 # agent_args = [AGENT_GEMINI3] 
-agent_args = [VISUAL_AGENT_GPT5]
+# agent_args = [VISUAL_AGENT_GPT5]
+agent_args = [AGENT_GPT5]
 
 
 # ## select the benchmark to run on
@@ -44,10 +45,14 @@ agent_args = [VISUAL_AGENT_GPT5]
 # benchmark = "miniwob"
 # benchmark = "workarena_l1"
 # benchmark = "workarena_l2_agent_curriculum_eval"
-# benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
-# benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
-benchmark = workarena_l2_single_seed()  # Custom: only 1 seed per task type
+benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
 # benchmark = "webarena"
+
+# Run on 5 random tasks 
+# benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
+# benchmark = workarena_l2_single_seed()  # Custom: only 1 seed per task type
+# import random
+# benchmark.env_args_list = random.sample(benchmark.env_args_list, 1)
 
 # Set reproducibility_mode = True for reproducibility
 # this will "ask" agents to be deterministic. Also, it will prevent you from launching if you have
@@ -59,10 +64,7 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 4  # Sequential execution for testing
-
-# Run on 1st task only from benchmark list 
-benchmark.env_args_list = benchmark.env_args_list[:1]
+n_jobs = 2  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend
@@ -76,7 +78,7 @@ if __name__ == "__main__":  # necessary for dask backend
         study.find_incomplete(include_errors=True)
 
     else:
-        study = Study(agent_args, benchmark, logging_level_stdout=logging.WARNING)
+        study = Study(agent_args, benchmark, logging_level_stdout=logging.WARNING, save_som=False)
 
     study.run(
         n_jobs=n_jobs,

@@ -13,12 +13,15 @@ DEFAULT_OBS_FLAGS = dp.ObsFlags(
     use_error_logs=True,
     use_past_error_logs=False,
     use_screenshot=True,
-    use_som=False,
+    use_som=True,
+    use_history=True, 
+    use_action_history=True,
+    use_think_history = True,
     openai_vision_detail="auto",
 )
 
 DEFAULT_ACTION_FLAGS = dp.ActionFlags(
-    action_set=HighLevelActionSetArgs(subsets=["coord"]),
+    action_set=HighLevelActionSetArgs(subsets=["coord", "bid"]),
     long_description=True,
     individual_examples=False,
 )

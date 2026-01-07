@@ -130,15 +130,22 @@ class MainPrompt(dp.PromptElement):
         actions: list[str],
         thoughts: list[str],
         flags: PromptFlags,
+        model_name: str = "",
     ) -> None:
         super().__init__()
         self.flags = flags
+        self.model_name = model_name
         self.history = History(actions, thoughts)
         self.instructions = make_instructions(obs, flags.enable_chat, flags.extra_instructions)
         self.obs = Observation(obs, self.flags.obs)
 
         self.action_prompt = dp.ActionPrompt(action_set, action_flags=flags.action)
-        self.think = dp.Think(visible=lambda: flags.use_thinking)
+
+        # Use ThinkGemini for Gemini models, otherwise use standard Think
+        if "gemini" in model_name.lower():
+            self.think = dp.ThinkGemini(visible=lambda: flags.use_thinking)
+        else:
+            self.think = dp.Think(visible=lambda: flags.use_thinking)
 
     @property
     def _prompt(self) -> HumanMessage:

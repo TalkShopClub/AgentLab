@@ -107,6 +107,7 @@ class GenericAgent(Agent):
             previous_plan=self.plan,
             step=self.plan_step,
             flags=self.flags,
+            model_name=self.chat_model_args.model_name,
         )
 
         max_prompt_tokens, max_trunc_itr = self._get_maxes()
@@ -125,12 +126,6 @@ class GenericAgent(Agent):
             # cause it to be too long
 
             chat_messages = Discussion([system_prompt, human_prompt])
-
-            # Save full prompt for debugging (only on first step)
-            if len(self.actions) == 0:
-                import json
-                with open("workarena_full_prompt.json", "w") as f:
-                    json.dump(list(chat_messages), f, indent=2)
 
             ans_dict = retry(
                 self.chat_llm,
@@ -157,6 +152,7 @@ class GenericAgent(Agent):
         self.actions.append(ans_dict["action"])
         self.memories.append(ans_dict.get("memory", None))
         self.thoughts.append(ans_dict.get("think", None))
+        # print("Thought: ", ans_dict.get("think", None))
 
         agent_info = AgentInfo(
             think=ans_dict.get("think", None),

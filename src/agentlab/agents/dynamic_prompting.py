@@ -708,6 +708,76 @@ or look for navigation arrows to change the year value.
             return {"think": text_answer, "parse_error": str(e)}
 
 
+class ThinkGemini(PromptElement):
+    """Gemini-specific thinking prompt using <reasoning> tags with stronger separation from actions."""
+
+    _prompt = """
+# Step 1: Reasoning Process
+
+IMPORTANT: First, you must write your step-by-step reasoning inside <reasoning> tags.
+Do NOT include any <action> tags inside your reasoning. Actions come later in a separate section.
+
+Your reasoning should include:
+1. Analysis of the current page state and what you observe
+2. Reflection on what your previous action accomplished (did it work as expected?)
+3. Reasoning about what needs to be done next to accomplish the goal
+4. Any calculations, coordinate computations, or element ID selections
+5. Potential issues or edge cases to be aware of
+
+Be thorough and analytical in your reasoning. Do NOT just restate the action - explain WHY you're taking it.
+
+Remember: <reasoning> tags are for your thought process ONLY. Your action will come after, in separate <action> tags.
+"""
+
+    _abstract_ex = """
+<reasoning>
+Think step by step. If you need to make calculations such as coordinates, write them here. Describe the effect
+that your previous action had on the current content of the page. Do NOT include <action> tags here.
+</reasoning>
+"""
+
+    _concrete_ex = """
+<reasoning>
+Current state: I'm looking at a form with several fields. I can see textboxes for "Name" and "Email",
+and what appears to be a year selector.
+
+Previous action reflection: I tried to set the year to "2022" using select_option on bid "year_select",
+but the action failed. Looking at the error log, it says the element doesn't support select_option.
+
+Analysis: This suggests the year field might be a custom dropdown or a text input disguised as a selector,
+not a standard HTML select element. I can see there's a clickable element with bid "a324" near the year field.
+
+Next step reasoning: I should click on bid "a324" to see if it opens a dropdown menu or reveals the actual
+year input mechanism. This is a common pattern for custom date pickers.
+
+Potential issues: If clicking doesn't reveal options, I may need to try typing the year directly as text,
+or look for navigation arrows to change the year value.
+</reasoning>
+
+<action>
+click('a324')
+</action>
+"""
+
+    def _parse_answer(self, text_answer):
+        try:
+            # Parse using "reasoning" key but return as "think" for framework compatibility
+            result = parse_html_tags_raise(text_answer, keys=["reasoning"], merge_multiple=True)
+            # Map "reasoning" to "think" for framework compatibility
+            if "reasoning" in result:
+                return {"think": result["reasoning"]}
+            return result
+        except ParseError as e:
+            # Fallback: try parsing with "think" tag in case model still uses it
+            try:
+                result = parse_html_tags_raise(text_answer, keys=["think"], merge_multiple=True)
+                print("Think: ", result["think"])
+                return result
+            except ParseError as e:
+                print("Parse error: ", e)
+                return {"think": text_answer, "parse_error": str(e)}
+
+
 # def diff(previous, new):
 #     """Return a string showing the difference between original and new.
 
@@ -890,8 +960,18 @@ def make_obs_preprocessor(flags: ObsFlags):
             filter_som_only=flags.filter_som_only,
         )
         obs["pruned_html"] = prune_html(obs["dom_txt"])
+
+        # Scale bounding boxes from 2560x1440 to match 1280x720 screenshot resolution
+        scaled_extra_properties = {}
+        for bid, props in obs["extra_element_properties"].items():
+            scaled_props = props.copy()
+            if props.get("bbox") is not None:
+                x, y, w, h = props["bbox"]
+                scaled_props["bbox"] = [x * 0.5, y * 0.5, w * 0.5, h * 0.5]
+            scaled_extra_properties[bid] = scaled_props
+
         obs["screenshot_som"] = overlay_som(
-            obs["screenshot"], extra_properties=obs["extra_element_properties"]
+            obs["screenshot"], extra_properties=scaled_extra_properties
         )
 
         return obs

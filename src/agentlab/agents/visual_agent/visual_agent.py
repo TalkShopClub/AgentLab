@@ -85,6 +85,7 @@ class VisualAgent(Agent):
             actions=self.actions,
             thoughts=self.thoughts,
             flags=self.flags,
+            model_name=self.chat_model_args.model_name,
         )
 
         system_prompt = SystemMessage(dp.SystemPrompt().prompt)
