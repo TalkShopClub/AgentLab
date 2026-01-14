@@ -14,10 +14,12 @@ from typing import List, Dict, Any
 import tempfile
 import shutil
 import base64
+import gc
 from tqdm import tqdm
 
 from browsergym.experiments.loop import ExpResult
 from browsergym.experiments import get_exp_result
+from agentlab.experiments.loop import EXP_RESULT_CACHE
 from PIL import Image, ImageDraw, ImageFont
 from agentlab.analyze import inspect_results
 
@@ -423,7 +425,7 @@ def main():
     task_dirs = [d for d in study_dir.iterdir() if d.is_dir()]
     print(f"Found {len(task_dirs)} task directories\n")
 
-    for task_dir in tqdm(task_dirs, desc="Processing tasks", unit="task"):
+    for i, task_dir in enumerate(tqdm(task_dirs, desc="Processing tasks", unit="task")):
         total_tasks += 1
         try:
             result = process_task_folder(str(task_dir), level, overwrite)
@@ -433,6 +435,9 @@ def main():
                 successful_tasks += 1
             else:
                 failed_tasks += 1
+            EXP_RESULT_CACHE.pop(str(task_dir), None)
+            if i % 20 == 0:
+                gc.collect()
         except Exception as e:
             print(f"\nError processing {task_dir.name}: {e}")
             failed_tasks += 1

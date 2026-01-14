@@ -4,15 +4,28 @@ import os
 import sys
 from pathlib import Path
 
-if len(sys.argv) < 2:
-    print("Usage: python calculate_success_rate.py <model_name> [task_level]")
-    print("Example: python calculate_success_rate.py gpt-5 l3")
-    sys.exit(1)
+import argparse
 
-model_name = sys.argv[1]
-task_level = sys.argv[2] if len(sys.argv) > 2 else None
+parser = argparse.ArgumentParser(
+    description="Calculate success rate for AgentLab task results",
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    epilog="""
+Examples:
+  python calculate_success_rate.py gpt-5
+  python calculate_success_rate.py gpt-5 --level l3
+  python calculate_success_rate.py gpt-5 --dir /path/to/results
+    """
+)
+parser.add_argument('--model', type=str, help='Model name to filter results')
+parser.add_argument('--level', type=str, help='Task level to filter (e.g., l2 or l3)')
+parser.add_argument('--dir', type=str, help='Directory containing results (if not specified, uses AGENTLAB_EXP_ROOT)')
 
-base_path = Path(os.getenv('AGENTLAB_EXP_ROOT'))
+args = parser.parse_args()
+
+model_name = args.model
+task_level = args.level
+
+base_path = Path(args.dir) if args.dir else Path(os.getenv('AGENTLAB_EXP_ROOT'))
 
 if task_level:
     target_folder = next(f for f in base_path.iterdir() if model_name in f.name and task_level in f.name)

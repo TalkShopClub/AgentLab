@@ -9,6 +9,7 @@ import os
 import sys
 import base64
 import argparse
+import html
 from pathlib import Path
 from typing import Dict, Any
 
@@ -161,11 +162,11 @@ def create_html_visualization(exp_dir: str, task_data: Dict[str, Any], output_ht
     </div>
 """).format(
         screenshot_type=screenshot_type,
-        task_name=task_data.get('task_name', 'Unknown'),
+        task_name=html.escape(task_data.get('task_name', 'Unknown')),
         task_seed=task_data.get('task_seed', 'N/A'),
         num_steps=task_data.get('num_steps', 0),
         final_reward=task_data.get('final_reward', 'N/A'),
-        goal=task_data.get('goal', 'Goal not available').replace('\n', '<br>')
+        goal=html.escape(task_data.get('goal', 'Goal not available')).replace('\n', '<br>')
     ))
 
     for i, screenshot in enumerate(screenshots):
@@ -189,9 +190,9 @@ def create_html_visualization(exp_dir: str, task_data: Dict[str, Any], output_ht
         truncated = action_data.get('truncated', False)
 
         if action:
-            action = str(action).replace('\n', '<br>')
+            action = html.escape(str(action)).replace('\n', '<br>')
         if thought:
-            thought = str(thought).replace('\n', '<br>')
+            thought = html.escape(str(thought)).replace('\n', '<br>')
 
         status_html = ''
         if terminated:
@@ -299,8 +300,15 @@ Examples:
   python create_html_from_results.py --model gpt-5
   python create_html_from_results.py -m claude-sonnet -l l3
   python create_html_from_results.py -d visual_gpt5_l2 --use-som
+  python create_html_from_results.py -t path/to/task_folder
   python create_html_from_results.py  # Process all models
         """
+    )
+    parser.add_argument(
+        '-t', '--task',
+        type=str,
+        default=None,
+        help='Specific task folder to process (generates HTML for this task only)'
     )
     parser.add_argument(
         '-d', '--directory',
@@ -332,6 +340,29 @@ Examples:
     )
 
     args = parser.parse_args()
+
+    # Handle specific task folder
+    if args.task:
+        task_path = Path(args.task)
+        if not task_path.exists():
+            print(f"Error: Task folder not found: {task_path}")
+            sys.exit(1)
+        if not task_path.is_dir():
+            print(f"Error: {task_path} is not a directory")
+            sys.exit(1)
+
+        print(f"Processing single task: {task_path.name}")
+        result = process_task_folder(task_path, overwrite=args.overwrite, use_som=args.use_som)
+
+        if result is None:
+            print("Task was skipped (missing task_summary.json or already processed)")
+            sys.exit(0)
+        elif result:
+            print(f"✓ Successfully created HTML for {task_path.name}")
+            sys.exit(0)
+        else:
+            print(f"✗ Failed to create HTML for {task_path.name}")
+            sys.exit(1)
 
     # Handle direct directory specification
     if args.directory:

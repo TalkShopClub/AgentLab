@@ -446,13 +446,18 @@ class Observation(Shrinkable):
     def add_screenshot(self, prompt: BaseMessage) -> BaseMessage:
         if self.flags.use_screenshot:
             if self.flags.use_som:
-                screenshot = self.obs["screenshot_som"]
+                print("Adding SOM and regular screenshot!")
+                screenshot_som = self.obs["screenshot_som"]
                 prompt.add_text(
-                    "\n## Screenshot:\nHere is a screenshot of the page, it is annotated with bounding boxes and corresponding bids:"
+                    "\n## Screenshot:\nHere is a screenshot of the page, it is annotated with bounding boxes and corresponding bids. The bids are always in the top left corner of the corresponding bounding box. This should help you identify which bid corresponds to which element on the page: "
                 )
-            else:
-                screenshot = self.obs["screenshot"]
-                prompt.add_text("\n## Screenshot:\nHere is a screenshot of the page:")
+                img_url_som = image_to_jpg_base64_url(screenshot_som)
+                prompt.add_image(img_url_som, detail=self.flags.openai_vision_detail)
+            # else:
+            screenshot = self.obs["screenshot"]
+            prompt.add_text("\n## Screenshot:\nHere is a screenshot of the page without any annotations.") 
+            if self.flags.use_som:
+                prompt.add_text("Refer to the non annotated screenshot to identify elements that are occluded by the SOM annotations in the annotated screenshot. This should help you see the small elements that are not visible in the annotated screenshot.")
             img_url = image_to_jpg_base64_url(screenshot)
             prompt.add_image(img_url, detail=self.flags.openai_vision_detail)
         return prompt

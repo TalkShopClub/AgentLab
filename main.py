@@ -36,16 +36,16 @@ logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
 # agent_args = [AGENT_GEMINI3] 
-# agent_args = [VISUAL_AGENT_GPT5]
-agent_args = [AGENT_GPT5]
+agent_args = [VISUAL_AGENT_GPT5]
+# agent_args = [AGENT_GPT5]
 
 
 # ## select the benchmark to run on
 # benchmark = "miniwob_tiny_test"
 # benchmark = "miniwob"
 # benchmark = "workarena_l1"
-# benchmark = "workarena_l2_agent_curriculum_eval"
-benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
+benchmark = "workarena_l2_agent_curriculum_eval"
+# benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
 # benchmark = "webarena"
 
 # Run on 5 random tasks 
@@ -64,7 +64,7 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 2  # Sequential execution for testing
+n_jobs = 3  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend
