@@ -1,0 +1,30 @@
+{
+  "raw_response": "<candidates>\n<candidate_1>\n<action>click('a80')</action>\n<action_text>Click the funnel/filter icon to open the list filter builder</action_text>\n<rationale>We need to create a filter where \u201cAssigned to\u201d is a specific user; opening the filter builder is the first step.</rationale>\n</candidate_1>\n<candidate_2>\n<action>click('a78')</action>\n<action_text>Click the adjacent list control icon to toggle/show the filter bar</action_text>\n<rationale>If the primary funnel icon isn\u2019t correct, this neighboring control often also reveals the filter panel in ServiceNow lists.</rationale>\n</candidate_2>\n<candidate_3>\n<action>click('a119')</action>\n<action_text>Click the list\u2019s Search control</action_text>\n<rationale>As a fallback, using the list search to enter the assignee\u2019s name can quickly narrow results, helping us identify the correct record to extract the Warranty expiration.</rationale>\n</candidate_3>\n<candidate_4>\n<action>click('a227', button='right')</action>\n<action_text>Right-click the \u201cAssigned to\u201d column header to open its context menu</action_text>\n<rationale>The column header context menu typically includes filtering options (e.g., Show Matching/Filter) that let us set \u201cAssigned to\u201d to a specific user.</rationale>\n</candidate_4>\n<candidate_5>\n<action>click('a107')</action>\n<action_text>Open the \u201cActions on selected rows\u2026\u201d list menu</action_text>\n<rationale>This menu sometimes provides access to list controls, including showing the filter bar, if the filter icon is not functioning as expected.</rationale>\n</candidate_5>\n</candidates>",
+  "parsed_candidates": [
+    {
+      "action": "click('a80')",
+      "action_text": "Click the funnel/filter icon to open the list filter builder",
+      "rationale": "We need to create a filter where \u201cAssigned to\u201d is a specific user; opening the filter builder is the first step."
+    },
+    {
+      "action": "click('a78')",
+      "action_text": "Click the adjacent list control icon to toggle/show the filter bar",
+      "rationale": "If the primary funnel icon isn\u2019t correct, this neighboring control often also reveals the filter panel in ServiceNow lists."
+    },
+    {
+      "action": "click('a119')",
+      "action_text": "Click the list\u2019s Search control",
+      "rationale": "As a fallback, using the list search to enter the assignee\u2019s name can quickly narrow results, helping us identify the correct record to extract the Warranty expiration."
+    },
+    {
+      "action": "click('a227', button='right')",
+      "action_text": "Right-click the \u201cAssigned to\u201d column header to open its context menu",
+      "rationale": "The column header context menu typically includes filtering options (e.g., Show Matching/Filter) that let us set \u201cAssigned to\u201d to a specific user."
+    },
+    {
+      "action": "click('a107')",
+      "action_text": "Open the \u201cActions on selected rows\u2026\u201d list menu",
+      "rationale": "This menu sometimes provides access to list controls, including showing the filter bar, if the filter icon is not functioning as expected."
+    }
+  ]
+}

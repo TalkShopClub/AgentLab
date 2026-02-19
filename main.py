@@ -26,6 +26,10 @@ from agentlab.agents.visual_agent import (
     VISUAL_AGENT_GPT5,
     VISUAL_AGENT_QWEN3_VL_30B_A3B_INSTRUCT,
 )
+from agentlab.agents.wm_visual_agent.agent_configs import (
+    WM_VISUAL_AGENT_GPT5_IMAGE,
+    WM_VISUAL_AGENT_GPT5_TEXT,
+)
 from agentlab.experiments.study import Study
 from agentlab.llm.chat_api import OpenRouterModelArgs
 from agentlab.agents.generic_agent.generic_agent_prompt import GenericPromptFlags
@@ -35,24 +39,36 @@ from agentlab.benchmarks.custom_workarena import workarena_l3_single_seed, worka
 logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
-# agent_args = [AGENT_GEMINI3] 
+# agent_args = [AGENT_GEMINI3]
 agent_args = [VISUAL_AGENT_GPT5]
 # agent_args = [AGENT_GPT5]
+# agent_args = [WM_VISUAL_AGENT_GPT5_TEXT]   # World model augmented (text predictions)
+# agent_args = [WM_VISUAL_AGENT_GPT5_IMAGE]  # World model augmented (image predictions)
 
 
 # ## select the benchmark to run on
 # benchmark = "miniwob_tiny_test"
 # benchmark = "miniwob"
 # benchmark = "workarena_l1"
-benchmark = "workarena_l2_agent_curriculum_eval"
+# benchmark = "workarena_l2_agent_curriculum_eval"
 # benchmark = "workarena_l3_agent_curriculum_eval"  # Default (with all perturbations)
 # benchmark = "webarena"
 
-# Run on 5 random tasks 
+# Run on 5 random tasks
 # benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
-# benchmark = workarena_l2_single_seed()  # Custom: only 1 seed per task type
-# import random
-# benchmark.env_args_list = random.sample(benchmark.env_args_list, 1)
+benchmark = workarena_l2_single_seed()  # Custom: only 1 seed per task type
+
+# Deterministic task selection and execution.
+# TASK_SEED controls both which task is picked and the task content (hashtags, users, etc.).
+# Set to None to use the curriculum-assigned seeds without overriding.
+TASK_SEED = 42
+
+import random
+rng = random.Random(TASK_SEED)
+benchmark.env_args_list = rng.sample(benchmark.env_args_list, 3)
+if TASK_SEED is not None:
+    for env_args in benchmark.env_args_list:
+        env_args.task_seed = TASK_SEED
 
 # Set reproducibility_mode = True for reproducibility
 # this will "ask" agents to be deterministic. Also, it will prevent you from launching if you have

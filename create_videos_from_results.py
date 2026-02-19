@@ -15,6 +15,7 @@ import tempfile
 import shutil
 import base64
 import gc
+import io
 from tqdm import tqdm
 
 from browsergym.experiments.loop import ExpResult
@@ -228,6 +229,32 @@ def extract_goal_and_actions(exp_dir: str, level: str = 'l3') -> Dict[str, Any]:
                 "terminated": step_info.terminated if hasattr(step_info, 'terminated') else None,
                 "truncated": step_info.truncated if hasattr(step_info, 'truncated') else None,
             }
+
+            # Extract world model data from agent_info.extra_info
+            if hasattr(step_info, 'agent_info') and hasattr(step_info.agent_info, 'extra_info'):
+                extra = step_info.agent_info.extra_info
+
+                if 'wm_candidates' in extra:
+                    action_data['wm_candidates'] = extra['wm_candidates']
+
+                if 'wm_predictions' in extra:
+                    # Convert numpy arrays to base64 strings for JSON serialization
+                    predictions = []
+                    for pred in extra['wm_predictions']:
+                        pred_copy = pred.copy()
+                        if pred_copy.get('image') is not None:
+                            import numpy as np
+                            img_array = pred_copy['image']
+                            img = Image.fromarray(img_array.astype('uint8'))
+                            buf = io.BytesIO()
+                            img.save(buf, format='PNG')
+                            pred_copy['image'] = base64.b64encode(buf.getvalue()).decode('utf-8')
+                        predictions.append(pred_copy)
+                    action_data['wm_predictions'] = predictions
+
+                if 'wm_mode' in extra:
+                    action_data['wm_mode'] = extra['wm_mode']
+
             actions.append(action_data)
 
         # Get summary info

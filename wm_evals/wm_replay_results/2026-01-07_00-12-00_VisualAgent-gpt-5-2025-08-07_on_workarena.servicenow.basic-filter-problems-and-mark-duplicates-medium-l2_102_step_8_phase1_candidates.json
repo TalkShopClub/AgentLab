@@ -1,0 +1,30 @@
+{
+  "raw_response": "<candidates>\n<candidate_1>\n<action>click('a47')</action>\n<action_text>Click the list filter/funnel icon to open the filter builder</action_text>\n<rationale>We need to create a filter where Problem statement contains a specific string; opening the filter builder is the standard first step.</rationale>\n</candidate_1>\n<candidate_2>\n<action>click('a223', button='right')</action>\n<action_text>Right-click the \"Problem statement\" column header to open its context menu</action_text>\n<rationale>The header menu typically offers a Filter option pre-selecting this field, making it easy to set the operator to \"contains\" and enter the series value.</rationale>\n</candidate_2>\n<candidate_3>\n<action>click('a75')</action>\n<action_text>Click the list Search field</action_text>\n<rationale>Focusing the list search allows a quick text filter; typing the series string can rapidly narrow results even before building a precise filter.</rationale>\n</candidate_3>\n<candidate_4>\n<action>fill('a75', '#SERIES-2d813135-2')</action>\n<action_text>Type \"#SERIES-2d813135-2\" into the list Search field</action_text>\n<rationale>Quickly narrows the list to entries containing the series token, helping identify duplicates and verify the needed filter criteria.</rationale>\n</candidate_4>\n<candidate_5>\n<action>click('79')</action>\n<action_text>Open the All navigation panel</action_text>\n<rationale>If we are not already in the \"Assigned to me\" module, opening the navigator lets us quickly switch to Problem > Assigned to me to satisfy step 1.</rationale>\n</candidate_5>\n</candidates>",
+  "parsed_candidates": [
+    {
+      "action": "click('a47')",
+      "action_text": "What would happen if we clicked filter/funnel icon?",
+      "rationale": "We need to create a filter where Problem statement contains a specific string; opening the filter builder is the standard first step."
+    },
+    {
+      "action": "click('a223', button='right')",
+      "action_text": "What would happen if we right-clicked the \"Problem statement\" column header?",
+      "rationale": "The header menu typically offers a Filter option pre-selecting this field, making it easy to set the operator to \"contains\" and enter the series value."
+    },
+    {
+      "action": "click('a75')",
+      "action_text": "What would happen if we clicked the list Search field?",
+      "rationale": "Focusing the list search allows a quick text filter; typing the series string can rapidly narrow results even before building a precise filter."
+    },
+    {
+      "action": "fill('a75', '#SERIES-2d813135-2')",
+      "action_text": "What would happen if we filled the list Search field with \"#SERIES-2d813135-2\"?",
+      "rationale": "Quickly narrows the list to entries containing the series token, helping identify duplicates and verify the needed filter criteria."
+    },
+    {
+      "action": "click('79')",
+      "action_text": "What would happen if we clicked the All navigation panel?",
+      "rationale": "If we are not already in the \"Assigned to me\" module, opening the navigator lets us quickly switch to Problem > Assigned to me to satisfy step 1."
+    }
+  ]
+}

@@ -147,6 +147,50 @@ def create_html_visualization(exp_dir: str, task_data: Dict[str, Any], output_ht
             background: #fff3cd;
             color: #856404;
         }}
+        .wm-section {{
+            background: #f0f8ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            border-left: 4px solid #17a2b8;
+        }}
+        .wm-section h3 {{
+            margin: 0 0 15px 0;
+            color: #17a2b8;
+            font-size: 16px;
+        }}
+        .wm-candidate {{
+            background: white;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }}
+        .wm-candidate-header {{
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #dee2e6;
+        }}
+        .wm-candidate-body {{
+            font-size: 13px;
+        }}
+        .wm-field {{
+            margin: 6px 0;
+            color: #212529;
+        }}
+        .wm-prediction {{
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #dee2e6;
+        }}
+        .wm-pred-img {{
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 8px;
+        }}
     </style>
 </head>
 <body>
@@ -208,6 +252,39 @@ def create_html_visualization(exp_dir: str, task_data: Dict[str, Any], output_ht
                 {thought}
             </div>"""
 
+        # World model predictions (if available)
+        wm_html = ''
+        wm_candidates = action_data.get('wm_candidates', [])
+        wm_predictions = action_data.get('wm_predictions', [])
+        wm_mode = action_data.get('wm_mode', 'text')
+
+        if wm_candidates and wm_predictions:
+            wm_html = '<div class="wm-section"><h3>World Model Predictions</h3>'
+            for j, (cand, pred) in enumerate(zip(wm_candidates, wm_predictions), 1):
+                cand_action = html.escape(str(cand.get('action', ''))).replace('\n', '<br>')
+                cand_text = html.escape(str(cand.get('action_text', ''))).replace('\n', '<br>')
+                cand_rationale = html.escape(str(cand.get('rationale', ''))).replace('\n', '<br>')
+
+                wm_html += f'''
+                <div class="wm-candidate">
+                    <div class="wm-candidate-header">Candidate #{j}</div>
+                    <div class="wm-candidate-body">
+                        <div class="wm-field"><strong>Action Code:</strong> {cand_action}</div>
+                        <div class="wm-field"><strong>Action Description:</strong> {cand_text}</div>
+                        <div class="wm-field"><strong>Rationale:</strong> {cand_rationale}</div>
+                '''
+
+                if wm_mode == 'image' and pred.get('image') is not None:
+                    # pred['image'] is already base64-encoded string from create_videos_from_results.py
+                    pred_img_b64 = pred['image']
+                    wm_html += f'<div class="wm-prediction"><strong>Predicted Next State:</strong><br><img src="data:image/png;base64,{pred_img_b64}" class="wm-pred-img"></div>'
+                elif wm_mode == 'text' and pred.get('text'):
+                    pred_text = html.escape(str(pred['text'])).replace('\n', '<br>')
+                    wm_html += f'<div class="wm-prediction"><strong>Predicted Next State:</strong><br>{pred_text}</div>'
+
+                wm_html += '</div></div>'
+            wm_html += '</div>'
+
         # Build screenshots HTML
         if img_data_after:
             screenshots_html = f"""
@@ -238,7 +315,7 @@ def create_html_visualization(exp_dir: str, task_data: Dict[str, Any], output_ht
             <div class="action-info">
                 <strong>Action:</strong><br>
                 {action}
-            </div>{thought_html}
+            </div>{thought_html}{wm_html}
             <div class="meta-info">
                 <span class="reward">Reward: {reward}</span>
                 {status_html}

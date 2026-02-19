@@ -1,0 +1,10 @@
+[
+    {
+        "traj_path": "/Users/lakshyagupta/skyfall/ewm_benchmarks/AgentLab/results3/2026-01-07_00-11-58_visualagent-gpt-5-2025-08-07-on-workarena-l2-agent-curriculum-eval/2026-01-07_00-12-00_VisualAgent-gpt-5-2025-08-07_on_workarena.servicenow.basic-filter-problems-and-mark-duplicates-medium-l2_102",
+        "step_id": 8
+    }, 
+    {
+        "traj_path": "/Users/lakshyagupta/skyfall/ewm_benchmarks/AgentLab/results3/2026-01-07_00-11-58_visualagent-gpt-5-2025-08-07-on-workarena-l2-agent-curriculum-eval/2026-01-07_00-12-00_VisualAgent-gpt-5-2025-08-07_on_workarena.servicenow.get-warranty-expiration-date-l2_106", 
+        "step_id": 4
+    }
+]

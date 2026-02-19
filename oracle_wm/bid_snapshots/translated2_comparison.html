@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>workarena.servicenow.dashboard-retrieve-incident-and-min-create-problem-l2 seed=42</title>
+<style>
+body { font-family: monospace; font-size: 12px; background: #1e1e1e; color: #d4d4d4; margin: 0; }
+h2 { padding: 8px 16px; margin: 0; background: #252526; border-bottom: 1px solid #3c3c3c; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #2d2d2d; padding: 6px 8px; text-align: left; border-bottom: 2px solid #3c3c3c; position: sticky; top: 0; z-index: 1; }
+td { padding: 6px 8px; vertical-align: top; border-bottom: 1px solid #2a2a2a; }
+td.step-num { width: 32px; text-align: center; color: #888; font-size: 11px; }
+tr.ok td { background: #1e2a1e; }
+tr.translated td { background: #1e2227; }
+tr.error td { background: #2a1e1e; }
+tr.ok:hover td, tr.translated:hover td, tr.error:hover td { filter: brightness(1.15); }
+.img-wrap { text-align: center; }
+img { max-width: 100%; height: auto; display: block; border: 1px solid #3c3c3c; }
+.action { margin-top: 4px; color: #9cdcfe; word-break: break-all; }
+.note { margin-top: 2px; color: #888; font-size: 11px; }
+.err { margin-top: 2px; color: #f44747; font-size: 11px; white-space: pre-wrap; word-break: break-all; max-height: 80px; overflow: auto; }
+.tag { display: inline-block; font-size: 10px; padding: 1px 5px; border-radius: 3px; margin-left: 4px; }
+.tag-stable { background: #2d5a2d; color: #9fdf9f; }
+.tag-translated { background: #1a3a5a; color: #7ecdf7; }
+.tag-ambiguous { background: #4a3a1a; color: #e8c97d; }
+.tag-missing { background: #4a2a2a; color: #f47d7d; }
+.tag-noerr { background: #2d5a2d; color: #9fdf9f; }
+.tag-err { background: #4a2a2a; color: #f47d7d; }
+</style>
+</head>
+<body>
+<h2>Original vs Translate-Replay &mdash; workarena.servicenow.dashboard-retrieve-incident-and-min-create-problem-l2 &nbsp; seed=42</h2>
+<table>
+<thead><tr>
+  <th>#</th>
+  <th style="width:47%">Original trajectory</th>
+  <th style="width:47%">Translate-replay</th>
+</tr></thead>
+<tbody>
+
+<tr class="ok">
+  <td class="step-num">0</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_00_reset.png" loading="lazy"></div>
+    <div class="action">reset</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_00_reset.png" loading="lazy"></div>
+    <div class="action">reset</div>
+    
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">1</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_01.png" loading="lazy"></div>
+    <div class="action">click('79')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_01.png" loading="lazy"></div>
+    <div class="action">click('79')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::All'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">2</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_02.png" loading="lazy"></div>
+    <div class="action">fill('242', 'Reports')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_02.png" loading="lazy"></div>
+    <div class="action">fill('664', 'Reports')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated '242' -> '664' via fp='textbox::Enter search term to filter All menu'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">3</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_03.png" loading="lazy"></div>
+    <div class="action">click('1113')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_03.png" loading="lazy"></div>
+    <div class="action">click('1230')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated '1113' -> '1230' via fp='button::Reports::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=1'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">4</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_04.png" loading="lazy"></div>
+    <div class="action">click('1113')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_04.png" loading="lazy"></div>
+    <div class="action">click('1230')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated '1113' -> '1230' via fp='button::Reports::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=1'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">5</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_05.png" loading="lazy"></div>
+    <div class="action">click('1122')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_05.png" loading="lazy"></div>
+    <div class="action">click('1239')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated '1122' -> '1239' via fp='button::Add Reports to favorites'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">6</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_06.png" loading="lazy"></div>
+    <div class="action">click('1701')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_06.png" loading="lazy"></div>
+    <div class="action">click('1847')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated '1701' -> '1847' via fp='button::Done'</div>
+  </td>
+</tr>
+<tr class="error">
+  <td class="step-num">7</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_07.png" loading="lazy"></div>
+    <div class="action">click('1747')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_07.png" loading="lazy"></div>
+    <div class="action">click('1893')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated '1747' -> '1893' via fp='generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu/View / Run::after=View / Run::yrank=2'</div><div class="err">TimeoutError: Locator.click: Timeout 500ms exceeded.
+Call log:
+waiting for get_by_test_id("1893")
+  -   locator resolved to <span bid="1893" class="outline" browsergym_set_of_mar…> </span>
+  - attempting click action
+  -   waiting for element to be visible, enabled and stable
+  -   element is visibl</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">8</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_08.png" loading="lazy"></div>
+    <div class="action">click('1738')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_08.png" loading="lazy"></div>
+    <div class="action">click('1884')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated '1738' -> '1884' via fp='link::View / Run::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=1'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">9</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_09.png" loading="lazy"></div>
+    <div class="action">fill('a184', 'Number of incidents assigned to agent')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_09.png" loading="lazy"></div>
+    <div class="action">fill('a179', 'Number of incidents assigned to agent')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">10</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_10.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_10.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">11</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_11.png" loading="lazy"></div>
+    <div class="action">click('a171')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_11.png" loading="lazy"></div>
+    <div class="action">click('a166')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a171' -> 'a166' via fp='generic::::via=Reports/Reports data/Reports shared via group or user'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">12</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_12.png" loading="lazy"></div>
+    <div class="action">click('a173')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_12.png" loading="lazy"></div>
+    <div class="action">click('a168')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a173' -> 'a168' via fp='generic::::via=Reports/Reports data/Reports that are shared as global'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">13</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_13.png" loading="lazy"></div>
+    <div class="action">click('a175')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_13.png" loading="lazy"></div>
+    <div class="action">click('a170')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a175' -> 'a170' via fp='generic::::via=Reports/Reports data/All reports accessible by me'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">14</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_14.png" loading="lazy"></div>
+    <div class="action">fill('a184', 'agent')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_14.png" loading="lazy"></div>
+    <div class="action">fill('a179', 'agent')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">15</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_15.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_15.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">16</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_16.png" loading="lazy"></div>
+    <div class="action">fill('a184', 'incident')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_16.png" loading="lazy"></div>
+    <div class="action">fill('a179', 'incident')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">17</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_17.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_17.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">18</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_18.png" loading="lazy"></div>
+    <div class="action">click('a184')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_18.png" loading="lazy"></div>
+    <div class="action">click('a179')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">19</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_19.png" loading="lazy"></div>
+    <div class="action">clear('a184')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_19.png" loading="lazy"></div>
+    <div class="action">clear('a179')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">20</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_20.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_20.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">21</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_21.png" loading="lazy"></div>
+    <div class="action">click('a186')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_21.png" loading="lazy"></div>
+    <div class="action">click('a181')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a186' -> 'a181' via fp='image::Clear tags'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">22</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_22.png" loading="lazy"></div>
+    <div class="action">fill('a184', 'agent')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_22.png" loading="lazy"></div>
+    <div class="action">fill('a179', 'agent')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">23</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_23.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_23.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">24</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_24.png" loading="lazy"></div>
+    <div class="action">click('a186')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_24.png" loading="lazy"></div>
+    <div class="action">click('a181')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a186' -> 'a181' via fp='image::Clear tags'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">25</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_25.png" loading="lazy"></div>
+    <div class="action">fill('a184', 'assigned to')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_25.png" loading="lazy"></div>
+    <div class="action">fill('a179', 'assigned to')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">26</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_26.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_26.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">27</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_27.png" loading="lazy"></div>
+    <div class="action">click('a186')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_27.png" loading="lazy"></div>
+    <div class="action">click('a181')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a186' -> 'a181' via fp='image::Clear tags'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">28</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_28.png" loading="lazy"></div>
+    <div class="action">fill('a184', 'Incidents by Assigned to')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_28.png" loading="lazy"></div>
+    <div class="action">fill('a179', 'Incidents by Assigned to')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">29</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_29.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_29.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">30</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_30.png" loading="lazy"></div>
+    <div class="action">click('a186')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_30.png" loading="lazy"></div>
+    <div class="action">click('a181')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a186' -> 'a181' via fp='image::Clear tags'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">31</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_31.png" loading="lazy"></div>
+    <div class="action">fill('a184', 'Open Incidents')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_31.png" loading="lazy"></div>
+    <div class="action">fill('a179', 'Open Incidents')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">32</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_32.png" loading="lazy"></div>
+    <div class="action">press('a184', 'Enter')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_32.png" loading="lazy"></div>
+    <div class="action">press('a179', 'Enter')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a184' -> 'a179' via fp='combobox::Search::via=Reports'</div>
+  </td>
+</tr>
+<tr class="translated">
+  <td class="step-num">33</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_33.png" loading="lazy"></div>
+    <div class="action">click('a2114')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_33.png" loading="lazy"></div>
+    <div class="action">click('a2109')<span class="tag tag-translated">TRANSLATED</span></div>
+    <div class="note">translated 'a2114' -> 'a2109' via fp='link::Open Incidents by Assignment'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">34</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_34.png" loading="lazy"></div>
+    <div class="action">noop(1500)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_34.png" loading="lazy"></div>
+    <div class="action">noop(1500)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">35</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_35.png" loading="lazy"></div>
+    <div class="action">click('a1201')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_35.png" loading="lazy"></div>
+    <div class="action">click('a1201')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::View chart menu, Open Incidents by Assignment'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">36</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_36.png" loading="lazy"></div>
+    <div class="action">click('a1201')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_36.png" loading="lazy"></div>
+    <div class="action">click('a1201')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::View chart menu, Open Incidents by Assignment'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">37</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_37.png" loading="lazy"></div>
+    <div class="action">click('a1201')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_37.png" loading="lazy"></div>
+    <div class="action">click('a1201')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::View chart menu, Open Incidents by Assignment'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">38</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_38.png" loading="lazy"></div>
+    <div class="action">click('a158')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_38.png" loading="lazy"></div>
+    <div class="action">click('a158')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::\uf131 More save options'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">39</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_39.png" loading="lazy"></div>
+    <div class="action">click('a139')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_39.png" loading="lazy"></div>
+    <div class="action">click('a139')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::Back'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">40</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_40.png" loading="lazy"></div>
+    <div class="action">click('a139')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_40.png" loading="lazy"></div>
+    <div class="action">click('a139')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::Back'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">41</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_41.png" loading="lazy"></div>
+    <div class="action">click('a139')</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_41.png" loading="lazy"></div>
+    <div class="action">click('a139')<span class="tag tag-stable">STABLE</span></div>
+    <div class="note">stable fp='button::Back'</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">42</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_42.png" loading="lazy"></div>
+    <div class="action">scroll(0, 600)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_42.png" loading="lazy"></div>
+    <div class="action">scroll(0, 600)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">43</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_43.png" loading="lazy"></div>
+    <div class="action">scroll(0, 600)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_43.png" loading="lazy"></div>
+    <div class="action">scroll(0, 600)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">44</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_44.png" loading="lazy"></div>
+    <div class="action">mouse_move(720, 460)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_44.png" loading="lazy"></div>
+    <div class="action">mouse_move(720, 460)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">45</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_45.png" loading="lazy"></div>
+    <div class="action">mouse_move(560, 420)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_45.png" loading="lazy"></div>
+    <div class="action">mouse_move(560, 420)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">46</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_46.png" loading="lazy"></div>
+    <div class="action">mouse_move(520, 420)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_46.png" loading="lazy"></div>
+    <div class="action">mouse_move(520, 420)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">47</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_47.png" loading="lazy"></div>
+    <div class="action">mouse_move(520, 420)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_47.png" loading="lazy"></div>
+    <div class="action">mouse_move(520, 420)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">48</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_48.png" loading="lazy"></div>
+    <div class="action">mouse_move(600, 420)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_48.png" loading="lazy"></div>
+    <div class="action">mouse_move(600, 420)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">49</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_49.png" loading="lazy"></div>
+    <div class="action">mouse_move(640, 420)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_49.png" loading="lazy"></div>
+    <div class="action">mouse_move(640, 420)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+<tr class="ok">
+  <td class="step-num">50</td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som_original/step_50.png" loading="lazy"></div>
+    <div class="action">mouse_move(480, 420)</div>
+  </td>
+  <td>
+    <div class="img-wrap"><img src="translated2/som/step_50.png" loading="lazy"></div>
+    <div class="action">mouse_move(480, 420)</div>
+    <div class="note">no-bid-in-action</div>
+  </td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
