@@ -19,7 +19,7 @@ from agentlab.llm.llm_utils import HumanMessage, image_to_jpg_base64_url, parse_
 
 
 class CandidateGenerationPrompt:
-    """Phase 1: Generate top-5 candidate actions with code, text description, and rationale."""
+    """Phase 1: Generate top-K candidate actions with code, text description, and rationale."""
 
     def __init__(
         self,
@@ -29,12 +29,31 @@ class CandidateGenerationPrompt:
         thoughts: list[str],
         flags: PromptFlags,
         model_name: str = "",
+        n_candidates: int = 5,
     ):
         self.flags = flags
+        self.n_candidates = n_candidates
         self.instructions = make_instructions(obs, flags.enable_chat, flags.extra_instructions)
         self.obs = Observation(obs, flags.obs)
         self.history = History(actions, thoughts)
         self.action_prompt = dp.ActionPrompt(action_set, action_flags=flags.action)
+
+    def _candidate_examples(self) -> str:
+        lines = ["<candidates>"]
+        for i in range(1, self.n_candidates + 1):
+            if i == 1:
+                action, text, rationale = "click('70')", "Click the quantity dropdown button", "Need to select the number of items"
+            elif i == 2:
+                action, text, rationale = "fill('42', 'laptop')", 'Type "laptop" into the search field', "Need to search for the product"
+            else:
+                action, text, rationale = "...", "...", "..."
+            lines.append(f"<candidate_{i}>")
+            lines.append(f"<rationale>{rationale}</rationale>")
+            lines.append(f"<action>{action}</action>")
+            lines.append(f"<action_text>{text}</action_text>")
+            lines.append(f"</candidate_{i}>")
+        lines.append("</candidates>")
+        return "\n".join(lines)
 
     @property
     def prompt(self) -> HumanMessage:
@@ -46,41 +65,15 @@ class CandidateGenerationPrompt:
             {self.action_prompt.prompt}\
 
             # Your Task
-            Propose exactly 5 candidate actions you think are most promising right now.
-            For each candidate, provide three things:
+            Propose exactly {self.n_candidates} candidate actions you think are most promising right now.
+            For each candidate, provide three things in this order:
+            - <rationale>: Why you think this action would help achieve the goal (write this first)
             - <action>: The exact action code from the action set (e.g. click('70'))
             - <action_text>: A plain-English description of what the action does (e.g. "Click the quantity dropdown button")
-            - <rationale>: Why you think this action would help achieve the goal
 
             Use this exact format:
 
-            <candidates>
-            <candidate_1>
-            <action>click('70')</action>
-            <action_text>Click the quantity dropdown button</action_text>
-            <rationale>Need to select the number of items</rationale>
-            </candidate_1>
-            <candidate_2>
-            <action>fill('42', 'laptop')</action>
-            <action_text>Type "laptop" into the search field</action_text>
-            <rationale>Need to search for the product</rationale>
-            </candidate_2>
-            <candidate_3>
-            <action>...</action>
-            <action_text>...</action_text>
-            <rationale>...</rationale>
-            </candidate_3>
-            <candidate_4>
-            <action>...</action>
-            <action_text>...</action_text>
-            <rationale>...</rationale>
-            </candidate_4>
-            <candidate_5>
-            <action>...</action>
-            <action_text>...</action_text>
-            <rationale>...</rationale>
-            </candidate_5>
-            </candidates>
+            {self._candidate_examples()}
             """
         )
         return self.obs.add_screenshot(msg)
@@ -91,7 +84,7 @@ class CandidateGenerationPrompt:
         Returns list of dicts with keys: action, action_text, rationale
         """
         candidates = []
-        for i in range(1, 6):
+        for i in range(1, self.n_candidates + 1):
             block = re.search(
                 rf"<candidate_{i}>(.*?)</candidate_{i}>", text, re.DOTALL
             )
