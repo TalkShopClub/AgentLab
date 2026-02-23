@@ -1,0 +1,27 @@
+[
+  {
+    "action": "fill('a179', 'Incidents by Assigned To')",
+    "action_text": "Type \"Incidents by Assigned To\" into the report list search field",
+    "rationale": "Use the list\u2019s search box to find the likely standard report title \u201cIncidents by Assigned To\u201d directly in the Global library."
+  },
+  {
+    "action": "fill('a179', 'Incidents by')",
+    "action_text": "Type \"Incidents by\" into the report list search field",
+    "rationale": "Broaden the search in case the exact report title varies; this will surface all \u201cIncidents by \u2026\u201d reports to choose from."
+  },
+  {
+    "action": "fill('a179', 'Assigned To')",
+    "action_text": "Type \"Assigned To\" into the report list search field",
+    "rationale": "Search by the key dimension (\u201cAssigned To\u201d) to capture reports that show incident counts by assignee, regardless of full title wording."
+  },
+  {
+    "action": "fill('a179', 'assignee')",
+    "action_text": "Type \"assignee\" into the report list search field",
+    "rationale": "Try a synonym (\u201cassignee\u201d) to catch differently named reports that still chart incidents by agent/person."
+  },
+  {
+    "action": "scroll_at(600, 500, 0, 700)",
+    "action_text": "Scroll down the report list to look for \u201cIncidents by \u2026\u201d titles",
+    "rationale": "If the list is alphabetically sorted, scrolling may reveal the \u201cIncidents by \u2026\u201d section without needing an exact search term."
+  }
+]

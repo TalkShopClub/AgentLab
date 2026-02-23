@@ -1,0 +1,4 @@
+<think>
+We’re on Reports > View/Run (Global). We need to find the report titled like “Incidents by agent.” The best next step is to use the list’s search field. Candidate 1 successfully types the exact title into the list search field, setting us up to execute the search by clicking the magnifier next. Candidate 2 presses Enter but it doesn’t run the search (no change). Candidate 4 sorts titles; Candidate 5 enables an unhelpful filter that hides all reports. Candidate 3 scrolls. Therefore, Candidate 1 best advances the goal.
+</think>
+<selection>1</selection>

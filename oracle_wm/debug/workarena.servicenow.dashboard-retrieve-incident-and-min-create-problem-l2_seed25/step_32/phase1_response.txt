@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We’ve typed a query in the list search field; executing it may quickly filter to reports with titles matching “incidents by,” helping us find the report that shows incidents by assignee.</rationale>
+<action>click('a181')</action>
+<action_text>Click the list search magnifier to run the current search</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Running the search from the list search field should apply the Title filter; this may reveal “Incidents by Assigned to” or similar.</rationale>
+<action>press('a179', 'Enter')</action>
+<action_text>Press Enter in the list search field to execute the search</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Searching for the phrase “Assigned to” is likely to find the report that counts incidents per assignee/agent.</rationale>
+<action>fill('a179', 'Assigned to')</action>
+<action_text>Type "Assigned to" in the list search field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Broadening the search to “Incident” can surface all Incident-related reports, after which we can refine to find the one grouped by assignee.</rationale>
+<action>fill('a179', 'Incident')</action>
+<action_text>Type "Incident" into the list search field</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Sorting by the Table column can group items by table so we can quickly navigate to reports on the Incident [incident] table and then locate the one by assignee.</rationale>
+<action>click('a242')</action>
+<action_text>Click the "Table" column header to sort by table</action_text>
+</candidate_5>
+</candidates>

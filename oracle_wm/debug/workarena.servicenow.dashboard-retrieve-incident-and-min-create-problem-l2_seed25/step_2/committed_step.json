@@ -1,0 +1,19 @@
+{
+  "action": "fill('329', 'View / Run')",
+  "bid_entry": {
+    "329": {
+      "role": "textbox",
+      "name": "Enter search term to filter All menu",
+      "description": "",
+      "bbox": [
+        143.0,
+        128.0,
+        492.0,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "textbox::Enter search term to filter All menu"
+    }
+  }
+}

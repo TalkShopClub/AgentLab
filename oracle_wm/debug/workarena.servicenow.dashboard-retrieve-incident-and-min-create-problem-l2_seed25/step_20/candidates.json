@@ -1,0 +1,27 @@
+[
+  {
+    "action": "fill('a272', 'Incidents by agent')",
+    "action_text": "Type \"Incidents by agent\" into the list Search field",
+    "rationale": "We need to find the report by title within the Reports View/Run list; using the page\u2019s Search field will quickly filter to \"Incidents by agent\"."
+  },
+  {
+    "action": "click('a271')",
+    "action_text": "Click the Global tab",
+    "rationale": "The desired report may be a shared/global report, not in \"My reports\"; switching to the Global tab broadens the list to likely include it."
+  },
+  {
+    "action": "click('a260')",
+    "action_text": "Click the Group tab",
+    "rationale": "If the report is shared within the group, switching to the Group tab can reveal it."
+  },
+  {
+    "action": "press('a272', 'Enter')",
+    "action_text": "Press Enter in the list Search field to apply the filter",
+    "rationale": "After entering text in the list Search field, pressing Enter ensures the filter is applied if it doesn\u2019t auto-filter."
+  },
+  {
+    "action": "click('239')",
+    "action_text": "Click the Title column header to sort by title",
+    "rationale": "If searching is unreliable, sorting by Title helps manually locate the \"Incidents by agent\" report alphabetically."
+  }
+]

@@ -1,0 +1,4 @@
+<think>
+We need to identify agents with the minimum incident count from the bar chart by hovering over the smallest bars to read tooltips. None of the candidate actions show a tooltip in the resulting state, but hovering a small bar near the right end is the correct approach to reveal those values. Candidate 1 does exactly that and keeps us focused on the task.
+</think>
+<selection>1</selection>

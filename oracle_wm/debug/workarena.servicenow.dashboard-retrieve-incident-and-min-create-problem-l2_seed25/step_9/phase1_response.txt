@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>The “Choose search context” popover near the global search is likely obstructing interactions on the page; dismissing it will let us use the list controls to filter or search for the report.</rationale>
+<action>keyboard_press('Escape')</action>
+<action_text>Press Escape to close the search-context popover</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Quickly locate a report titled with the word “agent” by using the browser’s Find-in-page, which searches visible text in the current list.</rationale>
+<action>keyboard_press('Meta+f')</action>
+<action_text>Open the browser’s Find-in-page</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Sorting by Title will make it easier to scan alphabetically for a report like “Incidents by agent.”</rationale>
+<action>click('239')</action>
+<action_text>Click the Title column header to sort the reports by title</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Enabling the list filter builder allows filtering by Title to directly search for “Incidents by agent.”</rationale>
+<action>click('234')</action>
+<action_text>Click the list filter icon to open the filter builder</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the desired report isn’t initially visible, scrolling the list can reveal more entries to locate the correct report.</rationale>
+<action>scroll(0, 700)</action>
+<action_text>Scroll down the reports list</action_text>
+</candidate_5>
+</candidates>

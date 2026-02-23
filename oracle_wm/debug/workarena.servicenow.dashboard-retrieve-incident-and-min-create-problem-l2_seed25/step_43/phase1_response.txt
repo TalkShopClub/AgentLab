@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Viewing the chart’s data table would list each agent with their exact incident counts, making it easy to identify the minimum and all agents at that value.</rationale>
+<action>click('a1203')</action>
+<action_text>Click the chart options/menu button (likely “Show data” or similar) for the report chart</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Hovering a very small bar near the right end should display a tooltip with the agent name and exact count, helping determine the minimum.</rationale>
+<action>mouse_move(945, 520)</action>
+<action_text>Hover over a small bar near the right end of the chart to reveal its tooltip</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Checking the adjacent small bar ensures we capture if multiple agents share the minimum count.</rationale>
+<action>mouse_move(915, 520)</action>
+<action_text>Hover over the next small bar to the left to read its tooltip</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Further hovering another nearby small bar increases chances of finding and confirming the absolute minimum and duplicates at that value.</rationale>
+<action>mouse_move(885, 520)</action>
+<action_text>Hover over another small bar toward the right to read its tooltip</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Clicking a tiny bar can drill down to the incidents for that agent, revealing the agent name and allowing confirmation of the count.</rationale>
+<action>mouse_click(915, 520)</action>
+<action_text>Click a small bar near the right end to drill down into that agent’s incidents</action_text>
+</candidate_5>
+</candidates>

@@ -1,0 +1,7 @@
+{
+  "selected_index": 4,
+  "selected_action": "click('234')",
+  "translated_action": "click('234')",
+  "bid_translation": "stable fp='::::yrank=2'",
+  "thought": "The goal is to find a specific report within the Reports > View/Run list. Among the actions, toggling the list filter (Show/Hide filter) is the most directly useful for filtering by Title to locate \u201cIncidents by agent,\u201d even though the visual change isn't obvious. Other actions either leave the distracting popover or just sort, which is less effective than filtering by title."
+}

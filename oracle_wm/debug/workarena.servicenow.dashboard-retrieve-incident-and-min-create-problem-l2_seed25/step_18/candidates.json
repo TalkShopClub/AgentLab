@@ -1,0 +1,27 @@
+[
+  {
+    "action": "fill('179', 'Incidents by agent')",
+    "action_text": "Type \"Incidents by agent\" into the list Search field",
+    "rationale": "Filter the reports list directly by typing the expected report title to quickly find the \u201cincidents by agent\u201d report"
+  },
+  {
+    "action": "press('179', 'Enter')",
+    "action_text": "Press Enter in the list Search field to run the search",
+    "rationale": "Execute the list search after entering the query so matching reports appear"
+  },
+  {
+    "action": "click('166')",
+    "action_text": "Click the adjacent tab (likely \u201cAll\u201d or broader scope) on the Reports page",
+    "rationale": "Expand the result set to include all available reports in case we\u2019re currently limited to \u201cMy reports\u201d"
+  },
+  {
+    "action": "click('234')",
+    "action_text": "Click the Show/Hide filter icon on the reports list",
+    "rationale": "Open the list filter builder to add a condition like Title contains \u201cagent,\u201d enabling precise filtering"
+  },
+  {
+    "action": "click('239')",
+    "action_text": "Click the Title column header to sort the reports by title",
+    "rationale": "Alphabetically ordering by Title can make it easier to locate a report named around \u201cIncidents by agent\u201d"
+  }
+]

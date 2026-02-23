@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We need to read the exact count on one of the smallest bars to determine the minimum; hovering slightly left of the right edge should reveal a tooltip with the agent name and count.</rationale>
+<action>mouse_move(940, 510)</action>
+<action_text>Hover over a very small bar near the right end of the chart to show its tooltip</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Another nearby small bar may represent the minimum; hovering here increases the chance of revealing the lowest-value agent and count.</rationale>
+<action>mouse_move(960, 510)</action>
+<action_text>Hover over another tiny bar near the right end to display its tooltip</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the smallest bars are slightly further left, this hover should catch one; we need the tooltip to capture the agent name and incident count.</rationale>
+<action>mouse_move(900, 500)</action>
+<action_text>Hover over a small mid-right bar to reveal the agent and incident count</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>The rightmost bar might be “Other”; confirming via tooltip helps us ignore it and focus on actual agents.</rationale>
+<action>mouse_move(990, 515)</action>
+<action_text>Hover over the rightmost small bar to check if it’s “Other” and see its count</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Opening chart options may provide a “Show data” view or table, which would list agents and counts directly, making it easier to find the minimum.</rationale>
+<action>click('a1203')</action>
+<action_text>Open the chart options menu for the report</action_text>
+</candidate_5>
+</candidates>

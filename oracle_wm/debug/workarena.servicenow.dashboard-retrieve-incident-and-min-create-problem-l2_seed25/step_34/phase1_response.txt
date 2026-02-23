@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Opening “Incidents by Assignment” may show incidents grouped by who they’re assigned to (or close enough to quickly verify), which is likely the needed report to identify agents and their counts.</rationale>
+<action>click('a1232')</action>
+<action_text>Open the “Incidents by Assignment” report</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Filtering the Global reports list to titles containing “Assigned To” directly targets the report that shows incidents per assignee/agent.</rationale>
+<action>fill('a179', 'Assigned To')</action>
+<action_text>Type “Assigned To” into the reports list search field</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the capitalization differs, searching for “Assigned to” (lowercase “to”) can surface the correct report title variant.</rationale>
+<action>fill('a179', 'Assigned to')</action>
+<action_text>Type “Assigned to” into the reports list search field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Using a broader keyword “Assigned” widens the filter to show any relevant reports, including those for “Assigned to.”</rationale>
+<action>fill('a179', 'Assigned')</action>
+<action_text>Type “Assigned” into the reports list search field</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>There may be a “Number of Incidents by Assigned To” further down the alphabetically sorted list; scrolling can reveal it.</rationale>
+<action>scroll_at(600, 500, 0, 700)</action>
+<action_text>Scroll down the Global reports list to see more report titles</action_text>
+</candidate_5>
+</candidates>

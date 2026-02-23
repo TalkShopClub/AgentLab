@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('259')",
+    "action_text": "Click empty space in the list area to dismiss the popover",
+    "rationale": "The global search context popover is obstructing interactions; clicking on blank space in the list should dismiss it so I can use the list filter to find the report."
+  },
+  {
+    "action": "keyboard_press('Escape')",
+    "action_text": "Press Escape to close the popover",
+    "rationale": "If clicking outside doesn\u2019t close the popover, pressing Escape should dismiss it, allowing me to interact with the list controls."
+  },
+  {
+    "action": "click('234')",
+    "action_text": "Toggle the Show/Hide filter for the reports list",
+    "rationale": "To quickly locate the report by title on this page, enabling the list filter is ideal so I can filter by \u201cTitle = Incidents by agent.\u201d"
+  },
+  {
+    "action": "click('239')",
+    "action_text": "Click the Title column header to sort the report list by title",
+    "rationale": "Sorting by Title may make it easier to scan for \u201cIncidents by agent\u201d in the list if filtering isn\u2019t available."
+  },
+  {
+    "action": "click('164')",
+    "action_text": "Click the Reports breadcrumb/header to refresh the reports list",
+    "rationale": "If the popover persists or the list state is odd, refreshing the list context by re-selecting the Reports breadcrumb can reset the UI and clear overlays."
+  }
+]

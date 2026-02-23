@@ -1,0 +1,2 @@
+<think>We need to find a report showing incidents by agent/assignee in Reports > View/Run. The best progress is to filter the list to relevant titles. Candidate 2 executes the list search and shows many “Incidents by …” reports including “Incidents by Assignment,” which is likely the needed one. Other candidates either don’t change the list or just sort. Thus, Candidate 2 best advances the goal.</think>
+<selection>2</selection>

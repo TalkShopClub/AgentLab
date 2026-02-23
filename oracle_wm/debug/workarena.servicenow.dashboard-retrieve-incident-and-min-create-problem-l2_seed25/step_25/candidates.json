@@ -1,0 +1,27 @@
+[
+  {
+    "action": "press('a179', 'Enter')",
+    "action_text": "Press Enter in the list search field to run the search",
+    "rationale": "The report title is already typed into the list search field; pressing Enter should execute the list search and filter the reports to find \u201cIncidents by agent.\u201d"
+  },
+  {
+    "action": "mouse_click(965,  ninety)",
+    "action_text": "Click the magnifying-glass button next to the list search field",
+    "rationale": "Clicking the search icon next to the list search box should also execute the search for \u201cIncidents by agent.\u201d"
+  },
+  {
+    "action": "click('a234')",
+    "action_text": "Toggle the list filter (Show/Hide filter) to enable building a Title filter",
+    "rationale": "If the search doesn\u2019t run, enabling the list filter builder allows filtering by Title contains \u201cIncidents by agent,\u201d which directly locates the report."
+  },
+  {
+    "action": "click('a239')",
+    "action_text": "Sort the reports list by the Title column",
+    "rationale": "Sorting by Title can make it easier to visually locate an \u201cIncidents by agent\u201d report if searching isn\u2019t working."
+  },
+  {
+    "action": "scroll_at(1140, 640, 0, 700)",
+    "action_text": "Scroll down the Global reports list",
+    "rationale": "If the desired report is further down, scrolling the Global reports list can reveal it for manual selection."
+  }
+]

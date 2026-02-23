@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "scroll(0,700)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 2,
+    "action": "press('113', 'Enter')",
+    "bid_note": "stable fp='combobox::Search::via=Reports | ServiceNow/Primary'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('239')",
+    "bid_note": "stable fp='::::yrank=95'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('242')",
+    "bid_note": "translated '242' -> '329' via fp='::::yrank=73'"
+  },
+  {
+    "candidate": 5,
+    "action": "click('234')",
+    "bid_note": "stable fp='::::yrank=2'"
+  }
+]

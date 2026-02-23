@@ -1,0 +1,7 @@
+{
+  "selected_index": 1,
+  "selected_action": "click('170')",
+  "translated_action": "click('170')",
+  "bid_translation": "stable fp='::::yrank=46'",
+  "thought": "We\u2019re on the Reports > View/Run page but likely viewing \u201cMy reports,\u201d which shows a single irrelevant report. To find a widely available report like \u201cIncidents by agent,\u201d switching to the Global tab is the best move. Candidate 1 attempts exactly that, while the others either keep us in the same scope or make less helpful interactions. Even if the UI looks similar, selecting Global broadens the scope to likely include the needed report."
+}

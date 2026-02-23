@@ -1,0 +1,7 @@
+{
+  "selected_index": 3,
+  "selected_action": "click('239')",
+  "translated_action": "click('239')",
+  "bid_translation": "stable fp='::::yrank=95'",
+  "thought": "All candidates show no visible change, but the action that most directly helps locate the report within the current page context is sorting by Title. Closing the popover (Candidate 1) didn\u2019t work, and opening filter or find didn\u2019t change state either. Sorting the list is still a logical step toward finding the \u201cIncidents by agent\u201d report."
+}

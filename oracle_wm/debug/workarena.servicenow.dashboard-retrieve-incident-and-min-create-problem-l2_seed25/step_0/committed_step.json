@@ -1,0 +1,19 @@
+{
+  "action": "click('79')",
+  "bid_entry": {
+    "79": {
+      "role": "button",
+      "name": "All",
+      "description": "",
+      "bbox": [
+        388.0,
+        20.0,
+        81.734375,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "button::All"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Use the built-in Reports list search to quickly locate the desired report without leaving the page</rationale>
+<action>click('a179')</action>
+<action_text>Click the Reports list "Search" control</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Enable the list filter builder so we can filter Title to something like "Incidents by agent"</rationale>
+<action>click('a234')</action>
+<action_text>Toggle the Show/Hide filter for the Reports list</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Scroll the Global reports list to the “Inc…” section where “Incidents by …” reports are likely located</rationale>
+<action>scroll_at(600, 420, 0, 700)</action>
+<action_text>Scroll down the Reports list</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>If list search is difficult to activate, running the existing global search query may surface the report quickly</rationale>
+<action>click('119')</action>
+<action_text>Click the header search magnifier to run the global search</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Refine the global search query to a likely report title (“Incident by Assigned to”) which often matches the needed report</rationale>
+<action>fill('113', 'Incident by Assigned to')</action>
+<action_text>Type "Incident by Assigned to" into the global search field</action_text>
+</candidate_5>
+</candidates>

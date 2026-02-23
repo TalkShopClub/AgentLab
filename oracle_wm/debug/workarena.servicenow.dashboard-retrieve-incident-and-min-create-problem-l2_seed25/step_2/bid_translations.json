@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "click('1230')",
+    "bid_note": "stable fp='button::Reports::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=1'"
+  },
+  {
+    "candidate": 2,
+    "action": "click('1239')",
+    "bid_note": "translated '1239' -> '1237' via fp='button::Add Reports to favorites'"
+  },
+  {
+    "candidate": 3,
+    "action": "fill('329', 'View / Run')",
+    "bid_note": "translated '329' -> '242' via fp='textbox::Enter search term to filter All menu'"
+  },
+  {
+    "candidate": 4,
+    "action": "fill('329', 'View/Run')",
+    "bid_note": "translated '329' -> '242' via fp='textbox::Enter search term to filter All menu'"
+  },
+  {
+    "candidate": 5,
+    "action": "fill('329', 'View')",
+    "bid_note": "translated '329' -> '242' via fp='textbox::Enter search term to filter All menu'"
+  }
+]

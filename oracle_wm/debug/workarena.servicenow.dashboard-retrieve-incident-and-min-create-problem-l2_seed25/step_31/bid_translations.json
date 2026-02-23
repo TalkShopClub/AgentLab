@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "click('a181')",
+    "bid_note": "stable fp='::::yrank=712'"
+  },
+  {
+    "candidate": 2,
+    "action": "press('a179', 'Enter')",
+    "bid_note": "stable fp='combobox::Search::via=Reports'"
+  },
+  {
+    "candidate": 3,
+    "action": "fill('a179', 'Incidents by')",
+    "bid_note": "stable fp='combobox::Search::via=Reports'"
+  },
+  {
+    "candidate": 4,
+    "action": "fill('a179', 'Assigned to')",
+    "bid_note": "stable fp='combobox::Search::via=Reports'"
+  },
+  {
+    "candidate": 5,
+    "action": "fill('a179', 'Incidents by Assignee')",
+    "bid_note": "stable fp='combobox::Search::via=Reports'"
+  }
+]

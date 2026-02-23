@@ -1,0 +1,19 @@
+{
+  "action": "click('234')",
+  "bid_entry": {
+    "234": {
+      "role": "",
+      "name": "",
+      "description": "",
+      "bbox": [
+        109.0,
+        0.0,
+        640.0,
+        684.5
+      ],
+      "visibility": 1.0,
+      "clickable": false,
+      "fingerprint": "::::yrank=2"
+    }
+  }
+}

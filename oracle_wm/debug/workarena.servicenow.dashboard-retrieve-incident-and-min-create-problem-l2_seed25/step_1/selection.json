@@ -1,0 +1,7 @@
+{
+  "selected_index": 1,
+  "selected_action": "fill('242', 'Reports')",
+  "translated_action": "fill('329', 'Reports')",
+  "bid_translation": "translated '242' -> '329' via fp='textbox::Enter search term to filter All menu'",
+  "thought": "We need to get to Reports > View/Run. The best next state is where the left nav filter shows the Reports application so we can expand it and choose View/Run. Candidate 1, after typing \"Reports\" in the All filter, shows \"Reports\" in the results list, which is the right path. The others are less targeted or show no results. Therefore, Candidate 1 best advances the goal."
+}

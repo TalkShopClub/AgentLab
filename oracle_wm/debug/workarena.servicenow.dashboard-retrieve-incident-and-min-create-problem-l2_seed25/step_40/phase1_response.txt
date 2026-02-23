@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Opening the chart options may provide a “Show data” or “Data labels” feature, making it easy to read exact agent names and counts to find the minimum.</rationale>
+<action>click('a1203')</action>
+<action_text>Open the chart options menu</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>We need the exact count and agent name for the smallest bar; hovering the far-right small bar should reveal a tooltip with this data.</rationale>
+<action>mouse_move(650, 515)</action>
+<action_text>Hover over the rightmost small bar to see its tooltip</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the previous hover doesn’t expose the minimum, hovering the neighboring small bar may reveal another candidate with the minimum count.</rationale>
+<action>mouse_move(630, 515)</action>
+<action_text>Hover over the second-from-right small bar</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Continue identifying minimal bars and associated agents by hovering another adjacent small bar to capture its tooltip.</rationale>
+<action>mouse_move(610, 507)</action>
+<action_text>Hover over another small bar near the right end</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Gathering multiple tooltip readings helps confirm the minimum and list all agents at that minimum threshold.</rationale>
+<action>mouse_move(590, 505)</action>
+<action_text>Hover over an additional small bar near the right end</action_text>
+</candidate_5>
+</candidates>

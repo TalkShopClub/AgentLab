@@ -1,0 +1,19 @@
+{
+  "action": "click('a170')",
+  "bid_entry": {
+    "a170": {
+      "role": "generic",
+      "name": "",
+      "description": "",
+      "bbox": [
+        762.8125,
+        142.0,
+        31.125,
+        28.0
+      ],
+      "visibility": 1.0,
+      "clickable": false,
+      "fingerprint": "generic::::via=Reports/Reports data/All reports accessible by me"
+    }
+  }
+}

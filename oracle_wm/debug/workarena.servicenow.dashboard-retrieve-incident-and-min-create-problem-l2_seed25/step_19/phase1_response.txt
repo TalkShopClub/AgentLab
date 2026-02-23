@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Use the list’s built-in Search field to find the report by its title without leaving the View/Run page</rationale>
+<action>fill('179', 'Incidents by agent')</action>
+<action_text>Type "Incidents by agent" into the reports list Search field</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>After entering the search text, explicitly trigger the list search to filter results</rationale>
+<action>click('183')</action>
+<action_text>Click the magnifying glass next to the list Search field to execute the search</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the search requires submission via keyboard, press Enter within the Search field to apply the filter</rationale>
+<action>press('179', 'Enter')</action>
+<action_text>Press Enter in the reports list Search field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>If search isn’t responsive, sort by Title to more easily locate the “Incidents by agent” report alphabetically</rationale>
+<action>click('239')</action>
+<action_text>Click the Title column header to sort the reports list</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If available, open the list filter builder to set a condition Title contains "Incidents by agent"</rationale>
+<action>click('234')</action>
+<action_text>Toggle the Show/Hide filter (list filter builder) for the reports list</action_text>
+</candidate_5>
+</candidates>

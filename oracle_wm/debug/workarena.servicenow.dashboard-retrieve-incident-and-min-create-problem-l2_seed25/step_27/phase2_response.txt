@@ -1,0 +1,4 @@
+<think>
+We’re on the Reports > View/Run (Global) page searching for a report showing incidents by assignee. The current query “Incidents by Assigned to” returned no results. The best next step is to broaden the query to something more general so we can find a likely report title. Candidate 2 types “Incidents by” into the list search field, setting us up to run a broader search next. Other options either re-run the too-specific query with no results, enable an unhelpful favorites filter, or do nothing. Therefore, Candidate 2 best advances the goal.
+</think>
+<selection>2</selection>

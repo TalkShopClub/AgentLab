@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We need to open the application navigator to reach Reports > View/Run.</rationale>
+<action>click('79')</action>
+<action_text>Click the "All" menu to open the left navigation panel</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>The page content is still loading; a short wait can ensure UI elements are ready before interacting.</rationale>
+<action>noop(1500)</action>
+<action_text>Wait for 1.5 seconds</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the left nav is slow, using the global search can help locate the Reports area quickly.</rationale>
+<action>click('113')</action>
+<action_text>Click the global search field in the header</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Search for the Reports View/Run module using the global search as an alternative path.</rationale>
+<action>fill('113', 'Reports View/Run')</action>
+<action_text>Type "Reports View/Run" into the global search field</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Execute the global search to navigate to or find the Reports View/Run module.</rationale>
+<action>press('113', 'Enter')</action>
+<action_text>Press Enter in the global search field to run the search</action_text>
+</candidate_5>
+</candidates>

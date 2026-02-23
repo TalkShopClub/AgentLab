@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We need to find the minimum incident count and the agents who have it. Hovering the adjacent small bar to the right should reveal a tooltip with that agent’s count (possibly 1) and name.</rationale>
+<action>mouse_move(940, 510)</action>
+<action_text>Hover over a small bar near the right end of the chart to see the agent name and incident count</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Another neighboring small bar might show an even smaller count. Hovering here helps determine the true minimum and capture the agent name.</rationale>
+<action>mouse_move(920, 510)</action>
+<action_text>Hover over another small bar near the right end to read its tooltip</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Check a different small bar slightly further left to compare counts and gather additional agent names that might share the minimum.</rationale>
+<action>mouse_move(900, 510)</action>
+<action_text>Hover over a nearby small bar on the chart to display its tooltip</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Continue sampling small bars to confirm which value is the minimum and identify all agents at that value.</rationale>
+<action>mouse_move(875, 505)</action>
+<action_text>Hover another small bar toward the right-middle of the chart</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the previous hovers don’t show a smaller value, checking one more neighboring small bar increases the chance of finding/counting all minimum-value agents.</rationale>
+<action>mouse_move(860, 505)</action>
+<action_text>Hover an additional small bar to reveal its count and agent name</action_text>
+</candidate_5>
+</candidates>

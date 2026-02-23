@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1203')",
+    "action_text": "Open the chart options menu for \u201cAll Incidents by Assignment\u201d",
+    "rationale": "Opening the chart\u2019s options may provide \u201cShow data\u201d or similar to view a sortable table of counts by assignee, making it easy to find the minimum and the corresponding agents."
+  },
+  {
+    "action": "mouse_move(705, 466)",
+    "action_text": "Hover over a nearby small bar in the chart to see its count tooltip",
+    "rationale": "We need to identify the minimum count; hovering adjacent small bars will reveal tooltips with counts to find agents with the lowest value."
+  },
+  {
+    "action": "mouse_move(674, 475)",
+    "action_text": "Hover over another small bar slightly to the left to view its tooltip",
+    "rationale": "Continue scanning small bars to find any with the minimum incident count (likely 1); this hover reveals another agent\u2019s count."
+  },
+  {
+    "action": "mouse_move(640, 480)",
+    "action_text": "Hover over an additional small bar to display its incident count",
+    "rationale": "Further checks of adjacent bars help confirm the true minimum across agents before proceeding to create problems."
+  },
+  {
+    "action": "mouse_move(825, 470)",
+    "action_text": "Hover over a small bar toward the right end of the chart to read its count",
+    "rationale": "The far-right small bars may represent the lowest counts; hovering there can quickly reveal if any agents have the minimum (e.g., 1)."
+  }
+]

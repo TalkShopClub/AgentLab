@@ -50,7 +50,7 @@ class OracleSelectionPrompt:
             f"Select the single best candidate (1–{len(self.candidates)}) based on which resulting "
             f"state best advances the goal.You must generate the thought in the <think> tag before selecting the candidate using the <selection> tag. \n\n"
             f"<think>\nYour reasoning about which candidate best advances the goal.\n</think>\n"
-            f"<selection>N</selection>"
+            f"<selection>N (between 1 and {len(self.candidates)})</selection>"
         )
         return msg
 

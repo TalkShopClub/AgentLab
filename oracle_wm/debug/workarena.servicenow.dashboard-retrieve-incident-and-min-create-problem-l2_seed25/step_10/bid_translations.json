@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "click('234')",
+    "bid_note": "stable fp='::::yrank=2'"
+  },
+  {
+    "candidate": 2,
+    "action": "click('239')",
+    "bid_note": "stable fp='::::yrank=95'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('242')",
+    "bid_note": "stable fp='::::yrank=73'"
+  },
+  {
+    "candidate": 4,
+    "action": "scroll(0, 700)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 5,
+    "action": "click('164')",
+    "bid_note": "stable fp='::::yrank=141'"
+  }
+]

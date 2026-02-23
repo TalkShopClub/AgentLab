@@ -1,0 +1,27 @@
+[
+  {
+    "action": "mouse_move(960, 515)",
+    "action_text": "Hover over a small bar near the right end of the chart to show its tooltip",
+    "rationale": "To identify the agents with the minimum incident count, I should hover a very small bar near the right end of the chart to reveal its tooltip with the agent name and count."
+  },
+  {
+    "action": "mouse_move(990, 515)",
+    "action_text": "Hover over the next small bar to the right to read its tooltip",
+    "rationale": "Hovering the adjacent small bar may reveal another agent\u2019s count; this helps confirm the minimum value and list all agents at that minimum."
+  },
+  {
+    "action": "mouse_move(930, 510)",
+    "action_text": "Hover over another small bar near the right side to display its tooltip",
+    "rationale": "Checking another nearby small bar ensures we capture all agents tied at the lowest count."
+  },
+  {
+    "action": "mouse_move(900, 505)",
+    "action_text": "Hover over a small bar slightly left of the rightmost group to see its tooltip",
+    "rationale": "One more hover slightly further left can surface any additional agents with the same minimal count."
+  },
+  {
+    "action": "click('a1203')",
+    "action_text": "Click the chart options/menu button",
+    "rationale": "If available, opening the chart options may provide a \u201cShow data\u201d view with a clear table of agent names and counts, making it easier to find the minimum."
+  }
+]

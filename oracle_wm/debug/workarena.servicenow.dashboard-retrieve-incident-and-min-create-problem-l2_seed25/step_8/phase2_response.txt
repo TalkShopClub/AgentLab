@@ -1,0 +1,4 @@
+<think>
+We’re on the Reports View/Run list and need to locate a specific report by title. The global search context popover is open and unhelpful. Among the actions, toggling the list filter builder (Candidate 2) is the most directly useful toward filtering by Title to find “Incidents by agent.” The others either don’t change state or are less helpful. Even if the UI doesn’t visibly update, enabling the filter is the right step toward targeted search within the list.
+</think>
+<selection>2</selection>

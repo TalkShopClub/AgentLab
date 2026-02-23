@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "noop(2000)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 2,
+    "action": "scroll_at(600, 420, 0, 700)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 3,
+    "action": "click('a139')",
+    "bid_note": "stable fp='button::Back'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('a150')",
+    "bid_note": "stable fp='button::\\uf19c Report info'"
+  },
+  {
+    "candidate": 5,
+    "action": "scroll_at(600, 600, 0, 900)",
+    "bid_note": "no-bid-in-action"
+  }
+]

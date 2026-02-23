@@ -1,0 +1,2 @@
+<think>We need to find a report on the Reports > View/Run page. The current filter returns no results. Candidate 5 clicks the list’s search/magnifier and the result shows the full list of reports, which enables us to search or scroll effectively. Other candidates either keep the empty results or add an unhelpful favorites filter. Therefore, Candidate 5 best advances the goal.</think>
+<selection>5</selection>

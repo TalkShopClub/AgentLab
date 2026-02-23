@@ -19,6 +19,7 @@ def main():
     parser.add_argument("--debug-dir", default="oracle_wm/debug", help="Directory to save debug artifacts")
     parser.add_argument("--cleanup", action="store_true", help="Delete orphaned @workarena.com users before starting (use after interrupted runs)")
     parser.add_argument("--headless", action="store_true", help="Run browser headless")
+    parser.add_argument("--resume-from", type=int, default=0, metavar="N", help="Resume from step N (reads committed history from debug dir)")
     args = parser.parse_args()
 
     save_path = run_oracle_pipeline(
@@ -31,6 +32,7 @@ def main():
         debug_dir=args.debug_dir,
         cleanup=args.cleanup,
         headless=args.headless,
+        resume_from=args.resume_from,
     )
     print(f"Results saved to: {save_path}")
 

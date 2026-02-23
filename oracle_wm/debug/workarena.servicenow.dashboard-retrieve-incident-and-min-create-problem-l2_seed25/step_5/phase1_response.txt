@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>The last attempt to type into the report list search failed because it isn’t an input; clicking it should activate or expand the real search field so we can then type the report title.</rationale>
+<action>click('179')</action>
+<action_text>Click the page-level "Search" control for the reports list to activate it</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>The magnifying-glass icon next to the list search often toggles/focuses the actual input; using it may open the searchable field.</rationale>
+<action>click('1779')</action>
+<action_text>Click the magnifying-glass button next to the reports list search</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the list search won’t activate, use the global search to quickly find the “Incidents by agent” report by title.</rationale>
+<action>fill('113', 'Incidents by agent')</action>
+<action_text>Type "Incidents by agent" into the global search box</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>If search is unavailable, sorting by Title can help quickly locate the report manually.</rationale>
+<action>click('239')</action>
+<action_text>Click the Title column header to sort reports by title</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Opening the list filter panel may provide a text filter (e.g., Title contains) to find the report.</rationale>
+<action>click('234')</action>
+<action_text>Click the filter/toggle icon on the report list to open filtering options</action_text>
+</candidate_5>
+</candidates>

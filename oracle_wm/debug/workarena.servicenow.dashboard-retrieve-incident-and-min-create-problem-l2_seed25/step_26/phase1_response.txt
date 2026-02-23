@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>The current filter returned no results. A more accurate out-of-box report name is “Incidents by Assigned to”; updating the list search to this exact title is likely to find the correct report.</rationale>
+<action>fill('a179', 'Incidents by Assigned to')</action>
+<action_text>Type "Incidents by Assigned to" into the reports list search field</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>After updating the search term, we need to execute the list search to refresh results and locate the report.</rationale>
+<action>press('a179', 'Enter')</action>
+<action_text>Press Enter in the reports list search field to run the search</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the exact title differs slightly, a close variant “Incident by Assigned to” may match existing report naming and surface the needed report.</rationale>
+<action>fill('a179', 'Incident by Assigned to')</action>
+<action_text>Type "Incident by Assigned to" into the reports list search field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Using a broader keyword increases chances of finding related reports that show counts by assignee; we can then pick the correct one.</rationale>
+<action>fill('a179', 'Assigned to')</action>
+<action_text>Type "Assigned to" into the reports list search field</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the report is not Global but shared within a group, switching to the Group tab can reveal it.</rationale>
+<action>click('a166')</action>
+<action_text>Click the "Group" tab in the Reports list</action_text>
+</candidate_5>
+</candidates>

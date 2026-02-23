@@ -1,0 +1,19 @@
+{
+  "action": "click('a1232')",
+  "bid_entry": {
+    "a1232": {
+      "role": "link",
+      "name": "All Incidents by Assignment",
+      "description": "",
+      "bbox": [
+        349.140625,
+        454.0,
+        340.84375,
+        31.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "link::All Incidents by Assignment"
+    }
+  }
+}

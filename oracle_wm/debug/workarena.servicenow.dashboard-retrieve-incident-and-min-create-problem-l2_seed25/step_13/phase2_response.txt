@@ -1,0 +1,4 @@
+<think>
+We need to locate a specific report within Reports > View/Run. The most useful next capability is enabling the list filter to search by Title. Among the candidates, #4 attempts to toggle the Show/Hide filter on the list, which aligns best with the task, even though the popover remains visible and no obvious change is shown. Sorting (candidate 5) or interacting with the global search (1,2,3) doesn’t help target the report list. Therefore, #4 best advances the goal.
+</think>
+<selection>4</selection>

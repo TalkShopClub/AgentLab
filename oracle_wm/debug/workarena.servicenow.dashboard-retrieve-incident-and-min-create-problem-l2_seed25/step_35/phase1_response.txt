@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>The page shows “Loading report…”. Waiting briefly should allow the chart/data to render so we can read incident counts by agent.</rationale>
+<action>noop(2000)</action>
+<action_text>Wait 2 seconds for the report to finish loading</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>After the report loads, the visualization may appear further down the page. Scrolling can bring the chart with agent counts into view.</rationale>
+<action>scroll_at(600, 420, 0, 700)</action>
+<action_text>Scroll down the report area</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the chart isn’t grouped by “Assigned to,” opening Edit report will let us confirm or switch the breakdown to agents so we can get the correct counts.</rationale>
+<action>click('a139')</action>
+<action_text>Click the “Edit report” control</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>The info panel may show key configuration (e.g., Group by/Breakdown). This verifies whether the report is by “Assigned to” (agents) without changing settings.</rationale>
+<action>click('a150')</action>
+<action_text>Click the “Info” (i) button for report details</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the content is already present but off-screen, an additional scroll may be needed to expose the chart/table with incident counts per agent.</rationale>
+<action>scroll_at(600, 600, 0, 900)</action>
+<action_text>Scroll further down the page</action_text>
+</candidate_5>
+</candidates>

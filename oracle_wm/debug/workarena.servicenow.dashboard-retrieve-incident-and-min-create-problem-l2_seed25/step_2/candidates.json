@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('1230')",
+    "action_text": "Click the \"Reports\" application in the left navigation results to expand it",
+    "rationale": "We need to open the Reports application to access its modules, including View/Run."
+  },
+  {
+    "action": "click('1239')",
+    "action_text": "Click the expand/collapse arrow next to \"Reports\"",
+    "rationale": "If the disclosure arrow is required, clicking it will expand the Reports module list."
+  },
+  {
+    "action": "fill('329', 'View / Run')",
+    "action_text": "Type \"View / Run\" into the left navigation filter",
+    "rationale": "Directly filtering for the target module name should surface the \"View / Run\" entry for quick access."
+  },
+  {
+    "action": "fill('329', 'View/Run')",
+    "action_text": "Type \"View/Run\" into the left navigation filter",
+    "rationale": "Some instances list the module without spaces around the slash; this variant may match it."
+  },
+  {
+    "action": "fill('329', 'View')",
+    "action_text": "Type \"View\" into the left navigation filter",
+    "rationale": "If exact matching fails, a broader filter will list modules beginning with \"View\", including \"View / Run\"."
+  }
+]

@@ -1,0 +1,2 @@
+<think>We need to reach Reports > View/Run. Candidate 3 filters the left nav to show the exact "View / Run" module, making it the most direct next step. Other candidates either don't show the correct item or introduce distractions. </think>
+<selection>3</selection>

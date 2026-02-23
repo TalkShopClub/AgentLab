@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a179')",
+    "action_text": "Click the Reports list \"Search\" control",
+    "rationale": "Use the built-in Reports list search to quickly locate the desired report without leaving the page"
+  },
+  {
+    "action": "click('a234')",
+    "action_text": "Toggle the Show/Hide filter for the Reports list",
+    "rationale": "Enable the list filter builder so we can filter Title to something like \"Incidents by agent\""
+  },
+  {
+    "action": "scroll_at(600, 420, 0, 700)",
+    "action_text": "Scroll down the Reports list",
+    "rationale": "Scroll the Global reports list to the \u201cInc\u2026\u201d section where \u201cIncidents by \u2026\u201d reports are likely located"
+  },
+  {
+    "action": "click('119')",
+    "action_text": "Click the header search magnifier to run the global search",
+    "rationale": "If list search is difficult to activate, running the existing global search query may surface the report quickly"
+  },
+  {
+    "action": "fill('113', 'Incident by Assigned to')",
+    "action_text": "Type \"Incident by Assigned to\" into the global search field",
+    "rationale": "Refine the global search query to a likely report title (\u201cIncident by Assigned to\u201d) which often matches the needed report"
+  }
+]

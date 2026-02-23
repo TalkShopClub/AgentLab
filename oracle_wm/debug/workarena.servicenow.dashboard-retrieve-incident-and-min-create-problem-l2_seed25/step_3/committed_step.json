@@ -1,0 +1,19 @@
+{
+  "action": "click('1177')",
+  "bid_entry": {
+    "1177": {
+      "role": "link",
+      "name": "View / Run",
+      "description": "",
+      "bbox": [
+        203.0,
+        496.5,
+        498.0,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "link::View / Run"
+    }
+  }
+}

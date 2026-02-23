@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "press('113', 'Escape')",
+    "bid_note": "fp='combobox::Search::via=Classic | Unified Navigation App | ServiceNow/Primary' not found in replay, keeping original BID"
+  },
+  {
+    "candidate": 2,
+    "action": "click('234')",
+    "bid_note": "stable fp='::::yrank=2'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('239')",
+    "bid_note": "stable fp='::::yrank=95'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('119')",
+    "bid_note": "stable fp='::::yrank=16'"
+  },
+  {
+    "candidate": 5,
+    "action": "scroll(0, 700)",
+    "bid_note": "no-bid-in-action"
+  }
+]

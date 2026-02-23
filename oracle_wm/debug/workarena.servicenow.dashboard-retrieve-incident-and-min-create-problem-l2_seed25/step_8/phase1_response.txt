@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>The “Choose search context” popover is likely blocking clicks on the list; pressing Escape should dismiss it so we can interact with the report list.</rationale>
+<action>keyboard_press('Escape')</action>
+<action_text>Press Escape to close the search context popover</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Opening the list filter will let us search for the report by Title directly on the View/Run page.</rationale>
+<action>click('234')</action>
+<action_text>Click the filter/show-hide icon to open the list filter builder</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Sorting by Title can help quickly locate a report named “Incidents by agent” within the list.</rationale>
+<action>click('239')</action>
+<action_text>Click the Title column header to sort the reports by title</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Clicking the page header will remove focus from the global search and may dismiss the popover, restoring normal interactions.</rationale>
+<action>click('164')</action>
+<action_text>Click the “Reports” page header</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the desired report isn’t visible, scrolling down can reveal more report entries to select from.</rationale>
+<action>scroll(0, 600)</action>
+<action_text>Scroll down the reports list</action_text>
+</candidate_5>
+</candidates>

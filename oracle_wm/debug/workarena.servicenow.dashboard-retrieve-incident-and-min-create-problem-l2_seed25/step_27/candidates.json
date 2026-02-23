@@ -1,0 +1,27 @@
+[
+  {
+    "action": "press('a179', 'Enter')",
+    "action_text": "Run the reports list search with the current query",
+    "rationale": "We\u2019ve already typed \u201cIncidents by Assigned to\u201d into the list search; executing the search is the most direct way to find the report."
+  },
+  {
+    "action": "fill('a179', 'Incidents by')",
+    "action_text": "Type \"Incidents by\" into the reports list search field",
+    "rationale": "Broaden the search to a more general phrase likely matching the report title, then we can execute it."
+  },
+  {
+    "action": "clear('a179')",
+    "action_text": "Clear the reports list search field",
+    "rationale": "Current filters yield no results; clearing the search resets the list so we can try a different approach."
+  },
+  {
+    "action": "click('a234')",
+    "action_text": "Toggle the Show/Hide filter builder for the reports list",
+    "rationale": "Using the list\u2019s filter builder will let us add a condition like Title contains \u201cAssigned to,\u201d precisely targeting the needed report."
+  },
+  {
+    "action": "click('a170')",
+    "action_text": "Click the Global tab for the reports list",
+    "rationale": "The standard \u201cIncidents by Assigned To\u201d report is typically in the Global scope; ensuring we\u2019re on that tab may reveal it."
+  }
+]

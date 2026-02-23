@@ -1,0 +1,4 @@
+<think>
+We’re already on Reports > View/Run but viewing “My reports,” which doesn’t contain the needed report. The best next step is to broaden scope to find a common report like “Incidents by agent.” Candidate 1 switches to the Global tab, revealing many global reports and positioning us to search/filter for the target. The other candidates either keep us in limited scopes or activate filters that don’t help. Thus, Candidate 1 best advances the goal.
+</think>
+<selection>1</selection>

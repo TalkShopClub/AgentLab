@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1203')",
+    "action_text": "Open the chart\u2019s context/options menu (to access a data table or similar details)",
+    "rationale": "Seeing the underlying data table will let us quickly read exact incident counts per agent and identify the minimum without guessing from bar heights."
+  },
+  {
+    "action": "mouse_move(870, 485)",
+    "action_text": "Hover over a small bar near the right end of the chart to read its tooltip",
+    "rationale": "Hovering the smallest bar near the far right (likely an individual agent) should display a tooltip with the agent\u2019s name and exact incident count to find the minimum."
+  },
+  {
+    "action": "mouse_move(845, 485)",
+    "action_text": "Hover over the adjacent small bar to the left to view its tooltip",
+    "rationale": "Check the next smallest bar (slightly left of the rightmost) to compare counts and confirm the minimum value across agents."
+  },
+  {
+    "action": "mouse_move(820, 485)",
+    "action_text": "Hover over another small bar toward the right-middle to view its tooltip",
+    "rationale": "Continue scanning small bars to ensure we capture all agents tied at the minimum incident count."
+  },
+  {
+    "action": "mouse_move(790, 480)",
+    "action_text": "Hover over a small bar further left to view its tooltip",
+    "rationale": "Expand the scan slightly further left among the shorter bars to identify any additional agents with the same minimal count."
+  }
+]

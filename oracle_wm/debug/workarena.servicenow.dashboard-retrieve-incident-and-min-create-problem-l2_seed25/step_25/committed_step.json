@@ -1,0 +1,19 @@
+{
+  "action": "press('a179', 'Enter')",
+  "bid_entry": {
+    "a179": {
+      "role": "combobox",
+      "name": "Search",
+      "description": "",
+      "bbox": [
+        1701.671875,
+        132.0,
+        420.0,
+        44.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "combobox::Search::via=Reports"
+    }
+  }
+}

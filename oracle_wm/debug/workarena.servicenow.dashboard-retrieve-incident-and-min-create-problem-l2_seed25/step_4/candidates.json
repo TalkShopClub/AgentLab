@@ -1,0 +1,27 @@
+[
+  {
+    "action": "fill('179', 'agent')",
+    "action_text": "Type \"agent\" into the reports list Search field",
+    "rationale": "We need to locate the report that shows incidents by agent; filtering the list with a broad keyword will surface it quickly."
+  },
+  {
+    "action": "fill('179', 'Incidents by agent')",
+    "action_text": "Type \"Incidents by agent\" into the reports list Search field",
+    "rationale": "If the report title includes \"Incidents by agent\", searching this exact phrase should narrow directly to the needed report."
+  },
+  {
+    "action": "fill('179', 'assigned to')",
+    "action_text": "Type \"assigned to\" into the reports list Search field",
+    "rationale": "The metric is incidents assigned to an agent; using \"assigned to\" is another effective keyword to find the report."
+  },
+  {
+    "action": "click('179')",
+    "action_text": "Click the reports list Search input to focus it",
+    "rationale": "First focusing the in-page search box ensures the following text entry goes to the correct field."
+  },
+  {
+    "action": "press('179', 'Enter')",
+    "action_text": "Press Enter in the reports list Search field to apply the search",
+    "rationale": "Submitting the search may be required by the page to apply the filter after typing."
+  }
+]

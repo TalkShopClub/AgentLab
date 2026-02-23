@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>The “Choose search context” popover is obstructing interactions with the report list; clicking an empty area should dismiss it so I can filter the list by Title.</rationale>
+<action>mouse_click(600, 350)</action>
+<action_text>Click a blank area on the page to dismiss the popover</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If the popover persists, pressing Escape often closes overlays, allowing access to list filter controls.</rationale>
+<action>keyboard_press('Escape')</action>
+<action_text>Press Escape to close the search context popover</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Once the popover is closed, enabling the list filter will let me search for the report by Title (e.g., contains “agent”).</rationale>
+<action>click('234')</action>
+<action_text>Toggle the Show/Hide filter for the reports list</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Sorting the list by Title may make it easier to locate a report like “Incidents by agent” alphabetically if filtering isn’t available.</rationale>
+<action>click('239')</action>
+<action_text>Click the Title column header to sort reports by title</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Scrolling the list could reveal more reports if the desired one isn’t initially visible.</rationale>
+<action>scroll_at(600, 420, 0, 700)</action>
+<action_text>Scroll down through the reports list</action_text>
+</candidate_5>
+</candidates>

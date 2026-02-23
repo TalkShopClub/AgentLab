@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Using the left navigation filter is the fastest way to locate the Reports module to reach View/Run</rationale>
+<action>fill('242', 'Reports')</action>
+<action_text>Type "Reports" into the All menu Filter field</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If case sensitivity or partial matching behaves differently, a lowercase partial term may surface the module</rationale>
+<action>fill('242', 'report')</action>
+<action_text>Type "report" into the All menu Filter field</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Directly filtering for the specific module name could take us straight to the desired item</rationale>
+<action>fill('242', 'View/Run')</action>
+<action_text>Type "View/Run" into the All menu Filter field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Ensure the filter input is focused and ready for typing in case it isn't active yet</rationale>
+<action>click('242')</action>
+<action_text>Click the Filter input in the left navigation panel</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the left nav filter fails, the global search can be used to locate the Reports View/Run module</rationale>
+<action>fill('113', 'Reports View/Run')</action>
+<action_text>Type "Reports View/Run" into the global Search field</action_text>
+</candidate_5>
+</candidates>

@@ -1,0 +1,14 @@
+{
+  "action": "click('a271')",
+  "bid_entry": {
+    "a271": {
+      "role": "",
+      "name": "",
+      "description": "",
+      "bbox": null,
+      "visibility": 0.0,
+      "clickable": false,
+      "fingerprint": "::::yrank=765"
+    }
+  }
+}

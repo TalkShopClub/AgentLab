@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Use the list’s search box to find the likely standard report title “Incidents by Assigned To” directly in the Global library.</rationale>
+<action>fill('a179', 'Incidents by Assigned To')</action>
+<action_text>Type "Incidents by Assigned To" into the report list search field</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Broaden the search in case the exact report title varies; this will surface all “Incidents by …” reports to choose from.</rationale>
+<action>fill('a179', 'Incidents by')</action>
+<action_text>Type "Incidents by" into the report list search field</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Search by the key dimension (“Assigned To”) to capture reports that show incident counts by assignee, regardless of full title wording.</rationale>
+<action>fill('a179', 'Assigned To')</action>
+<action_text>Type "Assigned To" into the report list search field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Try a synonym (“assignee”) to catch differently named reports that still chart incidents by agent/person.</rationale>
+<action>fill('a179', 'assignee')</action>
+<action_text>Type "assignee" into the report list search field</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the list is alphabetically sorted, scrolling may reveal the “Incidents by …” section without needing an exact search term.</rationale>
+<action>scroll_at(600, 500, 0, 700)</action>
+<action_text>Scroll down the report list to look for “Incidents by …” titles</action_text>
+</candidate_5>
+</candidates>

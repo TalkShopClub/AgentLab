@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We’ve already typed the report title into the global search; pressing Enter will execute the search and likely surface the report to open.</rationale>
+<action>press('113', 'Enter')</action>
+<action_text>Press Enter in the global search box to run the search for "Incidents by agent"</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If Enter doesn’t trigger the search, clicking the search icon next to the global search field should perform the search.</rationale>
+<action>click('119')</action>
+<action_text>Click the global search magnifying glass to run the search</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>The dropdown shows a “results” option; selecting it may navigate to the full search results where the report can be selected.</rationale>
+<action>click('a179')</action>
+<action_text>Click the “results” item in the global search suggestions</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>If the current query doesn’t match the report, refine it to the more typical ServiceNow title “Incidents by Assigned to” and then search.</rationale>
+<action>fill('113', 'Incidents by Assigned to')</action>
+<action_text>Replace the global search text with "Incidents by Assigned to"</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Try an alternative likely title phrasing to improve the chance of finding the correct report before executing the search.</rationale>
+<action>fill('113', 'Number of incidents by agent')</action>
+<action_text>Replace the global search text with "Number of incidents by agent"</action_text>
+</candidate_5>
+</candidates>

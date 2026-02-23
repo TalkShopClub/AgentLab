@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Use the list’s own search to quickly locate the report titled "Incidents by agent" within the Global reports list</rationale>
+<action>fill('a179', 'Incidents by agent')</action>
+<action_text>Type "Incidents by agent" into the Reports list search field</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Execute the list search after entering the report title so the list filters to matching reports</rationale>
+<action>press('a179', 'Enter')</action>
+<action_text>Press Enter in the Reports list search field to run the search</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If the list is already sorted by Title, the target should appear near other “Incidents …” entries; scrolling slightly up may reveal “Incidents by agent” above “Incidents older than 7 days”</rationale>
+<action>scroll_at(600, 520, 0, -600)</action>
+<action_text>Scroll up within the reports list to look for “Incidents by agent”</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Ensure the list is alphabetically ordered by Title so that “Incidents by agent” appears in the expected position among “Incidents …” reports</rationale>
+<action>click('a239')</action>
+<action_text>Click the Title column header to sort by Title</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If simple search doesn’t work, enabling the list filter builder allows adding a condition like Title contains “Incidents by agent”</rationale>
+<action>click('a234')</action>
+<action_text>Toggle the Show/Hide filter to open the list filter builder</action_text>
+</candidate_5>
+</candidates>

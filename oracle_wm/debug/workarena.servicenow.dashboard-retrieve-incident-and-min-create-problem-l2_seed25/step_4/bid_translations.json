@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "fill('179', 'agent')",
+    "bid_note": "stable fp='button::Nicholas Mcintosh: available'"
+  },
+  {
+    "candidate": 2,
+    "action": "fill('179', 'Incidents by agent')",
+    "bid_note": "stable fp='button::Nicholas Mcintosh: available'"
+  },
+  {
+    "candidate": 3,
+    "action": "fill('179', 'assigned to')",
+    "bid_note": "stable fp='button::Nicholas Mcintosh: available'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('179')",
+    "bid_note": "stable fp='button::Nicholas Mcintosh: available'"
+  },
+  {
+    "candidate": 5,
+    "action": "press('179', 'Enter')",
+    "bid_note": "stable fp='button::Nicholas Mcintosh: available'"
+  }
+]

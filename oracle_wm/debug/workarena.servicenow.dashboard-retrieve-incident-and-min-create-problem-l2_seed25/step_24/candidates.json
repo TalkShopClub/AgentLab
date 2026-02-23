@@ -1,0 +1,27 @@
+[
+  {
+    "action": "fill('a179', 'Incidents by agent')",
+    "action_text": "Type \"Incidents by agent\" into the Reports list search field",
+    "rationale": "Use the list\u2019s own search to quickly locate the report titled \"Incidents by agent\" within the Global reports list"
+  },
+  {
+    "action": "press('a179', 'Enter')",
+    "action_text": "Press Enter in the Reports list search field to run the search",
+    "rationale": "Execute the list search after entering the report title so the list filters to matching reports"
+  },
+  {
+    "action": "scroll_at(600, 520, 0, -600)",
+    "action_text": "Scroll up within the reports list to look for \u201cIncidents by agent\u201d",
+    "rationale": "If the list is already sorted by Title, the target should appear near other \u201cIncidents \u2026\u201d entries; scrolling slightly up may reveal \u201cIncidents by agent\u201d above \u201cIncidents older than 7 days\u201d"
+  },
+  {
+    "action": "click('a239')",
+    "action_text": "Click the Title column header to sort by Title",
+    "rationale": "Ensure the list is alphabetically ordered by Title so that \u201cIncidents by agent\u201d appears in the expected position among \u201cIncidents \u2026\u201d reports"
+  },
+  {
+    "action": "click('a234')",
+    "action_text": "Toggle the Show/Hide filter to open the list filter builder",
+    "rationale": "If simple search doesn\u2019t work, enabling the list filter builder allows adding a condition like Title contains \u201cIncidents by agent\u201d"
+  }
+]

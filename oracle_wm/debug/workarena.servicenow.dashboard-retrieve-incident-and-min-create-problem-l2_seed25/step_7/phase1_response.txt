@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Only one report row is visible; scrolling may reveal more reports including the target “Incidents by agent.”</rationale>
+<action>scroll(0,700)</action>
+<action_text>Scroll down the Reports list to load and view more report entries</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>The global search box already contains “incidents by agent”; executing it may quickly locate the specific report record.</rationale>
+<action>press('113', 'Enter')</action>
+<action_text>Press Enter in the global search field to run the search for "incidents by agent"</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Sorting by Title can make it easier to find “Incidents by agent” alphabetically in the list.</rationale>
+<action>click('239')</action>
+<action_text>Click the Title column header to sort reports by title</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Sorting by the Table column groups Incident-based reports together, narrowing the scan to relevant items.</rationale>
+<action>click('242')</action>
+<action_text>Click the Table column header to sort/filter by table</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Expanding the list tree/folder may reveal additional report categories or items hidden under a collapsed node.</rationale>
+<action>click('234')</action>
+<action_text>Click the expand/caret control at the left of the list to reveal more report items</action_text>
+</candidate_5>
+</candidates>

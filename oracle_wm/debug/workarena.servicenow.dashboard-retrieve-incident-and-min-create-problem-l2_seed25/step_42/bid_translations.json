@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "mouse_move(1000, 515)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 2,
+    "action": "mouse_move(960, 515)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 3,
+    "action": "mouse_move(900, 515)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 4,
+    "action": "mouse_move(860, 515)",
+    "bid_note": "no-bid-in-action"
+  },
+  {
+    "candidate": 5,
+    "action": "click('a1203')",
+    "bid_note": "stable fp='button::View chart menu, All Incidents by Assignment'"
+  }
+]

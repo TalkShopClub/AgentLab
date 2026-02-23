@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('1177')",
+    "action_text": "Click the \"View / Run\" module in the filtered left navigation results",
+    "rationale": "The left navigation is filtered to \"View / Run\"; clicking the visible \"View / Run\" result should open the Reports > View/Run page directly."
+  },
+  {
+    "action": "click('1186')",
+    "action_text": "Click the text link for \"View / Run\" under All Results",
+    "rationale": "Another clickable target on the same \"View / Run\" list item; if the first selector misses, this one may succeed."
+  },
+  {
+    "action": "press('242', 'Enter')",
+    "action_text": "Press Enter in the left nav filter to open the highlighted \"View / Run\" result",
+    "rationale": "The filter field is focused with \"View / Run\"; pressing Enter should open the highlighted first result."
+  },
+  {
+    "action": "click('1163')",
+    "action_text": "Click the \"Reports\" application in the left navigation",
+    "rationale": "If direct navigation to the module fails, expanding the Reports application will expose the \"View / Run\" option to click next."
+  },
+  {
+    "action": "click('1171')",
+    "action_text": "Click the \"Reports\" item in the left nav results",
+    "rationale": "Backup click on the Reports application row in case the other Reports selector is the wrong element."
+  }
+]

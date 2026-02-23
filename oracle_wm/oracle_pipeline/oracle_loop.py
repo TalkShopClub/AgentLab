@@ -2,6 +2,7 @@
 
 import json
 import logging
+import re
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -118,14 +119,36 @@ def replay_committed(
     env_args: EnvArgs,
     committed: list[CommittedAction],
     instance,
+    max_retries: int = 3,
+    retry_delay: float = 30.0,
 ) -> tuple[object, dict, dict]:
     """Create fresh env, replay all committed actions, return (env, obs, bid_map) at decision point.
 
-    The returned env is open — caller must close it.
+    The returned env is open — caller must close it. Retries on transient reset failures.
+    Before each retry, cleans up any orphaned user left by a failed partial setup — this handles
+    the case where create_user() succeeds but a subsequent role-assignment call fails (502 etc.),
+    leaving the deterministic user in ServiceNow without teardown being called.
     """
     obs_preprocessor = dp.make_obs_preprocessor(DEFAULT_OBS_FLAGS)
-    env = _make_env(env_args, instance)
-    obs, _ = env.reset(seed=env_args.task_seed)
+    last_exc = None
+    for attempt in range(1, max_retries + 1):
+        env = _make_env(env_args, instance)
+        try:
+            obs, _ = env.reset(seed=env_args.task_seed)
+            break
+        except Exception as exc:
+            last_exc = exc
+            try:
+                env.close()
+            except Exception:
+                pass
+            if attempt < max_retries:
+                logger.warning(f"env.reset() failed (attempt {attempt}/{max_retries}): {exc}. Cleaning up orphaned user and retrying in {retry_delay}s")
+                cleanup_orphaned_users(instance, env_args.task_seed)
+                time.sleep(retry_delay)
+            else:
+                raise RuntimeError(f"env.reset() failed after {max_retries} attempts") from last_exc
+
     _wait_idle(env)
     obs = obs_preprocessor(obs)
     current_bid_map = build_bid_map(obs)
@@ -141,14 +164,47 @@ def replay_committed(
     return env, obs, current_bid_map
 
 
+def load_committed_from_debug(
+    debug_root: Path,
+    resume_from: int,
+) -> tuple[list[CommittedAction], list[str], list[str]]:
+    """Reconstruct committed action history from saved debug files for resume.
+
+    Loads committed_step.json (action=chosen_action, bid_entry from decision_bid_map) so that
+    replay_committed can fingerprint-translate BIDs into whatever fresh env is created.
+    Also loads selection.json for translated_action (shown in history) and thought.
+    """
+    committed: list[CommittedAction] = []
+    actions_history: list[str] = []
+    thoughts_history: list[str] = []
+    for i in range(resume_from):
+        committed_path = debug_root / f"step_{i}" / "committed_step.json"
+        sel_path = debug_root / f"step_{i}" / "selection.json"
+        if not committed_path.exists():
+            raise FileNotFoundError(f"Cannot resume: missing {committed_path}")
+        if not sel_path.exists():
+            raise FileNotFoundError(f"Cannot resume: missing {sel_path}")
+        step_data = json.loads(committed_path.read_text(encoding="utf-8"))
+        sel = json.loads(sel_path.read_text(encoding="utf-8"))
+        action = step_data["action"]          # chosen_action with original env BIDs
+        bid_map = step_data["bid_entry"]      # {orig_bid: entry} from decision_bid_map
+        thought = sel.get("thought", "")
+        translated = sel.get("translated_action", action)
+        committed.append(CommittedAction(step=i, action=action, bid_map=bid_map))
+        actions_history.append(translated)    # history shows what was actually executed
+        thoughts_history.append(thought)
+    logger.info(f"Loaded {len(committed)} committed actions from debug dir for resume")
+    return committed, actions_history, thoughts_history
+
+
 def explore_candidate(
     env_args: EnvArgs,
     committed: list[CommittedAction],
     action: str,
     decision_bid_map: dict,
     instance,
-) -> tuple[np.ndarray, np.ndarray]:
-    """Replay to decision point, execute candidate action, return (screenshot, screenshot_som).
+) -> tuple[np.ndarray, np.ndarray, str]:
+    """Replay to decision point, execute candidate action, return (screenshot, screenshot_som, bid_note).
 
     Creates and closes a fresh env sequentially — avoids duplicate data conflicts in ServiceNow
     that would arise from parallel resets of the same deterministic task seed.
@@ -157,10 +213,10 @@ def explore_candidate(
     blank = np.zeros((720, 1280, 3), dtype=np.uint8)
     env, obs, current_bid_map = replay_committed(env_args, committed, instance)
     try:
-        translated, _ = translate_action(action, decision_bid_map, current_bid_map)
+        translated, bid_note = translate_action(action, decision_bid_map, current_bid_map)
         obs, _, _, _, _ = env.step(translated)
         obs = obs_preprocessor(obs)
-        return obs.get("screenshot", blank), obs.get("screenshot_som", blank)
+        return obs.get("screenshot", blank), obs.get("screenshot_som", blank), bid_note
     finally:
         try:
             env.close()
@@ -192,6 +248,7 @@ def run_oracle_pipeline(
     debug_dir: str = "oracle_wm/debug",
     headless: bool = False,
     cleanup: bool = False,
+    resume_from: int = 0,
 ):
     save_path = Path(save_dir) / f"{task_name.replace('/', '_')}_seed{task_seed}"
     save_path.mkdir(parents=True, exist_ok=True)
@@ -209,13 +266,17 @@ def run_oracle_pipeline(
     if cleanup:
         cleanup_orphaned_users(instance, task_seed)
 
-    env, obs, current_bid_map = replay_committed(env_args, [], instance)
+    if resume_from > 0:
+        committed, actions_history, thoughts_history = load_committed_from_debug(debug_root, resume_from)
+        env, obs, current_bid_map = replay_committed(env_args, committed, instance)
+        logger.info(f"Resumed at step {resume_from}: replayed {len(committed)} committed actions")
+    else:
+        env, obs, current_bid_map = replay_committed(env_args, [], instance)
+        committed = []
+        actions_history = []
+        thoughts_history = []
 
-    committed: list[CommittedAction] = []
-    actions_history: list[str] = []
-    thoughts_history: list[str] = []
-
-    step_idx = 0
+    step_idx = resume_from
     try:
         while step_idx < max_steps:
             logger.info(f"Step {step_idx}: generating {n_candidates} candidates")
@@ -223,10 +284,13 @@ def run_oracle_pipeline(
             step_dbg.mkdir(exist_ok=True)
             decision_bid_map = current_bid_map
 
-            # Save current state screenshot
+            # Save current state screenshot + SOM
             sc_current = obs.get("screenshot")
+            sc_current_som = obs.get("screenshot_som")
             if sc_current is not None:
                 Image.fromarray(sc_current).save(step_dbg / "current.png")
+            if sc_current_som is not None:
+                Image.fromarray(sc_current_som).save(step_dbg / "current_som.png")
 
             # Phase 1: generate K candidate actions
             phase1_sys = f"You are an agent trying to solve a web task. Propose your top {n_candidates} candidate actions for the current state."
@@ -264,17 +328,28 @@ def run_oracle_pipeline(
             # Phase 2a: explore each candidate sequentially — one fresh env per candidate
             candidate_screenshots: list[np.ndarray] = []
             candidate_screenshots_som: list[np.ndarray] = []
+            candidate_bid_notes: list[dict] = []
             for k, cand in enumerate(candidates):
                 logger.info(f"  Exploring candidate {k + 1}/{len(candidates)}: {cand['action']!r:.80}")
-                sc, sc_som = explore_candidate(env_args, committed, cand["action"], decision_bid_map, instance)
+                sc, sc_som, bid_note = explore_candidate(env_args, committed, cand["action"], decision_bid_map, instance)
                 candidate_screenshots.append(sc)
                 candidate_screenshots_som.append(sc_som)
+                candidate_bid_notes.append({"candidate": k + 1, "action": cand["action"], "bid_note": bid_note})
                 # Save future screenshots immediately as they arrive
                 Image.fromarray(sc).save(step_dbg / f"step_{step_idx}_future_{k + 1}.png")
                 Image.fromarray(sc_som).save(step_dbg / f"step_{step_idx}_future_{k + 1}_som.png")
 
+            (step_dbg / "bid_translations.json").write_text(
+                json.dumps(candidate_bid_notes, indent=2), encoding="utf-8"
+            )
+
             # Phase 2b: final replay to decision point, present real SOM screenshots to agent
             env, obs, current_bid_map = replay_committed(env_args, committed, instance)
+
+            # Save the SOM the agent actually sees when making its selection decision
+            sc_decision_som = obs.get("screenshot_som")
+            if sc_decision_som is not None:
+                Image.fromarray(sc_decision_som).save(step_dbg / "decision_point_som.png")
 
             phase2_sys = "You are an agent trying to solve a web task. Select the best action based on the real environment screenshots."
             oracle_candidates = [(c["action_text"], s) for c, s in zip(candidates, candidate_screenshots_som)]
@@ -299,20 +374,41 @@ def run_oracle_pipeline(
             chosen_action = candidates[selected_idx]["action"]
             logger.info(f"  Selected candidate {selected_idx + 1}: {chosen_action!r:.80}")
 
-            # Write selection immediately (live debug)
+            # Translate selected action BIDs for execution.
+            # chosen_action has BIDs from decision_bid_map (original live env) — they are consistent.
+            # translated_chosen has BIDs from current_bid_map (Phase 2b fresh env).
+            obs_preprocessor = dp.make_obs_preprocessor(DEFAULT_OBS_FLAGS)
+            translated_chosen, selection_bid_note = translate_action(chosen_action, decision_bid_map, current_bid_map)
+
+            # Extract the BID entry from decision_bid_map for chosen_action's BID.
+            # Only this single entry is needed for fingerprint-based translation on future replays.
+            _m = re.match(r"\w+\('([^']+)'", chosen_action)
+            _bid_entry = {}
+            if _m:
+                _orig_bid = _m.group(1)
+                if _orig_bid in decision_bid_map:
+                    _bid_entry = {_orig_bid: decision_bid_map[_orig_bid]}
+
+            # Write selection + resume metadata immediately (live debug)
             (step_dbg / "selection.json").write_text(
                 json.dumps({
                     "selected_index": selected_idx + 1,  # 1-indexed for readability
                     "selected_action": chosen_action,
+                    "translated_action": translated_chosen,
+                    "bid_translation": selection_bid_note,
                     "thought": reasoning,
                 }, indent=2),
                 encoding="utf-8",
             )
+            # committed_step.json stores the data needed to reconstruct CommittedAction on resume:
+            # chosen_action (original BIDs) + the bid_entry from decision_bid_map for fingerprinting
+            (step_dbg / "committed_step.json").write_text(
+                json.dumps({"action": chosen_action, "bid_entry": _bid_entry}, indent=2),
+                encoding="utf-8",
+            )
 
             # Execute chosen action on the open env
-            obs_preprocessor = dp.make_obs_preprocessor(DEFAULT_OBS_FLAGS)
             t_start = time.time()
-            translated_chosen, _ = translate_action(chosen_action, decision_bid_map, current_bid_map)
             obs, reward, terminated, truncated, env_info = env.step(translated_chosen)
             obs = obs_preprocessor(obs)
             elapsed = time.time() - t_start
@@ -346,7 +442,9 @@ def run_oracle_pipeline(
             step_info.save_step_info(save_path, save_screenshot=True, save_som=False)
             logger.info(f"  reward={reward:.3f}  terminated={terminated}  truncated={truncated}")
 
-            committed.append(CommittedAction(step=step_idx, action=translated_chosen, bid_map=decision_bid_map))
+            # Store chosen_action (original env BIDs) with decision_bid_map (original env bid_map).
+            # These are a consistent pair: replay can fingerprint-translate to any future env's BIDs.
+            committed.append(CommittedAction(step=step_idx, action=chosen_action, bid_map=decision_bid_map))
             actions_history.append(translated_chosen)
             thoughts_history.append(reasoning)
             current_bid_map = build_bid_map(obs)

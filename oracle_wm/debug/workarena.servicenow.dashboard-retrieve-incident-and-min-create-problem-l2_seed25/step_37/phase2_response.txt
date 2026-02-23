@@ -1,0 +1,4 @@
+<think>
+We’re on the “All Incidents by Assignment” report and need to identify the agents with the minimum incident count, which we can get by reading bar tooltips. Opening chart options didn’t show anything; the hovers are the right approach. The best hover to reveal the minimum is on the smallest bars toward the right end. Candidate 2 targets that area and is the most likely to expose the minimum count and agent name(s), advancing the goal better than the others.
+</think>
+<selection>2</selection>

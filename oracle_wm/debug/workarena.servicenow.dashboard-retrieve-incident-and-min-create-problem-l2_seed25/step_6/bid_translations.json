@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "press('113', 'Enter')",
+    "bid_note": "stable fp='combobox::Search::via=Reports | ServiceNow/Primary'"
+  },
+  {
+    "candidate": 2,
+    "action": "click('119')",
+    "bid_note": "stable fp='::::yrank=16'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('a179')",
+    "bid_note": "stable fp='combobox::Search::via=Reports'"
+  },
+  {
+    "candidate": 4,
+    "action": "fill('113', 'Incidents by Assigned to')",
+    "bid_note": "stable fp='combobox::Search::via=Reports | ServiceNow/Primary'"
+  },
+  {
+    "candidate": 5,
+    "action": "fill('113', 'Number of incidents by agent')",
+    "bid_note": "stable fp='combobox::Search::via=Reports | ServiceNow/Primary'"
+  }
+]
