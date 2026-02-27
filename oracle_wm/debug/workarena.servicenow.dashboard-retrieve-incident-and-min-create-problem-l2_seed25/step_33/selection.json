@@ -1,7 +1,0 @@
-{
-  "selected_index": 3,
-  "selected_action": "fill('a179', 'Incidents by Assigned to')",
-  "translated_action": "fill('a179', 'Incidents by Assigned to')",
-  "bid_translation": "stable fp='combobox::Search::via=Reports'",
-  "thought": "We need to find a report showing incidents by agent (Assigned to). On the Global Reports list, \u201cIncidents by Assignment\u201d is visible but might be by Assignment group, not the individual. The best next step is to target the list search toward \u201cIncidents by Assigned to,\u201d which is a common report title. Candidate 3 types exactly \u201cIncidents by Assigned to\u201d into the list search field, positioning us to press Enter next to filter to the most likely correct report. Other candidates either don\u2019t apply a useful term or just scroll. So Candidate 3 best advances the goal."
-}

@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We have a confirmation dialog open to delete the selected non-task duplicate. Confirming deletion completes the deduplication step.</rationale>
+<action>click('a703')</action>
+<action_text>Click the "Delete" button in the confirmation dialog</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If we need to verify selections before deleting, canceling will safely dismiss the dialog without changes.</rationale>
+<action>click('a702')</action>
+<action_text>Click the "Cancel" button in the confirmation dialog</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Closing the dialog via the X is another way to return to the list to re-check duplicates before proceeding.</rationale>
+<action>click('a692')</action>
+<action_text>Click the "Close (X)" button on the confirmation dialog</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>If the wrong row was selected, deselecting it lets us correct the selection prior to deletion.</rationale>
+<action>click('a348')</action>
+<action_text>Toggle the checkbox for row EXP-35319670314 to change its selection</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Previewing the selected expense line lets us double-check it’s not associated with a task before confirming deletion.</rationale>
+<action>click('a352')</action>
+<action_text>Open the preview for EXP-35319670314</action_text>
+</candidate_5>
+</candidates>

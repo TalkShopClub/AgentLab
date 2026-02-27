@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('79')",
+    "action_text": "Click the \"All\" menu button to open the application navigator",
+    "rationale": "Opening the All menu should reveal the application navigator so I can access the Cost app and its Expense Lines module."
+  },
+  {
+    "action": "fill('113', 'Expense Lines')",
+    "action_text": "Type \"Expense Lines\" into the top search field",
+    "rationale": "Using the global search may quickly find the Expense Lines list if it supports navigating directly to that module."
+  },
+  {
+    "action": "click('115')",
+    "action_text": "Open the \"Choose search context\" dropdown next to the search box",
+    "rationale": "Adjusting the search context could switch the search to applications/modules, making it easier to navigate to Cost > Expense Lines."
+  },
+  {
+    "action": "click('82')",
+    "action_text": "Open the Workspaces menu",
+    "rationale": "If the Expense Lines is available as a workspace or in related workspaces, this could provide a direct route to Cost-related modules."
+  },
+  {
+    "action": "noop(1500)",
+    "action_text": "Wait 1.5 seconds for the page to finish loading",
+    "rationale": "The page shows a loading spinner; waiting briefly may allow navigation components to finish loading before interacting."
+  }
+]

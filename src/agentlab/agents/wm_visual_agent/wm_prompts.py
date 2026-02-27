@@ -11,7 +11,6 @@ from browsergym.core.action.base import AbstractActionSet
 from agentlab.agents import dynamic_prompting as dp
 from agentlab.agents.visual_agent.visual_agent_prompts import (
     History,
-    Observation,
     PromptFlags,
     make_instructions,
 )
@@ -34,7 +33,7 @@ class CandidateGenerationPrompt:
         self.flags = flags
         self.n_candidates = n_candidates
         self.instructions = make_instructions(obs, flags.enable_chat, flags.extra_instructions)
-        self.obs = Observation(obs, flags.obs)
+        self.obs = dp.Observation(obs, flags.obs)
         self.history = History(actions, thoughts)
         self.action_prompt = dp.ActionPrompt(action_set, action_flags=flags.action)
 
@@ -70,6 +69,20 @@ class CandidateGenerationPrompt:
             - <rationale>: Why you think this action would help achieve the goal (write this first)
             - <action>: The exact action code from the action set (e.g. click('70'))
             - <action_text>: A plain-English description of what the action does (e.g. "Click the quantity dropdown button")
+
+            ## Diversity Guidelines
+            Your candidates will be executed in the real environment to observe their effects, so **maximize the
+            information gained** by proposing diverse actions:
+            - **Target different elements**: Spread candidates across distinct interactive elements (different BIDs).
+              Avoid proposing multiple actions on the same element unless you are highly confident it is the only
+              viable path forward.
+            - Prioritize bid based actions over coordinate based actions in the diverse sampling. If there are enough bid based potential candidates, do not propose coordinate based actions.
+            - **Explore alternative strategies**: If you are unsure of the correct path, use candidates to test
+              fundamentally different approaches (e.g., using a menu vs. a search bar vs. a direct link) rather than
+              minor variations of the same approach.
+            - **Double-check BID grounding**: Before writing each action, verify the BID you are referencing actually
+              corresponds to the element you intend to interact with. A common failure mode is picking a nearby BID
+              that belongs to a different element.
 
             Use this exact format:
 
@@ -117,7 +130,7 @@ class InformedSelectionPrompt:
     ):
         self.flags = flags
         self.instructions = make_instructions(obs, flags.enable_chat, flags.extra_instructions)
-        self.obs = Observation(obs, flags.obs)
+        self.obs = dp.Observation(obs, flags.obs)
         self.action_prompt = dp.ActionPrompt(action_set, action_flags=flags.action)
         self.candidates = candidates
         self.predictions = predictions

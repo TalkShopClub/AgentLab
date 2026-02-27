@@ -1,0 +1,7 @@
+[
+  "The active highlight shifts from EXP-15319670314 to EXP-25319670314 (that row turns peach and shows the row selector), while the previous row is no longer highlighted.",
+  "EXP-35319670314 becomes the highlighted row and its checkbox is now checked, resulting in multiple rows checked while the prior active highlight moves.",
+  "A Confirmation modal appears over the list asking to delete the selected record(s), with Cancel and Delete buttons, and the background list is dimmed.",
+  "The \u201cActions on selected rows\u2026\u201d control is engaged but no dropdown is visible; the page remains essentially the same aside from the button focus.",
+  "A preview panel opens beneath EXP-05319670314 showing its details (number, amount, state, etc.) with an \u201cOpen Record\u201d button, and the first row shows a preview indicator."
+]

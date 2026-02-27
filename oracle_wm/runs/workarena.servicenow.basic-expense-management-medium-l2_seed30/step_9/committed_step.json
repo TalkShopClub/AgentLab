@@ -1,0 +1,19 @@
+{
+  "action": "fill('a1254', '#SERIES-f9d328e8-a', True)",
+  "bid_entry": {
+    "a1254": {
+      "role": "textbox",
+      "name": "Short description",
+      "description": "",
+      "bbox": [
+        776.0,
+        296.5,
+        315.0,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "textbox::Short description"
+    }
+  }
+}

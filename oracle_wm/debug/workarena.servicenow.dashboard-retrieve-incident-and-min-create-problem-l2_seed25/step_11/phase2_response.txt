@@ -1,2 +1,0 @@
-<think>The goal is to find a specific report within the Reports > View/Run list. Among the actions, toggling the list filter (Show/Hide filter) is the most directly useful for filtering by Title to locate “Incidents by agent,” even though the visual change isn't obvious. Other actions either leave the distracting popover or just sort, which is less effective than filtering by title.</think>
-<selection>4</selection>

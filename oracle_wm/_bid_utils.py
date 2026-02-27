@@ -11,10 +11,12 @@ from browsergym.utils.obs import overlay_som
 import browsergym.workarena  # noqa: F401  # pyright: ignore[reportUnusedImport]
 from browsergym.workarena.instance import SNowInstance
 
+from agentlab.experiments.loop import EnvArgs
+
 SNAPSHOTS_DIR = Path(__file__).parent / "bid_snapshots"
 
 # Same action set as WMVisualAgent (agent_configs.py:22-26)
-_ACTION_SET = HighLevelActionSetArgs(subsets=["coord", "bid"]).make_action_set()
+_ACTION_SET = HighLevelActionSetArgs(subsets=["coord", "bid"], retry_with_force=True).make_action_set()
 
 
 def build_bid_map(obs: dict) -> dict:
@@ -194,6 +196,38 @@ def translate_action(action: str, orig_bid_map: dict, replay_bid_map: dict) -> t
         return action, f"stable fp={fp!r}"
     return action.replace(f"'{orig_bid}'", f"'{replay_bid}'", 1), \
            f"translated {orig_bid!r} -> {replay_bid!r} via fp={fp!r}"
+
+
+from agentlab.utils.phantom_actions import (
+    _PHANTOM_MIN_AREA,
+    _resolve_clickable_bbox,
+    resolve_phantom_action,
+)
+
+
+def _make_env(env_args: EnvArgs, instance):
+    return env_args.make_env(
+        action_mapping=_ACTION_SET.to_python_code,
+        exp_dir=Path("."),
+        exp_task_kwargs={"instance": instance},
+        use_raw_page_output=False,
+    )
+
+
+def _wait_idle(env) -> None:
+    page = env.unwrapped.page
+    try:
+        page.wait_for_load_state("load", timeout=15000)
+    except Exception:
+        pass
+    try:
+        page.wait_for_load_state("networkidle", timeout=15000)
+    except Exception:
+        pass
+    try:
+        page.wait_for_function("() => document.readyState === 'complete'", timeout=5000)
+    except Exception:
+        pass
 
 
 def get_valid_snow_instance() -> SNowInstance:

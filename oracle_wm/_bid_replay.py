@@ -5,7 +5,7 @@ from pathlib import Path
 
 from agentlab.experiments.loop import get_exp_result
 
-from ._bid_utils import _ACTION_SET, build_bid_map, get_valid_snow_instance, save_som, translate_action
+from ._bid_utils import _ACTION_SET, _make_env, _wait_idle, build_bid_map, get_valid_snow_instance, save_som, translate_action
 
 
 def replay_trajectory(traj_dir: str, output_path: str) -> None:
@@ -31,12 +31,7 @@ def replay_trajectory(traj_dir: str, output_path: str) -> None:
 
     instance = get_valid_snow_instance()
     env_args.headless = False
-    env = env_args.make_env(
-        action_mapping=_ACTION_SET.to_python_code,
-        exp_dir=Path("."),
-        exp_task_kwargs={"instance": instance},
-        use_raw_page_output=False,
-    )
+    env = _make_env(env_args, instance)
 
     som_dir = Path(output_path).with_suffix("") / "som"
     som_dir.mkdir(parents=True, exist_ok=True)
@@ -46,10 +41,7 @@ def replay_trajectory(traj_dir: str, output_path: str) -> None:
     try:
         print("reset() ...")
         obs, _ = env.reset(seed=task_seed)
-        try:
-            env.unwrapped.page.wait_for_load_state("networkidle", timeout=15000)
-        except Exception:
-            pass
+        _wait_idle(env)
         obs = env.unwrapped._get_obs()
         print(f"  -> url={obs.get('url', '')}  bids={len(obs.get('extra_element_properties', {}))}")
         save_som(obs, som_dir, "step_00_reset")
@@ -123,12 +115,7 @@ def translate_replay_trajectory(traj_dir: str, output_path: str) -> None:
 
     instance = get_valid_snow_instance()
     env_args.headless = False
-    env = env_args.make_env(
-        action_mapping=_ACTION_SET.to_python_code,
-        exp_dir=Path("."),
-        exp_task_kwargs={"instance": instance},
-        use_raw_page_output=False,
-    )
+    env = _make_env(env_args, instance)
 
     som_dir = Path(output_path).with_suffix("") / "som"
     som_dir.mkdir(parents=True, exist_ok=True)
@@ -151,10 +138,7 @@ def translate_replay_trajectory(traj_dir: str, output_path: str) -> None:
     try:
         print("reset() ...")
         obs, _ = env.reset(seed=task_seed)
-        try:
-            env.unwrapped.page.wait_for_load_state("networkidle", timeout=15000)
-        except Exception:
-            pass
+        _wait_idle(env)
         obs = env.unwrapped._get_obs()
         current_bid_map = build_bid_map(obs)
         print(f"  -> url={obs.get('url', '')}  bids={len(obs.get('extra_element_properties', {}))}")

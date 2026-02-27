@@ -1,0 +1,19 @@
+{
+  "action": "select_option('a1237', 'contains')",
+  "bid_entry": {
+    "a1237": {
+      "role": "combobox",
+      "name": "Operator For Condition 1: Short description starts with #SERIES-f9d328e8-a",
+      "description": "",
+      "bbox": [
+        468.0,
+        296.5,
+        300.0,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": false,
+      "fingerprint": "combobox::Operator For Condition 1: Short description starts with #SERIES-f9d328e8-a"
+    }
+  }
+}

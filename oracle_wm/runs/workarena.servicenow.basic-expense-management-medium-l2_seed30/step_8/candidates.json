@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1196')",
+    "action_text": "Select \"Short description\" from the filter field selector",
+    "rationale": "Selecting \"Short description\" in the filter builder is the first step to define the required condition; the dropdown is already open with this option visible."
+  },
+  {
+    "action": "fill('a294', '#SERIES-f9d328e8-a', True)",
+    "action_text": "Type \"#SERIES-f9d328e8-a\" into the Short description column search input",
+    "rationale": "As an alternate path, the per\u2011column search row is visible; filtering the \"Short description\" column directly should immediately narrow the list to matching entries."
+  },
+  {
+    "action": "click('a1105')",
+    "action_text": "Open the Operator dropdown for the first filter condition",
+    "rationale": "After choosing the field in the builder, we need to set the operator to \u201ccontains\u201d; opening the operator dropdown enables selecting the correct operator."
+  },
+  {
+    "action": "fill('a1108', '#SERIES-f9d328e8-a', True)",
+    "action_text": "Enter \"#SERIES-f9d328e8-a\" into the filter value field",
+    "rationale": "We must specify the filter value; entering the target text into the value input completes the condition so it can be run."
+  },
+  {
+    "action": "click('a233')",
+    "action_text": "Open the \"Short description\" column options menu",
+    "rationale": "Another route is via the column\u2019s options; opening the \u201cShort description\u201d header menu may offer filtering actions to target matching text."
+  }
+]

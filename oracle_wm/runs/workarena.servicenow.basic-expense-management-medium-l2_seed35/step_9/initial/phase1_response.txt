@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We need to delete duplicates not associated with tasks. The second row is a duplicate ("Ten experience whole note...") with Source ID "User: Ana Christensen" (not a task). Selecting it is the first step toward bulk deletion.</rationale>
+<action>click('a348')</action>
+<action_text>Select the checkbox for EXP-15319670314 (duplicate without a task association)</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>The third row is another duplicate with the same short description and Source ID "User: Ana Christensen". Selecting it prepares it for deletion.</rationale>
+<action>click('a370')</action>
+<action_text>Select the checkbox for EXP-25319670314 (duplicate without a task association)</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>The fourth row is also a duplicate with the same short description and is not associated with a task. Selecting it will include it in the deletion set.</rationale>
+<action>click('a392')</action>
+<action_text>Select the checkbox for EXP-35319670314 (duplicate without a task association)</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>After selecting the non-task duplicates, we should delete them. Using the list action is the standard way to remove selected records.</rationale>
+<action>select_option('a101', 'Delete')</action>
+<action_text>Choose "Delete" from the "Actions on selected rows" menu</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If we want to further refine selection (e.g., filter Source ID to "User:"), showing the per-column search row will help identify and isolate non-task duplicates quickly.</rationale>
+<action>click('a193')</action>
+<action_text>Toggle "Show column search row" to display per-column filters</action_text>
+</candidate_5>
+</candidates>

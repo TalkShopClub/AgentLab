@@ -1,0 +1,14 @@
+<think>
+None of the candidates advanced the required filter creation. 
+- Candidate 1 attempted to set the filter field but nothing changed; the filter still shows “-- choose field --”.
+- Candidate 2 only highlighted the column options with no menu or filter applied.
+- Candidate 3 toggled the column search row, which is not the requested filter builder.
+- Candidate 4 tried to open the quick search field selector (not the filter builder), with no effect.
+- Candidate 5 typed into the list quick search for “Number”, not into the filter builder for “Short description contains …”.
+
+Next attempts should:
+1) Click the filter field combobox (bid a1055) to open it, then select “Short description”.
+2) Set the operator combobox (a1105) to “contains”.
+3) Enter “#SERIES-1f711cdf-2” into the value textbox (a1108) and click “Run filter” (a991).
+</think>
+<resample>true</resample>

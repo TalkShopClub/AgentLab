@@ -1,0 +1,8 @@
+{
+  "selected_index": 4,
+  "selected_from": "initial",
+  "selected_action": "click('a46')",
+  "translated_action": "click('a46')",
+  "bid_translation": "stable fp='button::\\uf18a Show / hide filter'",
+  "thought": "We\u2019re already on the Expense Lines list. To meet step 2, we should create a proper filter: field = Short description, operator = contains, value = #SERIES-1f711cdf-2. Candidate 4 opened the filter builder, which is the right tool for this. The other actions either changed the quick search field, typed text without executing, or opened column search. Opening the filter builder is the strongest step toward creating the required filter."
+}

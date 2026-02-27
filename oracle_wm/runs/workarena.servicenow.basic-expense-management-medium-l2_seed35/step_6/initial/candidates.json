@@ -1,0 +1,27 @@
+[
+  {
+    "action": "select_option('a1237', 'contains')",
+    "action_text": "Change the filter operator from \"starts with\" to \"contains\"",
+    "rationale": "We need the filter operator to be \"contains\" to match the requirement for Short description containing a specific string."
+  },
+  {
+    "action": "fill('a1254', '#SERIES-c8c8c533-7')",
+    "action_text": "Type \"#SERIES-c8c8c533-7\" into the Short description filter value field",
+    "rationale": "After setting the operator, we must input the target string so the filter can match the desired entries."
+  },
+  {
+    "action": "click('a994')",
+    "action_text": "Click the Run filter button",
+    "rationale": "Running the filter will apply the condition and display only entries whose Short description contains the given string."
+  },
+  {
+    "action": "click('a999')",
+    "action_text": "Click the Add Sort button in the filter controls",
+    "rationale": "Sorting by Short description will help group identical descriptions together, making it easier to spot duplicates for deletion later."
+  },
+  {
+    "action": "click('a233')",
+    "action_text": "Open the Short description column options menu",
+    "rationale": "Opening the Short description column options can provide sorting/grouping tools useful for identifying duplicates after filtering."
+  }
+]

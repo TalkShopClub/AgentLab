@@ -1,0 +1,4 @@
+<think>
+Candidate 3 correctly changes the operator to "contains" for the Short description condition, aligning with the required filter. This meaningfully advances step 2, unlike others (e.g., Candidate 4 runs the wrong filter).
+</think>
+<selection>3</selection>

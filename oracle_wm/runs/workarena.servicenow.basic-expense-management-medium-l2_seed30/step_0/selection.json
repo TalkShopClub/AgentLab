@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "initial",
+  "selected_action": "click('79')",
+  "translated_action": "click('79')",
+  "bid_translation": "stable fp='button::All'",
+  "thought": "Candidate 1 opens the All menu (application navigator) with a Filter field and module list, which is the correct way to navigate to the \"Expense Lines\" module under the \"Cost\" application. Other candidates either just wait or use global search, which is less direct."
+}

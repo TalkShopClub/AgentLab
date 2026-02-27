@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We need to filter by “Short description”; switching the list search field from Number to Short description aligns the search with the requirement.</rationale>
+<action>select_option('a60', 'Short description')</action>
+<action_text>Select "Short description" in the list search field selector</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>After setting the field to Short description, entering the target token will filter the list to only entries containing the string.</rationale>
+<action>fill('a73', '#SERIES-c8c8c533-7')</action>
+<action_text>Type "#SERIES-c8c8c533-7" into the list search box</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Using the advanced filter builder provides precise control to add a condition: Short description contains "#SERIES-c8c8c533-7".</rationale>
+<action>click('a46')</action>
+<action_text>Click the "Show / hide filter" button to open the filter builder</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>The column search row enables per-column filtering; showing it lets us enter the series value under the Short description column.</rationale>
+<action>click('a190')</action>
+<action_text>Click "Show column search row" to display per-column filters</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Column options may offer quick filtering (e.g., Show Matching/Filter Out) based on a selected cell value; opening it could provide a fast path to filter by the series text.</rationale>
+<action>click('a233')</action>
+<action_text>Open the "Short description" column options menu</action_text>
+</candidate_5>
+</candidates>

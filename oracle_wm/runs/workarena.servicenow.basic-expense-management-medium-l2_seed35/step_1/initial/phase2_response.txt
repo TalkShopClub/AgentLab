@@ -1,0 +1,4 @@
+<think>
+Candidates 1 and 3 both filter the All menu to show the “Expense Lines” module under the Cost app, which directly progresses to step 1. Candidate 1 is precise and clearly shows the target item ready to click.
+</think>
+<selection>1</selection>

@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "resample",
+  "selected_action": "click('a1055')",
+  "translated_action": "click('a1112')",
+  "bid_translation": "translated 'a1055' -> 'a1112' via fp='::::yrank=111'",
+  "thought": "We need to set up a filter: Short description contains \"#SERIES-1f711cdf-2\". The best next move is to open the filter field combobox so we can choose \"Short description\". Candidate 1 successfully opens that dropdown. Other candidates either failed to select, targeted disabled controls, typed into the wrong search box, or ran an empty filter."
+}

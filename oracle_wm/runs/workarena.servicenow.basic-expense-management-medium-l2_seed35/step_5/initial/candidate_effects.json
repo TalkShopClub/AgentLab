@@ -1,0 +1,7 @@
+[
+  "The filter builder\u2019s first dropdown is now set to \u201cShort description\u201d; the operator shows \u201cstarts with\u201d with a value box plus AND/OR and an X (remove) button, and the field dropdown menu is closed.",
+  "The previously open field selector dropdown is closed, leaving the \u201c-- choose field -- / -- oper -- / -- value --\u201d placeholders visible, and tooltips \u201cChoose option\u201d and \u201cChoose operator\u201d appear above the controls.",
+  "The header search field selector next to \u201cExpense Lines\u201d changed from \u201cNumber\u201d to \u201cShort description,\u201d while the field-selection dropdown in the filter row remains open.",
+  "The search input inside the open field dropdown was filled with \u201c#SERIES-c8c8c533-7,\u201d and a \u201cNo matches found\u201d message appears below it.",
+  "The field dropdown is closed and a \u201cShow column search row\u201d link appears just above the table header; no per\u2011column filters are shown yet."
+]

@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Directly opens the required module from the All menu to start filtering expense lines.</rationale>
+<action>click('1183')</action>
+<action_text>Click the "Expense Lines" link under the Cost application</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If keyboard navigation is supported, pressing Enter in the filter may open the highlighted module result.</rationale>
+<action>press('242', 'Enter')</action>
+<action_text>Press Enter in the All menu filter to open the top matching result</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Moves focus from the filter input to the first search result so it can be opened with Enter next.</rationale>
+<action>press('242', 'ArrowDown')</action>
+<action_text>Press Arrow Down in the All menu filter to highlight the first result</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Ensures the Cost application node is expanded so the Expense Lines module is visible and clickable.</rationale>
+<action>click('1169')</action>
+<action_text>Click the "Cost" application toggle to expand/collapse its modules</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Resets the filter text in case the list is not updating correctly, enabling a fresh search for the module.</rationale>
+<action>click('244')</action>
+<action_text>Click the "Clear filter" button in the All menu</action_text>
+</candidate_5>
+</candidates>

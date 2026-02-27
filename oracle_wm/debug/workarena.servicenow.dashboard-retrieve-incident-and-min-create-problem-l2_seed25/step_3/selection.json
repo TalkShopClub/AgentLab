@@ -1,7 +1,0 @@
-{
-  "selected_index": 1,
-  "selected_action": "click('1177')",
-  "translated_action": "click('1177')",
-  "bid_translation": "stable fp='link::View / Run'",
-  "thought": "The goal\u2019s next step is to navigate to Reports > View/Run. Candidates 1 and 3 successfully land on the Reports View/Run page listing reports with columns like Type, Title, and Table. Candidates 2 and 5 only add favorites and remain on the dashboard, while 4 just selects the Reports app. Either 1 or 3 works; select 1."
-}

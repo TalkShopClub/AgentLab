@@ -1,0 +1,7 @@
+[
+  "The Short description filter\u2019s value box is now filled with \u201c#SERIES-c8c8c533-7\u201d; the results list remains as before.",
+  "The filter builder collapsed and a summary \u201cAll > Short description contains\u201d appeared above the table; the Run/Save/AND/OR controls disappeared, with rows otherwise unchanged.",
+  "Pressing Enter applied the filter UI the same way: the builder collapsed into the \u201cAll > Short description contains\u201d summary and the toolbar vanished; no obvious change to the row set.",
+  "A new \u201cOrder results by the following fields\u201d section appeared showing a sort field (Amount) and direction dropdown with a remove (X) button; the table content stayed the same.",
+  "The Short description column is now sorted in ascending order (up-arrow and highlighted header), and the rows have been reordered accordingly."
+]

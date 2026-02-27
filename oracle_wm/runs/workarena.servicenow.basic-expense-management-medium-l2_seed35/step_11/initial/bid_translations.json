@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "click('a746')",
+    "bid_note": "stable fp='button::Cancel'"
+  },
+  {
+    "candidate": 2,
+    "action": "click('a747')",
+    "bid_note": "stable fp='button::Delete'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('a736')",
+    "bid_note": "stable fp='button::Close'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('a370')",
+    "bid_note": "stable fp='checkbox::Select record for action: EXP-25319670314'"
+  },
+  {
+    "candidate": 5,
+    "action": "click('a392')",
+    "bid_note": "stable fp='checkbox::Select record for action: EXP-35319670314'"
+  }
+]

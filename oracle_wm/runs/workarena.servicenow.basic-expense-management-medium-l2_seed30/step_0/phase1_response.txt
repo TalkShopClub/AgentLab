@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>To reach the "Expense Lines" module, the fastest path is opening the All menu (Application Navigator) where applications/modules like Cost -> Expense Lines are listed.</rationale>
+<action>click('79')</action>
+<action_text>Click the "All" button to open the Application Navigator</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If the global search can navigate directly to modules, searching for "Expense Lines" could take us straight to the desired list.</rationale>
+<action>fill('113', 'Expense Lines', True)</action>
+<action_text>Type "Expense Lines" into the global Search field</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Searching for the parent application name "Cost" may surface the "Cost" app and its modules (including Expense Lines) for quick navigation.</rationale>
+<action>fill('113', 'Cost', True)</action>
+<action_text>Type "Cost" into the global Search field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Adjusting the search context (e.g., to Applications/Navigation) can ensure search results include modules like "Expense Lines" rather than records.</rationale>
+<action>click('115')</action>
+<action_text>Open the "Choose search context" dropdown</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>The page shows a loading spinner; waiting briefly may allow menus and search to fully initialize before interacting.</rationale>
+<action>noop(1500)</action>
+<action_text>Wait 1.5 seconds for the page to finish loading</action_text>
+</candidate_5>
+</candidates>

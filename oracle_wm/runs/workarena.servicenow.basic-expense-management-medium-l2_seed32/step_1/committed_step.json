@@ -1,0 +1,19 @@
+{
+  "action": "fill('242', 'Expense Lines')",
+  "bid_entry": {
+    "242": {
+      "role": "textbox",
+      "name": "Enter search term to filter All menu",
+      "description": "",
+      "bbox": [
+        116.90625,
+        128.0,
+        492.0,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "textbox::Enter search term to filter All menu"
+    }
+  }
+}

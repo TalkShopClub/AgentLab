@@ -1,0 +1,4 @@
+<think>
+We’re building the filter. Candidate 1 correctly sets the filter field to “Short description” in the filter builder, which is the first required part. Others either changed unrelated header search, typed into the wrong input, or toggled column search. Candidate 1 makes clear progress toward creating the correct filter.
+</think>
+<selection>1</selection>

@@ -1,0 +1,4 @@
+<think>
+We need to navigate to the Expense Lines module. Opening the All application navigator is the correct first step to find the Cost app and its modules. Candidate 1 opens the All menu with the filter field, enabling us to search for "Expense Lines." The other candidates either use the global search or unrelated menus, which are less direct.
+</think>
+<selection>1</selection>

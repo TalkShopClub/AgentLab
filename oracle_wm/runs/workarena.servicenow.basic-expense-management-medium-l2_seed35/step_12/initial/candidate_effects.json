@@ -1,0 +1,7 @@
+[
+  "The row EXP-25319670314 is now selected: its checkbox is checked and the entire row is highlighted.",
+  "The selection moved to EXP-35319670314: its checkbox is checked and highlighted, while the previously selected row is no longer selected.",
+  "No visible change occurred\u2014no rows were deleted and no confirmation dialog appeared; the list looks the same with no selections.",
+  "A details preview card labeled \u201cExpense Line\u201d opened for EXP-25319670314 below that row, showing fields and an \u201cOpen Record\u201d button; the row is highlighted.",
+  "A similar \u201cExpense Line\u201d preview opened for the top row (EXP-05319670314) with its details and an \u201cOpen Record\u201d button, and that row is highlighted."
+]

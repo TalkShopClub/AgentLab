@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>To reach the "Expense Lines" module quickly, use the All menu filter which is already focused to search directly for the module by name.</rationale>
+<action>fill('242', 'Expense Lines')</action>
+<action_text>Type "Expense Lines" into the All menu filter field</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If searching by the exact module name doesn’t surface results, searching by the application name "Cost" should reveal the "Expense Lines" module under it.</rationale>
+<action>fill('242', 'Cost')</action>
+<action_text>Type "Cost" into the All menu filter field</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Broader search term may list multiple expense-related modules, including "Expense Lines", allowing selection from results.</rationale>
+<action>fill('242', 'Expense')</action>
+<action_text>Type "Expense" into the All menu filter field</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>As an alternate path, use the global Search box to locate the "Expense Lines" module or related list, in case the All menu filter is insufficient.</rationale>
+<action>fill('113', 'Expense Lines')</action>
+<action_text>Type "Expense Lines" into the global Search field</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Reduce clutter in the All menu by collapsing the expanded "Self-Service" section so other applications like "Cost" are easier to spot if scrolling becomes necessary.</rationale>
+<action>click('256')</action>
+<action_text>Collapse the "Self-Service" section in the All menu</action_text>
+</candidate_5>
+</candidates>

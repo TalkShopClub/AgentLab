@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>Directly opens the required "Expense Lines" module under the "Cost" application, which is the first step of the goal.</rationale>
+<action>click('1190')</action>
+<action_text>Click the "Expense Lines" link in the All menu</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Pressing Enter in the All menu filter often navigates to the top matching module; this could quickly open "Expense Lines" without clicking.</rationale>
+<action>press('329', 'Enter')</action>
+<action_text>Press Enter in the All menu filter field</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>If a single click doesn’t trigger navigation due to UI latency, a double-click on the module item may ensure it opens.</rationale>
+<action>dblclick('1190')</action>
+<action_text>Double-click the "Expense Lines" link</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Ensures the "Cost" application section is expanded so the "Expense Lines" module is visible and clickable (useful if it collapses).</rationale>
+<action>click('1176')</action>
+<action_text>Toggle the "Cost" application section in the All menu</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Alternative navigation path: using the global search to find and navigate to the "Expense Lines" list if the All menu interaction fails.</rationale>
+<action>fill('113', 'Expense Lines', True)</action>
+<action_text>Type "Expense Lines" into the global Search field</action_text>
+</candidate_5>
+</candidates>

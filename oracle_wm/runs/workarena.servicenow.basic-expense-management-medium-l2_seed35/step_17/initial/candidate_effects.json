@@ -1,0 +1,7 @@
+[
+  "The confirmation dialog disappears and the selected record is removed, reducing the list from 6 to 5 items (row EXP-35319670314 no longer appears).",
+  "The confirmation dialog closes with no data change; the table still shows 6 items and the previously selected row remains selected.",
+  "The dialog is dismissed via the X; the list remains unchanged with 6 items and the same row selected.",
+  "The confirmation dialog closes and the list returns without any deletion; the EXP-35319670314 row remains selected.",
+  "The dialog closes and a small \u201cPreview EXP-35319670314\u201d tooltip appears next to the selected row; no records change."
+]

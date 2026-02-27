@@ -1,0 +1,7 @@
+[
+  "The filter was executed: the filter builder collapsed into a breadcrumb \u201cAll > Short description contains #SERIES-c8c8c533-7,\u201d and the table shrank to 8 matching rows (pagination shows 1 to 8 of 8).",
+  "Pressing Enter applied the same filter; the builder collapsed to the breadcrumb and the grid shows the 8 matching rows.",
+  "The list is now sorted by Short description in ascending order (arrow on that header and the left dropdown shows \u201cShort description\u201d); the filter builder is no longer visible and the full dataset (1 to 20 of 3,139) is shown with reordered rows.",
+  "An additional empty AND condition row appeared below the existing filter with \u201c-- choose field -- / -- oper -- / -- value --\u201d inputs and a delete X, while the results list stayed the same.",
+  "A column search row appeared beneath the headers with small \u201cSearch\u201d inputs for each column (and the toggle indicates Hide column search row); the table contents remain unchanged."
+]

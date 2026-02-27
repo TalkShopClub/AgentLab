@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1056')",
+    "action_text": "Open the \"-- choose field --\" combobox in the filter bar",
+    "rationale": "To build the required list filter, I first need to choose the field to filter on; opening the field combobox lets me select \"Short description\"."
+  },
+  {
+    "action": "click('a60')",
+    "action_text": "Open the \"Search a specific field\" dropdown",
+    "rationale": "Using the quick list search scoped to a specific field is another way to filter; I need to change the search field from \"Number\" to \"Short description\"."
+  },
+  {
+    "action": "click('a48')",
+    "action_text": "Toggle and show the natural language filter bar",
+    "rationale": "The natural language filter can quickly create the condition \"Short description contains '#SERIES-f9d328e8-a'\"; I need to reveal that input first."
+  },
+  {
+    "action": "click('a190')",
+    "action_text": "Show the column search row",
+    "rationale": "Column search row allows typing a contains filter directly under the \"Short description\" column; first I need to show that row."
+  },
+  {
+    "action": "click('a233')",
+    "action_text": "Open the \"Short description\" column options menu",
+    "rationale": "The column options menu for \"Short description\" often includes filter actions; opening it provides another path to set a contains filter."
+  }
+]

@@ -1,0 +1,7 @@
+Managing Your Existing Expenses
+ 
+ Concretely, you need to complete the following steps:
+1. Navigate to the "Expense Lines" module of the "Cost" application.
+2. Create a filter for the list to extract all entries where:
+    - "Short description" contains "#SERIES-1f711cdf-2"
+3. Delete expense lines with duplicated short descriptions where the duplicated expense lines are not associated with tasks.

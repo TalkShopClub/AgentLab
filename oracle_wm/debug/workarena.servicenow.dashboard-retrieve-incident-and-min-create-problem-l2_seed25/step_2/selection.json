@@ -1,7 +1,0 @@
-{
-  "selected_index": 3,
-  "selected_action": "fill('329', 'View / Run')",
-  "translated_action": "fill('242', 'View / Run')",
-  "bid_translation": "translated '329' -> '242' via fp='textbox::Enter search term to filter All menu'",
-  "thought": "We need to reach Reports > View/Run. Candidate 3 filters the left nav to show the exact \"View / Run\" module, making it the most direct next step. Other candidates either don't show the correct item or introduce distractions."
-}

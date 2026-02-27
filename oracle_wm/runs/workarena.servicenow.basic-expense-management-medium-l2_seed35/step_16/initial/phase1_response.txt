@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>The duplicate non-task expense line (row EXP-35319670314) is already selected; using the list’s bulk action is the quickest way to remove it.</rationale>
+<action>select_option('a101', 'Delete')</action>
+<action_text>Choose "Delete" from the "Actions on selected rows" dropdown</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Before deleting, quickly verify the selected row isn’t tied to a task by opening its preview in-place.</rationale>
+<action>click('a352')</action>
+<action_text>Open the preview for EXP-35319670314</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Confirm the other record with the same short description is task-related so we don’t delete it by mistake.</rationale>
+<action>click('a326')</action>
+<action_text>Open the preview for EXP-05319670314</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>If further refinement is needed to identify duplicates across columns, enable the per-column search row.</rationale>
+<action>click('a193')</action>
+<action_text>Toggle "Show column search row" to display per-column filters</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Use column controls to sort or configure the Short description column, which can help surface any other duplicates.</rationale>
+<action>click('a236')</action>
+<action_text>Open the "Short description" column options menu</action_text>
+</candidate_5>
+</candidates>

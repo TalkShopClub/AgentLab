@@ -1,0 +1,7 @@
+[
+  "The checkbox for EXP-35319670314 is checked and that entire row is highlighted; a blue outline appears around the table indicating a selection.",
+  "No rows are selected; the first row\u2019s Source ID changes to \u201cChange Request: CHG0031944\u201d (previously CHG0031943).",
+  "An \u201cExpense Line\u201d preview card pops up showing details for EXP-35319670314 with an Open Record button, anchored to that row.",
+  "An \u201cExpense Line\u201d preview card opens for EXP-05319670314 beneath the top row, displaying its details and an Open Record button.",
+  "The grid is sorted by the Short description column in ascending order (up-arrow shown), reordering the rows, and the field next to \u201cExpense Lines\u201d now shows \u201cShort description.\u201d"
+]

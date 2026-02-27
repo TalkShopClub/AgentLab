@@ -1,0 +1,7 @@
+[
+  "The operator dropdown of the first filter condition gains focus (green outline) and a \u201cChoose operator\u201d tooltip appears next to it; the rest of the page stays the same.",
+  "No options list opens; the operator combobox remains focused with the \u201cChoose operator\u201d tooltip, visually unchanged from before.",
+  "The value field of the filter condition is populated with \u201c#SERIES-f9d328e8-a,\u201d gets a green focus outline, and an \u201cInput value\u201d tooltip appears.",
+  "The filter builder bar (Run/Save, AND/OR, and the condition row) disappears and is replaced by a breadcrumb text \u201cAll > Short description starts with,\u201d indicating the filter is applied; the table remains visible.",
+  "The inline search box under the \u201cShort description\u201d column header is filled with \u201c#SERIES-f9d328e8-a\u201d and shows a green focus outline; everything else is unchanged."
+]

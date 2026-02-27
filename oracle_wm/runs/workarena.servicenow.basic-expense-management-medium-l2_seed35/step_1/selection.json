@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "initial",
+  "selected_action": "fill('242', 'Expense Lines')",
+  "translated_action": "fill('242', 'Expense Lines')",
+  "bid_translation": "stable fp='textbox::Enter search term to filter All menu'",
+  "thought": "Candidates 1 and 3 both filter the All menu to show the \u201cExpense Lines\u201d module under the Cost app, which directly progresses to step 1. Candidate 1 is precise and clearly shows the target item ready to click."
+}

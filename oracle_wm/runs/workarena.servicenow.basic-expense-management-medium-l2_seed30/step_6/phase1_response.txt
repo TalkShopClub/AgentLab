@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We need to build a filter condition; first step is selecting the field. Opening the “-- choose field --” combobox should let us pick “Short description.”</rationale>
+<action>click('a1055')</action>
+<action_text>Open the field selector in the filter builder</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Using the column header options often provides filtering actions (e.g., Filter, Show Matching). Opening the Short description header menu may allow setting a “contains” filter.</rationale>
+<action>click('a233')</action>
+<action_text>Open the “Short description” column options menu</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>The per-column search row allows quick filtering by substring. Showing it will let us type “#SERIES-f9d328e8-a” under Short description.</rationale>
+<action>click('a190')</action>
+<action_text>Show the column search row</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Context-clicking a cell with the target token may expose “Show Matching”/“Filter Out” options, providing an alternate path to filtering relevant rows.</rationale>
+<action>click('a701', button='right')</action>
+<action_text>Right-click the Short description cell that contains “#SERIES-f9d328e8-a”</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>If the standard builder is finicky, the natural language filter can quickly create the needed condition; enabling it prepares for typing the NLQ.</rationale>
+<action>click('a48')</action>
+<action_text>Toggle the natural language filter bar</action_text>
+</candidate_5>
+</candidates>

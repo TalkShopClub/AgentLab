@@ -1,0 +1,7 @@
+[
+  "A centered \u201cConfirmation\u201d modal appears over a dimmed page asking \u201cDelete the selected record(s)?\u201d with Close, Cancel, and Delete buttons.",
+  "An inline \u201cExpense Line\u201d preview panel opens at the lower left showing details for EXP-35319670314 with an Open Record button.",
+  "An inline \u201cExpense Line\u201d preview panel opens for EXP-05319670314; the previous orange row selection highlight is no longer shown.",
+  "A new row of per\u2011column search inputs appears directly beneath the headers (with the Short description field prefilled), and the toolbar toggle now indicates \u201cHide column search row.\u201d",
+  "The \u201cShort description\u201d column header shows its three\u2011dot options control highlighted/active, indicating the column options menu was invoked (no separate dropdown is visible)."
+]

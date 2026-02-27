@@ -1,0 +1,7 @@
+[
+  "The dropdown next to the list Search box changed from \u201cNumber\u201d to \u201cShort description\u201d; the table stayed the same.",
+  "The list Search box was populated with \u201c#SERIES-1f711cdf-2\u201d, with no filtering or other visible changes to the rows.",
+  "No visible change from the starting view; the Search box is empty and the list remains unchanged.",
+  "A gray filter builder bar appeared under the header with AND/OR/Add Sort buttons and the \u201c-- choose field -- / -- oper -- / -- value --\u201d dropdowns, pushing the table down.",
+  "A column-specific search row appeared beneath the headers, adding a Search input under each column and a magnifying-glass toggle at the left; the table data otherwise looks the same."
+]

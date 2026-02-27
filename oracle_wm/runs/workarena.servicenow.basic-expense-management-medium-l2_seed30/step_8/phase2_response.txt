@@ -1,0 +1,4 @@
+<think>
+We need to build a filter: Short description contains "#SERIES-f9d328e8-a". Candidate 1 selects "Short description" in the filter builder, which is the correct first step before setting operator to "contains" and entering the value. Other candidates either use column search or don't progress. 
+</think>
+<selection>1</selection>

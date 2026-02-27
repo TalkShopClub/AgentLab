@@ -1,0 +1,7 @@
+[
+  "The field selector next to the list search box changed from \u201cNumber\u201d to \u201cShort description\u201d; the table stayed the same.",
+  "The list search input was filled with \u201c#SERIES-c8c8c533-7\u201d; no visible change to the rows.",
+  "A filter builder bar appeared below the toolbar with AND/OR/Add Sort buttons and \u201c-- choose field -- / -- oper -- / -- value --\u201d controls.",
+  "A new row of per\u2011column search inputs labeled \u201cSearch\u201d appeared beneath each column header, and the toggle now indicates \u201cHide column search row.\u201d",
+  "The \u201cShort description\u201d column header now shows an orange three\u2011dot options button/highlight, indicating the column options; no dropdown content is visible."
+]

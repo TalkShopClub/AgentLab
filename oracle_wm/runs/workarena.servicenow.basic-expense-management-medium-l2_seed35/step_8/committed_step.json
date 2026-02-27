@@ -1,0 +1,19 @@
+{
+  "action": "click('a994')",
+  "bid_entry": {
+    "a994": {
+      "role": "button",
+      "name": "Run filter",
+      "description": "",
+      "bbox": [
+        20.0,
+        210.5,
+        95.375,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "button::Run filter"
+    }
+  }
+}

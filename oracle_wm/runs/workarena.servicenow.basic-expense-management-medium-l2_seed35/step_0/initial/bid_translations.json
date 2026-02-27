@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "click('79')",
+    "bid_note": "stable fp='button::All'"
+  },
+  {
+    "candidate": 2,
+    "action": "fill('113', 'Expense Lines')",
+    "bid_note": "stable fp='combobox::Search'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('115')",
+    "bid_note": "stable fp='combobox::Choose search context'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('82')",
+    "bid_note": "stable fp='button::Workspaces'"
+  },
+  {
+    "candidate": 5,
+    "action": "noop(1500)",
+    "bid_note": "no-bid-in-action"
+  }
+]

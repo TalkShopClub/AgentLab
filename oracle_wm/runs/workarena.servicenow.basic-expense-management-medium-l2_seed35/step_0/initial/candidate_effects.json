@@ -1,0 +1,7 @@
+[
+  "The loading spinner is replaced by the Admin Home dashboard, and the \u201cAll\u201d application navigator opens as a dropdown on the left with a filter field and list of modules.",
+  "The Admin Home dashboard appears, and the top search bar now contains \u201cExpense Lines\u201d with a small suggestion panel showing \u201cView results\u201d beneath it.",
+  "The dashboard replaces the loading screen, and the search-context dropdown next to the search box is expanded showing options like Global and Service Operations Workspace.",
+  "The dashboard loads in place of the spinner, and the center pill shows \u201cShared admin dashboard\u201d with no additional menus open.",
+  "The page finishes loading to the Admin Home dashboard view; no dropdowns or overlays are open."
+]

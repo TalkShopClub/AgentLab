@@ -1,0 +1,27 @@
+[
+  {
+    "action": "select_option('a101', 'Delete')",
+    "action_text": "Choose \"Delete\" from the \"Actions on selected rows\" dropdown",
+    "rationale": "The duplicate non-task expense line (row EXP-35319670314) is already selected; using the list\u2019s bulk action is the quickest way to remove it."
+  },
+  {
+    "action": "click('a352')",
+    "action_text": "Open the preview for EXP-35319670314",
+    "rationale": "Before deleting, quickly verify the selected row isn\u2019t tied to a task by opening its preview in-place."
+  },
+  {
+    "action": "click('a326')",
+    "action_text": "Open the preview for EXP-05319670314",
+    "rationale": "Confirm the other record with the same short description is task-related so we don\u2019t delete it by mistake."
+  },
+  {
+    "action": "click('a193')",
+    "action_text": "Toggle \"Show column search row\" to display per-column filters",
+    "rationale": "If further refinement is needed to identify duplicates across columns, enable the per-column search row."
+  },
+  {
+    "action": "click('a236')",
+    "action_text": "Open the \"Short description\" column options menu",
+    "rationale": "Use column controls to sort or configure the Short description column, which can help surface any other duplicates."
+  }
+]

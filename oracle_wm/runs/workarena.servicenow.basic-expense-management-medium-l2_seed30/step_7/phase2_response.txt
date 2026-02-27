@@ -1,0 +1,4 @@
+<think>
+We need to create a filter where Short description contains "#SERIES-f9d328e8-a". Candidate 2 opens the filter builder’s field selector, enabling us to choose "Short description" next. This directly advances step 2. Candidate 3 typed into the column search but didn’t execute a filter. Others made no relevant progress.
+</think>
+<selection>2</selection>

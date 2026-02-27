@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a370')",
+    "action_text": "Select the checkbox for EXP-35319670314",
+    "rationale": "We must delete duplicate lines not associated with tasks. Another duplicate with the same short description is row EXP-35319670314; selecting it lets us delete both non-task duplicates together."
+  },
+  {
+    "action": "select_option('a101', 'Delete')",
+    "action_text": "Choose \"Delete\" from the Actions on selected rows menu",
+    "rationale": "Proceed to remove the currently selected duplicate row(s). This executes the required deletion step."
+  },
+  {
+    "action": "click('a193')",
+    "action_text": "Show the column search row",
+    "rationale": "Showing per-column search fields would let us quickly filter Source ID to \"User: ...\" and isolate non-task entries, reducing the chance of deleting a task-linked line."
+  },
+  {
+    "action": "click('a236')",
+    "action_text": "Open the \"Short description\" column options menu",
+    "rationale": "Opening the Short description column options may provide grouping or show-matching tools to identify duplicates more reliably before deletion."
+  },
+  {
+    "action": "click('a374')",
+    "action_text": "Open the preview for EXP-35319670314",
+    "rationale": "Previewing the duplicate row\u2019s details verifies it isn\u2019t associated with a task before deletion, preventing mistakes."
+  }
+]

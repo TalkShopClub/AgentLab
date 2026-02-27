@@ -1,7 +1,0 @@
-{
-  "selected_index": 4,
-  "selected_action": "click('234')",
-  "translated_action": "click('234')",
-  "bid_translation": "stable fp='::::yrank=2'",
-  "thought": "We\u2019re on the Reports View/Run list and need to locate a specific report by title. The actions\u2019 resulting states show little visible change, but the most purposeful control for finding a report by its Title on this page is the list\u2019s Show/Hide filter. Enabling the filter allows building a condition like Title contains \u201cIncidents by agent,\u201d which directly serves the goal better than sorting or clicking tabs. Therefore, Candidate 4 best advances the goal."
-}

@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "initial",
+  "selected_action": "select_option('a1055', 'Short description')",
+  "translated_action": "select_option('a1055', 'Short description')",
+  "bid_translation": "stable fp='combobox::All of these conditions must be met. -- choose field --'",
+  "thought": "We need to build a filter: Short description contains \"#SERIES-1f711cdf-2\". Candidate 1 opened the filter field dropdown in the filter builder, which is the correct path to select \"Short description\" as the field. Other candidates either changed the list search context, used wrong inputs, or made no progress. Candidate 1 makes the best progress toward creating the required filter."
+}

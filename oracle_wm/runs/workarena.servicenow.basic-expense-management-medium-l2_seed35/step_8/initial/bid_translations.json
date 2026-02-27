@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "click('a994')",
+    "bid_note": "stable fp='button::Run filter'"
+  },
+  {
+    "candidate": 2,
+    "action": "press('a1258', 'Enter')",
+    "bid_note": "stable fp='textbox::Short description'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('a229')",
+    "bid_note": "stable fp='button::Short description'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('a1113')",
+    "bid_note": "stable fp='button::Add AND Condition To Condition 1: Short description contains #SERIES-c8c8c533-7'"
+  },
+  {
+    "candidate": 5,
+    "action": "click('a190')",
+    "bid_note": "stable fp='button::\\uf1e4 Show column search row'"
+  }
+]

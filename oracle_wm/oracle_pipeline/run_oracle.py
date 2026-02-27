@@ -16,10 +16,13 @@ def main():
     parser.add_argument("--n-candidates", type=int, default=5, help="Number of candidate actions per step")
     parser.add_argument("--max-steps", type=int, default=30, help="Maximum steps per episode")
     parser.add_argument("--save-dir", default="oracle_results", help="Directory to save results")
-    parser.add_argument("--debug-dir", default="oracle_wm/debug", help="Directory to save debug artifacts")
+    parser.add_argument("--run-dir", default="oracle_wm/runs", help="Directory to save run artifacts")
     parser.add_argument("--cleanup", action="store_true", help="Delete orphaned @workarena.com users before starting (use after interrupted runs)")
     parser.add_argument("--headless", action="store_true", help="Run browser headless")
     parser.add_argument("--resume-from", type=int, default=0, metavar="N", help="Resume from step N (reads committed history from debug dir)")
+    parser.add_argument("--agent-mode", default="vision", choices=["vision", "text"], help="vision: SOM screenshot (default); text: AXTree only (AGENT_GPT5 flags)")
+    parser.add_argument("--no-sel-effects", action="store_true", help="Exclude candidates effect text descriptions from oracle selection prompt")
+    parser.add_argument("--no-sel-images", action="store_true", help="Exclude candidate screenshots from oracle selection prompt")
     args = parser.parse_args()
 
     save_path = run_oracle_pipeline(
@@ -29,10 +32,13 @@ def main():
         n_candidates=args.n_candidates,
         max_steps=args.max_steps,
         save_dir=args.save_dir,
-        debug_dir=args.debug_dir,
+        run_dir=args.run_dir,
         cleanup=args.cleanup,
         headless=args.headless,
         resume_from=args.resume_from,
+        agent_mode=args.agent_mode,
+        sel_effects=not args.no_sel_effects,
+        sel_images=not args.no_sel_images,
     )
     print(f"Results saved to: {save_path}")
 

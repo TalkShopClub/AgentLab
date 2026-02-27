@@ -1,0 +1,4 @@
+<think>
+We need the filter to be "Short description contains #SERIES-c8c8c533-7". Candidate 1 correctly changes the operator to "contains," which is essential. Candidate 2 fills the value but leaves the operator as "starts with," which is incorrect. Other candidates are irrelevant or premature. Candidate 1 best advances the goal.
+</think>
+<selection>1</selection>

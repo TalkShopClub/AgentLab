@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('1183')",
+    "action_text": "Open the \"Expense Lines\" module from the Cost app",
+    "rationale": "The All menu is open and shows the Cost > Expense Lines module. Clicking this link should navigate directly to the target list."
+  },
+  {
+    "action": "press('242', 'Enter')",
+    "action_text": "Press Enter in the All menu filter to open the highlighted \"Expense Lines\" result",
+    "rationale": "The All menu filter box is focused with \"Expense Lines\" typed. Pressing Enter typically opens the highlighted result, quickly navigating to the module."
+  },
+  {
+    "action": "click('1169')",
+    "action_text": "Toggle the \"Cost\" application group in the All menu",
+    "rationale": "If the module list is not fully visible, toggling the Cost application group ensures its modules (including Expense Lines) are displayed for selection."
+  },
+  {
+    "action": "fill('113', 'Expense Lines')",
+    "action_text": "Type \"Expense Lines\" into the global search bar",
+    "rationale": "As a fallback path, using the global search to find \u201cExpense Lines\u201d can provide a quick link to the module if the All menu path fails."
+  },
+  {
+    "action": "click('244')",
+    "action_text": "Clear the All menu filter",
+    "rationale": "If the All menu results behave unexpectedly, clearing the filter can reset the state so we can re-enter the query and reveal the module again."
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "initial",
+  "selected_action": "click('1190')",
+  "translated_action": "click('1190')",
+  "bid_translation": "stable fp='link::Expense Lines'",
+  "thought": "The goal\u2019s first step is to navigate to the Expense Lines module. Candidates 1\u20133 all achieve this, but Candidate 1 directly clicks the module link and lands on the \u201cExpense Lines\u201d list view, clearly fulfilling step 1."
+}

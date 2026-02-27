@@ -1,0 +1,4 @@
+<think>
+Candidate 1 opens the All menu (application navigator) with a Filter field and module list, which is the correct way to navigate to the "Expense Lines" module under the "Cost" application. Other candidates either just wait or use global search, which is less direct. 
+</think>
+<selection>1</selection>

@@ -1,7 +1,0 @@
-{
-  "selected_index": 4,
-  "selected_action": "clear('a179')",
-  "translated_action": "clear('a179')",
-  "bid_translation": "stable fp='combobox::Search::via=Reports'",
-  "thought": "We\u2019re on Reports > View/Run (Global) with a list search filter that keeps returning no results. Typing more specific queries (Candidates 1\u20133) continues to yield no results. Switching to the Group tab (Candidate 5) still shows no results due to the existing filter and likely moves us away from where the needed report is. Clearing the report list search field (Candidate 4) is the least harmful and best step toward resetting filters so we can try a broader search or remove remaining filter chips and find the desired report."
-}

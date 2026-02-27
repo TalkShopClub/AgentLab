@@ -1,0 +1,4 @@
+<think>
+We need to build a filter condition using the filter builder: set field to "Short description", operator "contains", and value "#SERIES-c8c8c533-7". Candidate 1 opens the filter field dropdown in the builder, which is the correct first step toward creating that filter. Other candidates use quick search or column search, which don't fulfill the explicit "create a filter" requirement.
+</think>
+<selection>1</selection>

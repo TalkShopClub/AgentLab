@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>To delete all duplicates in one action, I should first dismiss the confirmation dialog so I can select the other duplicate rows.</rationale>
+<action>click('a746')</action>
+<action_text>Click the "Cancel" button on the confirmation dialog</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>If bulk selection isn’t necessary, I can proceed by deleting the currently selected duplicate to make incremental progress toward the goal.</rationale>
+<action>click('a747')</action>
+<action_text>Confirm deletion of the currently selected record(s) by clicking "Delete"</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>As an alternative way to dismiss the overlay, close the confirmation dialog to resume selecting additional duplicates.</rationale>
+<action>click('a736')</action>
+<action_text>Click the "Close (X)" button on the confirmation dialog</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Select another duplicate (same short description, not associated with a task) so it can be removed together with the others.</rationale>
+<action>click('a370')</action>
+<action_text>Select the checkbox for EXP-25319670314</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Select the third duplicate with the same short description and no task association to prepare for bulk deletion.</rationale>
+<action>click('a392')</action>
+<action_text>Select the checkbox for EXP-35319670314</action_text>
+</candidate_5>
+</candidates>

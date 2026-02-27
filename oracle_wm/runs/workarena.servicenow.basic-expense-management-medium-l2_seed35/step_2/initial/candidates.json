@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('1183')",
+    "action_text": "Click the \"Expense Lines\" link under the Cost application",
+    "rationale": "Directly opens the required module from the All menu to start filtering expense lines."
+  },
+  {
+    "action": "press('242', 'Enter')",
+    "action_text": "Press Enter in the All menu filter to open the top matching result",
+    "rationale": "If keyboard navigation is supported, pressing Enter in the filter may open the highlighted module result."
+  },
+  {
+    "action": "press('242', 'ArrowDown')",
+    "action_text": "Press Arrow Down in the All menu filter to highlight the first result",
+    "rationale": "Moves focus from the filter input to the first search result so it can be opened with Enter next."
+  },
+  {
+    "action": "click('1169')",
+    "action_text": "Click the \"Cost\" application toggle to expand/collapse its modules",
+    "rationale": "Ensures the Cost application node is expanded so the Expense Lines module is visible and clickable."
+  },
+  {
+    "action": "click('244')",
+    "action_text": "Click the \"Clear filter\" button in the All menu",
+    "rationale": "Resets the filter text in case the list is not updating correctly, enabling a fresh search for the module."
+  }
+]

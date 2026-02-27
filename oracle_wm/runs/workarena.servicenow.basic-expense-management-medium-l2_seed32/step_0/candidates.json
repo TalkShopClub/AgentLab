@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('79')",
+    "action_text": "Click the \u201cAll\u201d menu button to open the application navigator",
+    "rationale": "To reach the \"Expense Lines\" module, I should first open the left Application Navigator. The \u201cAll\u201d button typically reveals apps like \u201cCost.\u201d"
+  },
+  {
+    "action": "click('115')",
+    "action_text": "Open the \u201cChoose search context\u201d dropdown",
+    "rationale": "If the app navigator isn\u2019t available, switching the top search context to the Application Navigator can let me search directly for modules like \u201cExpense Lines.\u201d"
+  },
+  {
+    "action": "fill('113', 'Expense Lines')",
+    "action_text": "Type \u201cExpense Lines\u201d into the global search field",
+    "rationale": "Directly searching for \u201cExpense Lines\u201d might surface the module or relevant navigation links, expediting access."
+  },
+  {
+    "action": "click('82')",
+    "action_text": "Click the \u201cWorkspaces\u201d menu",
+    "rationale": "Workspaces sometimes provide quick access to domain apps like Cost; exploring here could reveal a shortcut to Expense Lines."
+  },
+  {
+    "action": "noop(1500)",
+    "action_text": "Wait 1.5 seconds for the page to finish loading",
+    "rationale": "The page shows a loading spinner; waiting briefly can ensure UI elements are fully interactive before navigating."
+  }
+]

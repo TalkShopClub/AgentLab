@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>To start deleting duplicates, first select one of the duplicate rows that is not associated with a task (row with "Ten experience whole note..." and Source ID "User: Ana Christensen").</rationale>
+<action>click('a348')</action>
+<action_text>Select the checkbox for EXP-25319670314</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Select the second duplicate (also "Ten experience whole note..." with Source ID "User: Ana Christensen") so both non-task duplicates are chosen for deletion.</rationale>
+<action>click('a370')</action>
+<action_text>Select the checkbox for EXP-35319670314</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>After selecting the duplicate rows, use the bulk action to remove them from the list.</rationale>
+<action>select_option('a101', 'Delete')</action>
+<action_text>Choose "Delete" from the "Actions on selected rows" dropdown</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Verify a candidate for deletion truly lacks a task association by inspecting its details before deleting.</rationale>
+<action>click('a352')</action>
+<action_text>Open the preview for EXP-25319670314</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Confirm that the record to keep (same short description) is the one associated with a task (Change Request) so it isn’t deleted.</rationale>
+<action>click('a326')</action>
+<action_text>Open the preview for EXP-05319670314</action_text>
+</candidate_5>
+</candidates>

@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "fill('242', 'Expense Lines')",
+    "bid_note": "stable fp='textbox::Enter search term to filter All menu'"
+  },
+  {
+    "candidate": 2,
+    "action": "fill('242', 'Cost')",
+    "bid_note": "stable fp='textbox::Enter search term to filter All menu'"
+  },
+  {
+    "candidate": 3,
+    "action": "fill('242', 'Expense')",
+    "bid_note": "stable fp='textbox::Enter search term to filter All menu'"
+  },
+  {
+    "candidate": 4,
+    "action": "fill('113', 'Expense Lines')",
+    "bid_note": "stable fp='combobox::Search'"
+  },
+  {
+    "candidate": 5,
+    "action": "fill('113', 'Cost')",
+    "bid_note": "stable fp='combobox::Search'"
+  }
+]

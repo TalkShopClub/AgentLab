@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1237')",
+    "action_text": "Open the operator dropdown for the Short description filter condition",
+    "rationale": "The filter condition operator is currently \"starts with\"; to fulfill \"contains\", first open the operator dropdown."
+  },
+  {
+    "action": "click('a1240')",
+    "action_text": "Select the \"contains\" operator in the operator menu",
+    "rationale": "We need the operator to be \"contains\" to match entries where the short description contains the target string."
+  },
+  {
+    "action": "select_option('a1237', 'contains')",
+    "action_text": "Set the operator to \"contains\" for the Short description condition",
+    "rationale": "If the dropdown interaction is unreliable, directly set the operator programmatically to \"contains\"."
+  },
+  {
+    "action": "click('a991')",
+    "action_text": "Click the Run filter button",
+    "rationale": "After setting the correct operator and value, apply the filter to update the list to matching records."
+  },
+  {
+    "action": "fill('a294', '#SERIES-f9d328e8-a', True)",
+    "action_text": "Type \"#SERIES-f9d328e8-a\" into the Short description column search box",
+    "rationale": "As an alternative path, use the per-column search to quickly narrow rows where Short description contains the string."
+  }
+]

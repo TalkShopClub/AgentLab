@@ -1,0 +1,19 @@
+{
+  "action": "select_option('a1055', 'Short description')",
+  "bid_entry": {
+    "a1055": {
+      "role": "combobox",
+      "name": "All of these conditions must be met. -- choose field --",
+      "description": "",
+      "bbox": [
+        20.0,
+        296.5,
+        2.0,
+        2.0
+      ],
+      "visibility": 0.0,
+      "clickable": true,
+      "fingerprint": "combobox::All of these conditions must be met. -- choose field --"
+    }
+  }
+}

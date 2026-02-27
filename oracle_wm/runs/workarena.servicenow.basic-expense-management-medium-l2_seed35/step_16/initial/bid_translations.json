@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "select_option('a101', 'Delete')",
+    "bid_note": "stable fp='combobox::Actions on selected rows'"
+  },
+  {
+    "candidate": 2,
+    "action": "click('a352')",
+    "bid_note": "stable fp='button::Preview record: EXP-35319670314'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('a326')",
+    "bid_note": "stable fp='button::Preview record: EXP-05319670314'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('a193')",
+    "bid_note": "stable fp='button::\\uf1e4 Show column search row'"
+  },
+  {
+    "candidate": 5,
+    "action": "click('a236')",
+    "bid_note": "stable fp='button::Short description column options'"
+  }
+]

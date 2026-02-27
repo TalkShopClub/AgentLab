@@ -1,0 +1,27 @@
+[
+  {
+    "action": "fill('a1258', '#SERIES-c8c8c533-7')",
+    "action_text": "Type \"#SERIES-c8c8c533-7\" into the filter value textbox for Short description",
+    "rationale": "We need to complete the filter condition by entering the value that the \"Short description\" should contain."
+  },
+  {
+    "action": "click('a994')",
+    "action_text": "Click the \"Run filter\" button",
+    "rationale": "After setting the filter value, we must run the filter to narrow the list to matching expense lines."
+  },
+  {
+    "action": "press('a1258', 'Enter')",
+    "action_text": "Press Enter in the filter value field to apply the filter",
+    "rationale": "If pressing Enter in the value field applies the filter, this is a quick way to execute it without moving the mouse."
+  },
+  {
+    "action": "click('a999')",
+    "action_text": "Click \"Add Sort\" in the filter toolbar",
+    "rationale": "To prepare for identifying duplicates after filtering, adding a sort will help group identical short descriptions together."
+  },
+  {
+    "action": "click('a229')",
+    "action_text": "Click the \"Short description\" column header to sort by that column",
+    "rationale": "Sorting the table by \"Short description\" will visually group duplicate descriptions, aiding selection for deletion."
+  }
+]

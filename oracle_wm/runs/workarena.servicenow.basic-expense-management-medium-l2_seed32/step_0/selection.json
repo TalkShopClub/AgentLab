@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "initial",
+  "selected_action": "click('79')",
+  "translated_action": "click('79')",
+  "bid_translation": "stable fp='button::All'",
+  "thought": "Candidate 1 opens the \u201cAll\u201d application navigator, which is the right place to search for and navigate to the \"Cost > Expense Lines\" module. Other candidates either open unrelated menus, global search, or just wait. Candidate 1 makes the most meaningful progress toward the goal."
+}

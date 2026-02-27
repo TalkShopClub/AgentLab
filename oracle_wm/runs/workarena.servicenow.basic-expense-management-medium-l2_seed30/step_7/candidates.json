@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1055')",
+    "action_text": "Click the \"-- choose field --\" dropdown in the filter builder",
+    "rationale": "We need to build a condition \"Short description contains ...\". Opening the field selector in the filter builder is the first step."
+  },
+  {
+    "action": "press('a1055', 'Enter')",
+    "action_text": "Press Enter on the \"-- choose field --\" combobox to expand the field list",
+    "rationale": "If clicking doesn\u2019t open the field dropdown, pressing Enter on the focused combobox often expands it in ServiceNow."
+  },
+  {
+    "action": "fill('a294', '#SERIES-f9d328e8-a', True)",
+    "action_text": "Type \"#SERIES-f9d328e8-a\" into the Short description column search box",
+    "rationale": "The per-column search row can directly filter the Short description column; entering the target string here satisfies the filter requirement quickly."
+  },
+  {
+    "action": "click('a60')",
+    "action_text": "Open the \"Search a specific field\" dropdown above the list",
+    "rationale": "Another route is the list\u2019s \u201cSearch a specific field\u201d control; opening it lets us switch to Short description and use the adjacent search box."
+  },
+  {
+    "action": "click('a701', button='right')",
+    "action_text": "Right-click the Short description cell that contains \"#SERIES-f9d328e8-a\" to open the context menu",
+    "rationale": "Right-clicking a cell with the desired text can bring up the context menu to \u201cShow Matching,\u201d which quickly applies a filter to that value."
+  }
+]

@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>To start building the required filter, open the filter field combobox in the filter builder so we can choose the field to filter on. BID a1055 is the filter field combobox.</rationale>
+<action>click('a1055')</action>
+<action_text>Click the filter field combobox to open it</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>Set the filter field to Short description, which is the field we must filter by. Using the combobox (a1055) to select the label should populate the field and enable the operator control.</rationale>
+<action>select_option('a1055', 'Short description')</action>
+<action_text>Select "Short description" in the filter field combobox</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>After selecting the field, configure the operator to "contains" as required. The operator combobox is a1105 and should be enabled once a field is chosen.</rationale>
+<action>select_option('a1105', 'contains')</action>
+<action_text>Choose the "contains" operator in the operator combobox</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Enter the target string to match in the value input of the filter builder. The value textbox is a1108 and becomes enabled after the operator is set.</rationale>
+<action>fill('a1108', '#SERIES-1f711cdf-2')</action>
+<action_text>Type "#SERIES-1f711cdf-2" into the filter value textbox</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Execute the constructed filter to update the list results. The Run filter button has BID a991.</rationale>
+<action>click('a991')</action>
+<action_text>Click the "Run filter" button</action_text>
+</candidate_5>
+</candidates>

@@ -1,0 +1,7 @@
+[
+  "The filter bar gained \u201cRun\u201d and \u201cSave...\u201d buttons to the left of AND/OR; no dropdown from \u201c-- choose field --\u201d is visible.",
+  "No dropdown opened; the \u201cNumber\u201d field appears selected but the view otherwise looks the same.",
+  "A natural language query bar appeared (\u201cWhat do you want to see\u201d, Ask, Tips, NLQ support), and the previous condition-builder row (AND/OR and choose field/oper/value) disappeared.",
+  "A new row of per-column search inputs appeared directly under the headers (with a magnifying-glass toggle on the left).",
+  "The \u201cShort description\u201d column header now shows its action icons (three-dot/kebab), but no options menu is open."
+]

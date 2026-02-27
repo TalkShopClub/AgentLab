@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "initial",
+  "selected_action": "click('a1055')",
+  "translated_action": "click('a1055')",
+  "bid_translation": "stable fp='combobox::All of these conditions must be met. -- choose field --'",
+  "thought": "We need to build a filter: Short description contains \"#SERIES-f9d328e8-a\". Candidate 1 engages the condition-builder filter by focusing the \"-- choose field --\" selector, which is the correct path. Others either toggle column search, open NLQ, or use the list search set to Number, which is not aligned with the explicit filter requirement. Candidate 1 makes the most meaningful progress."
+}

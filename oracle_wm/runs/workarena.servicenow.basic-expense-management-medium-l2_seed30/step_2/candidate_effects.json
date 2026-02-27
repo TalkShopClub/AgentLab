@@ -1,0 +1,7 @@
+[
+  "The All menu closes and the page navigates from the Shared admin dashboard to the Expense Lines list view, showing a table of records; the header now reads \u201cExpense Lines.\u201d",
+  "Pressing Enter triggers navigation to the Expense Lines list view, replacing the dashboard with a records table and closing the All menu; the header shows \u201cExpense Lines.\u201d",
+  "Double-clicking also opens the Expense Lines list view, replacing the dashboard with a table and closing the All menu; the header updates to \u201cExpense Lines.\u201d",
+  "The All menu remains open but the Cost section collapses, hiding the \u201cExpense Lines\u201d item; the main dashboard content does not change.",
+  "The global Search field at the top right is filled with \u201cExpense Lines\u201d and a suggestions panel (\u201cView results\u201d) appears beneath it; the page remains on the dashboard with the All menu still open."
+]

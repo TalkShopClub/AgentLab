@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "select_option('a1056', 'Short description')",
+    "bid_note": "translated 'a1056' -> 'a1055' via fp='combobox::All of these conditions must be met. -- choose field --'"
+  },
+  {
+    "candidate": 2,
+    "action": "click('a233')",
+    "bid_note": "stable fp='button::Short description column options'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('a190')",
+    "bid_note": "stable fp='button::\\uf1e4 Show column search row'"
+  },
+  {
+    "candidate": 4,
+    "action": "click('a60')",
+    "bid_note": "stable fp='listbox::Search a specific field of the Expense Lines list, 11 items'"
+  },
+  {
+    "candidate": 5,
+    "action": "fill('a73', '#SERIES-1f711cdf-2')",
+    "bid_note": "stable fp='searchbox::Search'"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1059')",
+    "action_text": "Open the filter condition field dropdown (\"-- choose field --\")",
+    "rationale": "We need to build a filter; first step is choosing the field. This opens the filter condition field selector so we can pick \"Short description\"."
+  },
+  {
+    "action": "select_option('a60', 'Short description')",
+    "action_text": "Select \"Short description\" in the list\u2019s field-specific search dropdown",
+    "rationale": "Alternative quick-filter path: set the list search to target the Short description field, enabling a direct contains search via the header search box."
+  },
+  {
+    "action": "fill('a73', '#SERIES-c8c8c533-7')",
+    "action_text": "Type \"#SERIES-c8c8c533-7\" into the list search box",
+    "rationale": "If the header search is already set to Short description, entering the target string will quickly narrow the list to matching rows."
+  },
+  {
+    "action": "click('a190')",
+    "action_text": "Show the column search row",
+    "rationale": "Another route is enabling the column search row, which adds per-column inputs; we can then filter the Short description column by the target text."
+  },
+  {
+    "action": "click('a233')",
+    "action_text": "Open the \"Short description\" column options menu",
+    "rationale": "Using the column\u2019s options often provides filtering actions (e.g., Show Matching/Filter...). Opening this menu may allow setting a filter on Short description."
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "selected_index": 1,
+  "selected_from": "initial",
+  "selected_action": "click('a46')",
+  "translated_action": "click('a46')",
+  "bid_translation": "stable fp='button::\\uf18a Show / hide filter'",
+  "thought": "We\u2019re already on the Expense Lines list. To meet step 2, we should open the filter builder and set a condition on Short description contains \"#SERIES-f9d328e8-a\". Candidate 1 opens the filter builder, which is the correct first move. Candidate 5 also helps but the funnel/filter builder is more aligned with \u201ccreate a filter.\u201d Others did not progress."
+}

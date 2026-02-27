@@ -1,0 +1,8 @@
+{
+  "selected_index": 2,
+  "selected_from": "initial",
+  "selected_action": "press('a1055', 'Enter')",
+  "translated_action": "press('a1055', 'Enter')",
+  "bid_translation": "stable fp='combobox::All of these conditions must be met. -- choose field --'",
+  "thought": "We need to create a filter where Short description contains \"#SERIES-f9d328e8-a\". Candidate 2 opens the filter builder\u2019s field selector, enabling us to choose \"Short description\" next. This directly advances step 2. Candidate 3 typed into the column search but didn\u2019t execute a filter. Others made no relevant progress."
+}

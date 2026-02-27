@@ -18,15 +18,12 @@ import argparse
 import re
 from pathlib import Path
 
-from bgym import HighLevelActionSetArgs
 from browsergym.experiments.loop import EnvArgs
 from browsergym.workarena.api.utils import table_api_call
 
 import browsergym.workarena  # noqa: F401
 
-from oracle_wm._bid_utils import get_valid_snow_instance
-
-_ACTION_SET = HighLevelActionSetArgs(subsets=["coord", "bid"]).make_action_set()
+from oracle_wm._bid_utils import _ACTION_SET, get_valid_snow_instance
 
 
 def _verify_snow_data(instance, task, hashtag: str) -> dict:

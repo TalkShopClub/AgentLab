@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1055')",
+    "action_text": "Open the field selector in the filter builder",
+    "rationale": "We need to build a filter condition; first step is selecting the field. Opening the \u201c-- choose field --\u201d combobox should let us pick \u201cShort description.\u201d"
+  },
+  {
+    "action": "click('a233')",
+    "action_text": "Open the \u201cShort description\u201d column options menu",
+    "rationale": "Using the column header options often provides filtering actions (e.g., Filter, Show Matching). Opening the Short description header menu may allow setting a \u201ccontains\u201d filter."
+  },
+  {
+    "action": "click('a190')",
+    "action_text": "Show the column search row",
+    "rationale": "The per-column search row allows quick filtering by substring. Showing it will let us type \u201c#SERIES-f9d328e8-a\u201d under Short description."
+  },
+  {
+    "action": "click('a701', button='right')",
+    "action_text": "Right-click the Short description cell that contains \u201c#SERIES-f9d328e8-a\u201d",
+    "rationale": "Context-clicking a cell with the target token may expose \u201cShow Matching\u201d/\u201cFilter Out\u201d options, providing an alternate path to filtering relevant rows."
+  },
+  {
+    "action": "click('a48')",
+    "action_text": "Toggle the natural language filter bar",
+    "rationale": "If the standard builder is finicky, the natural language filter can quickly create the needed condition; enabling it prepares for typing the NLQ."
+  }
+]

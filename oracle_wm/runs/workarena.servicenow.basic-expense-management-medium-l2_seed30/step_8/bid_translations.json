@@ -1,0 +1,27 @@
+[
+  {
+    "candidate": 1,
+    "action": "click('a1196')",
+    "bid_note": "stable fp='option::Short description::via=Expense Lines | ServiceNow/select2-results::after=Process date'"
+  },
+  {
+    "candidate": 2,
+    "action": "fill('a294', '#SERIES-f9d328e8-a', True)",
+    "bid_note": "stable fp='searchbox::Search column: short description'"
+  },
+  {
+    "candidate": 3,
+    "action": "click('a1105')",
+    "bid_note": "stable fp='combobox::Operator For Condition 1: -- choose field -- -- oper --'"
+  },
+  {
+    "candidate": 4,
+    "action": "fill('a1108', '#SERIES-f9d328e8-a', True)",
+    "bid_note": "stable fp='textbox::Input value'"
+  },
+  {
+    "candidate": 5,
+    "action": "click('a233')",
+    "bid_note": "stable fp='button::Short description column options'"
+  }
+]

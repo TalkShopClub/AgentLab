@@ -1,0 +1,8 @@
+{
+  "selected_index": 3,
+  "selected_from": "initial",
+  "selected_action": "fill('a1254', '#SERIES-f9d328e8-a', True)",
+  "translated_action": "fill('a1254', '#SERIES-f9d328e8-a', True)",
+  "bid_translation": "stable fp='textbox::Short description'",
+  "thought": "We\u2019re already on Expense Lines with the filter builder open. We need \u201cShort description contains #SERIES-f9d328e8-a.\u201d Candidate 3 enters the correct value in the filter value field; we just need to change the operator to \u201ccontains\u201d and run. Other candidates either only focus the operator, misuse inline search, or run with the wrong operator. Candidate 3 makes the most concrete progress."
+}

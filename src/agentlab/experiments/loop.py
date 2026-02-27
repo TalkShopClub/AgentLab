@@ -18,6 +18,8 @@ from typing import Optional
 
 import gymnasium as gym
 import numpy as np
+
+from agentlab.utils.phantom_actions import resolve_phantom_action
 from browsergym.core.chat import Chat
 from browsergym.experiments.agent import Agent
 from browsergym.experiments.utils import count_tokens
@@ -198,6 +200,8 @@ class StepInfo:
     def from_step(self, env: gym.Env, action: str, obs_preprocessor: callable):
         t = self.profiling
         t.env_start = time.time()
+        action = resolve_phantom_action(action, env)
+        self.action = action
         self.obs, self.reward, self.terminated, self.truncated, env_info = env.step(action)
         t.env_stop = time.time()
 

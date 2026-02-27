@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a370')",
+    "action_text": "Select the checkbox for EXP-25319670314",
+    "rationale": "We must delete duplicates of \"Ten experience whole note...\" not tied to tasks. EXP-25319670314 is one such duplicate (Source ID = User), so select it for deletion."
+  },
+  {
+    "action": "click('a392')",
+    "action_text": "Select the checkbox for EXP-35319670314",
+    "rationale": "Another duplicate without a task is EXP-35319670314 (Source ID = User). Select it to include in the deletion set."
+  },
+  {
+    "action": "select_option('a101', 'Delete')",
+    "action_text": "Choose \"Delete\" from the \"Actions on selected rows\" dropdown",
+    "rationale": "With the three duplicates selected (EXP-153..., EXP-253..., EXP-353...), execute deletion via the bulk action control."
+  },
+  {
+    "action": "click('a101')",
+    "action_text": "Open the \"Actions on selected rows\" menu",
+    "rationale": "If selecting by value fails, first expand the bulk actions menu so the Delete option can be clicked explicitly."
+  },
+  {
+    "action": "click('a326')",
+    "action_text": "Open the preview for EXP-05319670314",
+    "rationale": "Double-check that the record we plan to keep (EXP-05319670314) is task-associated by previewing it (shows Change Request). This avoids accidental deletion."
+  }
+]

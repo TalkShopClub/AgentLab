@@ -1,5 +1,6 @@
 """Oracle pipeline: agent proposes K candidates, each executed in real env, agent picks one."""
 
+import copy
 import json
 import logging
 import re
@@ -10,19 +11,23 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
+from bgym import HighLevelActionSetArgs
+
 from agentlab.agents import dynamic_prompting as dp
+from agentlab.agents.generic_agent import AGENT_GPT5
 from agentlab.agents.wm_visual_agent.agent_configs import (
-    DEFAULT_ACTION_FLAGS,
-    DEFAULT_OBS_FLAGS,
-    DEFAULT_PROMPT_FLAGS,
+	DEFAULT_ACTION_FLAGS,
+	DEFAULT_OBS_FLAGS,
+	DEFAULT_PROMPT_FLAGS,
 )
 from agentlab.agents.wm_visual_agent.wm_prompts import CandidateGenerationPrompt
 from agentlab.experiments.loop import EnvArgs, StepInfo, StepTimestamps
 from agentlab.llm.llm_configs import CHAT_MODEL_ARGS_DICT
-from agentlab.llm.llm_utils import Discussion, ParseError, SystemMessage
+from agentlab.llm.llm_utils import Discussion, SystemMessage
 
-from .oracle_prompts import OracleSelectionPrompt
-from .._bid_utils import _ACTION_SET, build_bid_map, get_valid_snow_instance, translate_action
+from .oracle_prompts import CandidateAwareHistory, CandidateEffectDescriptionPrompt, OracleSelectionPrompt, ResampleRequested
+from agentlab.utils.phantom_actions import resolve_phantom_action
+from .._bid_utils import _ACTION_SET, _make_env, _wait_idle, build_bid_map, get_valid_snow_instance, translate_action
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +40,6 @@ def _predict_task_username(task_seed: int) -> str:
     - Faker.seed(seed) is called again by _seed_external_rng() right before create_user(), so
       calling it here first does not affect what the task will generate.
     """
-    import numpy as np
     from faker import Faker
 
     rng = np.random.RandomState(task_seed)
@@ -76,24 +80,13 @@ def cleanup_orphaned_users(instance, task_seed: int) -> int:
 @dataclass
 class CommittedAction:
     step: int
-    action: str    # action string executed
-    bid_map: dict  # bid_map at the decision point (for BID translation on replay)
-
-
-def _make_env(env_args: EnvArgs, instance):
-    return env_args.make_env(
-        action_mapping=_ACTION_SET.to_python_code,
-        exp_dir=Path("."),
-        exp_task_kwargs={"instance": instance},
-        use_raw_page_output=False,
-    )
-
-
-def _wait_idle(env):
-    try:
-        env.unwrapped.page.wait_for_load_state("networkidle", timeout=15000)
-    except Exception:
-        pass
+    action: str               # action string executed
+    bid_map: dict             # single BID entry for chosen action (for translate_action)
+    full_decision_bid_map: dict = None  # full map for translating all candidates
+    candidates: list = None   # [{action, action_text, rationale}]
+    selected_idx: int = -1    # 0-indexed
+    selected_from: str = "initial"
+    effects: list = None      # per-candidate effect descriptions (parallel to candidates)
 
 
 def _dump_prompt(system_text: str, human_msg, path: Path):
@@ -119,17 +112,22 @@ def replay_committed(
     env_args: EnvArgs,
     committed: list[CommittedAction],
     instance,
+    obs_preprocessor,
     max_retries: int = 3,
     retry_delay: float = 30.0,
-) -> tuple[object, dict, dict]:
-    """Create fresh env, replay all committed actions, return (env, obs, bid_map) at decision point.
+    save_intermediate_soms_to: Path = None,
+) -> tuple[object, dict, dict, list[dict]]:
+    """Create fresh env, replay all committed actions, return (env, obs, bid_map, candidate_history).
 
     The returned env is open — caller must close it. Retries on transient reset failures.
     Before each retry, cleans up any orphaned user left by a failed partial setup — this handles
     the case where create_user() succeeds but a subsequent role-assignment call fails (502 etc.),
     leaving the deterministic user in ServiceNow without teardown being called.
+
+    candidate_history contains each committed step's candidates translated into the current
+    replay env's BID space, built just before each step's action is executed (the moment when
+    current_bid_map equals that step's decision-point BID map).
     """
-    obs_preprocessor = dp.make_obs_preprocessor(DEFAULT_OBS_FLAGS)
     last_exc = None
     for attempt in range(1, max_retries + 1):
         env = _make_env(env_args, instance)
@@ -153,45 +151,99 @@ def replay_committed(
     obs = obs_preprocessor(obs)
     current_bid_map = build_bid_map(obs)
 
+    translated_candidate_history: list[dict] = []
     for ca in committed:
+        # current_bid_map here equals ca's decision-point BID map — translate candidates now
+        if save_intermediate_soms_to is not None:
+            sc_som = obs.get("screenshot_som")
+            if sc_som is not None:
+                Image.fromarray(sc_som).save(save_intermediate_soms_to / f"previous_step_{ca.step}_som.png")
+        if ca.full_decision_bid_map and ca.candidates:
+            translated_cands = []
+            for cand in ca.candidates:
+                t_action, _ = translate_action(cand["action"], ca.full_decision_bid_map, current_bid_map)
+                translated_cands.append({**cand, "action": t_action})
+            translated_candidate_history.append({
+                "step": ca.step,
+                "candidates": translated_cands,
+                "selected_idx": ca.selected_idx,
+                "effects": ca.effects or [],
+            })
         translated, _ = translate_action(ca.action, ca.bid_map, current_bid_map)
+        translated = resolve_phantom_action(translated, env)
         obs, _, terminated, truncated, _ = env.step(translated)
         if terminated or truncated:
             break
+        _wait_idle(env)
         obs = obs_preprocessor(obs)
         current_bid_map = build_bid_map(obs)
 
-    return env, obs, current_bid_map
+    return env, obs, current_bid_map, translated_candidate_history
 
 
-def load_committed_from_debug(
-    debug_root: Path,
+def load_committed_from_run(
+    run_root: Path,
     resume_from: int,
 ) -> tuple[list[CommittedAction], list[str], list[str]]:
     """Reconstruct committed action history from saved debug files for resume.
 
     Loads committed_step.json (action=chosen_action, bid_entry from decision_bid_map) so that
     replay_committed can fingerprint-translate BIDs into whatever fresh env is created.
-    Also loads selection.json for translated_action (shown in history) and thought.
+    Also loads selection.json for translated_action (shown in history) and thought,
+    decision_bid_map.json for full candidate translation, and candidates.json for history.
     """
     committed: list[CommittedAction] = []
     actions_history: list[str] = []
     thoughts_history: list[str] = []
     for i in range(resume_from):
-        committed_path = debug_root / f"step_{i}" / "committed_step.json"
-        sel_path = debug_root / f"step_{i}" / "selection.json"
+        committed_path = run_root / f"step_{i}" / "committed_step.json"
+        sel_path = run_root / f"step_{i}" / "selection.json"
         if not committed_path.exists():
             raise FileNotFoundError(f"Cannot resume: missing {committed_path}")
         if not sel_path.exists():
             raise FileNotFoundError(f"Cannot resume: missing {sel_path}")
         step_data = json.loads(committed_path.read_text(encoding="utf-8"))
         sel = json.loads(sel_path.read_text(encoding="utf-8"))
-        action = step_data["action"]          # chosen_action with original env BIDs
-        bid_map = step_data["bid_entry"]      # {orig_bid: entry} from decision_bid_map
+        action = step_data["action"]
+        bid_map = step_data["bid_entry"]
         thought = sel.get("thought", "")
         translated = sel.get("translated_action", action)
-        committed.append(CommittedAction(step=i, action=action, bid_map=bid_map))
-        actions_history.append(translated)    # history shows what was actually executed
+        selected_from = sel.get("selected_from", "initial")
+        selected_idx = sel.get("selected_index", 1) - 1
+
+        full_dm = None
+        dm_path = run_root / f"step_{i}" / "decision_bid_map.json"
+        if dm_path.exists():
+            full_dm = json.loads(dm_path.read_text(encoding="utf-8"))
+
+        cands = None
+        # New layout: step_N/{attempt}/candidates.json; old layout: step_N/candidates[_resample].json
+        cands_path = run_root / f"step_{i}" / selected_from / "candidates.json"
+        if not cands_path.exists():
+            old_name = "candidates_resample.json" if selected_from == "resample" else "candidates.json"
+            cands_path = run_root / f"step_{i}" / old_name
+        if cands_path.exists():
+            cands = json.loads(cands_path.read_text(encoding="utf-8"))
+
+        effects = None
+        effects_path = run_root / f"step_{i}" / selected_from / "candidate_effects.json"
+        if not effects_path.exists():
+            old_name = "candidate_effects_resample.json" if selected_from == "resample" else "candidate_effects.json"
+            effects_path = run_root / f"step_{i}" / old_name
+        if effects_path.exists():
+            effects = json.loads(effects_path.read_text(encoding="utf-8"))
+
+        committed.append(CommittedAction(
+            step=i,
+            action=action,
+            bid_map=bid_map,
+            full_decision_bid_map=full_dm,
+            candidates=cands,
+            selected_idx=selected_idx,
+            selected_from=selected_from,
+            effects=effects,
+        ))
+        actions_history.append(translated)
         thoughts_history.append(thought)
     logger.info(f"Loaded {len(committed)} committed actions from debug dir for resume")
     return committed, actions_history, thoughts_history
@@ -203,17 +255,18 @@ def explore_candidate(
     action: str,
     decision_bid_map: dict,
     instance,
+    obs_preprocessor,
 ) -> tuple[np.ndarray, np.ndarray, str]:
     """Replay to decision point, execute candidate action, return (screenshot, screenshot_som, bid_note).
 
     Creates and closes a fresh env sequentially — avoids duplicate data conflicts in ServiceNow
     that would arise from parallel resets of the same deterministic task seed.
     """
-    obs_preprocessor = dp.make_obs_preprocessor(DEFAULT_OBS_FLAGS)
     blank = np.zeros((720, 1280, 3), dtype=np.uint8)
-    env, obs, current_bid_map = replay_committed(env_args, committed, instance)
+    env, obs, current_bid_map, _ = replay_committed(env_args, committed, instance, obs_preprocessor)
     try:
         translated, bid_note = translate_action(action, decision_bid_map, current_bid_map)
+        translated = resolve_phantom_action(translated, env)
         obs, _, _, _, _ = env.step(translated)
         obs = obs_preprocessor(obs)
         return obs.get("screenshot", blank), obs.get("screenshot_som", blank), bid_note
@@ -245,19 +298,43 @@ def run_oracle_pipeline(
     n_candidates: int = 5,
     max_steps: int = 30,
     save_dir: str = "oracle_results",
-    debug_dir: str = "oracle_wm/debug",
+    run_dir: str = "oracle_wm/runs",
     headless: bool = False,
     cleanup: bool = False,
     resume_from: int = 0,
+    agent_mode: str = "vision",  # "vision" = SOM screenshot, "text" = AXTree only
+    sel_effects: bool = True,
+    sel_images: bool = True,
 ):
     save_path = Path(save_dir) / f"{task_name.replace('/', '_')}_seed{task_seed}"
     save_path.mkdir(parents=True, exist_ok=True)
 
-    debug_root = Path(debug_dir) / f"{task_name.replace('/', '_')}_seed{task_seed}"
-    debug_root.mkdir(parents=True, exist_ok=True)
+    run_root = Path(run_dir) / f"{task_name.replace('/', '_')}_seed{task_seed}"
+    run_root.mkdir(parents=True, exist_ok=True)
 
-    flags = DEFAULT_PROMPT_FLAGS
-    action_set = DEFAULT_ACTION_FLAGS.action_set.make_action_set()
+    if agent_mode == "text":
+        flags = copy.deepcopy(AGENT_GPT5.flags)
+        flags.action.long_description = True
+        action_set = HighLevelActionSetArgs(subsets=["bid"]).make_action_set()
+    else:
+        flags = DEFAULT_PROMPT_FLAGS
+        action_set = DEFAULT_ACTION_FLAGS.action_set.make_action_set()
+
+    # Oracle selection always shows plain screenshot of current state (no SOM overlay).
+    # This is independent of agent_mode: text mode needs use_screenshot enabled;
+    # vision mode needs use_som disabled so only the plain image is shown.
+    # For text mode, use_ax_tree is already True on oracle_sel_flags (inherited from AGENT_GPT5).
+    oracle_sel_flags = copy.deepcopy(flags)
+    oracle_sel_flags.obs.use_screenshot = True
+    oracle_sel_flags.obs.use_som = False
+
+    # Preprocessor used at every env interaction. Always extracts AXTree + SOM + screenshot so
+    # that text-mode agents have axtree_txt available for Phase 1, and SOM images are always
+    # stored for debug HTML regardless of agent_mode.
+    preproc_obs_flags = copy.deepcopy(DEFAULT_OBS_FLAGS)
+    preproc_obs_flags.use_ax_tree = True
+    obs_preprocessor = dp.make_obs_preprocessor(preproc_obs_flags)
+
     chat_llm = CHAT_MODEL_ARGS_DICT[model].make_model()
 
     env_args = EnvArgs(task_name=task_name, task_seed=task_seed, headless=headless)
@@ -267,56 +344,26 @@ def run_oracle_pipeline(
         cleanup_orphaned_users(instance, task_seed)
 
     if resume_from > 0:
-        committed, actions_history, thoughts_history = load_committed_from_debug(debug_root, resume_from)
-        env, obs, current_bid_map = replay_committed(env_args, committed, instance)
+        committed, actions_history, thoughts_history = load_committed_from_run(run_root, resume_from)
+        env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor)
         logger.info(f"Resumed at step {resume_from}: replayed {len(committed)} committed actions")
     else:
-        env, obs, current_bid_map = replay_committed(env_args, [], instance)
+        env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, [], instance, obs_preprocessor)
         committed = []
         actions_history = []
         thoughts_history = []
+
+    goal_text = obs.get("goal", "")
+    if goal_text:
+        (run_root / "goal.txt").write_text(goal_text, encoding="utf-8")
 
     step_idx = resume_from
     try:
         while step_idx < max_steps:
             logger.info(f"Step {step_idx}: generating {n_candidates} candidates")
-            step_dbg = debug_root / f"step_{step_idx}"
-            step_dbg.mkdir(exist_ok=True)
+            step_dir = run_root / f"step_{step_idx}"
+            step_dir.mkdir(exist_ok=True)
             decision_bid_map = current_bid_map
-
-            # Save current state screenshot + SOM
-            sc_current = obs.get("screenshot")
-            sc_current_som = obs.get("screenshot_som")
-            if sc_current is not None:
-                Image.fromarray(sc_current).save(step_dbg / "current.png")
-            if sc_current_som is not None:
-                Image.fromarray(sc_current_som).save(step_dbg / "current_som.png")
-
-            # Phase 1: generate K candidate actions
-            phase1_sys = f"You are an agent trying to solve a web task. Propose your top {n_candidates} candidate actions for the current state."
-            gen_prompt = CandidateGenerationPrompt(
-                action_set=action_set,
-                obs=obs,
-                actions=actions_history,
-                thoughts=thoughts_history,
-                flags=flags,
-                n_candidates=n_candidates,
-            )
-            _dump_prompt(phase1_sys, gen_prompt.prompt, step_dbg / "phase1_prompt.txt")
-
-            phase1_text = _call_llm(chat_llm, phase1_sys, gen_prompt.prompt)
-            (step_dbg / "phase1_response.txt").write_text(phase1_text, encoding="utf-8")
-
-            candidates = gen_prompt.parse_candidates(phase1_text)
-            if not candidates:
-                logger.error("No candidates parsed, stopping.")
-                break
-
-            # Write candidates immediately (live debug)
-            (step_dbg / "candidates.json").write_text(
-                json.dumps(candidates, indent=2), encoding="utf-8"
-            )
-            logger.info(f"  Saved {len(candidates)} candidates -> {step_dbg / 'candidates.json'}")
 
             # Close current env before exploration replays
             try:
@@ -325,51 +372,145 @@ def run_oracle_pipeline(
                 pass
             env = None
 
-            # Phase 2a: explore each candidate sequentially — one fresh env per candidate
-            candidate_screenshots: list[np.ndarray] = []
-            candidate_screenshots_som: list[np.ndarray] = []
-            candidate_bid_notes: list[dict] = []
-            for k, cand in enumerate(candidates):
-                logger.info(f"  Exploring candidate {k + 1}/{len(candidates)}: {cand['action']!r:.80}")
-                sc, sc_som, bid_note = explore_candidate(env_args, committed, cand["action"], decision_bid_map, instance)
-                candidate_screenshots.append(sc)
-                candidate_screenshots_som.append(sc_som)
-                candidate_bid_notes.append({"candidate": k + 1, "action": cand["action"], "bid_note": bid_note})
-                # Save future screenshots immediately as they arrive
-                Image.fromarray(sc).save(step_dbg / f"step_{step_idx}_future_{k + 1}.png")
-                Image.fromarray(sc_som).save(step_dbg / f"step_{step_idx}_future_{k + 1}_som.png")
+            # ── generate → explore → select (with one resample attempt) ──
+            resample_reasoning = ""
+            selected_from = "initial"
+            for attempt_tag in ("initial", "resample"):
+                is_resample = attempt_tag == "resample"
+                attempt_dir = step_dir / attempt_tag
+                attempt_dir.mkdir(exist_ok=True)
 
-            (step_dbg / "bid_translations.json").write_text(
-                json.dumps(candidate_bid_notes, indent=2), encoding="utf-8"
-            )
+                # Snapshot bid map matching the obs Phase 1 will see.
+                # For initial: current_bid_map == decision_bid_map (live env).
+                # For resample: current_bid_map is the Phase 2b initial map — the env whose
+                # AXTree produced the BIDs the LLM writes in candidates. Using decision_bid_map
+                # (live env) here would cause translate_action to look up BIDs in the wrong map.
+                generation_bid_map = current_bid_map
 
-            # Phase 2b: final replay to decision point, present real SOM screenshots to agent
-            env, obs, current_bid_map = replay_committed(env_args, committed, instance)
+                # Save current state (obs used by Phase 1 generation for this attempt).
+                # For initial: the live env state. For resample: the Phase 2b decision point from initial.
+                sc_cur = obs.get("screenshot")
+                sc_cur_som = obs.get("screenshot_som")
+                if sc_cur is not None:
+                    Image.fromarray(sc_cur).save(attempt_dir / "current.png")
+                if sc_cur_som is not None:
+                    Image.fromarray(sc_cur_som).save(attempt_dir / "current_som.png")
 
-            # Save the SOM the agent actually sees when making its selection decision
-            sc_decision_som = obs.get("screenshot_som")
-            if sc_decision_som is not None:
-                Image.fromarray(sc_decision_som).save(step_dbg / "decision_point_som.png")
+                # Phase 1: generate K candidate actions
+                phase1_sys = f"You are an agent trying to solve a web task. Propose your top {n_candidates} candidate actions for the current state."
+                if is_resample:
+                    phase1_sys += (
+                        f"\n\nIMPORTANT — your previous set of candidates was rejected for the following reason:\n"
+                        f"> {resample_reasoning}\n\n"
+                        f"Generate a completely new set of candidates that addresses the issues above. "
+                        f"Focus on:\n"
+                        f"- Targeting different elements (different BIDs) than the rejected set.\n"
+                        f"- Re-examining BID grounding — verify each BID actually corresponds to "
+                        f"the UI element you intend to interact with.\n"
+                        f"- Trying fundamentally different strategies, not minor variations."
+                    )
 
-            phase2_sys = "You are an agent trying to solve a web task. Select the best action based on the real environment screenshots."
-            oracle_candidates = [(c["action_text"], s) for c, s in zip(candidates, candidate_screenshots_som)]
-            sel_prompt = OracleSelectionPrompt(
-                obs=obs,
-                actions=actions_history,
-                thoughts=thoughts_history,
-                candidates=oracle_candidates,
-                flags=flags,
-            )
-            _dump_prompt(phase2_sys, sel_prompt.prompt, step_dbg / "phase2_prompt.txt")
+                # Text mode: oracle_sel_flags adds plain screenshot to AXTree context.
+                # Vision mode: original flags keeps SOM overlay for BID identification.
+                gen_flags = oracle_sel_flags if agent_mode == "text" else flags
+                gen_prompt = CandidateGenerationPrompt(
+                    action_set=action_set,
+                    obs=obs,
+                    actions=actions_history,
+                    thoughts=thoughts_history,
+                    flags=gen_flags,
+                    n_candidates=n_candidates,
+                )
+                if translated_candidate_history:
+                    gen_prompt.history = CandidateAwareHistory(translated_candidate_history, thoughts_history)
+                _dump_prompt(phase1_sys, gen_prompt.prompt, attempt_dir / "phase1_prompt.txt")
 
-            phase2_text = _call_llm(chat_llm, phase2_sys, sel_prompt.prompt)
-            (step_dbg / "phase2_response.txt").write_text(phase2_text, encoding="utf-8")
+                phase1_text = _call_llm(chat_llm, phase1_sys, gen_prompt.prompt)
+                (attempt_dir / "phase1_response.txt").write_text(phase1_text, encoding="utf-8")
 
-            try:
-                selected_idx, reasoning = sel_prompt.parse_answer(phase2_text)
-            except (ValueError, ParseError) as e:
-                logger.warning(f"  Selection parse failed: {e}, defaulting to candidate 0")
-                selected_idx, reasoning = 0, ""
+                candidates = gen_prompt.parse_candidates(phase1_text)
+                if not candidates:
+                    raise RuntimeError("No candidates parsed from LLM response, cannot continue.")
+
+                (attempt_dir / "candidates.json").write_text(
+                    json.dumps(candidates, indent=2), encoding="utf-8"
+                )
+                logger.info(f"  Saved {len(candidates)} candidates -> {attempt_tag}/candidates.json")
+
+                # Phase 2a: explore each candidate sequentially
+                candidate_screenshots: list[np.ndarray] = []
+                candidate_screenshots_som: list[np.ndarray] = []
+                candidate_bid_notes: list[dict] = []
+                for k, cand in enumerate(candidates):
+                    logger.info(f"  Exploring candidate {k + 1}/{len(candidates)}: {cand['action']!r:.80}")
+                    sc, sc_som, bid_note = explore_candidate(env_args, committed, cand["action"], generation_bid_map, instance, obs_preprocessor)
+                    candidate_screenshots.append(sc)
+                    candidate_screenshots_som.append(sc_som)
+                    candidate_bid_notes.append({"candidate": k + 1, "action": cand["action"], "bid_note": bid_note})
+                    Image.fromarray(sc).save(attempt_dir / f"future_{k + 1}.png")
+                    Image.fromarray(sc_som).save(attempt_dir / f"future_{k + 1}_som.png")
+
+                (attempt_dir / "bid_translations.json").write_text(
+                    json.dumps(candidate_bid_notes, indent=2), encoding="utf-8"
+                )
+
+                # Phase 2a.5: describe visual effect of each candidate
+                cand_images = candidate_screenshots if agent_mode == "text" else candidate_screenshots_som
+                effect_sys = "You are comparing browser states. Describe what changed after each action."
+                effect_prompt = CandidateEffectDescriptionPrompt(obs, candidates, cand_images, oracle_sel_flags)
+                effect_text = _call_llm(chat_llm, effect_sys, effect_prompt.prompt)
+                candidate_effects = effect_prompt.parse_effects(effect_text)
+                (attempt_dir / "candidate_effects.json").write_text(
+                    json.dumps(candidate_effects, indent=2), encoding="utf-8"
+                )
+
+                # Phase 2b: replay to decision point for selection
+                env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor, save_intermediate_soms_to=step_dir)
+
+                sc_decision_som = obs.get("screenshot_som")
+                if sc_decision_som is not None:
+                    Image.fromarray(sc_decision_som).save(attempt_dir / "decision_point_som.png")
+
+                phase2_sys = "You are an agent trying to solve a web task. Select the best action based on the real environment screenshots."
+                oracle_candidates = [
+                    (
+                        c["action_text"],
+                        translate_action(c["action"], generation_bid_map, current_bid_map)[0],
+                        s,
+                    )
+                    for c, s in zip(candidates, cand_images)
+                ]
+                allow_resample = not is_resample  # allow resample only on first attempt
+                sel_prompt = OracleSelectionPrompt(
+                    obs=obs,
+                    actions=actions_history,
+                    thoughts=thoughts_history,
+                    candidates=oracle_candidates,
+                    flags=oracle_sel_flags,
+                    allow_resample=allow_resample,
+                    effects=candidate_effects,
+                    include_effects=sel_effects,
+                    include_images=sel_images,
+                )
+                _dump_prompt(phase2_sys, sel_prompt.prompt, attempt_dir / "phase2_prompt.txt")
+
+                phase2_text = _call_llm(chat_llm, phase2_sys, sel_prompt.prompt)
+                (attempt_dir / "phase2_response.txt").write_text(phase2_text, encoding="utf-8")
+
+                try:
+                    selected_idx, reasoning = sel_prompt.parse_answer(phase2_text)
+                    selected_from = attempt_tag
+                    break  # selection made, exit the generate-select loop
+                except ResampleRequested as e:
+                    resample_reasoning = e.reasoning
+                    logger.info(f"  Resample requested: {resample_reasoning[:120]}")
+                    # Close the env from phase 2b before re-generating
+                    try:
+                        env.close()
+                    except Exception:
+                        pass
+                    env = None
+                    continue  # go to resample attempt
 
             chosen_action = candidates[selected_idx]["action"]
             logger.info(f"  Selected candidate {selected_idx + 1}: {chosen_action!r:.80}")
@@ -377,7 +518,6 @@ def run_oracle_pipeline(
             # Translate selected action BIDs for execution.
             # chosen_action has BIDs from decision_bid_map (original live env) — they are consistent.
             # translated_chosen has BIDs from current_bid_map (Phase 2b fresh env).
-            obs_preprocessor = dp.make_obs_preprocessor(DEFAULT_OBS_FLAGS)
             translated_chosen, selection_bid_note = translate_action(chosen_action, decision_bid_map, current_bid_map)
 
             # Extract the BID entry from decision_bid_map for chosen_action's BID.
@@ -390,9 +530,10 @@ def run_oracle_pipeline(
                     _bid_entry = {_orig_bid: decision_bid_map[_orig_bid]}
 
             # Write selection + resume metadata immediately (live debug)
-            (step_dbg / "selection.json").write_text(
+            (step_dir / "selection.json").write_text(
                 json.dumps({
                     "selected_index": selected_idx + 1,  # 1-indexed for readability
+                    "selected_from": selected_from,       # "initial" or "resample"
                     "selected_action": chosen_action,
                     "translated_action": translated_chosen,
                     "bid_translation": selection_bid_note,
@@ -402,13 +543,18 @@ def run_oracle_pipeline(
             )
             # committed_step.json stores the data needed to reconstruct CommittedAction on resume:
             # chosen_action (original BIDs) + the bid_entry from decision_bid_map for fingerprinting
-            (step_dbg / "committed_step.json").write_text(
+            (step_dir / "committed_step.json").write_text(
                 json.dumps({"action": chosen_action, "bid_entry": _bid_entry}, indent=2),
                 encoding="utf-8",
             )
+            (step_dir / "decision_bid_map.json").write_text(
+                json.dumps(decision_bid_map, indent=2), encoding="utf-8"
+            )
 
-            # Execute chosen action on the open env
+            # Execute chosen action on the open env (wait for page to settle first)
+            _wait_idle(env)
             t_start = time.time()
+            translated_chosen = resolve_phantom_action(translated_chosen, env)
             obs, reward, terminated, truncated, env_info = env.step(translated_chosen)
             obs = obs_preprocessor(obs)
             elapsed = time.time() - t_start
@@ -435,16 +581,21 @@ def run_oracle_pipeline(
                 task_info=env_info.get("task_info", None),
             )
 
-            for k, (sc, sc_som) in enumerate(zip(candidate_screenshots, candidate_screenshots_som)):
-                Image.fromarray(sc).save(save_path / f"screenshot_step_{step_idx}_candidate_{k}.png")
-                Image.fromarray(sc_som).save(save_path / f"screenshot_som_step_{step_idx}_candidate_{k}.png")
-
             step_info.save_step_info(save_path, save_screenshot=True, save_som=False)
             logger.info(f"  reward={reward:.3f}  terminated={terminated}  truncated={truncated}")
 
-            # Store chosen_action (original env BIDs) with decision_bid_map (original env bid_map).
-            # These are a consistent pair: replay can fingerprint-translate to any future env's BIDs.
-            committed.append(CommittedAction(step=step_idx, action=chosen_action, bid_map=decision_bid_map))
+            # Store chosen_action with bid_entry (single BID for compat) and full decision_bid_map
+            # (for translating all candidates on replay).
+            committed.append(CommittedAction(
+                step=step_idx,
+                action=chosen_action,
+                bid_map=_bid_entry,
+                full_decision_bid_map=decision_bid_map,
+                candidates=candidates,
+                selected_idx=selected_idx,
+                selected_from=selected_from,
+                effects=candidate_effects,
+            ))
             actions_history.append(translated_chosen)
             thoughts_history.append(reasoning)
             current_bid_map = build_bid_map(obs)
@@ -461,6 +612,5 @@ def run_oracle_pipeline(
             except Exception:
                 pass
 
-    logger.info(f"Oracle pipeline complete. {step_idx} steps saved to {save_path}")
-    logger.info(f"Debug artifacts saved to {debug_root}")
+    logger.info(f"Oracle pipeline complete. {step_idx} steps. Run artifacts: {run_root}")
     return save_path

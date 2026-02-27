@@ -1,0 +1,137 @@
+RootWebArea 'Expense Lines | ServiceNow'
+	[47] generic, live='assertive', atomic, relevant='additions text'
+	[48] generic, live='polite', atomic, relevant='additions text'
+	[53] generic, live='polite', atomic, relevant='all'
+	[56] navigation 'Global skip links'
+		[57] link 'Skip to main content'
+		[58] link 'Open accessibility preferences'
+	[233] region 'There are 0 announcements displayed', live='polite', relevant='additions text'
+	[59] generic, live='polite', atomic, relevant='additions text'
+	[62] navigation 'Primary'
+		navigation 'Unpinned All menu', live='polite', relevant='additions text'
+		navigation 'Unpinned Favorites menu', live='polite', relevant='additions text'
+		navigation 'Unpinned History menu', live='polite', relevant='additions text'
+		navigation 'Unpinned Workspaces menu', live='polite', relevant='additions text'
+		navigation 'Unpinned Admin menu', live='polite', relevant='additions text'
+		navigation 'More menus', live='polite', relevant='additions text'
+		[66] button 'My ServiceNow landing page', describedby='logo-tooltip'
+			[67] image 'ServiceNow Service Management'
+		[79] button 'All', expanded=False
+		[80] button 'Favorites', expanded=False
+		[81] button 'History', expanded=False
+		[82] button 'Workspaces', expanded=False
+		[84] button 'More menus', expanded=False
+		generic, describedby='title-tooltip'
+			StaticText 'Expense Lines'
+			[97] button 'Create favorite for Expense Lines', live='polite', relevant='additions text', pressed='false'
+		[109] search ''
+			[113] combobox 'Search', autocomplete='both', hasPopup='listbox', expanded=False
+			[114] region '', live='polite', relevant='additions text'
+				StaticText 'No exact match. Press Enter for full results.'
+			[115] combobox 'Choose search context', hasPopup='listbox', expanded=False
+		[126] button 'Scope selectors', expanded=False
+		[133] button 'Sidebar discussions', expanded=False
+		[139] button 'Show help', expanded=False
+		[167] button 'Show notifications', expanded=False
+		[179] button 'Stephen Humphrey: available', expanded=False
+			[182] image 'Stephen Humphrey is Available'
+				StaticText 'SH'
+	[196] main ''
+		[a] Iframe 'Main Content'
+			RootWebArea 'Expense Lines | ServiceNow', focused
+				[a34] region '', live='polite', relevant='additions text'
+				[a35] region '', live='assertive', relevant='additions text'
+				[a41] region 'Expense Lines, filtering toolbar'
+					[a44] button 'Actions', hasPopup='menu', expanded=False
+						StaticText '\uf1b2'
+						StaticText 'List controls'
+					[a46] button '\uf18a Show / hide filter', expanded=False, controls='fm_expense_linefilterdiv'
+						StaticText '\uf18a'
+						StaticText 'Show / hide filter'
+					[a48] button '\uf1b8 Show / hide natural language filter', expanded=False
+						StaticText '\uf1b8'
+						StaticText 'Show / hide natural language filter'
+					[a50] heading 'Expense Lines'
+						[a51] button 'Expense Lines', hasPopup='menu', expanded=False
+							StaticText 'Expense Lines'
+					[a57] search ''
+						[a60] listbox 'Search a specific field of the Expense Lines list, 11 items' value='Number', multiselectable=False, orientation='vertical', expanded=False
+							[a61] option 'Number', selected=True
+							[a62] option 'User', selected=False
+							[a63] option 'Inherited', selected=False
+							[a64] option 'Parent', selected=False
+							[a65] option 'Date', selected=False
+							[a66] option 'Short description', selected=False
+							[a67] option 'Source ID', selected=False
+							[a68] option 'Amount', selected=False
+							[a69] option 'Type', selected=False
+							[a70] option 'Summary type', selected=False
+						StaticText '\uf21f'
+						[a73] searchbox 'Search', focused, describedby='dd5a86f93b5f76d01eab3e0eb3e45a50_describedby'
+					[a134] button 'New'
+				[a167] region 'Filter'
+					[a169] list ''
+						[a170] link 'All Press enter to remove all subsequent conditions. Right click or press either Shift + Space or Alt + F10 to open menu.'
+						[a172] button 'Remove next condition Short description contains Lakshya'
+							StaticText '>'
+						[a173] link 'Short description contains Lakshya Press enter to remove all subsequent conditions. Right click or press either Shift + Space or Alt + F10 to open menu.'
+				[a175] main 'Expense Lines'
+					[a179] button 'Edit table data inline', controls='fm_expense_line_table'
+					[a181] grid 'Expense Lines.', multiselectable=False
+						[a182] caption '', live='polite', relevant='additions text'
+							StaticText 'Expense Lines table. Currently in read mode.'
+						[a184] rowgroup ''
+							[a185] row ''
+								[a186] columnheader ''
+								[a187] columnheader '\uf1e4 Show column search row'
+									[a189] button '\uf1e4 Show column search row', expanded=False, controls='fm_expense_line_table_header_search_control'
+										StaticText '\uf1e4'
+										StaticText 'Show column search row'
+								[a191] columnheader 'Number \uf222 Number column options'
+									[a193] button 'Number'
+									[a197] button 'Number column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a198] columnheader 'User User column options'
+									[a200] button 'User'
+									[a204] button 'User column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a205] columnheader 'Inherited Inherited column options'
+									[a207] button 'Inherited'
+									[a211] button 'Inherited column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a212] columnheader 'Parent Parent column options'
+									[a214] button 'Parent'
+									[a218] button 'Parent column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a219] columnheader 'Date Date column options'
+									[a221] button 'Date'
+									[a225] button 'Date column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a226] columnheader 'Short description Short description column options'
+									[a228] button 'Short description'
+									[a232] button 'Short description column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a233] columnheader 'Source ID Source ID column options'
+									[a235] button 'Source ID'
+									[a239] button 'Source ID column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a240] columnheader 'Amount Amount column options'
+									[a242] button 'Amount'
+									[a246] button 'Amount column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a247] columnheader 'Type Type column options'
+									[a249] button 'Type'
+									[a253] button 'Type column options', hasPopup='menu'
+										StaticText '\uf17f'
+								[a254] columnheader 'Summary type Summary type column options'
+									[a256] button 'Summary type'
+									[a260] button 'Summary type column options', hasPopup='menu'
+										StaticText '\uf17f'
+						[a314] rowgroup ''
+					StaticText 'No records to display'
+					[a320] list ''
+				[a489] status '', live='polite', atomic, relevant='additions text'
+				[a490] generic, live='polite', relevant='additions text'
+				[a492] complementary 'Timing details'
+					[a494] button 'Response Time', controls='glide:timing_widget'
+						StaticText '\uf1f6'

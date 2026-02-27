@@ -1,7 +1,0 @@
-{
-  "selected_index": 2,
-  "selected_action": "fill('a179', 'Incidents by')",
-  "translated_action": "fill('a179', 'Incidents by')",
-  "bid_translation": "stable fp='combobox::Search::via=Reports'",
-  "thought": "We\u2019re on the Reports > View/Run (Global) page searching for a report showing incidents by assignee. The current query \u201cIncidents by Assigned to\u201d returned no results. The best next step is to broaden the query to something more general so we can find a likely report title. Candidate 2 types \u201cIncidents by\u201d into the list search field, setting us up to run a broader search next. Other options either re-run the too-specific query with no results, enable an unhelpful favorites filter, or do nothing. Therefore, Candidate 2 best advances the goal."
-}

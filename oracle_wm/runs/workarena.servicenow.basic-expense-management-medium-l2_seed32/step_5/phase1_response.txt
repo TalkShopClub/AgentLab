@@ -1,0 +1,27 @@
+<candidates>
+<candidate_1>
+<rationale>We need to build the required filter; first choose the field “Short description” in the filter builder so the operator and value inputs become enabled.</rationale>
+<action>select_option('a1055', 'Short description')</action>
+<action_text>Select "Short description" as the field in the filter condition dropdown</action_text>
+</candidate_1>
+<candidate_2>
+<rationale>As an alternate, use the list’s quick search by setting its field selector to “Short description,” enabling a direct search for the target text.</rationale>
+<action>select_option('a60', 'Short description')</action>
+<action_text>Set the list Search field selector to "Short description"</action_text>
+</candidate_2>
+<candidate_3>
+<rationale>Revealing the column search row allows filtering directly under the “Short description” column, another path to apply the needed contains filter.</rationale>
+<action>click('a190')</action>
+<action_text>Show the column search row beneath the table headers</action_text>
+</candidate_3>
+<candidate_4>
+<rationale>Prepare to run a quick search by entering the target string; after setting the field to “Short description,” pressing Enter will filter results.</rationale>
+<action>fill('a73', '#SERIES-1f711cdf-2')</action>
+<action_text>Type "#SERIES-1f711cdf-2" into the list Search box</action_text>
+</candidate_4>
+<candidate_5>
+<rationale>Opening the Short description column options may provide built-in filtering actions (e.g., filter/show matching), offering another route to the desired filter.</rationale>
+<action>click('a233')</action>
+<action_text>Open the "Short description" column options menu</action_text>
+</candidate_5>
+</candidates>

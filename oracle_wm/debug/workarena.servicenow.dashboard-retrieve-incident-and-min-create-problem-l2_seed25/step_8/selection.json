@@ -1,7 +1,0 @@
-{
-  "selected_index": 2,
-  "selected_action": "click('234')",
-  "translated_action": "click('234')",
-  "bid_translation": "stable fp='::::yrank=2'",
-  "thought": "We\u2019re on the Reports View/Run list and need to locate a specific report by title. The global search context popover is open and unhelpful. Among the actions, toggling the list filter builder (Candidate 2) is the most directly useful toward filtering by Title to find \u201cIncidents by agent.\u201d The others either don\u2019t change state or are less helpful. Even if the UI doesn\u2019t visibly update, enabling the filter is the right step toward targeted search within the list."
-}

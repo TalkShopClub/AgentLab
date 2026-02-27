@@ -1,0 +1,4 @@
+<think>
+We’re already in the filtered Expense Lines list. The next step is to delete the duplicate entries not associated with tasks. Candidate 1 selects the non-task duplicate row (EXP-35319670314), which is direct progress toward deletion. Other candidates either open previews, try to delete with no selection, or just sort. Selecting the correct row is the most meaningful step now.
+</think>
+<selection>1</selection>

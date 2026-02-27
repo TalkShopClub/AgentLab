@@ -1,7 +1,0 @@
-{
-  "selected_index": 1,
-  "selected_action": "mouse_move(940, 510)",
-  "translated_action": "mouse_move(940, 510)",
-  "bid_translation": "no-bid-in-action",
-  "thought": "We need to identify agents with the minimum incident count from the bar chart by hovering over the smallest bars to read tooltips. None of the candidate actions show a tooltip in the resulting state, but hovering a small bar near the right end is the correct approach to reveal those values. Candidate 1 does exactly that and keeps us focused on the task."
-}

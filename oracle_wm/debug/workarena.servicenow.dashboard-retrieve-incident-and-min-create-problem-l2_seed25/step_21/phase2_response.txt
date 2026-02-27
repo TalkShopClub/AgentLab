@@ -1,2 +1,0 @@
-<think>We’re on the Reports > View/Run page but likely viewing “My reports,” which shows a single irrelevant report. To find a widely available report like “Incidents by agent,” switching to the Global tab is the best move. Candidate 1 attempts exactly that, while the others either keep us in the same scope or make less helpful interactions. Even if the UI looks similar, selecting Global broadens the scope to likely include the needed report.</think>
-<selection>1</selection>

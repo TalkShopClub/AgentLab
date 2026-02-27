@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('a1237')",
+    "action_text": "Click the operator combobox for the first filter condition",
+    "rationale": "The operator is currently \"starts with\"; to meet the requirement we need to change it to \"contains\", so first open the operator menu."
+  },
+  {
+    "action": "press('a1237', 'Enter')",
+    "action_text": "Press Enter on the operator combobox to expand its options",
+    "rationale": "If clicking doesn\u2019t open the operator menu, using the keyboard can expand it; we need access to select \"contains\"."
+  },
+  {
+    "action": "fill('a1254', '#SERIES-f9d328e8-a', True)",
+    "action_text": "Type \"#SERIES-f9d328e8-a\" into the filter value textbox",
+    "rationale": "We also need to supply the value for the condition; entering the target token prepares the filter."
+  },
+  {
+    "action": "click('a991')",
+    "action_text": "Click the Run filter button",
+    "rationale": "After configuring the condition, we must execute it to filter the list."
+  },
+  {
+    "action": "fill('a294', '#SERIES-f9d328e8-a', True)",
+    "action_text": "Type \"#SERIES-f9d328e8-a\" into the Short description column search field",
+    "rationale": "As an alternative path, using the per-column search on Short description can quickly narrow to rows containing the token if the filter builder is finicky."
+  }
+]

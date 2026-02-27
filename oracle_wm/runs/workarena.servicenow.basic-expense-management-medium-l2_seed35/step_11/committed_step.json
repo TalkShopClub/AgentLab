@@ -1,0 +1,19 @@
+{
+  "action": "click('a747')",
+  "bid_entry": {
+    "a747": {
+      "role": "button",
+      "name": "Delete",
+      "description": "",
+      "bbox": [
+        1287.890625,
+        337.0,
+        270.109375,
+        64.0
+      ],
+      "visibility": 1.0,
+      "clickable": true,
+      "fingerprint": "button::Delete"
+    }
+  }
+}

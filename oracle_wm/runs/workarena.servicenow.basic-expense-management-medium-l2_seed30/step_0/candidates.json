@@ -1,0 +1,27 @@
+[
+  {
+    "action": "click('79')",
+    "action_text": "Click the \"All\" button to open the Application Navigator",
+    "rationale": "To reach the \"Expense Lines\" module, the fastest path is opening the All menu (Application Navigator) where applications/modules like Cost -> Expense Lines are listed."
+  },
+  {
+    "action": "fill('113', 'Expense Lines', True)",
+    "action_text": "Type \"Expense Lines\" into the global Search field",
+    "rationale": "If the global search can navigate directly to modules, searching for \"Expense Lines\" could take us straight to the desired list."
+  },
+  {
+    "action": "fill('113', 'Cost', True)",
+    "action_text": "Type \"Cost\" into the global Search field",
+    "rationale": "Searching for the parent application name \"Cost\" may surface the \"Cost\" app and its modules (including Expense Lines) for quick navigation."
+  },
+  {
+    "action": "click('115')",
+    "action_text": "Open the \"Choose search context\" dropdown",
+    "rationale": "Adjusting the search context (e.g., to Applications/Navigation) can ensure search results include modules like \"Expense Lines\" rather than records."
+  },
+  {
+    "action": "noop(1500)",
+    "action_text": "Wait 1.5 seconds for the page to finish loading",
+    "rationale": "The page shows a loading spinner; waiting briefly may allow menus and search to fully initialize before interacting."
+  }
+]

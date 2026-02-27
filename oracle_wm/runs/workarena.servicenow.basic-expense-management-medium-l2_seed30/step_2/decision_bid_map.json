@@ -1,0 +1,8068 @@
+{
+  "0": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      1440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=1"
+  },
+  "1": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=119"
+  },
+  "2": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=120"
+  },
+  "3": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=121"
+  },
+  "4": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=122"
+  },
+  "5": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=123"
+  },
+  "6": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=124"
+  },
+  "7": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=125"
+  },
+  "8": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=126"
+  },
+  "9": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=127"
+  },
+  "10": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=128"
+  },
+  "11": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=129"
+  },
+  "12": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=130"
+  },
+  "13": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=131"
+  },
+  "14": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=132"
+  },
+  "15": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=133"
+  },
+  "16": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=134"
+  },
+  "17": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=135"
+  },
+  "18": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=136"
+  },
+  "19": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=137"
+  },
+  "20": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=138"
+  },
+  "21": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=139"
+  },
+  "22": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=140"
+  },
+  "23": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=141"
+  },
+  "24": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=142"
+  },
+  "25": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=143"
+  },
+  "26": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=144"
+  },
+  "27": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=145"
+  },
+  "28": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=146"
+  },
+  "29": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=147"
+  },
+  "30": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=148"
+  },
+  "31": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=149"
+  },
+  "32": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=150"
+  },
+  "33": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=151"
+  },
+  "34": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=152"
+  },
+  "35": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=153"
+  },
+  "36": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=154"
+  },
+  "37": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=155"
+  },
+  "38": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=156"
+  },
+  "39": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=157"
+  },
+  "40": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=158"
+  },
+  "41": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=159"
+  },
+  "42": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=160"
+  },
+  "43": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=161"
+  },
+  "44": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=162"
+  },
+  "316": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=163"
+  },
+  "317": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=164"
+  },
+  "318": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=165"
+  },
+  "45": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      1440.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=1"
+  },
+  "46": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=166"
+  },
+  "47": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=2"
+  },
+  "48": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=3"
+  },
+  "49": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=23"
+  },
+  "50": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      1440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=4"
+  },
+  "51": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      1440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=5"
+  },
+  "52": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      1440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=6"
+  },
+  "53": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=7"
+  },
+  "54": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      1440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=8"
+  },
+  "55": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=9"
+  },
+  "56": {
+    "role": "navigation",
+    "name": "Global skip links",
+    "description": "",
+    "bbox": [
+      48.0,
+      0.0,
+      2560.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "navigation::Global skip links"
+  },
+  "57": {
+    "role": "link",
+    "name": "Skip to main content",
+    "description": "",
+    "bbox": [
+      48.0,
+      -17.25,
+      224.9375,
+      33.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::Skip to main content"
+  },
+  "58": {
+    "role": "link",
+    "name": "Open accessibility preferences",
+    "description": "",
+    "bbox": [
+      352.9375,
+      -17.25,
+      328.046875,
+      33.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::Open accessibility preferences"
+  },
+  "319": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=10"
+  },
+  "320": {
+    "role": "region",
+    "name": "There are 0 announcements displayed",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "region::There are 0 announcements displayed"
+  },
+  "59": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::after=Global skip links"
+  },
+  "60": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      1440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=11"
+  },
+  "61": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=12"
+  },
+  "62": {
+    "role": "navigation",
+    "name": "Primary",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "navigation::Primary"
+  },
+  "63": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      2560.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=1"
+  },
+  "321": {
+    "role": "navigation",
+    "name": "",
+    "description": "",
+    "bbox": [
+      109.0,
+      0.0,
+      640.0,
+      604.5
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "navigation::"
+  },
+  "322": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      109.0,
+      0.0,
+      640.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu::yrank=1"
+  },
+  "323": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      109.0,
+      0.0,
+      640.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu::yrank=2"
+  },
+  "324": {
+    "role": "image",
+    "name": "",
+    "description": "",
+    "bbox": [
+      109.0,
+      0.0,
+      640.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "image::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu"
+  },
+  "325": {
+    "role": "generic",
+    "name": "All menu",
+    "description": "",
+    "bbox": [
+      109.0,
+      104.0,
+      640.0,
+      500.5
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::All menu"
+  },
+  "326": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      111.0,
+      104.0,
+      636.0,
+      112.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=1"
+  },
+  "327": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      143.0,
+      128.0,
+      492.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=2"
+  },
+  "328": {
+    "role": "LabelText",
+    "name": "",
+    "description": "",
+    "bbox": [
+      143.0,
+      128.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "LabelText::"
+  },
+  "329": {
+    "role": "textbox",
+    "name": "Enter search term to filter All menu",
+    "description": "",
+    "bbox": [
+      143.0,
+      128.0,
+      492.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "textbox::Enter search term to filter All menu"
+  },
+  "330": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      167.0,
+      144.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=82"
+  },
+  "331": {
+    "role": "button",
+    "name": "Clear filter",
+    "description": "",
+    "bbox": [
+      563.0,
+      136.953125,
+      48.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Clear filter"
+  },
+  "332": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      571.0,
+      144.953125,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=83"
+  },
+  "333": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      659.0,
+      128.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=3"
+  },
+  "334": {
+    "role": "button",
+    "name": "Pin All menu",
+    "description": "",
+    "bbox": [
+      659.0,
+      128.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Pin All menu"
+  },
+  "335": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      668.359375,
+      137.359375,
+      45.28125,
+      45.28125
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=81"
+  },
+  "336": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      723.0,
+      128.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::after=Pin All menu"
+  },
+  "337": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      723.0,
+      128.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=4"
+  },
+  "338": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      111.0,
+      216.0,
+      636.0,
+      370.5
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=5"
+  },
+  "339": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      127.0,
+      216.0,
+      604.0,
+      62.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=6"
+  },
+  "1167": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      143.0,
+      294.0,
+      572.0,
+      32.5
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=7"
+  },
+  "1168": {
+    "role": "separator",
+    "name": "",
+    "description": "",
+    "bbox": [
+      127.0,
+      342.5,
+      604.0,
+      2.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "separator::"
+  },
+  "1169": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      127.0,
+      360.5,
+      604.0,
+      62.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=8"
+  },
+  "1170": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      143.0,
+      422.5,
+      604.0,
+      164.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=9"
+  },
+  "1171": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      145.0,
+      422.5,
+      602.0,
+      164.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=10"
+  },
+  "1172": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      145.0,
+      422.5,
+      602.0,
+      164.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=11"
+  },
+  "1173": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      145.0,
+      422.5,
+      602.0,
+      164.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=12"
+  },
+  "1174": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      161.0,
+      426.5,
+      570.0,
+      136.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=13"
+  },
+  "1175": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      161.0,
+      426.5,
+      570.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=14"
+  },
+  "1176": {
+    "role": "button",
+    "name": "Cost",
+    "description": "",
+    "bbox": [
+      171.0,
+      440.5,
+      530.0,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "button::Cost"
+  },
+  "1177": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      171.0,
+      442.5,
+      36.0,
+      36.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu/Cost::yrank=2"
+  },
+  "1178": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      173.0,
+      444.5,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=89"
+  },
+  "1179": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      223.0,
+      440.5,
+      478.0,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu/Cost::yrank=1"
+  },
+  "1180": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      701.0,
+      436.5,
+      28.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::after=Cost"
+  },
+  "1181": {
+    "role": "button",
+    "name": "Edit Application Cost",
+    "description": "",
+    "bbox": [
+      709.0,
+      436.5,
+      2.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Edit Application Cost"
+  },
+  "1182": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      709.0,
+      444.5,
+      2.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=90"
+  },
+  "1183": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=167"
+  },
+  "1184": {
+    "role": "button",
+    "name": "Add Cost to favorites",
+    "description": "",
+    "bbox": [
+      719.0,
+      436.5,
+      2.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Add Cost to favorites"
+  },
+  "1185": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      719.0,
+      444.5,
+      2.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=91"
+  },
+  "1186": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      161.0,
+      494.5,
+      570.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=15"
+  },
+  "1187": {
+    "role": "list",
+    "name": "",
+    "description": "",
+    "bbox": [
+      161.0,
+      494.5,
+      570.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "list::"
+  },
+  "1188": {
+    "role": "listitem",
+    "name": "",
+    "description": "",
+    "bbox": [
+      177.0,
+      494.5,
+      554.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "listitem::::level=1"
+  },
+  "1189": {
+    "role": "generic",
+    "name": "Expense Lines",
+    "description": "",
+    "bbox": [
+      201.0,
+      494.5,
+      530.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::Expense Lines"
+  },
+  "1190": {
+    "role": "link",
+    "name": "Expense Lines",
+    "description": "",
+    "bbox": [
+      203.0,
+      496.5,
+      498.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "link::Expense Lines"
+  },
+  "1191": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      219.0,
+      508.5,
+      482.0,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu/Expense Lines/Expense Lines::yrank=1"
+  },
+  "1192": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      219.0,
+      508.5,
+      197.390625,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu/Expense Lines/Expense Lines::yrank=2"
+  },
+  "1193": {
+    "role": "mark",
+    "name": "",
+    "description": "",
+    "bbox": [
+      219.0,
+      508.5,
+      197.390625,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "mark::"
+  },
+  "1194": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      701.0,
+      496.5,
+      28.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu/Expense Lines::after=Expense Lines::yrank=1"
+  },
+  "1195": {
+    "role": "button",
+    "name": "Edit Module Expense Lines",
+    "description": "",
+    "bbox": [
+      709.0,
+      504.5,
+      2.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Edit Module Expense Lines"
+  },
+  "1196": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      709.0,
+      512.5,
+      2.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=92"
+  },
+  "1197": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=168"
+  },
+  "1198": {
+    "role": "button",
+    "name": "Add Expense Lines to favorites",
+    "description": "",
+    "bbox": [
+      719.0,
+      504.5,
+      2.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Add Expense Lines to favorites"
+  },
+  "1199": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      719.0,
+      512.5,
+      2.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=93"
+  },
+  "1200": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      203.0,
+      496.5,
+      526.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu/Expense Lines::after=Expense Lines::yrank=2"
+  },
+  "1201": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      145.0,
+      586.5,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Unpinned All menu/All menu::yrank=16"
+  },
+  "64": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      1011.078125,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::after=More menus::yrank=1"
+  },
+  "65": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      388.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=2"
+  },
+  "66": {
+    "role": "button",
+    "name": "My ServiceNow landing page",
+    "description": "ServiceNow Service Management",
+    "bbox": [
+      0.0,
+      0.0,
+      388.0,
+      104.0
+    ],
+    "visibility": 0.99,
+    "clickable": true,
+    "fingerprint": "button::My ServiceNow landing page"
+  },
+  "67": {
+    "role": "image",
+    "name": "ServiceNow Service Management",
+    "description": "",
+    "bbox": [
+      48.0,
+      26.828125,
+      300.0,
+      50.328125
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "image::ServiceNow Service Management"
+  },
+  "68": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      48.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=19"
+  },
+  "69": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      48.0,
+      52.0,
+      241.390625,
+      95.96875
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=20"
+  },
+  "70": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      48.0,
+      52.0,
+      241.390625,
+      95.96875
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=21"
+  },
+  "72": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      64.0,
+      68.0,
+      209.390625,
+      63.96875
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=62"
+  },
+  "73": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      64.0,
+      68.0,
+      209.390625,
+      31.984375
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=63"
+  },
+  "74": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      64.0,
+      99.984375,
+      209.390625,
+      31.984375
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=76"
+  },
+  "75": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      388.0,
+      0.0,
+      0.0,
+      104.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::after=My ServiceNow landing page"
+  },
+  "76": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      388.0,
+      0.0,
+      48.0,
+      104.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=3"
+  },
+  "77": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      388.0,
+      0.0,
+      48.0,
+      104.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=4"
+  },
+  "78": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      388.0,
+      0.0,
+      623.078125,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=5"
+  },
+  "79": {
+    "role": "button",
+    "name": "All",
+    "description": "",
+    "bbox": [
+      388.0,
+      20.0,
+      81.734375,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::All"
+  },
+  "80": {
+    "role": "button",
+    "name": "Favorites",
+    "description": "",
+    "bbox": [
+      478.0,
+      20.0,
+      169.640625,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Favorites"
+  },
+  "81": {
+    "role": "button",
+    "name": "History",
+    "description": "",
+    "bbox": [
+      656.0,
+      20.0,
+      144.078125,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::History"
+  },
+  "82": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      808.0,
+      20.0,
+      207.5,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=6"
+  },
+  "83": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      808.0,
+      20.0,
+      135.078125,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=7"
+  },
+  "84": {
+    "role": "button",
+    "name": "More menus",
+    "description": "",
+    "bbox": [
+      808.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More menus"
+  },
+  "85": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      824.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=10"
+  },
+  "86": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      840.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=22"
+  },
+  "87": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      840.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=23"
+  },
+  "88": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      840.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=24"
+  },
+  "89": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      856.0,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=53"
+  },
+  "90": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1011.078125,
+      0.0,
+      537.828125,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::after=More menus::yrank=2"
+  },
+  "91": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1035.078125,
+      20.0,
+      489.828125,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=8"
+  },
+  "92": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1085.078125,
+      32.0,
+      353.828125,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=19"
+  },
+  "93": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1279.984375,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=25"
+  },
+  "94": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1279.984375,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=26"
+  },
+  "95": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1279.984375,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=27"
+  },
+  "96": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1295.984375,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=54"
+  },
+  "97": {
+    "role": "button",
+    "name": "Create favorite for Shared admin dashboard",
+    "description": "",
+    "bbox": [
+      1446.90625,
+      30.0,
+      44.0,
+      44.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Create favorite for Shared admin dashboard"
+  },
+  "98": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1452.90625,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=11"
+  },
+  "99": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1452.90625,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=28"
+  },
+  "100": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1452.90625,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=29"
+  },
+  "101": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1452.90625,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=30"
+  },
+  "102": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1468.90625,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=55"
+  },
+  "103": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1548.90625,
+      0.0,
+      1011.09375,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::after=More menus::yrank=3"
+  },
+  "104": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1548.90625,
+      0.0,
+      1009.09375,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=6"
+  },
+  "105": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1548.90625,
+      18.0,
+      545.09375,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=11"
+  },
+  "106": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1606.0,
+      18.0,
+      488.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=12"
+  },
+  "107": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1606.0,
+      18.0,
+      488.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=13"
+  },
+  "108": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1606.0,
+      18.0,
+      488.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=14"
+  },
+  "109": {
+    "role": "search",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1606.0,
+      18.0,
+      488.0,
+      68.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "search::"
+  },
+  "110": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1608.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=15"
+  },
+  "111": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1624.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=12"
+  },
+  "112": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1672.0,
+      20.0,
+      420.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=16"
+  },
+  "113": {
+    "role": "combobox",
+    "name": "Search",
+    "description": "",
+    "bbox": [
+      1672.0,
+      20.0,
+      354.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "combobox::Search"
+  },
+  "114": {
+    "role": "region",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1672.0,
+      51.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "region::"
+  },
+  "115": {
+    "role": "combobox",
+    "name": "Choose search context",
+    "description": "",
+    "bbox": [
+      2028.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "combobox::Choose search context"
+  },
+  "119": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2044.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=13"
+  },
+  "120": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2092.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=31"
+  },
+  "121": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2092.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=32"
+  },
+  "122": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2092.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=33"
+  },
+  "123": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2108.0,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=56"
+  },
+  "124": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2094.0,
+      20.0,
+      464.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=17"
+  },
+  "125": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2118.0,
+      20.0,
+      416.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=18"
+  },
+  "126": {
+    "role": "button",
+    "name": "Scope selectors",
+    "description": "",
+    "bbox": [
+      2126.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Scope selectors"
+  },
+  "127": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2142.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=14"
+  },
+  "128": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2126.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=34"
+  },
+  "129": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2126.0,
+      52.0,
+      308.3125,
+      95.96875
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=35"
+  },
+  "130": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2126.0,
+      52.0,
+      308.3125,
+      95.96875
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=36"
+  },
+  "132": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2142.0,
+      68.0,
+      276.3125,
+      63.96875
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=64"
+  },
+  "1202": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2142.0,
+      68.0,
+      276.3125,
+      31.984375
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=65"
+  },
+  "1203": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2142.0,
+      99.984375,
+      276.3125,
+      31.984375
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=77"
+  },
+  "133": {
+    "role": "button",
+    "name": "Sidebar discussions",
+    "description": "",
+    "bbox": [
+      2206.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Sidebar discussions"
+  },
+  "134": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2222.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=15"
+  },
+  "135": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2206.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=37"
+  },
+  "136": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2206.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=38"
+  },
+  "137": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2206.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=39"
+  },
+  "138": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2222.0,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=57"
+  },
+  "139": {
+    "role": "button",
+    "name": "Show help",
+    "description": "",
+    "bbox": [
+      2286.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Show help"
+  },
+  "140": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2302.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=16"
+  },
+  "141": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2286.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=40"
+  },
+  "142": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2286.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=41"
+  },
+  "143": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2286.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=42"
+  },
+  "144": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2302.0,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=58"
+  },
+  "145": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1920.0,
+      96.0,
+      640.0,
+      72.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=71"
+  },
+  "146": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1920.0,
+      96.0,
+      640.0,
+      16.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=72"
+  },
+  "147": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1920.0,
+      96.0,
+      302.0,
+      16.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=73"
+  },
+  "148": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2222.0,
+      96.0,
+      36.0,
+      16.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=74"
+  },
+  "149": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2258.0,
+      96.0,
+      302.0,
+      16.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=75"
+  },
+  "150": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1920.0,
+      112.0,
+      640.0,
+      524.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=80"
+  },
+  "151": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1922.0,
+      72.0,
+      636.0,
+      90.0
+    ],
+    "visibility": 0.56,
+    "clickable": false,
+    "fingerprint": "::::yrank=66"
+  },
+  "152": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1922.0,
+      72.0,
+      636.0,
+      72.0
+    ],
+    "visibility": 0.44,
+    "clickable": false,
+    "fingerprint": "::::yrank=67"
+  },
+  "159": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1954.0,
+      92.0,
+      492.0,
+      40.0
+    ],
+    "visibility": 0.5,
+    "clickable": false,
+    "fingerprint": "::::yrank=70"
+  },
+  "153": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2470.0,
+      80.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 0.5,
+    "clickable": true,
+    "fingerprint": "::::yrank=68"
+  },
+  "154": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2479.359375,
+      89.359375,
+      45.28125,
+      45.28125
+    ],
+    "visibility": 0.5,
+    "clickable": false,
+    "fingerprint": "::::yrank=69"
+  },
+  "155": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1954.0,
+      111.0,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=78"
+  },
+  "156": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1954.0,
+      111.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=79"
+  },
+  "157": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1954.0,
+      160.0,
+      572.0,
+      2.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=84"
+  },
+  "158": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1922.0,
+      258.0,
+      636.0,
+      416.0
+    ],
+    "visibility": 0.9,
+    "clickable": false,
+    "fingerprint": "::::yrank=85"
+  },
+  "160": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1922.0,
+      258.0,
+      636.0,
+      288.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=86"
+  },
+  "161": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1922.0,
+      258.0,
+      636.0,
+      288.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=87"
+  },
+  "162": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1922.0,
+      258.0,
+      636.0,
+      288.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=88"
+  },
+  "163": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1922.0,
+      546.0,
+      636.0,
+      128.0
+    ],
+    "visibility": 0.69,
+    "clickable": false,
+    "fingerprint": "::::yrank=94"
+  },
+  "164": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2069.171875,
+      578.0,
+      341.640625,
+      64.0
+    ],
+    "visibility": 0.88,
+    "clickable": true,
+    "fingerprint": "::::yrank=95"
+  },
+  "165": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2103.171875,
+      594.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=96"
+  },
+  "166": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2139.171875,
+      596.0,
+      237.640625,
+      28.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=97"
+  },
+  "167": {
+    "role": "button",
+    "name": "Show notifications",
+    "description": "",
+    "bbox": [
+      2366.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Show notifications"
+  },
+  "168": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2382.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=17"
+  },
+  "169": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2366.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=43"
+  },
+  "170": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2366.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=44"
+  },
+  "171": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2366.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=45"
+  },
+  "172": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2382.0,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=59"
+  },
+  "173": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2438.0,
+      20.0,
+      0.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=9"
+  },
+  "174": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2438.0,
+      36.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=18"
+  },
+  "175": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2438.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=46"
+  },
+  "176": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2438.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=47"
+  },
+  "177": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2438.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=48"
+  },
+  "178": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2454.0,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=60"
+  },
+  "179": {
+    "role": "button",
+    "name": "Amber Roberts: available",
+    "description": "",
+    "bbox": [
+      2462.0,
+      20.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Amber Roberts: available"
+  },
+  "180": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2470.0,
+      28.0,
+      48.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Amber Roberts: available::yrank=1"
+  },
+  "181": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2470.0,
+      28.0,
+      48.0,
+      48.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Amber Roberts: available::yrank=2"
+  },
+  "182": {
+    "role": "image",
+    "name": "Amber Roberts is Available",
+    "description": "",
+    "bbox": [
+      2480.640625,
+      40.796875,
+      26.71875,
+      22.40625
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "image::Amber Roberts is Available"
+  },
+  "183": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2480.640625,
+      34.40625,
+      26.71875,
+      31.984375
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Amber Roberts: available/Amber Roberts is Available::yrank=1"
+  },
+  "184": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2480.640625,
+      34.40625,
+      26.71875,
+      31.984375
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary/Amber Roberts: available/Amber Roberts is Available::yrank=2"
+  },
+  "185": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2496.0,
+      54.0,
+      24.0,
+      24.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=52"
+  },
+  "186": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2462.0,
+      52.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=49"
+  },
+  "187": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2462.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=50"
+  },
+  "188": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2462.0,
+      52.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=51"
+  },
+  "189": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2478.0,
+      61.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=61"
+  },
+  "190": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2558.0,
+      0.0,
+      2.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=7"
+  },
+  "191": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2560.0,
+      0.0,
+      0.0,
+      104.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=8"
+  },
+  "192": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2592.0,
+      0.0,
+      64.0,
+      104.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=9"
+  },
+  "193": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2592.0,
+      0.0,
+      64.0,
+      104.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Primary::yrank=10"
+  },
+  "194": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=13"
+  },
+  "195": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=14"
+  },
+  "196": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      1440.0,
+      2560.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=22"
+  },
+  "197": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=15"
+  },
+  "198": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=169"
+  },
+  "199": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=170"
+  },
+  "200": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=171"
+  },
+  "201": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=16"
+  },
+  "207": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=17"
+  },
+  "208": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=18"
+  },
+  "209": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=19"
+  },
+  "210": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=24"
+  },
+  "211": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=20"
+  },
+  "212": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow::yrank=21"
+  },
+  "213": {
+    "role": "main",
+    "name": "Screen content",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "main::Screen content"
+  },
+  "214": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=1"
+  },
+  "215": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=74"
+  },
+  "216": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2560.0,
+      1336.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=1"
+  },
+  "217": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2530.0,
+      2838.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=2"
+  },
+  "218": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2530.0,
+      480.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=2"
+  },
+  "219": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2530.0,
+      480.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=3"
+  },
+  "220": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2530.0,
+      480.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=3"
+  },
+  "221": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      104.0,
+      2530.0,
+      400.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=4"
+  },
+  "222": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      168.0,
+      2530.0,
+      136.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=4"
+  },
+  "223": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      168.0,
+      2530.0,
+      136.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=5"
+  },
+  "224": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      168.0,
+      2402.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=6"
+  },
+  "225": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=172"
+  },
+  "226": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      168.0,
+      942.09375,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=7"
+  },
+  "227": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      264.0,
+      2402.0,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=8"
+  },
+  "228": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=173"
+  },
+  "229": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      264.0,
+      1366.765625,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=9"
+  },
+  "230": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      456.0,
+      2530.0,
+      1214.0
+    ],
+    "visibility": 0.81,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=5"
+  },
+  "231": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      456.0,
+      2338.0,
+      1214.0
+    ],
+    "visibility": 0.81,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=10"
+  },
+  "232": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      456.0,
+      2338.0,
+      1214.0
+    ],
+    "visibility": 0.81,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=6"
+  },
+  "233": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      456.0,
+      2338.0,
+      1214.0
+    ],
+    "visibility": 0.81,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=11"
+  },
+  "234": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      136.0,
+      504.0,
+      2258.0,
+      60.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=12"
+  },
+  "235": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=174"
+  },
+  "236": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      136.0,
+      504.0,
+      616.140625,
+      60.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=13"
+  },
+  "237": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      564.0,
+      2338.0,
+      1106.0
+    ],
+    "visibility": 0.79,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=14"
+  },
+  "819": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      612.0,
+      2338.0,
+      138.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=15"
+  },
+  "820": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      144.0,
+      612.0,
+      2242.0,
+      88.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=16"
+  },
+  "821": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      144.0,
+      612.0,
+      779.203125,
+      88.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=17"
+  },
+  "822": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      144.0,
+      612.0,
+      779.203125,
+      88.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=18"
+  },
+  "823": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      144.0,
+      612.0,
+      749.203125,
+      88.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=19"
+  },
+  "824": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      144.0,
+      612.0,
+      749.203125,
+      88.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=20"
+  },
+  "825": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      144.0,
+      612.0,
+      675.203125,
+      88.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=21"
+  },
+  "826": {
+    "role": "heading",
+    "name": "Shared admin dashboard",
+    "description": "",
+    "bbox": [
+      144.0,
+      612.0,
+      675.203125,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Shared admin dashboard::level=1"
+  },
+  "827": {
+    "role": "button",
+    "name": "Change dashboard",
+    "description": "",
+    "bbox": [
+      824.203125,
+      626.6875,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Change dashboard"
+  },
+  "828": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      840.203125,
+      642.6875,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=101"
+  },
+  "849": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      953.203125,
+      612.0,
+      1432.796875,
+      88.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=22"
+  },
+  "850": {
+    "role": "button",
+    "name": "Refresh dashboard",
+    "description": "",
+    "bbox": [
+      2038.0,
+      624.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Refresh dashboard"
+  },
+  "851": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2054.0,
+      640.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=98"
+  },
+  "852": {
+    "role": "button",
+    "name": "View dashboard details",
+    "description": "",
+    "bbox": [
+      2112.0,
+      624.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::View dashboard details"
+  },
+  "853": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2128.0,
+      640.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=99"
+  },
+  "854": {
+    "role": "button",
+    "name": "Edit",
+    "description": "",
+    "bbox": [
+      2186.0,
+      624.0,
+      121.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Edit"
+  },
+  "855": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2220.0,
+      642.0,
+      53.0,
+      28.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Edit"
+  },
+  "856": {
+    "role": "button",
+    "name": "More actions",
+    "description": "",
+    "bbox": [
+      2317.0,
+      624.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More actions"
+  },
+  "857": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2333.0,
+      640.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=100"
+  },
+  "858": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2365.0,
+      656.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/More actions::yrank=1"
+  },
+  "859": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2365.0,
+      656.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/More actions::yrank=2"
+  },
+  "860": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      740.0,
+      2338.0,
+      8.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Saving Dashboard::yrank=1"
+  },
+  "861": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      740.0,
+      2338.0,
+      8.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Saving Dashboard::yrank=2"
+  },
+  "862": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      740.0,
+      2338.0,
+      8.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Saving Dashboard::yrank=3"
+  },
+  "863": {
+    "role": "progressbar",
+    "name": "Saving Dashboard",
+    "description": "",
+    "bbox": [
+      1342.59375,
+      742.0,
+      726.390625,
+      4.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "progressbar::Saving Dashboard"
+  },
+  "864": {
+    "role": "alert",
+    "name": "",
+    "description": "",
+    "bbox": [
+      128.0,
+      596.0,
+      2274.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "alert::"
+  },
+  "865": {
+    "role": "list",
+    "name": "Expanded alert list with 0 alerts.",
+    "description": "",
+    "bbox": [
+      128.0,
+      596.0,
+      2274.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "list::Expanded alert list with 0 alerts."
+  },
+  "866": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      750.0,
+      2338.0,
+      920.0
+    ],
+    "visibility": 0.75,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=23"
+  },
+  "867": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      750.0,
+      2338.0,
+      920.0
+    ],
+    "visibility": 0.75,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=24"
+  },
+  "868": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      750.0,
+      2338.0,
+      920.0
+    ],
+    "visibility": 0.75,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=25"
+  },
+  "869": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      750.0,
+      2338.0,
+      920.0
+    ],
+    "visibility": 0.75,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=26"
+  },
+  "870": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      750.0,
+      2338.0,
+      920.0
+    ],
+    "visibility": 0.75,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=27"
+  },
+  "871": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=175"
+  },
+  "872": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      116.0,
+      770.0,
+      2298.0,
+      880.0
+    ],
+    "visibility": 0.76,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=28"
+  },
+  "873": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      116.0,
+      770.0,
+      766.0,
+      484.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=29"
+  },
+  "874": {
+    "role": "generic",
+    "name": "Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.",
+    "description": "",
+    "bbox": [
+      136.0,
+      790.0,
+      726.0,
+      444.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "generic::Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria."
+  },
+  "875": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      136.0,
+      790.0,
+      726.0,
+      444.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=1"
+  },
+  "876": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=9"
+  },
+  "877": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      136.0,
+      790.0,
+      726.0,
+      444.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=2"
+  },
+  "878": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      808.0,
+      658.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=3"
+  },
+  "879": {
+    "role": "heading",
+    "name": "Open incidents",
+    "description": "",
+    "bbox": [
+      170.0,
+      828.0,
+      530.0,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Open incidents::level=2"
+  },
+  "880": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      700.0,
+      808.0,
+      64.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=4"
+  },
+  "881": {
+    "role": "button",
+    "name": "Description for Open incidents",
+    "description": "",
+    "bbox": [
+      700.0,
+      816.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Description for Open incidents"
+  },
+  "882": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      716.0,
+      832.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=102"
+  },
+  "885": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      764.0,
+      816.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria."
+  },
+  "886": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      780.0,
+      832.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=103"
+  },
+  "890": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      920.0,
+      658.0,
+      280.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=5"
+  },
+  "891": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      920.0,
+      658.0,
+      280.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=6"
+  },
+  "893": {
+    "role": "figure",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      920.0,
+      658.0,
+      122.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "figure::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria."
+  },
+  "894": {
+    "role": "image",
+    "name": "",
+    "description": "",
+    "bbox": [
+      443.0,
+      925.0,
+      112.0,
+      112.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "image::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria."
+  },
+  "895": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=176"
+  },
+  "892": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      251.265625,
+      1042.0,
+      495.46875,
+      158.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=7"
+  },
+  "896": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      251.265625,
+      1074.0,
+      495.46875,
+      94.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::yrank=8"
+  },
+  "897": {
+    "role": "heading",
+    "name": "No data available.",
+    "description": "",
+    "bbox": [
+      251.265625,
+      1074.0,
+      495.46875,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::No data available.::level=3::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria."
+  },
+  "898": {
+    "role": "paragraph",
+    "name": "",
+    "description": "",
+    "bbox": [
+      251.265625,
+      1138.0,
+      495.46875,
+      30.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "paragraph::::via=Shared admin dashboard | ServiceNow/Screen content/Open incidents Description for Open incidents More options No data available. There is no data available for the selected criteria.::after=No data available."
+  },
+  "908": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      882.0,
+      770.0,
+      766.0,
+      484.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=30"
+  },
+  "909": {
+    "role": "generic",
+    "name": "Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.",
+    "description": "",
+    "bbox": [
+      902.0,
+      790.0,
+      726.0,
+      444.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "generic::Open request items Description for Open request items More options No data available. There is no data available for the selected criteria."
+  },
+  "910": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      902.0,
+      790.0,
+      726.0,
+      444.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=1"
+  },
+  "911": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=9"
+  },
+  "912": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      902.0,
+      790.0,
+      726.0,
+      444.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=2"
+  },
+  "913": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      808.0,
+      658.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=3"
+  },
+  "914": {
+    "role": "heading",
+    "name": "Open request items",
+    "description": "",
+    "bbox": [
+      936.0,
+      828.0,
+      530.0,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Open request items::level=2"
+  },
+  "915": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1466.0,
+      808.0,
+      64.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=4"
+  },
+  "916": {
+    "role": "button",
+    "name": "Description for Open request items",
+    "description": "",
+    "bbox": [
+      1466.0,
+      816.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::Description for Open request items"
+  },
+  "917": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1482.0,
+      832.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=104"
+  },
+  "920": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      1530.0,
+      816.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria."
+  },
+  "921": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1546.0,
+      832.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=105"
+  },
+  "925": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      920.0,
+      658.0,
+      280.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=5"
+  },
+  "926": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      920.0,
+      658.0,
+      280.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=6"
+  },
+  "928": {
+    "role": "figure",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      920.0,
+      658.0,
+      122.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "figure::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria."
+  },
+  "929": {
+    "role": "image",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1209.0,
+      925.0,
+      112.0,
+      112.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "image::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria."
+  },
+  "930": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=177"
+  },
+  "927": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1017.265625,
+      1042.0,
+      495.46875,
+      158.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=7"
+  },
+  "931": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1017.265625,
+      1074.0,
+      495.46875,
+      94.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::yrank=8"
+  },
+  "932": {
+    "role": "heading",
+    "name": "No data available.",
+    "description": "",
+    "bbox": [
+      1017.265625,
+      1074.0,
+      495.46875,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::No data available.::level=3::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria."
+  },
+  "933": {
+    "role": "paragraph",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1017.265625,
+      1138.0,
+      495.46875,
+      30.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "paragraph::::via=Shared admin dashboard | ServiceNow/Screen content/Open request items Description for Open request items More options No data available. There is no data available for the selected criteria.::after=No data available."
+  },
+  "943": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1648.0,
+      770.0,
+      239.375,
+      440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=31"
+  },
+  "944": {
+    "role": "generic",
+    "name": "Problems More options 396\u00a0",
+    "description": "",
+    "bbox": [
+      1668.0,
+      790.0,
+      199.375,
+      400.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "generic::Problems More options 396\u00a0"
+  },
+  "945": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1668.0,
+      790.0,
+      199.375,
+      400.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0::yrank=1"
+  },
+  "946": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0::yrank=6"
+  },
+  "947": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1668.0,
+      790.0,
+      199.375,
+      400.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0::yrank=2"
+  },
+  "948": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      808.0,
+      131.375,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0::yrank=3"
+  },
+  "949": {
+    "role": "heading",
+    "name": "Problems",
+    "description": "",
+    "bbox": [
+      1702.0,
+      828.0,
+      67.375,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Problems::level=2"
+  },
+  "950": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      1769.375,
+      816.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0"
+  },
+  "951": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1785.375,
+      832.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=106"
+  },
+  "955": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      920.0,
+      131.375,
+      236.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0::yrank=4"
+  },
+  "956": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      920.0,
+      131.375,
+      236.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0::yrank=5"
+  },
+  "957": {
+    "role": "button",
+    "name": "396\u00a0",
+    "description": "",
+    "bbox": [
+      1702.0,
+      920.0,
+      131.375,
+      236.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::396\u00a0"
+  },
+  "958": {
+    "role": "generic",
+    "name": "396",
+    "description": "",
+    "bbox": [
+      1702.0,
+      920.0,
+      131.375,
+      120.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::396"
+  },
+  "959": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      920.0,
+      131.375,
+      120.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Problems More options 396\u00a0/396\u00a0/396"
+  },
+  "960": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1887.375,
+      770.0,
+      526.625,
+      440.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=32"
+  },
+  "961": {
+    "role": "generic",
+    "name": "Hardening compliance score More options 88%\u00a0",
+    "description": "",
+    "bbox": [
+      1907.375,
+      790.0,
+      486.625,
+      400.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "generic::Hardening compliance score More options 88%\u00a0"
+  },
+  "962": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1907.375,
+      790.0,
+      486.625,
+      400.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0::yrank=1"
+  },
+  "963": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0::yrank=6"
+  },
+  "964": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1907.375,
+      790.0,
+      486.625,
+      400.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0::yrank=2"
+  },
+  "965": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      808.0,
+      418.625,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0::yrank=3"
+  },
+  "966": {
+    "role": "heading",
+    "name": "Hardening compliance score",
+    "description": "",
+    "bbox": [
+      1941.375,
+      828.0,
+      354.625,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Hardening compliance score::level=2"
+  },
+  "967": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      2296.0,
+      816.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0"
+  },
+  "968": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2312.0,
+      832.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=107"
+  },
+  "972": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      920.0,
+      418.625,
+      236.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0::yrank=4"
+  },
+  "973": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      920.0,
+      418.625,
+      236.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0::yrank=5"
+  },
+  "974": {
+    "role": "button",
+    "name": "88%\u00a0",
+    "description": "",
+    "bbox": [
+      1941.375,
+      920.0,
+      418.625,
+      236.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::88%\u00a0"
+  },
+  "975": {
+    "role": "generic",
+    "name": "88%",
+    "description": "",
+    "bbox": [
+      1941.375,
+      920.0,
+      418.625,
+      120.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::88%"
+  },
+  "976": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      920.0,
+      418.625,
+      120.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0/88%\u00a0/88%"
+  },
+  "977": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1104.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.72,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0/88%\u00a0::after=88%"
+  },
+  "978": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1104.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.72,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0/88%\u00a0::yrank=1"
+  },
+  "979": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1104.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.72,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0/88%\u00a0::yrank=2"
+  },
+  "980": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1104.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.72,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Hardening compliance score More options 88%\u00a0/88%\u00a0::yrank=3"
+  },
+  "981": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1104.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.72,
+    "clickable": false,
+    "fingerprint": "::::yrank=108"
+  },
+  "982": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1648.0,
+      1210.0,
+      239.375,
+      440.0
+    ],
+    "visibility": 0.52,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=33"
+  },
+  "983": {
+    "role": "generic",
+    "name": "Changes More options 122\u00a0",
+    "description": "",
+    "bbox": [
+      1668.0,
+      1230.0,
+      199.375,
+      400.0
+    ],
+    "visibility": 0.52,
+    "clickable": true,
+    "fingerprint": "generic::Changes More options 122\u00a0"
+  },
+  "984": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1668.0,
+      1230.0,
+      199.375,
+      400.0
+    ],
+    "visibility": 0.52,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0::yrank=1"
+  },
+  "985": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0::yrank=6"
+  },
+  "986": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1668.0,
+      1230.0,
+      199.375,
+      400.0
+    ],
+    "visibility": 0.52,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0::yrank=2"
+  },
+  "987": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      1248.0,
+      131.375,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0::yrank=3"
+  },
+  "988": {
+    "role": "heading",
+    "name": "Changes",
+    "description": "",
+    "bbox": [
+      1702.0,
+      1268.0,
+      67.375,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Changes::level=2"
+  },
+  "989": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      1769.375,
+      1256.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0"
+  },
+  "990": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1785.375,
+      1272.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=109"
+  },
+  "994": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      1360.0,
+      131.375,
+      236.0
+    ],
+    "visibility": 0.34,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0::yrank=4"
+  },
+  "995": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      1360.0,
+      131.375,
+      236.0
+    ],
+    "visibility": 0.34,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0::yrank=5"
+  },
+  "996": {
+    "role": "button",
+    "name": "122\u00a0",
+    "description": "",
+    "bbox": [
+      1702.0,
+      1360.0,
+      131.375,
+      236.0
+    ],
+    "visibility": 0.34,
+    "clickable": true,
+    "fingerprint": "button::122\u00a0"
+  },
+  "997": {
+    "role": "generic",
+    "name": "122",
+    "description": "",
+    "bbox": [
+      1702.0,
+      1360.0,
+      131.375,
+      120.0
+    ],
+    "visibility": 0.67,
+    "clickable": false,
+    "fingerprint": "generic::122"
+  },
+  "998": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1702.0,
+      1360.0,
+      131.375,
+      120.0
+    ],
+    "visibility": 0.67,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Changes More options 122\u00a0/122\u00a0/122"
+  },
+  "999": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1887.375,
+      1210.0,
+      526.625,
+      440.0
+    ],
+    "visibility": 0.52,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=34"
+  },
+  "1000": {
+    "role": "generic",
+    "name": "Critical Updates More options 2\u00a0",
+    "description": "",
+    "bbox": [
+      1907.375,
+      1230.0,
+      486.625,
+      400.0
+    ],
+    "visibility": 0.52,
+    "clickable": true,
+    "fingerprint": "generic::Critical Updates More options 2\u00a0"
+  },
+  "1001": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1907.375,
+      1230.0,
+      486.625,
+      400.0
+    ],
+    "visibility": 0.52,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0::yrank=1"
+  },
+  "1002": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0::yrank=6"
+  },
+  "1003": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1907.375,
+      1230.0,
+      486.625,
+      400.0
+    ],
+    "visibility": 0.52,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0::yrank=2"
+  },
+  "1004": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1248.0,
+      418.625,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0::yrank=3"
+  },
+  "1005": {
+    "role": "heading",
+    "name": "Critical Updates",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1268.0,
+      354.625,
+      40.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Critical Updates::level=2"
+  },
+  "1006": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      2296.0,
+      1256.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0"
+  },
+  "1007": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2312.0,
+      1272.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=110"
+  },
+  "1011": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1360.0,
+      418.625,
+      236.0
+    ],
+    "visibility": 0.34,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0::yrank=4"
+  },
+  "1012": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1360.0,
+      418.625,
+      236.0
+    ],
+    "visibility": 0.34,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0::yrank=5"
+  },
+  "1013": {
+    "role": "button",
+    "name": "2\u00a0",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1360.0,
+      418.625,
+      236.0
+    ],
+    "visibility": 0.34,
+    "clickable": true,
+    "fingerprint": "button::2\u00a0"
+  },
+  "1014": {
+    "role": "generic",
+    "name": "2",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1360.0,
+      418.625,
+      120.0
+    ],
+    "visibility": 0.67,
+    "clickable": false,
+    "fingerprint": "generic::2"
+  },
+  "1015": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1360.0,
+      418.625,
+      120.0
+    ],
+    "visibility": 0.67,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0/2\u00a0/2"
+  },
+  "1016": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1544.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0/2\u00a0::after=2"
+  },
+  "1017": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1544.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0/2\u00a0::yrank=1"
+  },
+  "1018": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1544.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0/2\u00a0::yrank=2"
+  },
+  "1019": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1544.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Critical Updates More options 2\u00a0/2\u00a0::yrank=3"
+  },
+  "1020": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1941.375,
+      1544.0,
+      418.625,
+      72.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=115"
+  },
+  "1021": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      116.0,
+      1254.0,
+      383.0,
+      396.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=35"
+  },
+  "1022": {
+    "role": "generic",
+    "name": "Open P1 incidents More options 0\u00a0",
+    "description": "",
+    "bbox": [
+      136.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": true,
+    "fingerprint": "generic::Open P1 incidents More options 0\u00a0"
+  },
+  "1023": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      136.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0::yrank=1"
+  },
+  "1024": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0::yrank=6"
+  },
+  "1025": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      136.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0::yrank=2"
+  },
+  "1026": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      1292.0,
+      275.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0::yrank=3"
+  },
+  "1027": {
+    "role": "heading",
+    "name": "Open P1 incidents",
+    "description": "",
+    "bbox": [
+      170.0,
+      1292.0,
+      211.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Open P1 incidents::level=2"
+  },
+  "1028": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      381.0,
+      1300.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0"
+  },
+  "1029": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      397.0,
+      1316.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=111"
+  },
+  "1033": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0::yrank=4"
+  },
+  "1034": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0::yrank=5"
+  },
+  "1035": {
+    "role": "button",
+    "name": "0\u00a0",
+    "description": "",
+    "bbox": [
+      170.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": true,
+    "fingerprint": "button::0\u00a0::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0"
+  },
+  "1036": {
+    "role": "generic",
+    "name": "0",
+    "description": "",
+    "bbox": [
+      170.0,
+      1404.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.3,
+    "clickable": false,
+    "fingerprint": "generic::0::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0/0\u00a0"
+  },
+  "1037": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      170.0,
+      1404.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.3,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Open P1 incidents More options 0\u00a0/0\u00a0/0"
+  },
+  "1038": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      499.0,
+      1254.0,
+      383.0,
+      396.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=36"
+  },
+  "1039": {
+    "role": "generic",
+    "name": "Aging incidents over 24 hrs More options 0\u00a0",
+    "description": "",
+    "bbox": [
+      519.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": true,
+    "fingerprint": "generic::Aging incidents over 24 hrs More options 0\u00a0"
+  },
+  "1040": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      519.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0::yrank=1"
+  },
+  "1041": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0::yrank=6"
+  },
+  "1042": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      519.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0::yrank=2"
+  },
+  "1043": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      553.0,
+      1292.0,
+      275.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0::yrank=3"
+  },
+  "1044": {
+    "role": "heading",
+    "name": "Aging incidents over 24 hrs",
+    "description": "",
+    "bbox": [
+      553.0,
+      1292.0,
+      211.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Aging incidents over 24 hrs::level=2"
+  },
+  "1045": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      764.0,
+      1300.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0"
+  },
+  "1046": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      780.0,
+      1316.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=112"
+  },
+  "1050": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      553.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0::yrank=4"
+  },
+  "1051": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      553.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0::yrank=5"
+  },
+  "1052": {
+    "role": "button",
+    "name": "0\u00a0",
+    "description": "",
+    "bbox": [
+      553.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": true,
+    "fingerprint": "button::0\u00a0::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0"
+  },
+  "1053": {
+    "role": "generic",
+    "name": "0",
+    "description": "",
+    "bbox": [
+      553.0,
+      1404.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.3,
+    "clickable": false,
+    "fingerprint": "generic::0::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0/0\u00a0"
+  },
+  "1054": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      553.0,
+      1404.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.3,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Aging incidents over 24 hrs More options 0\u00a0/0\u00a0/0"
+  },
+  "1055": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      882.0,
+      1254.0,
+      383.0,
+      396.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=37"
+  },
+  "1056": {
+    "role": "generic",
+    "name": "Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25",
+    "description": "",
+    "bbox": [
+      902.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": true,
+    "fingerprint": "generic::Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25"
+  },
+  "1057": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      902.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25::yrank=1"
+  },
+  "1058": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25::yrank=6"
+  },
+  "1059": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      902.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25::yrank=2"
+  },
+  "1060": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      1292.0,
+      275.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25::yrank=3"
+  },
+  "1061": {
+    "role": "heading",
+    "name": "Request items over 24 hrs",
+    "description": "",
+    "bbox": [
+      936.0,
+      1292.0,
+      211.0,
+      80.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Request items over 24 hrs::level=2"
+  },
+  "1062": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      1147.0,
+      1300.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25"
+  },
+  "1063": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1163.0,
+      1316.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=113"
+  },
+  "1067": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25::yrank=4"
+  },
+  "1068": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25::yrank=5"
+  },
+  "1069": {
+    "role": "button",
+    "name": "1\u00a0 Trending upward \u00a0 1 \u00a0since February 25",
+    "description": "",
+    "bbox": [
+      936.0,
+      1404.0,
+      275.0,
+      192.0
+    ],
+    "visibility": 0.19,
+    "clickable": true,
+    "fingerprint": "button::1\u00a0 Trending upward \u00a0 1 \u00a0since February 25"
+  },
+  "1070": {
+    "role": "generic",
+    "name": "1",
+    "description": "",
+    "bbox": [
+      936.0,
+      1404.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.3,
+    "clickable": false,
+    "fingerprint": "generic::1"
+  },
+  "1071": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      1404.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.3,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1"
+  },
+  "1072": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      936.0,
+      1548.0,
+      275.0,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1\u00a0 Trending upward \u00a0 1 \u00a0since February 25::after=1"
+  },
+  "1073": {
+    "role": "generic",
+    "name": "1 since February 25",
+    "description": "",
+    "bbox": [
+      936.0,
+      1548.0,
+      275.0,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::1 since February 25"
+  },
+  "1074": {
+    "role": "image",
+    "name": "Trending upward",
+    "description": "",
+    "bbox": [
+      936.0,
+      1552.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "image::Trending upward"
+  },
+  "1075": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      974.46875,
+      1548.0,
+      236.53125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1 since February 25::after=\u00a0"
+  },
+  "1076": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      974.46875,
+      1548.0,
+      28.78125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1 since February 25::yrank=1"
+  },
+  "1077": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1003.25,
+      1548.0,
+      233.609375,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items over 24 hrs More options 1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1\u00a0 Trending upward \u00a0 1 \u00a0since February 25/1 since February 25::yrank=2"
+  },
+  "1078": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1265.0,
+      1254.0,
+      383.0,
+      396.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=38"
+  },
+  "1079": {
+    "role": "generic",
+    "name": "Request items awaiting approval More options 0\u00a0",
+    "description": "",
+    "bbox": [
+      1285.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": true,
+    "fingerprint": "generic::Request items awaiting approval More options 0\u00a0"
+  },
+  "1080": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1285.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0::yrank=1"
+  },
+  "1081": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0::yrank=6"
+  },
+  "1082": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1285.0,
+      1274.0,
+      343.0,
+      356.0
+    ],
+    "visibility": 0.47,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0::yrank=2"
+  },
+  "1083": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1319.0,
+      1292.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0::yrank=3"
+  },
+  "1084": {
+    "role": "heading",
+    "name": "Request items awaiting approval",
+    "description": "",
+    "bbox": [
+      1319.0,
+      1292.0,
+      211.0,
+      120.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "heading::Request items awaiting approval::level=2"
+  },
+  "1085": {
+    "role": "button",
+    "name": "More options",
+    "description": "",
+    "bbox": [
+      1530.0,
+      1320.0,
+      64.0,
+      64.0
+    ],
+    "visibility": 1.0,
+    "clickable": true,
+    "fingerprint": "button::More options::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0"
+  },
+  "1086": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1546.0,
+      1336.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=114"
+  },
+  "1090": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1319.0,
+      1444.0,
+      275.0,
+      152.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0::yrank=4"
+  },
+  "1091": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1319.0,
+      1444.0,
+      275.0,
+      152.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0::yrank=5"
+  },
+  "1092": {
+    "role": "button",
+    "name": "0\u00a0",
+    "description": "",
+    "bbox": [
+      1319.0,
+      1444.0,
+      275.0,
+      152.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "button::0\u00a0::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0"
+  },
+  "1093": {
+    "role": "generic",
+    "name": "0",
+    "description": "",
+    "bbox": [
+      1319.0,
+      1444.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::0::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0/0\u00a0"
+  },
+  "1094": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1319.0,
+      1444.0,
+      275.0,
+      120.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Request items awaiting approval More options 0\u00a0/0\u00a0/0"
+  },
+  "1095": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=178"
+  },
+  "1096": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=179"
+  },
+  "1097": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=180"
+  },
+  "1098": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=181"
+  },
+  "1099": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=182"
+  },
+  "1100": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=183"
+  },
+  "1101": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=184"
+  },
+  "1102": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=185"
+  },
+  "1103": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=186"
+  },
+  "1104": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=187"
+  },
+  "1105": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=188"
+  },
+  "1106": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=189"
+  },
+  "1107": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=190"
+  },
+  "1108": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=191"
+  },
+  "1109": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=192"
+  },
+  "1110": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=193"
+  },
+  "1111": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=194"
+  },
+  "1112": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=195"
+  },
+  "241": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      1702.0,
+      2530.0,
+      1048.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=7"
+  },
+  "242": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      1702.0,
+      2530.0,
+      1048.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=39"
+  },
+  "1113": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=75"
+  },
+  "1114": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      1734.0,
+      2338.0,
+      984.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=40"
+  },
+  "1115": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      1734.0,
+      2338.0,
+      984.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=41"
+  },
+  "1116": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      128.0,
+      1766.0,
+      2274.0,
+      72.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=42"
+  },
+  "1117": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=196"
+  },
+  "1118": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      128.0,
+      1772.0,
+      744.875,
+      60.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=43"
+  },
+  "1119": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      1902.0,
+      2338.0,
+      784.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=8"
+  },
+  "1120": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      96.0,
+      1902.0,
+      2338.0,
+      784.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=44"
+  },
+  "1121": {
+    "role": "group",
+    "name": "",
+    "description": "",
+    "bbox": [
+      144.0,
+      1902.0,
+      715.328125,
+      736.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "group::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=1"
+  },
+  "1122": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      178.0,
+      1936.0,
+      647.328125,
+      668.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=45"
+  },
+  "1123": {
+    "role": "heading",
+    "name": "Instance upgrade",
+    "description": "",
+    "bbox": [
+      178.0,
+      1936.0,
+      647.328125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "heading::Instance upgrade::level=2"
+  },
+  "1124": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=197"
+  },
+  "1125": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=198"
+  },
+  "1204": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=199"
+  },
+  "1205": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      178.0,
+      2013.578125,
+      647.328125,
+      276.78125
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=48"
+  },
+  "1206": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      178.0,
+      2013.578125,
+      285.984375,
+      105.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=49"
+  },
+  "1207": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      527.984375,
+      2013.578125,
+      297.34375,
+      105.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=50"
+  },
+  "1208": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      178.0,
+      2119.171875,
+      285.984375,
+      145.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=55"
+  },
+  "1209": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      527.984375,
+      2119.171875,
+      297.34375,
+      145.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=56"
+  },
+  "1210": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      178.0,
+      2264.765625,
+      285.984375,
+      25.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=57"
+  },
+  "1211": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      527.984375,
+      2264.765625,
+      297.34375,
+      25.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=58"
+  },
+  "1126": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=76"
+  },
+  "1127": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      186.0,
+      2329.0625,
+      631.328125,
+      127.5625
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=62"
+  },
+  "1128": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      186.0,
+      2329.0625,
+      631.328125,
+      127.5625
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=63"
+  },
+  "1129": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      186.0,
+      2329.0625,
+      631.328125,
+      127.5625
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=64"
+  },
+  "1130": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      186.0,
+      2329.0625,
+      631.328125,
+      127.5625
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=65"
+  },
+  "1131": {
+    "role": "generic",
+    "name": "Upgradability violations",
+    "description": "",
+    "bbox": [
+      186.0,
+      2329.0625,
+      631.328125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::Upgradability violations"
+  },
+  "1132": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      186.0,
+      2329.0625,
+      631.328125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Upgradability violations"
+  },
+  "1133": {
+    "role": "generic",
+    "name": "0",
+    "description": "",
+    "bbox": [
+      186.0,
+      2401.0625,
+      631.328125,
+      60.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::0::via=Shared admin dashboard | ServiceNow/Screen content::after=Upgradability violations"
+  },
+  "1134": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      186.0,
+      2401.0625,
+      631.328125,
+      60.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/0"
+  },
+  "1135": {
+    "role": "link",
+    "name": "Accessible Label",
+    "description": "",
+    "bbox": [
+      178.0,
+      2471.953125,
+      191.6875,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::Accessible Label::via=Shared admin dashboard | ServiceNow/Screen content::yrank=1"
+  },
+  "1136": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      369.6875,
+      2471.953125,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Accessible Label::after=Review results"
+  },
+  "1137": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      178.0,
+      2567.28125,
+      647.328125,
+      36.71875
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=11"
+  },
+  "1138": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      178.0,
+      2567.28125,
+      647.328125,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=71"
+  },
+  "1139": {
+    "role": "link",
+    "name": "Accessible Label",
+    "description": "",
+    "bbox": [
+      178.0,
+      2567.28125,
+      265.28125,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::Accessible Label::via=Shared admin dashboard | ServiceNow/Screen content::yrank=4"
+  },
+  "1140": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      443.28125,
+      2567.28125,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Accessible Label::after=Visit upgrade center"
+  },
+  "1141": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      447.28125,
+      2571.28125,
+      32.0,
+      32.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=117"
+  },
+  "1142": {
+    "role": "group",
+    "name": "",
+    "description": "",
+    "bbox": [
+      907.328125,
+      1902.0,
+      715.328125,
+      736.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "group::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=2"
+  },
+  "1143": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      1936.0,
+      647.328125,
+      668.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=46"
+  },
+  "1144": {
+    "role": "heading",
+    "name": "Entitled ServiceNow apps",
+    "description": "",
+    "bbox": [
+      941.328125,
+      1936.0,
+      647.328125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "heading::Entitled ServiceNow apps::level=2"
+  },
+  "1145": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=200"
+  },
+  "1146": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=201"
+  },
+  "1147": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=202"
+  },
+  "1212": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=77"
+  },
+  "1213": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2042.265625,
+      647.328125,
+      192.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=51"
+  },
+  "1214": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2042.265625,
+      647.328125,
+      192.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=52"
+  },
+  "1215": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2042.265625,
+      647.328125,
+      192.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=53"
+  },
+  "1216": {
+    "role": "button",
+    "name": "Needs update\u00a0 45\u00a0",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2042.265625,
+      647.328125,
+      192.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "button::Needs update\u00a0 45\u00a0"
+  },
+  "1217": {
+    "role": "generic",
+    "name": "Needs update",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2042.265625,
+      647.328125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::Needs update"
+  },
+  "1218": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2042.265625,
+      647.328125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Needs update\u00a0 45\u00a0/Needs update"
+  },
+  "1219": {
+    "role": "generic",
+    "name": "45",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2114.265625,
+      647.328125,
+      120.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::45"
+  },
+  "1220": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2114.265625,
+      647.328125,
+      120.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Needs update\u00a0 45\u00a0/45"
+  },
+  "1221": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=203"
+  },
+  "1222": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2300.53125,
+      384.0,
+      151.1875
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=59"
+  },
+  "1223": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2300.53125,
+      201.734375,
+      65.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=60"
+  },
+  "1224": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1143.0625,
+      2300.53125,
+      182.265625,
+      65.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=61"
+  },
+  "1225": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2366.125,
+      201.734375,
+      85.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=67"
+  },
+  "1226": {
+    "role": "link",
+    "name": "141",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2366.125,
+      71.578125,
+      60.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::141"
+  },
+  "1227": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1143.0625,
+      2366.125,
+      182.265625,
+      85.59375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=68"
+  },
+  "1228": {
+    "role": "link",
+    "name": "2289",
+    "description": "",
+    "bbox": [
+      1143.0625,
+      2366.125,
+      95.4375,
+      60.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::2289"
+  },
+  "1148": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2565.984375,
+      647.328125,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=9"
+  },
+  "1149": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2565.984375,
+      647.328125,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=69"
+  },
+  "1150": {
+    "role": "link",
+    "name": "Accessible Label",
+    "description": "",
+    "bbox": [
+      941.328125,
+      2565.984375,
+      273.1875,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::Accessible Label::via=Shared admin dashboard | ServiceNow/Screen content::yrank=2"
+  },
+  "1151": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1214.515625,
+      2565.984375,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Accessible Label::after=View all applications"
+  },
+  "1152": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1218.515625,
+      2571.984375,
+      32.0,
+      32.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=118"
+  },
+  "1153": {
+    "role": "group",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1670.65625,
+      1902.0,
+      715.328125,
+      736.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "group::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=3"
+  },
+  "1154": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      1936.0,
+      647.328125,
+      668.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=47"
+  },
+  "1155": {
+    "role": "heading",
+    "name": "Adoption blueprints",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      1936.0,
+      647.328125,
+      40.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "heading::Adoption blueprints::level=2"
+  },
+  "1156": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      2063.015625,
+      647.328125,
+      202.9375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=54"
+  },
+  "1157": {
+    "role": "image",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      2063.015625,
+      647.328125,
+      202.9375
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "image::::via=Shared admin dashboard | ServiceNow/Screen content"
+  },
+  "1158": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      2352.96875,
+      647.328125,
+      126.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=66"
+  },
+  "1159": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=204"
+  },
+  "1160": {
+    "role": "paragraph",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      2352.96875,
+      647.328125,
+      126.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "paragraph::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=1"
+  },
+  "1161": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      2565.984375,
+      647.328125,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=10"
+  },
+  "1162": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      2565.984375,
+      647.328125,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=70"
+  },
+  "1163": {
+    "role": "link",
+    "name": "Accessible Label",
+    "description": "",
+    "bbox": [
+      1704.65625,
+      2565.984375,
+      375.5625,
+      38.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "link::Accessible Label::via=Shared admin dashboard | ServiceNow/Screen content::yrank=3"
+  },
+  "1164": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2080.21875,
+      2565.984375,
+      2.0,
+      2.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Accessible Label::after=View all Adoption blueprints"
+  },
+  "1165": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      2084.21875,
+      2569.984375,
+      32.0,
+      32.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=116"
+  },
+  "243": {
+    "role": "Section",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      2750.0,
+      2530.0,
+      192.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "Section::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=12"
+  },
+  "244": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      2750.0,
+      2530.0,
+      192.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=72"
+  },
+  "245": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      691.703125,
+      2822.0,
+      795.5625,
+      48.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=73"
+  },
+  "246": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=205"
+  },
+  "247": {
+    "role": "paragraph",
+    "name": "",
+    "description": "",
+    "bbox": [
+      691.703125,
+      2822.0,
+      795.5625,
+      48.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "paragraph::::via=Shared admin dashboard | ServiceNow/Screen content::yrank=2"
+  },
+  "248": {
+    "role": "button",
+    "name": "Share a suggestion",
+    "description": "",
+    "bbox": [
+      1519.265625,
+      2814.0,
+      319.015625,
+      64.0
+    ],
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "button::Share a suggestion"
+  },
+  "249": {
+    "role": "generic",
+    "name": "",
+    "description": "",
+    "bbox": [
+      1553.265625,
+      2832.0,
+      251.015625,
+      28.0
+    ],
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "generic::::via=Shared admin dashboard | ServiceNow/Screen content/Share a suggestion"
+  },
+  "301": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=206"
+  },
+  "302": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=207"
+  },
+  "303": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=208"
+  },
+  "304": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=209"
+  },
+  "305": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=210"
+  },
+  "306": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=211"
+  },
+  "202": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=212"
+  },
+  "203": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=2"
+  },
+  "204": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=3"
+  },
+  "205": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      0.0,
+      0.0,
+      32.0,
+      32.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=4"
+  },
+  "206": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": [
+      16.0,
+      9.609375,
+      0.0,
+      0.0
+    ],
+    "visibility": 1.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=5"
+  },
+  "307": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=213"
+  },
+  "308": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=214"
+  },
+  "309": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=215"
+  },
+  "310": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=216"
+  },
+  "311": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": true,
+    "fingerprint": "::::yrank=217"
+  },
+  "312": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=218"
+  },
+  "313": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=219"
+  },
+  "314": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=220"
+  },
+  "315": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=221"
+  },
+  "1166": {
+    "role": "",
+    "name": "",
+    "description": "",
+    "bbox": null,
+    "visibility": 0.0,
+    "clickable": false,
+    "fingerprint": "::::yrank=222"
+  }
+}
