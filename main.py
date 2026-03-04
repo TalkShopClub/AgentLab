@@ -40,8 +40,8 @@ logging.getLogger().setLevel(logging.INFO)
 
 # choose your agent or provide a new agent
 # agent_args = [AGENT_GEMINI3]
-agent_args = [VISUAL_AGENT_GPT5]
-# agent_args = [AGENT_GPT5]
+# agent_args = [VISUAL_AGENT_GPT5]
+agent_args = [AGENT_GPT5]
 # agent_args = [WM_VISUAL_AGENT_GPT5_TEXT]   # World model augmented (text predictions)
 # agent_args = [WM_VISUAL_AGENT_GPT5_IMAGE]  # World model augmented (image predictions)
 
@@ -61,14 +61,55 @@ benchmark = workarena_l2_single_seed()  # Custom: only 1 seed per task type
 # Deterministic task selection and execution.
 # TASK_SEED controls both which task is picked and the task content (hashtags, users, etc.).
 # Set to None to use the curriculum-assigned seeds without overriding.
-TASK_SEED = 42
+TASK_SEED = 400
+
+# ── Task source ──
+# Option A: Load ordered task list from sampled_tasks.txt (written by run_parallel.py)
+TASK_FILE = "oracle_wm/parallel_logs/sampled_tasks.txt"
+# TASK_FILE = None
 
 import random
-rng = random.Random(TASK_SEED)
-benchmark.env_args_list = rng.sample(benchmark.env_args_list, 3)
-if TASK_SEED is not None:
-    for env_args in benchmark.env_args_list:
-        env_args.task_seed = TASK_SEED
+from pathlib import Path
+
+if TASK_FILE and Path(TASK_FILE).is_file():
+    # Parse ordered task names and seeds from the file
+    ordered_tasks = []  # list of (task_name, seed)
+    for line in Path(TASK_FILE).read_text().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        parts = line.split()
+        task_name = parts[0]
+        seed = int(parts[1].split("=")[1]) if len(parts) > 1 and "seed=" in parts[1] else TASK_SEED
+        ordered_tasks.append((task_name, seed))
+    # Build env_args lookup by task_name
+    env_args_by_name = {e.task_name: e for e in benchmark.env_args_list}
+    # Rebuild env_args_list in file order, assigning per-task seeds
+    benchmark.env_args_list = []
+    for task_name, seed in ordered_tasks:
+        if task_name in env_args_by_name:
+            ea = env_args_by_name[task_name]
+            ea.task_seed = seed
+            benchmark.env_args_list.append(ea)
+    print(f"Loaded {len(benchmark.env_args_list)} tasks from {TASK_FILE} (ordered, with per-task seeds)")
+else:
+    # Option B: Random sampling (or specific-task override)
+    SPECIFIC_TASKS = [
+        "workarena.servicenow.filter-single-item-expenses-and-delete-wrong-investments-medium-l2",
+        "workarena.servicenow.dashboard-retrieve-incident-and-min-filter-asset-list-l2",
+    ]
+    # SPECIFIC_TASKS = None
+    if SPECIFIC_TASKS:
+        task_set = set(SPECIFIC_TASKS)
+        benchmark.env_args_list = [e for e in benchmark.env_args_list if e.task_name in task_set]
+        for env_args in benchmark.env_args_list:
+            env_args.task_seed = TASK_SEED
+    else:
+        rng = random.Random(TASK_SEED)
+        benchmark.env_args_list = rng.sample(benchmark.env_args_list, 3)
+        if TASK_SEED is not None:
+            for env_args in benchmark.env_args_list:
+                env_args.task_seed = TASK_SEED
 
 # Set reproducibility_mode = True for reproducibility
 # this will "ask" agents to be deterministic. Also, it will prevent you from launching if you have
@@ -80,7 +121,7 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 3  # Sequential execution for testing
+n_jobs = 4  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend
