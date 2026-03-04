@@ -1,4 +1,0 @@
-<think>
-We need to build a filter: Short description contains "#SERIES-1f711cdf-2". Candidate 1 opened the filter field dropdown in the filter builder, which is the correct path to select "Short description" as the field. Other candidates either changed the list search context, used wrong inputs, or made no progress. Candidate 1 makes the best progress toward creating the required filter.
-</think>
-<selection>1</selection>

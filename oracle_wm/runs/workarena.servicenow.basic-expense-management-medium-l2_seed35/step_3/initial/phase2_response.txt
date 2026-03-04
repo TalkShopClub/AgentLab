@@ -1,4 +1,0 @@
-<think>
-We need to create a filter where “Short description” contains a specific string. Opening the filter builder is the most direct step to construct that condition. Candidate 3 successfully opens the filter builder with field/operator/value controls, best progressing toward the goal.
-</think>
-<selection>3</selection>

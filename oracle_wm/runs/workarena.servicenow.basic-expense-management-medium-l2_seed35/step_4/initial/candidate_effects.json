@@ -1,7 +1,0 @@
-[
-  "The filter field selector (\u201c-- choose field --\u201d) opened, showing a search box and a list of fields (e.g., Keywords, Amount, Asset).",
-  "The quick-search scope changed from \u201cNumber\u201d to \u201cShort description\u201d in the dropdown next to the list search box.",
-  "The list search input now contains \u201c#SERIES-c8c8c533-7\u201d; the table content remains unchanged.",
-  "An additional row with per-column \u201cSearch\u201d inputs appeared beneath the headers, enabling column-specific filtering.",
-  "The \u201cShort description\u201d column header became highlighted and displays its three-dot options icon, but no dropdown menu is shown."
-]

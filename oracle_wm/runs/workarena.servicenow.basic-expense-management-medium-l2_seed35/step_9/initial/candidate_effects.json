@@ -1,7 +1,0 @@
-[
-  "The checkbox for the second row (EXP-15319670314) is checked and that row is highlighted to indicate selection.",
-  "The checkbox for the third row (EXP-25319670314) is checked and that row becomes highlighted; no other rows are selected.",
-  "The checkbox for the fourth row (EXP-35319670314) is checked and the row is highlighted; all other rows remain unselected.",
-  "No visible change occurs\u2014no rows are selected or deleted and the list appears the same as before.",
-  "A new search/filter row appears beneath the column headers with input boxes for each column, pushing the table content down (icon now indicates \u201cHide column search row\u201d)."
-]

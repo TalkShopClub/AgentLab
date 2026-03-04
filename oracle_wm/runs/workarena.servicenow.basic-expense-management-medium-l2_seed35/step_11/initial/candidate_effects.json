@@ -1,7 +1,0 @@
-[
-  "The confirmation dialog closes, the list returns to full opacity, and no records are deleted; the previously selected row(s) remain selected.",
-  "The confirmation dialog disappears and the selected record is removed from the grid; the list count decreases (pagination changes to 1 to 7 of 7) and the deleted row no longer appears.",
-  "The dialog is closed via the X and the table is visible again with the prior selection intact; no deletion occurs.",
-  "The dialog is gone and the row EXP-25319670314 becomes selected (its row is highlighted), in addition to the previously selected row.",
-  "The dialog is closed and the row EXP-35319670314 is added to the selection, so multiple rows are now highlighted as selected."
-]

@@ -1,8 +1,0 @@
-{
-  "selected_index": 1,
-  "selected_from": "initial",
-  "selected_action": "click('a1196')",
-  "translated_action": "click('a1196')",
-  "bid_translation": "stable fp='option::Short description::via=Expense Lines | ServiceNow/select2-results::after=Process date'",
-  "thought": "We\u2019re building the filter. Candidate 1 correctly sets the filter field to \u201cShort description\u201d in the filter builder, which is the first required part. Others either changed unrelated header search, typed into the wrong input, or toggled column search. Candidate 1 makes clear progress toward creating the correct filter."
-}

@@ -1,4 +1,0 @@
-<think>
-We need the filter applied to proceed with identifying duplicates. Candidate 1 successfully runs the filter and shows 8 matching rows, enabling the next step of deleting duplicates. Candidates 2 also applies the filter, but 1 is fine. Others either remove the filter or add unrelated UI. Choose 1.
-</think>
-<selection>1</selection>

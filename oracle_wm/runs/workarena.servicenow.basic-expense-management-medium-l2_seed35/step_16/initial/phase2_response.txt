@@ -1,4 +1,0 @@
-<think>
-We need to remove the remaining non-task duplicate entry. The second row (selected) is the non-task duplicate of “Ten experience whole note...” and should be deleted. Candidate 1 initiates the deletion by opening the confirmation dialog, which is the correct next step. Other candidates either open previews or toggle UI and do not progress deletion.
-</think>
-<selection>1</selection>

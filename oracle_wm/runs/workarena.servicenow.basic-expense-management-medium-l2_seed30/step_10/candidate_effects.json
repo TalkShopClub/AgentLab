@@ -1,7 +1,0 @@
-[
-  "The operator control for the Short description filter was opened/focused, showing its dropdown (with a \u201cChoose operator\u201d tooltip).",
-  "No visible change: the operator still shows \u201cstarts with\u201d and no dropdown is open (the \u201cInput value\u201d tooltip remains by the value field).",
-  "The Short description operator changed from \u201cstarts with\u201d to \u201ccontains.\u201d",
-  "The filter was run: the builder row (AND/OR/value chips) disappeared, a breadcrumb \u201cAll > Short description starts with #SERIES-f9d328e8-a\u201d appeared, and the table now shows \u201cNo records to display.\u201d",
-  "The Short description column header search field in the table was populated with \u201c#SERIES-f9d328e8-a\u201d and is focused; the rest of the list remains unchanged."
-]

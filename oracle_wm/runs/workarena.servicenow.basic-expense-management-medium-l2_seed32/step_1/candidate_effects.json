@@ -1,7 +1,0 @@
-[
-  "The left \u201cAll\u201d menu filter is filled with \u201cExpense Lines,\u201d and the menu switches to search results showing a Cost section with a single \u201cExpense Lines\u201d entry (other Self\u2011Service items disappear).",
-  "The filter now reads \u201cCost,\u201d and the results list expands to multiple matches (e.g., Organization > Cost Centers, and Cost > Depreciation, Fixed Assets, Expense Lines, Cost Center) instead of the Self\u2011Service list.",
-  "The filter shows \u201cExpense,\u201d narrowing the All menu results to a single item under Cost: \u201cExpense Lines.\u201d",
-  "The top global Search box is populated with \u201cExpense Lines\u201d and a small \u201cView results\u201d dropdown appears, while the left All menu returns to its unfiltered state with the Self\u2011Service items visible.",
-  "The Self\u2011Service section in the All menu collapses to a single header row; its subitems (Business Applications, Dashboards, etc.) are hidden and other top\u2011level categories (e.g., Access Analyzer, Activity Subscriptions) move up."
-]

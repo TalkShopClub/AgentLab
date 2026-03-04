@@ -1,7 +1,0 @@
-[
-  "The All menu closed and the app navigated to the Expense Lines list view, showing a table of records with columns like Number, User, Date, Amount, and a New button in the header.",
-  "Pressing Enter opened the Expense Lines module as well; the dashboard was replaced by the Expense Lines list table and the All menu closed.",
-  "The All menu stayed open and the Expense Lines result under Cost became highlighted/focused with action icons, but no navigation occurred.",
-  "The Cost section in the All menu collapsed, hiding its Expense Lines entry and leaving only the Cost row visible.",
-  "The filter text was cleared (showing the Filter placeholder) and the results list reset to the full menu, displaying categories like Self\u2011Service, Business Applications, and Dashboards."
-]

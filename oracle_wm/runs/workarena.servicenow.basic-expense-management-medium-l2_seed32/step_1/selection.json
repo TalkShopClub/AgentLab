@@ -1,8 +1,0 @@
-{
-  "selected_index": 1,
-  "selected_from": "initial",
-  "selected_action": "fill('242', 'Expense Lines')",
-  "translated_action": "fill('242', 'Expense Lines')",
-  "bid_translation": "stable fp='textbox::Enter search term to filter All menu'",
-  "thought": "Candidate 1 narrows the All menu directly to Cost > Expense Lines, setting up the next click to open the module. This best advances the goal."
-}

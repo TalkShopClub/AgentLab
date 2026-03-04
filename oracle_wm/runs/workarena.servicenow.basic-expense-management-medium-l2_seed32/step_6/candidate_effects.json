@@ -1,7 +1,0 @@
-[
-  "The filter field dropdown closed; the left filter still shows \u201c-- choose field --\u201d with no selection applied.",
-  "The open filter dropdown closed instead of filtering its options; the left filter still reads \u201c-- choose field --\u201d.",
-  "No visible change; the filter field dropdown remains open with the same options list.",
-  "The inline list Search field selector changed from \u201cNumber\u201d to \u201cShort description\u201d; the filter dropdown below remains open.",
-  "The inline list Search input was filled with \u201c#SERIES-1f711cdf-2\u201d; the previously open filter-field dropdown closed."
-]

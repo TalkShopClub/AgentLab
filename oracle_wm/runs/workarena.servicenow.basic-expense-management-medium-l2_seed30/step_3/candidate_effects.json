@@ -1,7 +1,0 @@
-[
-  "A filter builder bar appears beneath the toolbar with AND/OR/Add Sort buttons and three dropdowns for field, operator, and value.",
-  "No visible change; the field selector still shows \"Number\" and no dropdown is open.",
-  "No visible change; the search field selector remains \"Number\" (not switched to \"Short description\").",
-  "The list search box is filled with \u201c#SERIES-f9d328e8-a\u201d; the table results remain unchanged.",
-  "A per-column search row appears under the headers with small \u201cSearch\u201d inputs for each column, along with a tooltip \u201cHide column search row.\u201d"
-]

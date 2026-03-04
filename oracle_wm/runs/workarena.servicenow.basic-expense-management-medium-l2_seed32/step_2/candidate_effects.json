@@ -1,7 +1,0 @@
-[
-  "The All menu closed and the app navigated to the Expense Lines list view, showing a table of records with columns and a list search box; the dashboard tiles disappeared.",
-  "Pressing Enter opened the Expense Lines module as a records table; the All menu closed and the dashboard view was replaced by the list.",
-  "Within the All menu, the Cost section was collapsed, hiding the Expense Lines item beneath it while the filter still shows \u201cExpense Lines\u201d; the rest of the page stayed the same.",
-  "The global search field at the top now contains \u201cExpense Lines\u201d and a \u201cView results\u201d dropdown appeared; the All menu remains open with the Expense Lines result visible.",
-  "The filter text in the All menu was cleared, removing the Expense Lines result and revealing the default application list (e.g., Self\u2011Service, Business Applications, etc.)."
-]

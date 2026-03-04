@@ -1,7 +1,0 @@
-[
-  "The confirmation dialog closed and the selected expense line was removed from the list; the table now shows 1 to 6 of 6 rows.",
-  "The confirmation dialog closed with no records deleted; the previously selected row remains checked and the list still shows 1 to 7 of 7.",
-  "The dialog was dismissed via the X; the table returns unchanged with the selected row still highlighted and the count at 1 to 7 of 7.",
-  "The confirmation dialog disappeared and the checkbox for EXP-35319670314 became selected, highlighting that row alongside the existing selection.",
-  "No visible change from the current state\u2014the same Delete confirmation dialog is shown over the dimmed table."
-]

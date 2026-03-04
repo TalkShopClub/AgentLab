@@ -1,4 +1,0 @@
-<think>
-Candidate 1 narrows the All menu directly to Cost > Expense Lines, setting up the next click to open the module. This best advances the goal.
-</think>
-<selection>1</selection>

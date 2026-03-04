@@ -1,7 +1,0 @@
-[
-  "The filter field selector (\u201c-- choose field --\u201d) opened, showing a dropdown with a search box and a list of field options (Keywords, Amount, etc.).",
-  "The selector to the left of the global Search box changed from \u201cNumber\u201d to \u201cShort description.\u201d",
-  "A tooltip/button labeled \u201cShow column search row\u201d appeared near the table header area; no column search inputs are visible.",
-  "Inside the open filter-field dropdown, the search input was filled with \u201c#SERIES-1f711cdf-2,\u201d and a \u201cNo matches found\u201d message appeared.",
-  "The \u201cShort description\u201d column\u2019s options (three-dots) control was highlighted with a \u201cColumn options\u201d tooltip, but no options menu is displayed."
-]

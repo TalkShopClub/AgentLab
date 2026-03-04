@@ -1,4 +1,0 @@
-<think>
-We need to build a filter: Short description contains "#SERIES-f9d328e8-a". Candidate 1 engages the condition-builder filter bar (Run/Save... with choose field/oper/value), which is the correct path. Candidates 2 and 5 do nothing helpful; 3 switches to NLQ (not desired); 4 opens column search row (less aligned with “create a filter”). Candidate 1 best advances the goal.
-</think>
-<selection>1</selection>

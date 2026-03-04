@@ -1,7 +1,0 @@
-[
-  "The first filter field combobox opened, showing a dropdown with a search box and options like Keywords, Amount, Asset, etc.",
-  "No visible change; the filter still shows \u201c-- choose field --\u201d and no dropdown or selection is active.",
-  "No visible change; the operator control still shows \u201c-- oper --\u201d with nothing selected.",
-  "The inline search box next to \u201cNumber\u201d at the top was filled with \u201c#SERIES-1f711cdf-2\u201d (focused), while the filter row remains unchanged.",
-  "No visible change; the table and filter controls remain the same, indicating no filter was applied."
-]

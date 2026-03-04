@@ -1,7 +1,0 @@
-[
-  "The All menu\u2019s filter field is filled with \u201cExpense Lines,\u201d and the navigator switches to a results view showing a Cost category with an \u201cExpense Lines\u201d item (Favorites shows \u201cNo Results\u201d), replacing the long Self\u2011Service list.",
-  "The filter field now contains \u201cCost,\u201d and the results list updates to matched items: Organization > Cost Centers and a Cost section with Depreciation, Fixed Assets, Expense Lines, and Cost Center, replacing the Self\u2011Service list.",
-  "The top global Search bar is filled with \u201cExpense Lines\u201d and a small \u201cView results\u201d suggestion dropdown appears; the All/Application Navigator remains open and unchanged.",
-  "The All/Application Navigator panel closes and disappears, leaving only the dashboard content visible.",
-  "No visible change: the All navigator stays open with the Filter field empty and the same Self\u2011Service list."
-]

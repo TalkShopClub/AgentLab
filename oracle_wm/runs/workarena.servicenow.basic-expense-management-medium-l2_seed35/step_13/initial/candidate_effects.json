@@ -1,7 +1,0 @@
-[
-  "The checkbox for the row EXP-35319670314 is now checked, so two rows are selected.",
-  "A \u201cConfirmation\u201d modal appears asking to delete the selected records, with Cancel and Delete buttons, and the list behind it is dimmed.",
-  "A new row of column search inputs appears under the headers (e.g., a search box under Short description), and the column-search toggle shows \u201cHide column search row.\u201d",
-  "The Short description column header becomes highlighted with its three\u2011dot options indicator visible, indicating the column menu is active (no dropdown shown).",
-  "A preview popover for EXP-35319670314 opens at the bottom-left with record details and an \u201cOpen Record\u201d button, with a small callout pointing to that row."
-]

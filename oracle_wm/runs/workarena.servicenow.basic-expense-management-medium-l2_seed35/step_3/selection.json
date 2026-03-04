@@ -1,8 +1,0 @@
-{
-  "selected_index": 3,
-  "selected_from": "initial",
-  "selected_action": "click('a46')",
-  "translated_action": "click('a46')",
-  "bid_translation": "stable fp='button::\\uf18a Show / hide filter'",
-  "thought": "We need to create a filter where \u201cShort description\u201d contains a specific string. Opening the filter builder is the most direct step to construct that condition. Candidate 3 successfully opens the filter builder with field/operator/value controls, best progressing toward the goal."
-}

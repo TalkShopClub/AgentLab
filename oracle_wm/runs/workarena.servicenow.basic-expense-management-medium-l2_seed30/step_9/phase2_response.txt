@@ -1,4 +1,0 @@
-<think>
-We’re already on Expense Lines with the filter builder open. We need “Short description contains #SERIES-f9d328e8-a.” Candidate 3 enters the correct value in the filter value field; we just need to change the operator to “contains” and run. Other candidates either only focus the operator, misuse inline search, or run with the wrong operator. Candidate 3 makes the most concrete progress.
-</think>
-<selection>3</selection>

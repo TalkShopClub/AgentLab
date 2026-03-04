@@ -1,7 +1,0 @@
-[
-  "The focus moves to the \u201c-- choose field --\u201d selector in the filter builder, but no dropdown opens; the list view remains otherwise unchanged.",
-  "The \u201c-- choose field --\u201d selector expands into a dropdown, showing a search box and a scrollable list of fields (e.g., Keywords, Amount, Asset, etc.).",
-  "The Short description column\u2019s search input is filled with \u201c#SERIES-f9d328e8-a,\u201d highlighting that field; the table content itself does not change yet.",
-  "Focus shifts to the \u201cNumber\u201d field selector next to the global search, but its menu does not open and nothing else changes.",
-  "The table scrolls to a different set of rows and the row containing \u201c#SERIES-f9d328e8-a\u201d in Short description is highlighted/selected (green row); no context menu is visible."
-]

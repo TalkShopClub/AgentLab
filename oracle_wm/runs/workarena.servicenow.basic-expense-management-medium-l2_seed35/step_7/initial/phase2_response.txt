@@ -1,4 +1,0 @@
-<think>
-We need to build the filter "Short description contains #SERIES-c8c8c533-7". Candidate 1 correctly entered the value into the filter’s value field, which is essential progress. Candidates 2 and 3 attempted to run/apply the filter but it didn’t actually filter the list (rows unchanged), suggesting the value wasn’t properly included in the applied filter. Candidates 4 and 5 are unrelated (sorting). Therefore, Candidate 1 best advances the goal.
-</think>
-<selection>1</selection>

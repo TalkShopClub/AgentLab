@@ -1,4 +1,0 @@
-<think>
-We need to open the Expense Lines list. Candidates 1 and 2 both navigate there successfully. Candidate 1 explicitly clicks the "Expense Lines" link and lands on the list view, which directly advances step 1.
-</think>
-<selection>1</selection>

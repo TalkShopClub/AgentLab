@@ -1,7 +1,0 @@
-[
-  "The filter builder\u2019s first field is set to \u201cShort description,\u201d the operator defaults to \u201cstarts with,\u201d a value box appears, and inline AND/OR and remove (X) buttons show; the prior dropdown is closed.",
-  "The \u201cShort description\u201d column header search box now contains \u201c#SERIES-f9d328e8-a,\u201d while the top field-selector dropdown remains open.",
-  "The previously open \u201cchoose field\u201d dropdown is closed and focus shifts to the operator control, showing a \u201cChoose operator\u201d tooltip (no options list is expanded).",
-  "The value input in the top filter row is populated with \u201c#SERIES-f9d328e8-a,\u201d and an autocomplete panel under the field selector shows \u201cNo matches found.\u201d",
-  "Clicking the three-dot icon in the \u201cShort description\u201d header reveals a \u201cColumn options\u201d tooltip next to it; no options menu is displayed."
-]

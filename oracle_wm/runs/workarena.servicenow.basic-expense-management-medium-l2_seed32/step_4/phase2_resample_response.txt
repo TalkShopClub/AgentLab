@@ -1,4 +1,0 @@
-<think>
-We need to set up a filter: Short description contains "#SERIES-1f711cdf-2". The best next move is to open the filter field combobox so we can choose "Short description". Candidate 1 successfully opens that dropdown. Other candidates either failed to select, targeted disabled controls, typed into the wrong search box, or ran an empty filter.
-</think>
-<selection>1</selection>

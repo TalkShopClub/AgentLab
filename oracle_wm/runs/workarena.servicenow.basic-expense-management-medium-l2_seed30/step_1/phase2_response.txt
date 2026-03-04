@@ -1,4 +1,0 @@
-<think>
-Candidate 1 narrows the All menu to show the "Expense Lines" item under the Cost application, which directly advances step 1 of the goal. Candidate 2 also helps but is broader. Candidate 1 is the most direct progress.
-</think>
-<selection>1</selection>

@@ -1,8 +1,0 @@
-{
-  "selected_index": 3,
-  "selected_from": "initial",
-  "selected_action": "click('a190')",
-  "translated_action": "click('a190')",
-  "bid_translation": "stable fp='button::\\uf1e4 Show column search row'",
-  "thought": "We\u2019re already on the Expense Lines list. To create the filter for Short description containing the given string, the most progress is made by revealing the column search row so we can input the filter directly under \u201cShort description.\u201d Candidate 3 successfully shows this row; others either had no effect or opened NLQ/other menus."
-}

@@ -184,3 +184,5 @@ experiments/*
 src/agentlab/_version.py
 
 oracle_results/
+results*/
+**/runs/

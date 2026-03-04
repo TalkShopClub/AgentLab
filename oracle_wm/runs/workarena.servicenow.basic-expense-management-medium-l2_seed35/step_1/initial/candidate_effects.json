@@ -1,7 +1,0 @@
-[
-  "The All menu\u2019s Filter box is filled with \u201cExpense Lines,\u201d and the menu is filtered to show an \u201cExpense Lines\u201d entry under the Cost section (with Favorites showing \u201cNo Results\u201d), replacing the previously full category list.",
-  "The All menu\u2019s Filter box contains \u201cCost,\u201d and the results change to multiple matches including Organization > Cost Centers and several Cost items (Depreciation, Fixed Assets, Expense Lines, Cost Center), instead of the original unfiltered list.",
-  "The All menu\u2019s Filter box is set to \u201cExpense,\u201d narrowing results to the Cost group with the \u201cExpense Lines\u201d item highlighted, replacing the prior unfiltered categories.",
-  "The top-right global search field is populated with \u201cExpense Lines\u201d and a \u201cView results\u201d suggestion appears beneath it; the All menu remains open with its filter empty and unchanged.",
-  "The top-right global search now shows \u201cCost\u201d with a \u201cView results\u201d suggestion underneath; the All menu stays open with no filtering applied."
-]
