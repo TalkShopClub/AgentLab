@@ -25,7 +25,7 @@ def main():
     parser.add_argument("--no-sel-images", action="store_true", help="Exclude candidate screenshots from oracle selection prompt")
     args = parser.parse_args()
 
-    save_path = run_oracle_pipeline(
+    save_path, reward = run_oracle_pipeline(
         task_name=args.task,
         task_seed=args.seed,
         model=args.model,
@@ -40,7 +40,8 @@ def main():
         sel_effects=not args.no_sel_effects,
         sel_images=not args.no_sel_images,
     )
-    print(f"Results saved to: {save_path}")
+
+    print(f"Results saved to: {save_path}  reward={reward:.3f}")
 
 
 if __name__ == "__main__":

@@ -32,6 +32,31 @@ from .._bid_utils import _ACTION_SET, _make_env, _wait_idle, build_bid_map, get_
 logger = logging.getLogger(__name__)
 
 
+def _safe_close_env(env):
+    """Close BrowserGym env and ensure the underlying browser process is terminated.
+
+    Grabs a reference to the Playwright Browser before calling env.close(), then
+    explicitly closes the browser as a safety net — if env.close() fails (e.g. due to
+    a broken transport pipe), this prevents orphaned Chromium processes.
+    """
+    if env is None:
+        return
+    browser = None
+    try:
+        browser = env.unwrapped.page.context.browser
+    except Exception:
+        pass
+    try:
+        env.close()
+    except Exception:
+        pass
+    if browser is not None:
+        try:
+            browser.close()
+        except Exception:
+            pass
+
+
 def _predict_task_username(task_seed: int) -> str:
     """Reproduce the deterministic username that task.setup() would create for the given seed.
 
@@ -136,10 +161,7 @@ def replay_committed(
             break
         except Exception as exc:
             last_exc = exc
-            try:
-                env.close()
-            except Exception:
-                pass
+            _safe_close_env(env)
             if attempt < max_retries:
                 logger.warning(f"env.reset() failed (attempt {attempt}/{max_retries}): {exc}. Cleaning up orphaned user and retrying in {retry_delay}s")
                 cleanup_orphaned_users(instance, env_args.task_seed)
@@ -271,10 +293,74 @@ def explore_candidate(
         obs = obs_preprocessor(obs)
         return obs.get("screenshot", blank), obs.get("screenshot_som", blank), bid_note
     finally:
+        _safe_close_env(env)
+
+
+def _explore_on_env(
+    env,
+    env_args: EnvArgs,
+    committed: list[CommittedAction],
+    action: str,
+    decision_bid_map: dict,
+    instance,
+    obs_preprocessor,
+    max_retries: int = 3,
+    retry_delay: float = 30.0,
+) -> tuple[np.ndarray, np.ndarray, str, object]:
+    """Explore a candidate action by resetting an existing env (reuses the browser process).
+
+    Instead of creating a new browser per candidate, this reuses the given env via reset().
+    If reset fails after all retries, the env is replaced with a fresh one.
+
+    Returns (screenshot, screenshot_som, bid_note, env).
+    The returned env may differ from the input if recreation was needed.
+    """
+    blank = np.zeros((720, 1280, 3), dtype=np.uint8)
+
+    last_exc = None
+    for attempt in range(1, max_retries + 1):
         try:
-            env.close()
-        except Exception:
-            pass
+            obs, _ = env.reset(seed=env_args.task_seed)
+            break
+        except Exception as exc:
+            last_exc = exc
+            if attempt < max_retries:
+                logger.warning(
+                    f"env.reset() failed (attempt {attempt}/{max_retries}): {exc}. "
+                    f"Cleaning up orphaned user and retrying in {retry_delay}s"
+                )
+                cleanup_orphaned_users(instance, env_args.task_seed)
+                time.sleep(retry_delay)
+            else:
+                # Browser may be corrupted — recreate it
+                logger.warning(f"env.reset() failed after {max_retries} attempts, recreating browser")
+                _safe_close_env(env)
+                env = _make_env(env_args, instance)
+                try:
+                    obs, _ = env.reset(seed=env_args.task_seed)
+                except Exception as final_exc:
+                    raise RuntimeError("env.reset() failed even after browser recreation") from final_exc
+
+    _wait_idle(env)
+    obs = obs_preprocessor(obs)
+    current_bid_map = build_bid_map(obs)
+
+    for ca in committed:
+        translated, _ = translate_action(ca.action, ca.bid_map, current_bid_map)
+        translated = resolve_phantom_action(translated, env)
+        obs, _, terminated, truncated, _ = env.step(translated)
+        if terminated or truncated:
+            break
+        _wait_idle(env)
+        obs = obs_preprocessor(obs)
+        current_bid_map = build_bid_map(obs)
+
+    translated, bid_note = translate_action(action, decision_bid_map, current_bid_map)
+    translated = resolve_phantom_action(translated, env)
+    obs, _, _, _, _ = env.step(translated)
+    obs = obs_preprocessor(obs)
+
+    return obs.get("screenshot", blank), obs.get("screenshot_som", blank), bid_note, env
 
 
 def _call_llm(chat_llm, system_text: str, prompt_msg, n_retry: int = 3) -> str:
@@ -358,6 +444,7 @@ def run_oracle_pipeline(
         (run_root / "goal.txt").write_text(goal_text, encoding="utf-8")
 
     step_idx = resume_from
+    reward, terminated, truncated = 0.0, False, False
     try:
         while step_idx < max_steps:
             logger.info(f"Step {step_idx}: generating {n_candidates} candidates")
@@ -366,10 +453,7 @@ def run_oracle_pipeline(
             decision_bid_map = current_bid_map
 
             # Close current env before exploration replays
-            try:
-                env.close()
-            except Exception:
-                pass
+            _safe_close_env(env)
             env = None
 
             # ── generate → explore → select (with one resample attempt) ──
@@ -437,18 +521,26 @@ def run_oracle_pipeline(
                 )
                 logger.info(f"  Saved {len(candidates)} candidates -> {attempt_tag}/candidates.json")
 
-                # Phase 2a: explore each candidate sequentially
+                # Phase 2a: explore each candidate (reusing single browser)
                 candidate_screenshots: list[np.ndarray] = []
                 candidate_screenshots_som: list[np.ndarray] = []
                 candidate_bid_notes: list[dict] = []
-                for k, cand in enumerate(candidates):
-                    logger.info(f"  Exploring candidate {k + 1}/{len(candidates)}: {cand['action']!r:.80}")
-                    sc, sc_som, bid_note = explore_candidate(env_args, committed, cand["action"], generation_bid_map, instance, obs_preprocessor)
-                    candidate_screenshots.append(sc)
-                    candidate_screenshots_som.append(sc_som)
-                    candidate_bid_notes.append({"candidate": k + 1, "action": cand["action"], "bid_note": bid_note})
-                    Image.fromarray(sc).save(attempt_dir / f"future_{k + 1}.png")
-                    Image.fromarray(sc_som).save(attempt_dir / f"future_{k + 1}_som.png")
+                exploration_env = _make_env(env_args, instance)
+                try:
+                    for k, cand in enumerate(candidates):
+                        logger.info(f"  Exploring candidate {k + 1}/{len(candidates)}: {cand['action']!r:.80}")
+                        sc, sc_som, bid_note, exploration_env = _explore_on_env(
+                            exploration_env, env_args, committed, cand["action"],
+                            generation_bid_map, instance, obs_preprocessor,
+                        )
+                        candidate_screenshots.append(sc)
+                        candidate_screenshots_som.append(sc_som)
+                        candidate_bid_notes.append({"candidate": k + 1, "action": cand["action"], "bid_note": bid_note})
+                        Image.fromarray(sc).save(attempt_dir / f"future_{k + 1}.png")
+                        Image.fromarray(sc_som).save(attempt_dir / f"future_{k + 1}_som.png")
+                finally:
+                    _safe_close_env(exploration_env)
+                    exploration_env = None
 
                 (attempt_dir / "bid_translations.json").write_text(
                     json.dumps(candidate_bid_notes, indent=2), encoding="utf-8"
@@ -505,10 +597,7 @@ def run_oracle_pipeline(
                     resample_reasoning = e.reasoning
                     logger.info(f"  Resample requested: {resample_reasoning[:120]}")
                     # Close the env from phase 2b before re-generating
-                    try:
-                        env.close()
-                    except Exception:
-                        pass
+                    _safe_close_env(env)
                     env = None
                     continue  # go to resample attempt
 
@@ -606,11 +695,18 @@ def run_oracle_pipeline(
                 break
 
     finally:
-        if env is not None:
-            try:
-                env.close()
-            except Exception:
-                pass
+        _safe_close_env(env)
 
-    logger.info(f"Oracle pipeline complete. {step_idx} steps. Run artifacts: {run_root}")
-    return save_path
+    summary = {
+        "task_name": task_name,
+        "task_seed": task_seed,
+        "steps": step_idx,
+        "reward": reward,
+        "terminated": terminated,
+        "truncated": truncated,
+    }
+    with open(save_path / "summary.json", "w") as f:
+        json.dump(summary, f, indent=2)
+
+    logger.info(f"Oracle pipeline complete. {step_idx} steps, reward={reward:.3f}. Run artifacts: {run_root}")
+    return save_path, reward

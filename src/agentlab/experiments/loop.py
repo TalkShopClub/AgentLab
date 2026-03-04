@@ -38,6 +38,29 @@ logger = logging.getLogger(__name__)
 SEED_MAX = 2 ^ 32  # arbitrary max value (exclusive), seems large enough
 
 
+def _wait_page_idle(env) -> None:
+    """Wait for the page to be fully settled before querying live DOM state.
+
+    SPA frameworks (e.g. ServiceNow) may continue rendering after the previous
+    env.step() returned. The agent's LLM inference can take 10-30s, during which
+    the page DOM can mutate.  This ensures bounding-box queries in
+    resolve_phantom_action see final layout rather than transient states.
+    """
+    try:
+        page = env.unwrapped.page
+    except AttributeError:
+        return
+    for wait_fn in (
+        lambda: page.wait_for_load_state("load", timeout=15000),
+        lambda: page.wait_for_load_state("networkidle", timeout=15000),
+        lambda: page.wait_for_function("() => document.readyState === 'complete'", timeout=5000),
+    ):
+        try:
+            wait_fn()
+        except Exception:
+            pass
+
+
 @dataclass
 class EnvArgs(DataClassJsonMixin):
     task_name: str
@@ -200,6 +223,7 @@ class StepInfo:
     def from_step(self, env: gym.Env, action: str, obs_preprocessor: callable):
         t = self.profiling
         t.env_start = time.time()
+        _wait_page_idle(env)
         action = resolve_phantom_action(action, env)
         self.action = action
         self.obs, self.reward, self.terminated, self.truncated, env_info = env.step(action)

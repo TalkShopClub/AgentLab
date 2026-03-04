@@ -692,28 +692,57 @@ def generate_oracle_html(run_dir: Path, output_html: Path | None = None) -> None
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate oracle pipeline evaluation HTML")
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--run-dir", help="Path to a specific run directory")
-    group.add_argument("--task",    help="Task name (used with --seed)")
-    parser.add_argument("--seed",         type=int, default=None)
-    parser.add_argument("--base-run-dir", default="oracle_wm/runs")
-    parser.add_argument("--output",       default=None)
+    parser = argparse.ArgumentParser(
+        description="Generate oracle pipeline evaluation HTML",
+        epilog="Examples:\n"
+               "  python oracle_wm/oracle_html.py                              # all completed runs\n"
+               "  python oracle_wm/oracle_html.py --run-dir oracle_wm/runs/task_seed0  # single run\n"
+               "  python oracle_wm/oracle_html.py --overwrite                  # regenerate all\n",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument("--run-dir", help="Path to a specific run directory (skip batch mode)")
+    parser.add_argument("--base-run-dir", default="oracle_wm/runs",
+                        help="Base directory containing run dirs (default: oracle_wm/runs)")
+    parser.add_argument("--result-dir", default="oracle_results",
+                        help="Base directory containing result dirs with summary.json (default: oracle_results)")
+    parser.add_argument("--overwrite", action="store_true", help="Overwrite existing HTML files")
     args = parser.parse_args()
 
+    # Single run mode
     if args.run_dir:
         run_dir = Path(args.run_dir)
-    else:
-        if args.seed is None:
-            parser.error("--seed is required when using --task")
-        run_name = f"{args.task.replace('/', '_')}_seed{args.seed}"
-        run_dir  = Path(args.base_run_dir) / run_name
-
-    if not run_dir.exists():
-        print(f"Run directory not found: {run_dir}")
+        if not run_dir.exists():
+            print(f"Run directory not found: {run_dir}")
+            return
+        generate_oracle_html(run_dir)
         return
 
-    generate_oracle_html(run_dir, Path(args.output) if args.output else None)
+    # Batch mode: process all completed runs under base-run-dir
+    base = Path(args.base_run_dir)
+    result_base = Path(args.result_dir)
+    if not base.exists():
+        print(f"Base run directory not found: {base}")
+        return
+
+    run_dirs = sorted(d for d in base.iterdir() if d.is_dir())
+    if not run_dirs:
+        print(f"No run directories found in {base}")
+        return
+
+    created = skipped = in_progress = 0
+    for rd in run_dirs:
+        # Skip in-progress: only process runs that have summary.json in result dir
+        if not (result_base / rd.name / "summary.json").exists():
+            in_progress += 1
+            continue
+        out = rd / "oracle_eval.html"
+        if out.exists() and not args.overwrite:
+            skipped += 1
+            continue
+        generate_oracle_html(rd, out)
+        created += 1
+
+    print(f"Done: {created} created, {skipped} already exist, {in_progress} in-progress (skipped)")
 
 
 if __name__ == "__main__":

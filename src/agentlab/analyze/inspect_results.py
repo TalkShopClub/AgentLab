@@ -556,7 +556,7 @@ def set_wrap_style(df):
 
 
 def map_err_key(err_msg: str):
-    if err_msg is None:
+    if err_msg is None or (isinstance(err_msg, float) and pd.isna(err_msg)):
         return err_msg
 
     # remove logs from the message if any

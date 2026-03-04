@@ -57,7 +57,7 @@ def _resolve_clickable_bbox(elem) -> tuple[dict | None, int, str | None]:
             parent = cur.evaluate_handle("el => el.parentElement")
         except Exception:
             break
-        if parent is None:
+        if parent is None or not hasattr(parent, "bounding_box"):
             break
 
         parent_bbox = parent.bounding_box()
@@ -71,9 +71,7 @@ def _resolve_clickable_bbox(elem) -> tuple[dict | None, int, str | None]:
                         orig_cy <= parent_bbox["y"] + parent_bbox["height"]):
                     try:
                         parent_bid = parent.evaluate(
-                            "el => el.getAttribute('browsergym_id')"
-                            " || el.getAttribute('data-id')"
-                            " || el.getAttribute('data-testid') || null"
+                            "el => el.getAttribute('bid') || null"
                         )
                     except Exception:
                         parent_bid = None
