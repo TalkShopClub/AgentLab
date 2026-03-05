@@ -26,6 +26,7 @@ class PromptFlags(dp.Flags):
     use_concrete_example: bool = False
     use_abstract_example: bool = True
     enable_chat: bool = False
+    use_memory: bool = False
     extra_instructions: str | None = None
 
 

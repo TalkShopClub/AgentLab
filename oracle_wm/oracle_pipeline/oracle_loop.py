@@ -16,7 +16,6 @@ from bgym import HighLevelActionSetArgs
 from agentlab.agents import dynamic_prompting as dp
 from agentlab.agents.generic_agent import AGENT_GPT5
 from agentlab.agents.wm_visual_agent.agent_configs import (
-	DEFAULT_ACTION_FLAGS,
 	DEFAULT_OBS_FLAGS,
 	DEFAULT_PROMPT_FLAGS,
 )
@@ -206,7 +205,7 @@ def replay_committed(
 def load_committed_from_run(
     run_root: Path,
     resume_from: int,
-) -> tuple[list[CommittedAction], list[str], list[str]]:
+) -> tuple[list[CommittedAction], list[str], list[str], list[str]]:
     """Reconstruct committed action history from saved debug files for resume.
 
     Loads committed_step.json (action=chosen_action, bid_entry from decision_bid_map) so that
@@ -217,6 +216,7 @@ def load_committed_from_run(
     committed: list[CommittedAction] = []
     actions_history: list[str] = []
     thoughts_history: list[str] = []
+    memories_history: list[str] = []
     for i in range(resume_from):
         committed_path = run_root / f"step_{i}" / "committed_step.json"
         sel_path = run_root / f"step_{i}" / "selection.json"
@@ -267,8 +267,9 @@ def load_committed_from_run(
         ))
         actions_history.append(translated)
         thoughts_history.append(thought)
+        memories_history.append(sel.get("memory", ""))
     logger.info(f"Loaded {len(committed)} committed actions from debug dir for resume")
-    return committed, actions_history, thoughts_history
+    return committed, actions_history, thoughts_history, memories_history
 
 
 def explore_candidate(
@@ -401,10 +402,14 @@ def run_oracle_pipeline(
     if agent_mode == "text":
         flags = copy.deepcopy(AGENT_GPT5.flags)
         flags.action.long_description = True
-        action_set = HighLevelActionSetArgs(subsets=["bid"]).make_action_set()
+        action_set = HighLevelActionSetArgs(subsets=["workarena++"]).make_action_set()
     else:
-        flags = DEFAULT_PROMPT_FLAGS
-        action_set = DEFAULT_ACTION_FLAGS.action_set.make_action_set()
+        flags = copy.deepcopy(DEFAULT_PROMPT_FLAGS)
+        action_set = HighLevelActionSetArgs(subsets=["coord", "workarena++"]).make_action_set()
+
+    # Enable memory for L3 tasks (need to recall info across multi-step conversations).
+    if task_name.endswith("-l3"):
+        flags.use_memory = True
 
     # Oracle selection always shows plain screenshot of current state (no SOM overlay).
     # This is independent of agent_mode: text mode needs use_screenshot enabled;
@@ -430,7 +435,7 @@ def run_oracle_pipeline(
         cleanup_orphaned_users(instance, task_seed)
 
     if resume_from > 0:
-        committed, actions_history, thoughts_history = load_committed_from_run(run_root, resume_from)
+        committed, actions_history, thoughts_history, memories_history = load_committed_from_run(run_root, resume_from)
         env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor)
         logger.info(f"Resumed at step {resume_from}: replayed {len(committed)} committed actions")
     else:
@@ -438,6 +443,7 @@ def run_oracle_pipeline(
         committed = []
         actions_history = []
         thoughts_history = []
+        memories_history = []
 
     goal_text = obs.get("goal", "")
     if goal_text:
@@ -459,6 +465,7 @@ def run_oracle_pipeline(
             # ── generate → explore → select (with one resample attempt) ──
             resample_reasoning = ""
             selected_from = "initial"
+            memory = ""
             for attempt_tag in ("initial", "resample"):
                 is_resample = attempt_tag == "resample"
                 attempt_dir = step_dir / attempt_tag
@@ -481,7 +488,7 @@ def run_oracle_pipeline(
                     Image.fromarray(sc_cur_som).save(attempt_dir / "current_som.png")
 
                 # Phase 1: generate K candidate actions
-                phase1_sys = f"You are an agent trying to solve a web task. Propose your top {n_candidates} candidate actions for the current state."
+                phase1_sys = f"You are an agent trying to solve a web task. Propose your top {n_candidates} candidate actions for the current state. Balance exploration with exploitation based on the semantics/common-sense of the user intent in the task description"
                 if is_resample:
                     phase1_sys += (
                         f"\n\nIMPORTANT — your previous set of candidates was rejected for the following reason:\n"
@@ -504,6 +511,7 @@ def run_oracle_pipeline(
                     thoughts=thoughts_history,
                     flags=gen_flags,
                     n_candidates=n_candidates,
+                    memories=memories_history,
                 )
                 if translated_candidate_history:
                     gen_prompt.history = CandidateAwareHistory(translated_candidate_history, thoughts_history)
@@ -512,6 +520,7 @@ def run_oracle_pipeline(
                 phase1_text = _call_llm(chat_llm, phase1_sys, gen_prompt.prompt)
                 (attempt_dir / "phase1_response.txt").write_text(phase1_text, encoding="utf-8")
 
+                memory = gen_prompt.parse_memory(phase1_text) if flags.use_memory else ""
                 candidates = gen_prompt.parse_candidates(phase1_text)
                 if not candidates:
                     raise RuntimeError("No candidates parsed from LLM response, cannot continue.")
@@ -627,6 +636,7 @@ def run_oracle_pipeline(
                     "translated_action": translated_chosen,
                     "bid_translation": selection_bid_note,
                     "thought": reasoning,
+                    "memory": memory,
                 }, indent=2),
                 encoding="utf-8",
             )
@@ -687,6 +697,7 @@ def run_oracle_pipeline(
             ))
             actions_history.append(translated_chosen)
             thoughts_history.append(reasoning)
+            memories_history.append(memory)
             current_bid_map = build_bid_map(obs)
             step_idx += 1
 

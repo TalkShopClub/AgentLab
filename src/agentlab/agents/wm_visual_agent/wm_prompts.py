@@ -29,9 +29,11 @@ class CandidateGenerationPrompt:
         flags: PromptFlags,
         model_name: str = "",
         n_candidates: int = 5,
+        memories: list[str] = None,
     ):
         self.flags = flags
         self.n_candidates = n_candidates
+        self.memories = memories or []
         self.instructions = make_instructions(obs, flags.enable_chat, flags.extra_instructions)
         self.obs = dp.Observation(obs, flags.obs)
         self.history = History(actions, thoughts)
@@ -54,6 +56,28 @@ class CandidateGenerationPrompt:
         lines.append("</candidates>")
         return "\n".join(lines)
 
+    def _memory_section(self) -> str:
+        if not self.flags.use_memory:
+            return ""
+        parts = []
+        non_empty = [(i, m) for i, m in enumerate(self.memories) if m]
+        if non_empty:
+            parts.append("\n# Memories from previous steps")
+            for i, m in non_empty:
+                parts.append(f"Step {i}: {m}")
+        return "\n".join(parts) + "\n" if parts else ""
+
+    def _memory_instruction(self) -> str:
+        if not self.flags.use_memory:
+            return ""
+        return (
+            "\nAfter the candidates, write a <memory> tag with any information "
+            "worth remembering for future steps (e.g., form field values, "
+            "navigation paths discovered, task constraints observed, task description presented in the beginning on the private task page etc).\n"
+            "IMPORTANT: Do NOT store BIDs (element IDs like '42', '105') in memory"
+            "<memory>\nYour notes here\n</memory>"
+        )
+
     @property
     def prompt(self) -> HumanMessage:
         msg = HumanMessage(self.instructions.prompt)
@@ -61,6 +85,7 @@ class CandidateGenerationPrompt:
             f"""\
             {self.obs.prompt}\
             {self.history.prompt}\
+            {self._memory_section()}\
             {self.action_prompt.prompt}\
 
             # Your Task
@@ -87,9 +112,14 @@ class CandidateGenerationPrompt:
             Use this exact format:
 
             {self._candidate_examples()}
+            {self._memory_instruction()}
             """
         )
         return self.obs.add_screenshot(msg)
+
+    def parse_memory(self, text: str) -> str:
+        m = re.search(r"<memory>(.*?)</memory>", text, re.DOTALL)
+        return m.group(1).strip() if m else ""
 
     def parse_candidates(self, text: str) -> list[dict]:
         """Extract candidate actions from the LLM response.

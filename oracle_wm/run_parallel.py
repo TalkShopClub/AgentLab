@@ -1,16 +1,18 @@
 """Run oracle tasks in parallel — one per ServiceNow instance in the pool.
 
-The number of parallel tasks per batch equals the pool size.
+Uses a worker-pool model: tasks are queued and each grabs an instance as soon
+as one becomes free. No batch boundaries — fast tasks free up instances for the
+next pending task immediately.
+
 Each subprocess gets its instance pinned via SNOW_INSTANCE_URL/UNAME/PWD env vars,
 so SNowInstance() inside the oracle pipeline deterministically uses that instance.
 
 Task sources:
   --task-dir : Read unique task names from folder names in the given directory.
-               Filters out infeasible tasks. Runs ALL matching tasks in sequential
-               batches of pool_size. Seeds are enumerated (task 0 -> seed 0, etc.)
+               Filters out infeasible tasks. Runs ALL matching tasks.
+               Seeds are enumerated (task 0 -> seed 0, etc.)
                unless overridden by --task-seed.
-  (default)  : Random sampling from feasible L2 tasks with family deduplication.
-               Runs a single batch of pool_size tasks.
+  (default)  : Random sampling from feasible tasks with family deduplication.
 """
 
 import argparse
@@ -18,6 +20,7 @@ import gzip
 import json
 import os
 import pickle
+import queue
 import random
 import re
 import shutil
@@ -27,6 +30,7 @@ import sys
 import threading
 import time
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 
@@ -39,13 +43,14 @@ def _task_family(task_id: str) -> str:
     return name
 
 
-def _get_feasible_l2_tasks() -> list[str]:
+def _get_feasible_tasks(level: str = "l2") -> list[str]:
     from browsergym.workarena import ALL_WORKARENA_TASKS
 
+    suffix = f"-{level}"
     return [
         t.get_task_id()
         for t in ALL_WORKARENA_TASKS
-        if "-l2" in t.get_task_id().lower() and "infeasible" not in t.get_task_id().lower()
+        if suffix in t.get_task_id().lower() and "infeasible" not in t.get_task_id().lower()
     ]
 
 
@@ -55,9 +60,9 @@ def _fetch_pool() -> list[dict]:
     return fetch_instances()
 
 
-def _sample_tasks(n: int, seed: int) -> list[str]:
+def _sample_tasks(n: int, seed: int, level: str = "l2") -> list[str]:
     """Return task names via family-deduplicated random sampling."""
-    all_tasks = _get_feasible_l2_tasks()
+    all_tasks = _get_feasible_tasks(level)
     rng = random.Random(seed)
 
     families: dict[str, list[str]] = defaultdict(list)
@@ -156,9 +161,12 @@ def main():
     parser.add_argument("--task-dir", help="Directory with failed task folders to re-run (reads task names from folder names)")
     parser.add_argument("--seed", type=int, default=0, help="RNG seed for random sampling mode (default: 0)")
     parser.add_argument("--task-seed-offset", type=int, default=0, help="Task seeds are enumerated as offset+0, offset+1, ... (default: 0)")
+    parser.add_argument("--level", choices=["l2", "l3"], default="l2",
+                        help="Task level to run (default: l2)")
     parser.add_argument("--model", default="openai/gpt-5-2025-08-07")
     parser.add_argument("--n-candidates", type=int, default=5)
-    parser.add_argument("--max-steps", type=int, default=50)
+    parser.add_argument("--max-steps", type=int, default=None,
+                        help="Max steps per task (default: 50 for L2, 25 for L3)")
     parser.add_argument("--save-dir", default="oracle_results")
     parser.add_argument("--run-dir", default="oracle_wm/runs")
     parser.add_argument("--headless", action="store_true")
@@ -171,6 +179,9 @@ def main():
     parser.add_argument("--continue", dest="cont", action="store_true",
                         help="Resume from sampled_tasks.txt: skip completed tasks, resume incomplete ones from their last committed step")
     args = parser.parse_args()
+
+    if args.max_steps is None:
+        args.max_steps = 25 if args.level == "l3" else 50
 
     def _result_dir(task_name, seed):
         return Path(args.save_dir) / f"{task_name.replace('/', '_')}_seed{seed}"
@@ -241,8 +252,8 @@ def main():
             random.Random(args.seed).shuffle(all_tasks)
             print(f"Loaded {len(all_tasks)} unique feasible tasks from {args.task_dir}/ (shuffled with seed={args.seed})")
         else:
-            all_tasks = _sample_tasks(batch_size, args.seed)
-            print(f"Sampled {len(all_tasks)} tasks (sampling seed={args.seed})")
+            all_tasks = _sample_tasks(batch_size, args.seed, args.level)
+            print(f"Sampled {len(all_tasks)} {args.level.upper()} tasks (sampling seed={args.seed})")
 
         task_seeds = [args.task_seed_offset + i for i in range(len(all_tasks))]
         resume_steps = [0] * len(all_tasks)
@@ -256,8 +267,7 @@ def main():
         print("Nothing to run — all tasks completed.")
         sys.exit(0)
 
-    n_batches = (len(all_tasks) + batch_size - 1) // batch_size
-    print(f"Total: {len(all_tasks)} tasks  |  {n_batches} batches of up to {batch_size}  |  seeds {task_seeds[0]}..{task_seeds[-1]}\n")
+    print(f"Total: {len(all_tasks)} tasks  |  {batch_size} parallel workers  |  seeds {task_seeds[0]}..{task_seeds[-1]}\n")
 
     extra_args = [
         "--model", args.model,
@@ -325,43 +335,31 @@ def main():
 
         return global_idx, task, proc.returncode
 
+    # ── Worker pool: instances are queued, each task grabs one when free ──
+    instance_queue = queue.Queue()
+    for entry in pool:
+        instance_queue.put(entry)
+
+    def _run_with_pool(global_idx, task, seed, resume_from):
+        instance = instance_queue.get()
+        try:
+            return _run_task_tracked(global_idx, task, seed, instance, resume_from)
+        finally:
+            instance_queue.put(instance)
+
     all_results = []
     t_total_start = time.time()
 
-    for batch_idx in range(n_batches):
-        if interrupted.is_set():
-            break
-
-        batch_start = batch_idx * batch_size
-        batch = list(zip(
-            all_tasks[batch_start : batch_start + batch_size],
-            task_seeds[batch_start : batch_start + batch_size],
-            resume_steps[batch_start : batch_start + batch_size],
-        ))
-
-        print(f"\n{'='*60}")
-        print(f"Batch {batch_idx + 1}/{n_batches}  ({len(batch)} tasks)")
-        print(f"{'='*60}")
-
-        batch_results = []
-
-        def _worker(global_idx, task, task_seed, instance_entry, resume_from):
-            result = _run_task_tracked(global_idx, task, task_seed, instance_entry, resume_from)
-            batch_results.append(result)
-
-        threads = [
-            threading.Thread(target=_worker, args=(batch_start + i, task, seed, pool[i], rs))
-            for i, (task, seed, rs) in enumerate(batch)
-        ]
-        for t in threads:
-            t.start()
-        for t in threads:
-            t.join()
-
-        batch_results.sort(key=lambda r: r[0])
-        all_results.extend(batch_results)
-
-        for idx, task, rc in batch_results:
+    with ThreadPoolExecutor(max_workers=batch_size) as executor:
+        futures = {
+            executor.submit(_run_with_pool, i, task, seed, rs): (i, task)
+            for i, (task, seed, rs) in enumerate(zip(all_tasks, task_seeds, resume_steps))
+        }
+        for future in as_completed(futures):
+            if interrupted.is_set():
+                break
+            idx, task, rc = future.result()
+            all_results.append((idx, task, rc))
             reward_str = ""
             summary_path = _result_dir(task, task_seeds[idx]) / "summary.json"
             if summary_path.is_file():
@@ -369,7 +367,7 @@ def main():
                 if r is not None:
                     reward_str = f"  reward={r:.3f}"
             status = "OK" if rc == 0 else f"FAILED (rc={rc})"
-            print(f"  {idx}: {task}  ->  {status}{reward_str}")
+            print(f"  DONE {idx}: {task}  ->  {status}{reward_str}")
 
     elapsed = time.time() - t_total_start
     ok = sum(1 for _, _, rc in all_results if rc == 0)
