@@ -966,6 +966,20 @@ def make_obs_preprocessor(flags: ObsFlags):
         )
         obs["pruned_html"] = prune_html(obs["dom_txt"])
 
+        # Log SOM diagnostic info (screenshot size vs bbox coordinate range)
+        screenshot_h, screenshot_w = obs["screenshot"].shape[:2]
+        raw_bboxes = [p["bbox"] for p in obs["extra_element_properties"].values() if p.get("bbox")]
+        if raw_bboxes:
+            max_x = max(b[0] + b[2] for b in raw_bboxes)
+            max_y = max(b[1] + b[3] for b in raw_bboxes)
+        else:
+            max_x = max_y = 0
+        logger.info(
+            f"SOM diag: screenshot={screenshot_w}x{screenshot_h}, "
+            f"bbox_max_extent=({max_x:.0f}, {max_y:.0f}), "
+            f"n_bboxes={len(raw_bboxes)}"
+        )
+
         # Scale bounding boxes from 2560x1440 to match 1280x720 screenshot resolution
         scaled_extra_properties = {}
         for bid, props in obs["extra_element_properties"].items():
