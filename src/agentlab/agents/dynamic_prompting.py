@@ -12,6 +12,8 @@ import bgym
 from bgym import HighLevelActionSetArgs
 from browsergym.core.action.base import AbstractActionSet
 from browsergym.utils.obs import flatten_axtree_to_str, flatten_dom_to_str, overlay_som, prune_html
+import logging 
+logger = logging.getLogger(__name__)
 
 from agentlab.llm.llm_utils import (
     BaseMessage,
@@ -966,31 +968,9 @@ def make_obs_preprocessor(flags: ObsFlags):
         )
         obs["pruned_html"] = prune_html(obs["dom_txt"])
 
-        # Log SOM diagnostic info (screenshot size vs bbox coordinate range)
-        screenshot_h, screenshot_w = obs["screenshot"].shape[:2]
-        raw_bboxes = [p["bbox"] for p in obs["extra_element_properties"].values() if p.get("bbox")]
-        if raw_bboxes:
-            max_x = max(b[0] + b[2] for b in raw_bboxes)
-            max_y = max(b[1] + b[3] for b in raw_bboxes)
-        else:
-            max_x = max_y = 0
-        logger.info(
-            f"SOM diag: screenshot={screenshot_w}x{screenshot_h}, "
-            f"bbox_max_extent=({max_x:.0f}, {max_y:.0f}), "
-            f"n_bboxes={len(raw_bboxes)}"
-        )
-
-        # Scale bounding boxes from 2560x1440 to match 1280x720 screenshot resolution
-        scaled_extra_properties = {}
-        for bid, props in obs["extra_element_properties"].items():
-            scaled_props = props.copy()
-            if props.get("bbox") is not None:
-                x, y, w, h = props["bbox"]
-                scaled_props["bbox"] = [x * 0.5, y * 0.5, w * 0.5, h * 0.5]
-            scaled_extra_properties[bid] = scaled_props
-
+        # Bboxes are already in CSS-pixel coordinates (scaled in browsergym core env.py)
         obs["screenshot_som"] = overlay_som(
-            obs["screenshot"], extra_properties=scaled_extra_properties
+            obs["screenshot"], extra_properties=obs["extra_element_properties"]
         )
 
         return obs
