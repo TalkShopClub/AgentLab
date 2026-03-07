@@ -1,18 +1,16 @@
-"""Run oracle tasks in parallel — one per ServiceNow instance in the pool.
+"""Run oracle tasks in parallel across ServiceNow instances.
 
-Uses a worker-pool model: tasks are queued and each grabs an instance as soon
-as one becomes free. No batch boundaries — fast tasks free up instances for the
-next pending task immediately.
+Instances are assigned round-robin and may be reused concurrently (different
+seeds create different users, so tasks don't interfere). --max-parallel controls
+worker count independently of the instance pool size.
 
-Each subprocess gets its instance pinned via SNOW_INSTANCE_URL/UNAME/PWD env vars,
-so SNowInstance() inside the oracle pipeline deterministically uses that instance.
+Failed tasks are automatically retried once from their last committed step.
 
 Task sources:
   --task-dir : Read unique task names from folder names in the given directory.
                Filters out infeasible tasks. Runs ALL matching tasks.
-               Seeds are enumerated (task 0 -> seed 0, etc.)
-               unless overridden by --task-seed.
-  (default)  : Random sampling from feasible tasks with family deduplication.
+  (default)  : Family-deduplicated random sampling of all feasible tasks
+               (use --n-tasks to limit).
 """
 
 import argparse
@@ -20,7 +18,6 @@ import gzip
 import json
 import os
 import pickle
-import queue
 import random
 import re
 import shutil
@@ -30,7 +27,7 @@ import sys
 import threading
 import time
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from pathlib import Path
 
 
@@ -74,7 +71,7 @@ def _sample_tasks(n: int, seed: int, level: str = "l2") -> list[str]:
 
     selected = []
     for key in family_keys:
-        if len(selected) >= n:
+        if n > 0 and len(selected) >= n:
             break
         selected.append(rng.choice(families[key]))
 
@@ -163,6 +160,8 @@ def main():
     parser.add_argument("--task-seed-offset", type=int, default=0, help="Task seeds are enumerated as offset+0, offset+1, ... (default: 0)")
     parser.add_argument("--level", choices=["l2", "l3"], default="l2",
                         help="Task level to run (default: l2)")
+    parser.add_argument("--n-tasks", type=int, default=0,
+                        help="Number of tasks to sample (0 = all families, default: 0)")
     parser.add_argument("--model", default="openai/gpt-5-2025-08-07")
     parser.add_argument("--n-candidates", type=int, default=5)
     parser.add_argument("--max-steps", type=int, default=None,
@@ -190,11 +189,9 @@ def main():
         return Path(args.run_dir) / f"{task_name.replace('/', '_')}_seed{seed}"
 
     pool = _fetch_pool()
-    if args.max_parallel and args.max_parallel < len(pool):
-        pool = pool[:args.max_parallel]
-    batch_size = len(pool)
+    n_instances = len(pool)
 
-    print(f"Instance pool has {batch_size} instances.\n")
+    print(f"Instance pool has {n_instances} instances.\n")
     for i, entry in enumerate(pool):
         print(f"  Instance {i}: {entry['url']}")
     print()
@@ -252,7 +249,7 @@ def main():
             random.Random(args.seed).shuffle(all_tasks)
             print(f"Loaded {len(all_tasks)} unique feasible tasks from {args.task_dir}/ (shuffled with seed={args.seed})")
         else:
-            all_tasks = _sample_tasks(batch_size, args.seed, args.level)
+            all_tasks = _sample_tasks(args.n_tasks, args.seed, args.level)
             print(f"Sampled {len(all_tasks)} {args.level.upper()} tasks (sampling seed={args.seed})")
 
         task_seeds = [args.task_seed_offset + i for i in range(len(all_tasks))]
@@ -267,7 +264,8 @@ def main():
         print("Nothing to run — all tasks completed.")
         sys.exit(0)
 
-    print(f"Total: {len(all_tasks)} tasks  |  {batch_size} parallel workers  |  seeds {task_seeds[0]}..{task_seeds[-1]}\n")
+    max_parallel = args.max_parallel or n_instances
+    print(f"Total: {len(all_tasks)} tasks  |  {max_parallel} parallel workers  |  {n_instances} instances  |  seeds {task_seeds[0]}..{task_seeds[-1]}\n")
 
     extra_args = [
         "--model", args.model,
@@ -335,46 +333,65 @@ def main():
 
         return global_idx, task, proc.returncode
 
-    # ── Worker pool: instances are queued, each task grabs one when free ──
-    instance_queue = queue.Queue()
-    for entry in pool:
-        instance_queue.put(entry)
-
-    def _run_with_pool(global_idx, task, seed, resume_from):
-        instance = instance_queue.get()
-        try:
-            return _run_task_tracked(global_idx, task, seed, instance, resume_from)
-        finally:
-            instance_queue.put(instance)
+    # ── Round-robin instance assignment (allows concurrent reuse) ──
+    def _run_with_instance(global_idx, task, seed, resume_from):
+        instance = pool[global_idx % n_instances]
+        return _run_task_tracked(global_idx, task, seed, instance, resume_from)
 
     all_results = []
+    retried = set()
     t_total_start = time.time()
 
-    with ThreadPoolExecutor(max_workers=batch_size) as executor:
-        futures = {
-            executor.submit(_run_with_pool, i, task, seed, rs): (i, task)
-            for i, (task, seed, rs) in enumerate(zip(all_tasks, task_seeds, resume_steps))
-        }
-        for future in as_completed(futures):
-            if interrupted.is_set():
-                break
-            idx, task, rc = future.result()
-            all_results.append((idx, task, rc))
-            reward_str = ""
-            summary_path = _result_dir(task, task_seeds[idx]) / "summary.json"
-            if summary_path.is_file():
-                r = json.loads(summary_path.read_text()).get("reward")
-                if r is not None:
-                    reward_str = f"  reward={r:.3f}"
-            status = "OK" if rc == 0 else f"FAILED (rc={rc})"
-            print(f"  DONE {idx}: {task}  ->  {status}{reward_str}")
+    with ThreadPoolExecutor(max_workers=max_parallel) as executor:
+        future_meta = {}
+        pending = set()
+        for i, (task, seed, rs) in enumerate(zip(all_tasks, task_seeds, resume_steps)):
+            fut = executor.submit(_run_with_instance, i, task, seed, rs)
+            pending.add(fut)
+            future_meta[fut] = (i, task, seed)
+
+        while pending and not interrupted.is_set():
+            done, pending = wait(pending, return_when=FIRST_COMPLETED)
+            for fut in done:
+                idx, task_name, seed = future_meta.pop(fut)
+                idx, task, rc = fut.result()
+
+                reward_str = ""
+                summary_path = _result_dir(task, seed) / "summary.json"
+                if summary_path.is_file():
+                    r = json.loads(summary_path.read_text()).get("reward")
+                    if r is not None:
+                        reward_str = f"  reward={r:.3f}"
+
+                # Auto-retry failed tasks once
+                if rc != 0 and idx not in retried:
+                    task_done, _ = _check_completed(_result_dir(task, seed))
+                    if not task_done:
+                        resume_step = _find_resume_point(_result_dir(task, seed), _run_artifact_dir(task, seed))
+                        partial_step = _run_artifact_dir(task, seed) / f"step_{resume_step}"
+                        if partial_step.exists():
+                            shutil.rmtree(partial_step)
+                        partial_pkl = _result_dir(task, seed) / f"step_{resume_step}.pkl.gz"
+                        if partial_pkl.exists():
+                            partial_pkl.unlink()
+                        retried.add(idx)
+                        print(f"  RETRY {idx}: {task}  resume_from={resume_step}")
+                        new_fut = executor.submit(_run_with_instance, idx, task, seed, resume_step)
+                        pending.add(new_fut)
+                        future_meta[new_fut] = (idx, task, seed)
+                        continue
+
+                status = "OK" if rc == 0 else f"FAILED (rc={rc})"
+                print(f"  DONE {idx}: {task}  ->  {status}{reward_str}")
+                all_results.append((idx, task, rc))
 
     elapsed = time.time() - t_total_start
     ok = sum(1 for _, _, rc in all_results if rc == 0)
     fail = len(all_results) - ok
+    retried_count = len(retried)
 
     print(f"\n{'='*60}")
-    print(f"Done. {len(all_results)}/{len(all_tasks)} tasks in {elapsed:.0f}s  |  {ok} OK  {fail} FAILED")
+    print(f"Done. {len(all_results)}/{len(all_tasks)} tasks in {elapsed:.0f}s  |  {ok} OK  {fail} FAILED  {retried_count} retried")
     print(f"{'='*60}")
     print(f"Logs: {log_dir}/")
 
