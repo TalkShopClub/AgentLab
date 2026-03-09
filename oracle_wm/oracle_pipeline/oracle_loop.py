@@ -56,40 +56,45 @@ def _safe_close_env(env):
             pass
 
 
-def _predict_task_username(task_seed: int) -> str:
-    """Reproduce the deterministic username that task.setup() would create for the given seed.
-
-    Mirrors the seeding in AbstractServiceNowTask._seed_external_rng() + create_user():
-    - np.random.RandomState(seed) is created fresh per task instance, so we replicate it here.
-    - Faker.seed(seed) is called again by _seed_external_rng() right before create_user(), so
-      calling it here first does not affect what the task will generate.
-    """
-    from faker import Faker
-
-    rng = np.random.RandomState(task_seed)
-    Faker.seed(task_seed)
-    fake = Faker()
-    first_name = fake.first_name()
-    last_name = fake.last_name()
-    user_idx = str(rng.randint(1000, 9999))
-    return f"{first_name}.{last_name}.{user_idx}"
+def _save_created_user(run_root: Path, env) -> None:
+    """Save the username created by task.setup() so cleanup can find it later."""
+    try:
+        username = getattr(env.unwrapped.task, "_base_user_name", None)
+        if username:
+            (run_root / "created_user.json").write_text(
+                json.dumps({"user_name": username}), encoding="utf-8"
+            )
+    except Exception:
+        pass
 
 
-def cleanup_orphaned_users(instance, task_seed: int) -> int:
-    """Delete the specific WorkArena task user that would be created for task_seed, if it exists.
+def cleanup_orphaned_users(instance, task_seed: int, run_root: Path = None) -> int:
+    """Delete the WorkArena task user from a previous run, if it exists.
 
-    Uses the same deterministic seeding as task.setup() to predict the exact username,
-    then deletes only that one record — avoids touching unrelated users.
-
-    Returns 1 if the user was found and deleted, 0 if it didn't exist.
+    Reads the exact username from created_user.json (saved after successful env.reset).
+    Falls back to Faker first/last name + email domain search if the file doesn't exist.
     """
     from browsergym.workarena.api.utils import table_api_call
 
-    username = _predict_task_username(task_seed)
+    username = None
+    if run_root:
+        user_file = run_root / "created_user.json"
+        if user_file.is_file():
+            username = json.loads(user_file.read_text()).get("user_name")
+
+    if username:
+        query = f"user_name={username}"
+    else:
+        from faker import Faker
+        Faker.seed(task_seed)
+        fake = Faker()
+        first, last = fake.first_name(), fake.last_name()
+        query = f"first_name={first}^last_name={last}^emailLIKEworkarena.com"
+
     response = table_api_call(
         instance=instance,
         table="sys_user",
-        params={"sysparm_query": f"user_name={username}", "sysparm_fields": "sys_id,user_name"},
+        params={"sysparm_query": query, "sysparm_fields": "sys_id,user_name"},
         method="GET",
     )
     users = response.get("result", [])
@@ -97,7 +102,7 @@ def cleanup_orphaned_users(instance, task_seed: int) -> int:
         table_api_call(instance=instance, table=f"sys_user/{user['sys_id']}", method="DELETE")
         logger.info(f"Deleted orphaned user: {user['user_name']} ({user['sys_id']})")
     if not users:
-        logger.info(f"No orphaned user found for seed {task_seed} (username={username!r}).")
+        logger.info(f"No orphaned user found (query: {query}).")
     return len(users)
 
 
@@ -140,6 +145,7 @@ def replay_committed(
     max_retries: int = 3,
     retry_delay: float = 30.0,
     save_intermediate_soms_to: Path = None,
+    run_root: Path = None,
 ) -> tuple[object, dict, dict, list[dict]]:
     """Create fresh env, replay all committed actions, return (env, obs, bid_map, candidate_history).
 
@@ -163,11 +169,13 @@ def replay_committed(
             _safe_close_env(env)
             if attempt < max_retries:
                 logger.warning(f"env.reset() failed (attempt {attempt}/{max_retries}): {exc}. Cleaning up orphaned user and retrying in {retry_delay}s")
-                cleanup_orphaned_users(instance, env_args.task_seed)
+                cleanup_orphaned_users(instance, env_args.task_seed, run_root=run_root)
                 time.sleep(retry_delay)
             else:
                 raise RuntimeError(f"env.reset() failed after {max_retries} attempts") from last_exc
 
+    if run_root:
+        _save_created_user(run_root, env)
     _wait_idle(env)
     obs = obs_preprocessor(obs)
     current_bid_map = build_bid_map(obs)
@@ -307,6 +315,7 @@ def _explore_on_env(
     obs_preprocessor,
     max_retries: int = 3,
     retry_delay: float = 30.0,
+    run_root: Path = None,
 ) -> tuple[np.ndarray, np.ndarray, str, object]:
     """Explore a candidate action by resetting an existing env (reuses the browser process).
 
@@ -330,7 +339,7 @@ def _explore_on_env(
                     f"env.reset() failed (attempt {attempt}/{max_retries}): {exc}. "
                     f"Cleaning up orphaned user and retrying in {retry_delay}s"
                 )
-                cleanup_orphaned_users(instance, env_args.task_seed)
+                cleanup_orphaned_users(instance, env_args.task_seed, run_root=run_root)
                 time.sleep(retry_delay)
             else:
                 # Browser may be corrupted — recreate it
@@ -432,14 +441,14 @@ def run_oracle_pipeline(
     instance = get_valid_snow_instance()
 
     if cleanup:
-        cleanup_orphaned_users(instance, task_seed)
+        cleanup_orphaned_users(instance, task_seed, run_root=run_root)
 
     if resume_from > 0:
         committed, actions_history, thoughts_history, memories_history = load_committed_from_run(run_root, resume_from)
-        env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor)
+        env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor, run_root=run_root)
         logger.info(f"Resumed at step {resume_from}: replayed {len(committed)} committed actions")
     else:
-        env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, [], instance, obs_preprocessor)
+        env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, [], instance, obs_preprocessor, run_root=run_root)
         committed = []
         actions_history = []
         thoughts_history = []
@@ -541,6 +550,7 @@ def run_oracle_pipeline(
                         sc, sc_som, bid_note, exploration_env = _explore_on_env(
                             exploration_env, env_args, committed, cand["action"],
                             generation_bid_map, instance, obs_preprocessor,
+                            run_root=run_root,
                         )
                         candidate_screenshots.append(sc)
                         candidate_screenshots_som.append(sc_som)
@@ -566,7 +576,7 @@ def run_oracle_pipeline(
                 )
 
                 # Phase 2b: replay to decision point for selection
-                env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor, save_intermediate_soms_to=step_dir)
+                env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor, save_intermediate_soms_to=step_dir, run_root=run_root)
 
                 sc_decision_som = obs.get("screenshot_som")
                 if sc_decision_som is not None:
@@ -657,6 +667,10 @@ def run_oracle_pipeline(
             obs, reward, terminated, truncated, env_info = env.step(translated_chosen)
             obs = obs_preprocessor(obs)
             elapsed = time.time() - t_start
+
+            if "send_msg_to_user(" in translated_chosen or "report_infeasible(" in translated_chosen:
+                logger.info(f"  Terminal action detected: {translated_chosen!r:.80}, forcing termination")
+                terminated = True
 
             # Build and save StepInfo
             step_info = StepInfo(
