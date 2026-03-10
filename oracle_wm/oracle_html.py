@@ -729,11 +729,15 @@ def main() -> None:
         print(f"No run directories found in {base}")
         return
 
-    created = skipped = in_progress = 0
+    created = skipped = no_steps = 0
     for rd in run_dirs:
-        # Skip in-progress: only process runs that have summary.json in result dir
-        if not (result_base / rd.name / "summary.json").exists():
-            in_progress += 1
+        # Check if at least one step has both candidates.json and selection.json
+        has_renderable = any(
+            _attempt_path(sd, "initial", "candidates.json").exists() and (sd / "selection.json").exists()
+            for sd in rd.iterdir() if sd.is_dir() and sd.name.startswith("step_")
+        )
+        if not has_renderable:
+            no_steps += 1
             continue
         out = rd / "oracle_eval.html"
         if out.exists() and not args.overwrite:
@@ -742,7 +746,7 @@ def main() -> None:
         generate_oracle_html(rd, out)
         created += 1
 
-    print(f"Done: {created} created, {skipped} already exist, {in_progress} in-progress (skipped)")
+    print(f"Done: {created} created, {skipped} already exist, {no_steps} no renderable steps (skipped)")
 
 
 if __name__ == "__main__":
