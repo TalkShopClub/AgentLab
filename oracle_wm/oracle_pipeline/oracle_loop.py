@@ -712,6 +712,12 @@ def run_oracle_pipeline(
             actions_history.append(translated_chosen)
             thoughts_history.append(reasoning)
             memories_history.append(memory)
+            translated_candidate_history.append({
+                "step": step_idx,
+                "candidates": candidates,
+                "selected_idx": selected_idx,
+                "effects": candidate_effects,
+            })
             current_bid_map = build_bid_map(obs)
             step_idx += 1
 

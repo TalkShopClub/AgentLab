@@ -56,12 +56,17 @@ agent_args = [AGENT_GPT5]
 
 # Run on 5 random tasks
 # benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
-benchmark = workarena_l2_single_seed()  # Custom: only 1 seed per task type
+benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
 
 # Deterministic task selection and execution.
 # TASK_SEED controls both which task is picked and the task content (hashtags, users, etc.).
 # Set to None to use the curriculum-assigned seeds without overriding.
 TASK_SEED = 400
+
+# ── Skip already-finished tasks ──
+# Set to a study directory path to skip tasks that already have summary_info.json
+SKIP_COMPLETED_FROM = "results_emu_fixed/2026-03-10_22-42-12_genericagent-gpt-5-2025-08-07-on-workarena-l3-single-seed"
+# SKIP_COMPLETED_FROM = None
 
 # ── Task source ──
 # Option A: Load ordered task list from sampled_tasks.txt (written by run_parallel.py)
@@ -82,15 +87,11 @@ if TASK_FILE and Path(TASK_FILE).is_file():
         task_name = parts[0]
         seed = int(parts[1].split("=")[1]) if len(parts) > 1 and "seed=" in parts[1] else TASK_SEED
         ordered_tasks.append((task_name, seed))
-    # Build env_args lookup by task_name
-    env_args_by_name = {e.task_name: e for e in benchmark.env_args_list}
-    # Rebuild env_args_list in file order, assigning per-task seeds
+    # Build env_args_list directly from file, creating EnvArgs for each task
+    from agentlab.experiments.loop import EnvArgs
     benchmark.env_args_list = []
     for task_name, seed in ordered_tasks:
-        if task_name in env_args_by_name:
-            ea = env_args_by_name[task_name]
-            ea.task_seed = seed
-            benchmark.env_args_list.append(ea)
+        benchmark.env_args_list.append(EnvArgs(task_name=task_name, task_seed=seed, max_steps=40))
     print(f"Loaded {len(benchmark.env_args_list)} tasks from {TASK_FILE} (ordered, with per-task seeds)")
 else:
     # Option B: Random sampling (or specific-task override)
@@ -110,6 +111,23 @@ else:
         if TASK_SEED is not None:
             for env_args in benchmark.env_args_list:
                 env_args.task_seed = TASK_SEED
+
+# ── Filter out completed tasks ──
+if SKIP_COMPLETED_FROM:
+    skip_dir = Path(SKIP_COMPLETED_FROM)
+    completed_tasks = set()
+    if skip_dir.is_dir():
+        for d in skip_dir.iterdir():
+            if d.is_dir() and (d / "summary_info.json").exists():
+                # Extract task name: ..._on_<task_name>_<seed>
+                parts = d.name.split("_on_")
+                if len(parts) >= 2:
+                    task_and_seed = parts[-1]
+                    task_name = "_".join(task_and_seed.rsplit("_", 1)[:-1])  # drop trailing seed
+                    completed_tasks.add(task_name)
+    before = len(benchmark.env_args_list)
+    benchmark.env_args_list = [e for e in benchmark.env_args_list if e.task_name not in completed_tasks]
+    print(f"Skipping {before - len(benchmark.env_args_list)} completed tasks, {len(benchmark.env_args_list)} remaining")
 
 # Set reproducibility_mode = True for reproducibility
 # this will "ask" agents to be deterministic. Also, it will prevent you from launching if you have

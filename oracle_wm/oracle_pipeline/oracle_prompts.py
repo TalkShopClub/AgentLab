@@ -67,7 +67,7 @@ class CandidateAwareHistory(dp.PromptElement):
 
 	def __init__(self, candidate_history: list[dict], thoughts: list[str]):
 		super().__init__()
-		lines = []
+		lines = ["# Trajectory History so far"]
 		for step_data, thought in zip(candidate_history, thoughts):
 			step = step_data.get("step", "?")
 			selected_idx = step_data.get("selected_idx", -1)
