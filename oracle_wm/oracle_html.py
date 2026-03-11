@@ -8,6 +8,7 @@ Usage:
 
 import argparse
 import json
+import shutil
 from pathlib import Path
 
 
@@ -625,7 +626,8 @@ def _load_goal(run_dir: Path) -> str:
     return ""
 
 
-def generate_oracle_html(run_dir: Path, output_html: Path | None = None) -> None:
+def generate_oracle_html(run_dir: Path, output_html: Path | None = None) -> bool:
+    """Generate HTML visualization. Returns True if at least one step was rendered."""
     run_dir = Path(run_dir).resolve()
     if output_html is None:
         output_html = run_dir / "oracle_eval.html"
@@ -640,8 +642,7 @@ def generate_oracle_html(run_dir: Path, output_html: Path | None = None) -> None
     )
 
     if not step_dirs:
-        print(f"No step_N directories found in {run_dir}")
-        return
+        return False
 
     run_name = run_dir.name
     n_steps  = len(step_dirs)
@@ -667,6 +668,9 @@ def generate_oracle_html(run_dir: Path, output_html: Path | None = None) -> None
         if block:
             step_blocks.append(block)
 
+    if not step_blocks:
+        return False
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -688,25 +692,45 @@ def generate_oracle_html(run_dir: Path, output_html: Path | None = None) -> None
 
     output_html.parent.mkdir(parents=True, exist_ok=True)
     output_html.write_text(html, encoding="utf-8")
-    print(f"Oracle eval HTML -> {output_html}")
+    return True
+
+
+def _has_renderable_step(run_dir: Path) -> bool:
+    """Check if run_dir has at least one step with candidates.json + selection.json."""
+    return any(
+        _attempt_path(sd, "initial", "candidates.json").exists() and (sd / "selection.json").exists()
+        for sd in run_dir.iterdir() if sd.is_dir() and sd.name.startswith("step_")
+    )
+
+
+def _copy_run_images(run_dir: Path, dest_dir: Path) -> None:
+    """Copy step directories (images + json) from run_dir into dest_dir."""
+    for item in run_dir.iterdir():
+        if item.is_dir() and item.name.startswith("step_"):
+            shutil.copytree(item, dest_dir / item.name, dirs_exist_ok=True)
+        elif item.name == "goal.txt":
+            shutil.copy2(item, dest_dir / item.name)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Generate oracle pipeline evaluation HTML",
         epilog="Examples:\n"
-               "  python oracle_wm/oracle_html.py                              # all completed runs\n"
-               "  python oracle_wm/oracle_html.py --run-dir oracle_wm/runs/task_seed0  # single run\n"
-               "  python oracle_wm/oracle_html.py --overwrite                  # regenerate all\n",
+               "  python oracle_wm/oracle_html.py --out-dir html_output --base-run-dir oracle_wm/runs\n"
+               "  python oracle_wm/oracle_html.py --out-dir html_output --run-dir oracle_wm/runs/task_seed0\n"
+               "  python oracle_wm/oracle_html.py --out-dir html_output --overwrite\n",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
+    parser.add_argument("--out-dir", required=True,
+                        help="Output directory. Each renderable task gets a subfolder with HTML + images.")
     parser.add_argument("--run-dir", help="Path to a specific run directory (skip batch mode)")
     parser.add_argument("--base-run-dir", default="oracle_wm/runs",
                         help="Base directory containing run dirs (default: oracle_wm/runs)")
-    parser.add_argument("--result-dir", default="oracle_results",
-                        help="Base directory containing result dirs with summary.json (default: oracle_results)")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing HTML files")
     args = parser.parse_args()
+
+    out_base = Path(args.out_dir)
+    out_base.mkdir(parents=True, exist_ok=True)
 
     # Single run mode
     if args.run_dir:
@@ -714,12 +738,18 @@ def main() -> None:
         if not run_dir.exists():
             print(f"Run directory not found: {run_dir}")
             return
-        generate_oracle_html(run_dir)
+        if not _has_renderable_step(run_dir):
+            print(f"No renderable steps in {run_dir}")
+            return
+        task_dir = out_base / run_dir.name
+        task_dir.mkdir(parents=True, exist_ok=True)
+        _copy_run_images(run_dir, task_dir)
+        generate_oracle_html(task_dir)
+        print(f"Created: {task_dir / 'oracle_eval.html'}")
         return
 
-    # Batch mode: process all completed runs under base-run-dir
+    # Batch mode
     base = Path(args.base_run_dir)
-    result_base = Path(args.result_dir)
     if not base.exists():
         print(f"Base run directory not found: {base}")
         return
@@ -731,19 +761,17 @@ def main() -> None:
 
     created = skipped = no_steps = 0
     for rd in run_dirs:
-        # Check if at least one step has both candidates.json and selection.json
-        has_renderable = any(
-            _attempt_path(sd, "initial", "candidates.json").exists() and (sd / "selection.json").exists()
-            for sd in rd.iterdir() if sd.is_dir() and sd.name.startswith("step_")
-        )
-        if not has_renderable:
-            no_steps += 1
-            continue
-        out = rd / "oracle_eval.html"
-        if out.exists() and not args.overwrite:
+        task_dir = out_base / rd.name
+        html_out = task_dir / "oracle_eval.html"
+        if html_out.exists() and not args.overwrite:
             skipped += 1
             continue
-        generate_oracle_html(rd, out)
+        if not _has_renderable_step(rd):
+            no_steps += 1
+            continue
+        task_dir.mkdir(parents=True, exist_ok=True)
+        _copy_run_images(rd, task_dir)
+        generate_oracle_html(task_dir)
         created += 1
 
     print(f"Done: {created} created, {skipped} already exist, {no_steps} no renderable steps (skipped)")
