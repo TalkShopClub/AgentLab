@@ -61,12 +61,12 @@ benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
 # Deterministic task selection and execution.
 # TASK_SEED controls both which task is picked and the task content (hashtags, users, etc.).
 # Set to None to use the curriculum-assigned seeds without overriding.
-TASK_SEED = 400
+TASK_SEED = 20000
 
 # ── Skip already-finished tasks ──
 # Set to a study directory path to skip tasks that already have summary_info.json
-SKIP_COMPLETED_FROM = "results_emu_fixed/2026-03-10_22-42-12_genericagent-gpt-5-2025-08-07-on-workarena-l3-single-seed"
-# SKIP_COMPLETED_FROM = None
+# SKIP_COMPLETED_FROM = "results_emu_fixed/2026-03-10_22-42-12_genericagent-gpt-5-2025-08-07-on-workarena-l3-single-seed"
+SKIP_COMPLETED_FROM = None
 
 # ── Task source ──
 # Option A: Load ordered task list from sampled_tasks.txt (written by run_parallel.py)
@@ -85,7 +85,7 @@ if TASK_FILE and Path(TASK_FILE).is_file():
             continue
         parts = line.split()
         task_name = parts[0]
-        seed = int(parts[1].split("=")[1]) if len(parts) > 1 and "seed=" in parts[1] else TASK_SEED
+        seed = TASK_SEED
         ordered_tasks.append((task_name, seed))
     # Build env_args_list directly from file, creating EnvArgs for each task
     from agentlab.experiments.loop import EnvArgs
@@ -139,7 +139,7 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 4  # Sequential execution for testing
+n_jobs = 2  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend
