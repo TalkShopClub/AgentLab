@@ -68,6 +68,15 @@ def main():
         env_args, committed, instance, obs_preprocessor
     )
     generation_bid_map = current_bid_map
+
+    # Save current state screenshots
+    sc = obs.get("screenshot")
+    sc_som = obs.get("screenshot_som")
+    if sc is not None:
+        Image.fromarray(sc).save(out_dir / "current.png")
+    if sc_som is not None:
+        Image.fromarray(sc_som).save(out_dir / "current_som.png")
+
     _safe_close_env(env)
     logger.info(f"Replayed {len(committed)} steps, env closed.")
 
