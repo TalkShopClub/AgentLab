@@ -61,7 +61,7 @@ benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
 # Deterministic task selection and execution.
 # TASK_SEED controls both which task is picked and the task content (hashtags, users, etc.).
 # Set to None to use the curriculum-assigned seeds without overriding.
-TASK_SEED = 20000
+TASK_SEED = 150000
 
 # ── Skip already-finished tasks ──
 # Set to a study directory path to skip tasks that already have summary_info.json
@@ -99,8 +99,8 @@ if TASK_FILE and Path(TASK_FILE).is_file():
 elif SPECIFIC_TASKS:
     task_set = set(SPECIFIC_TASKS)
     benchmark.env_args_list = [e for e in benchmark.env_args_list if e.task_name in task_set]
-    for env_args in benchmark.env_args_list:
-        env_args.task_seed = TASK_SEED
+    for i, env_args in enumerate(benchmark.env_args_list):
+        env_args.task_seed = TASK_SEED + i
     print(f"Running {len(benchmark.env_args_list)} specific tasks")
 else:
     rng = random.Random(TASK_SEED)
@@ -136,7 +136,7 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 2  # Sequential execution for testing
+n_jobs = 6  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend
