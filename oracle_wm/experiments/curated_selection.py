@@ -52,6 +52,7 @@ def main():
     parser.add_argument("--model", default="openai/gpt-5-2025-08-07")
     parser.add_argument("--headless", action="store_true")
     parser.add_argument("--agent-mode", default="text", choices=["vision", "text"])
+    parser.add_argument("--n-rounds", type=int, default=1, help="Run selection N times (exploration done once)")
     args = parser.parse_args()
 
     ctx = setup_experiment(args.task, args.seed, args.model, args.headless, args.agent_mode)
@@ -139,63 +140,72 @@ def main():
     candidate_effects = effect_prompt.parse_effects(effect_text)
     (explore_dir / "candidate_effects.json").write_text(json.dumps(candidate_effects, indent=2), encoding="utf-8")
 
-    # Phase 2b: replay again to decision point for selection
-    env, obs, current_bid_map, _ = replay_committed(env_args, committed, instance, obs_preprocessor)
+    # Phase 2b: replay and run selection (repeated n-rounds times)
+    all_selections = []
+    for round_i in range(args.n_rounds):
+        round_suffix = f"_round{round_i}" if args.n_rounds > 1 else ""
+        logger.info(f"Selection round {round_i + 1}/{args.n_rounds}")
 
-    sc_decision_som = obs.get("screenshot_som")
-    if sc_decision_som is not None:
-        Image.fromarray(sc_decision_som).save(out_dir / "decision_point_som.png")
+        env, obs, current_bid_map, _ = replay_committed(env_args, committed, instance, obs_preprocessor)
 
-    phase2_sys = (
-        "You are an agent trying to solve a web task. "
-        "Select the best action based on the real environment screenshots."
-    )
-    oracle_candidates = [
-        (
-            c.get("action_text", ""),
-            translate_action(c["action"], generation_bid_map, current_bid_map)[0],
-            s,
+        if round_i == 0:
+            sc_decision_som = obs.get("screenshot_som")
+            if sc_decision_som is not None:
+                Image.fromarray(sc_decision_som).save(out_dir / "decision_point_som.png")
+
+        phase2_sys = (
+            "You are an agent trying to solve a web task. "
+            "Select the best action based on the real environment screenshots."
         )
-        for c, s in zip(candidates, cand_images)
-    ]
-    sel_prompt = OracleSelectionPrompt(
-        obs=obs,
-        actions=actions_history,
-        thoughts=thoughts_history,
-        candidates=oracle_candidates,
-        flags=oracle_sel_flags,
-        allow_resample=True,
-        effects=candidate_effects,
-        include_effects=True,
-        include_images=True,
-    )
-    _dump_prompt(phase2_sys, sel_prompt.prompt, out_dir / "phase2_prompt.txt")
-    phase2_text = _call_llm(chat_llm, phase2_sys, sel_prompt.prompt)
-    (out_dir / "phase2_response.txt").write_text(phase2_text, encoding="utf-8")
+        oracle_candidates = [
+            (
+                c.get("action_text", ""),
+                translate_action(c["action"], generation_bid_map, current_bid_map)[0],
+                s,
+            )
+            for c, s in zip(candidates, cand_images)
+        ]
+        sel_prompt = OracleSelectionPrompt(
+            obs=obs,
+            actions=actions_history,
+            thoughts=thoughts_history,
+            candidates=oracle_candidates,
+            flags=oracle_sel_flags,
+            allow_resample=True,
+            effects=candidate_effects,
+            include_effects=True,
+            include_images=True,
+        )
+        _dump_prompt(phase2_sys, sel_prompt.prompt, out_dir / f"phase2_prompt{round_suffix}.txt")
+        phase2_text = _call_llm(chat_llm, phase2_sys, sel_prompt.prompt)
+        (out_dir / f"phase2_response{round_suffix}.txt").write_text(phase2_text, encoding="utf-8")
 
-    try:
-        selected_idx, reasoning = sel_prompt.parse_answer(phase2_text)
-        chosen = candidates[selected_idx]
-        selection = {
-            "selected_index": selected_idx + 1,
-            "selected_action": chosen["action"],
-            "selected_action_text": chosen.get("action_text", ""),
-            "thought": reasoning,
-            "resample": False,
-        }
-        logger.info(f"Selected C{selected_idx + 1}: {chosen['action']}")
-    except ResampleRequested as e:
-        selection = {
-            "resample": True,
-            "resample_reasoning": e.reasoning,
-        }
-        logger.info(f"Agent requested resample: {e.reasoning[:120]}")
-    except Exception as e:
-        selection = {"error": str(e)}
-        logger.error(f"Failed to parse selection: {e}")
+        try:
+            selected_idx, reasoning = sel_prompt.parse_answer(phase2_text)
+            chosen = candidates[selected_idx]
+            selection = {
+                "round": round_i,
+                "selected_index": selected_idx + 1,
+                "selected_action": chosen["action"],
+                "selected_action_text": chosen.get("action_text", ""),
+                "thought": reasoning,
+                "resample": False,
+            }
+            logger.info(f"  Round {round_i}: Selected C{selected_idx + 1}: {chosen['action']}")
+        except ResampleRequested as e:
+            selection = {"round": round_i, "resample": True, "resample_reasoning": e.reasoning}
+            logger.info(f"  Round {round_i}: Resample requested: {e.reasoning[:120]}")
+        except Exception as e:
+            selection = {"round": round_i, "error": str(e)}
+            logger.error(f"  Round {round_i}: Failed to parse selection: {e}")
 
-    (out_dir / "selection.json").write_text(json.dumps(selection, indent=2), encoding="utf-8")
-    _safe_close_env(env)
+        all_selections.append(selection)
+        (out_dir / f"selection{round_suffix}.json").write_text(json.dumps(selection, indent=2), encoding="utf-8")
+        _safe_close_env(env)
+
+    if args.n_rounds > 1:
+        (out_dir / "all_selections.json").write_text(json.dumps(all_selections, indent=2), encoding="utf-8")
+        logger.info(f"All {args.n_rounds} selections saved to all_selections.json")
 
 
 if __name__ == "__main__":
