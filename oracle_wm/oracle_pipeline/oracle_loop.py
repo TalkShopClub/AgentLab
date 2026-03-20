@@ -5,6 +5,7 @@ import json
 import logging
 import re
 import time
+from contextlib import contextmanager
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -54,6 +55,39 @@ def _safe_close_env(env):
             browser.close()
         except Exception:
             pass
+
+
+@contextmanager
+def _timed(store: dict, key: str):
+    t0 = time.perf_counter()
+    yield
+    store[key] = round(time.perf_counter() - t0, 3)
+
+
+def _stabilize_page(env) -> None:
+    """Ensure self.page points to the most recently opened tab after an action.
+
+    BrowserGym's _activate_page_from_js can leave self.page on the wrong tab
+    if events from background tabs fire during _wait_dom_loaded or _task_validate.
+    This explicitly waits for any new pages to load, then flushes the callback
+    queue so self.page settles on the correct (newest) tab.
+    """
+    benv = env.unwrapped
+    pages = benv.context.pages
+    if len(pages) <= 1:
+        return
+    for p in pages:
+        if p != benv.page:
+            try:
+                p.wait_for_load_state("load", timeout=5000)
+            except Exception:
+                pass
+    benv.context.cookies()
+    # After flushing, self.page should point to the newest activated tab.
+    # As a fallback, if it still points to the original tab, explicitly switch
+    # to the last page (most recently opened).
+    if benv.page == pages[0] and len(pages) > 1:
+        benv.page = pages[-1]
 
 
 def _save_created_user(run_root: Path, env) -> None:
@@ -203,6 +237,7 @@ def replay_committed(
         obs, _, terminated, truncated, _ = env.step(translated)
         if terminated or truncated:
             break
+        _stabilize_page(env)
         _wait_idle(env)
         obs = obs_preprocessor(obs)
         current_bid_map = build_bid_map(obs)
@@ -361,6 +396,7 @@ def _explore_on_env(
         obs, _, terminated, truncated, _ = env.step(translated)
         if terminated or truncated:
             break
+        _stabilize_page(env)
         _wait_idle(env)
         obs = obs_preprocessor(obs)
         current_bid_map = build_bid_map(obs)
@@ -401,6 +437,7 @@ def run_oracle_pipeline(
     agent_mode: str = "vision",  # "vision" = SOM screenshot, "text" = AXTree only
     sel_effects: bool = True,
     sel_images: bool = True,
+    collect_timing: bool = False,
 ):
     save_path = Path(save_dir) / f"{task_name.replace('/', '_')}_seed{task_seed}"
     save_path.mkdir(parents=True, exist_ok=True)
@@ -460,12 +497,16 @@ def run_oracle_pipeline(
 
     step_idx = resume_from
     reward, terminated, truncated = 0.0, False, False
+    timing_records = [] if collect_timing else None
+    timing_path = run_root / "timing.json" if collect_timing else None
     try:
         while step_idx < max_steps:
             logger.info(f"Step {step_idx}: generating {n_candidates} candidates")
             step_dir = run_root / f"step_{step_idx}"
             step_dir.mkdir(exist_ok=True)
             decision_bid_map = current_bid_map
+            if collect_timing:
+                step_t0 = time.perf_counter()
 
             # Close current env before exploration replays
             _safe_close_env(env)
@@ -475,10 +516,12 @@ def run_oracle_pipeline(
             resample_reasoning = ""
             selected_from = "initial"
             memory = ""
+            attempt_timings = {} if collect_timing else None
             for attempt_tag in ("initial", "resample"):
                 is_resample = attempt_tag == "resample"
                 attempt_dir = step_dir / attempt_tag
                 attempt_dir.mkdir(exist_ok=True)
+                t_rec = {} if collect_timing else None
 
                 # Snapshot bid map matching the obs Phase 1 will see.
                 # For initial: current_bid_map == decision_bid_map (live env).
@@ -526,7 +569,11 @@ def run_oracle_pipeline(
                     gen_prompt.history = CandidateAwareHistory(translated_candidate_history, thoughts_history)
                 _dump_prompt(phase1_sys, gen_prompt.prompt, attempt_dir / "phase1_prompt.txt")
 
-                phase1_text = _call_llm(chat_llm, phase1_sys, gen_prompt.prompt)
+                if collect_timing:
+                    with _timed(t_rec, "phase1_s"):
+                        phase1_text = _call_llm(chat_llm, phase1_sys, gen_prompt.prompt)
+                else:
+                    phase1_text = _call_llm(chat_llm, phase1_sys, gen_prompt.prompt)
                 (attempt_dir / "phase1_response.txt").write_text(phase1_text, encoding="utf-8")
 
                 memory = gen_prompt.parse_memory(phase1_text) if flags.use_memory else ""
@@ -543,15 +590,19 @@ def run_oracle_pipeline(
                 candidate_screenshots: list[np.ndarray] = []
                 candidate_screenshots_som: list[np.ndarray] = []
                 candidate_bid_notes: list[dict] = []
+                explore_times = [] if collect_timing else None
                 exploration_env = _make_env(env_args, instance)
                 try:
                     for k, cand in enumerate(candidates):
                         logger.info(f"  Exploring candidate {k + 1}/{len(candidates)}: {cand['action']!r:.80}")
+                        _et0 = time.perf_counter() if collect_timing else None
                         sc, sc_som, bid_note, exploration_env = _explore_on_env(
                             exploration_env, env_args, committed, cand["action"],
                             generation_bid_map, instance, obs_preprocessor,
                             run_root=run_root,
                         )
+                        if collect_timing:
+                            explore_times.append(round(time.perf_counter() - _et0, 3))
                         candidate_screenshots.append(sc)
                         candidate_screenshots_som.append(sc_som)
                         candidate_bid_notes.append({"candidate": k + 1, "action": cand["action"], "bid_note": bid_note})
@@ -560,6 +611,8 @@ def run_oracle_pipeline(
                 finally:
                     _safe_close_env(exploration_env)
                     exploration_env = None
+                if collect_timing:
+                    t_rec["explore_s"] = explore_times
 
                 (attempt_dir / "bid_translations.json").write_text(
                     json.dumps(candidate_bid_notes, indent=2), encoding="utf-8"
@@ -569,14 +622,22 @@ def run_oracle_pipeline(
                 cand_images = candidate_screenshots if agent_mode == "text" else candidate_screenshots_som
                 effect_sys = "You are comparing browser states. Describe what changed after each action."
                 effect_prompt = CandidateEffectDescriptionPrompt(obs, candidates, cand_images, oracle_sel_flags)
-                effect_text = _call_llm(chat_llm, effect_sys, effect_prompt.prompt)
+                if collect_timing:
+                    with _timed(t_rec, "effects_s"):
+                        effect_text = _call_llm(chat_llm, effect_sys, effect_prompt.prompt)
+                else:
+                    effect_text = _call_llm(chat_llm, effect_sys, effect_prompt.prompt)
                 candidate_effects = effect_prompt.parse_effects(effect_text)
                 (attempt_dir / "candidate_effects.json").write_text(
                     json.dumps(candidate_effects, indent=2), encoding="utf-8"
                 )
 
                 # Phase 2b: replay to decision point for selection
-                env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor, save_intermediate_soms_to=step_dir, run_root=run_root)
+                if collect_timing:
+                    with _timed(t_rec, "phase2b_replay_s"):
+                        env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor, save_intermediate_soms_to=step_dir, run_root=run_root)
+                else:
+                    env, obs, current_bid_map, translated_candidate_history = replay_committed(env_args, committed, instance, obs_preprocessor, save_intermediate_soms_to=step_dir, run_root=run_root)
 
                 sc_decision_som = obs.get("screenshot_som")
                 if sc_decision_som is not None:
@@ -605,20 +666,41 @@ def run_oracle_pipeline(
                 )
                 _dump_prompt(phase2_sys, sel_prompt.prompt, attempt_dir / "phase2_prompt.txt")
 
-                phase2_text = _call_llm(chat_llm, phase2_sys, sel_prompt.prompt)
+                if collect_timing:
+                    with _timed(t_rec, "selection_s"):
+                        phase2_text = _call_llm(chat_llm, phase2_sys, sel_prompt.prompt)
+                else:
+                    phase2_text = _call_llm(chat_llm, phase2_sys, sel_prompt.prompt)
                 (attempt_dir / "phase2_response.txt").write_text(phase2_text, encoding="utf-8")
 
                 try:
                     selected_idx, reasoning = sel_prompt.parse_answer(phase2_text)
                     selected_from = attempt_tag
+                    if collect_timing:
+                        attempt_timings[attempt_tag] = t_rec
                     break  # selection made, exit the generate-select loop
                 except ResampleRequested as e:
                     resample_reasoning = e.reasoning
                     logger.info(f"  Resample requested: {resample_reasoning[:120]}")
+                    if collect_timing:
+                        attempt_timings[attempt_tag] = t_rec
                     # Close the env from phase 2b before re-generating
                     _safe_close_env(env)
                     env = None
                     continue  # go to resample attempt
+
+            if collect_timing:
+                timing_record = {
+                    "step": step_idx,
+                    "n_committed": len(committed),
+                    "selected_from": selected_from,
+                }
+                timing_record.update(attempt_timings.get("initial", {}))
+                if "resample" in attempt_timings:
+                    timing_record["resample"] = attempt_timings["resample"]
+                timing_record["total_s"] = round(time.perf_counter() - step_t0, 3)
+                timing_records.append(timing_record)
+                timing_path.write_text(json.dumps(timing_records, indent=2), encoding="utf-8")
 
             chosen_action = candidates[selected_idx]["action"]
             logger.info(f"  Selected candidate {selected_idx + 1}: {chosen_action!r:.80}")
@@ -665,6 +747,7 @@ def run_oracle_pipeline(
             t_start = time.time()
             translated_chosen = resolve_phantom_action(translated_chosen, env)
             obs, reward, terminated, truncated, env_info = env.step(translated_chosen)
+            _stabilize_page(env)
             obs = obs_preprocessor(obs)
             elapsed = time.time() - t_start
 
