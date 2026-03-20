@@ -23,6 +23,7 @@ def main():
     parser.add_argument("--agent-mode", default="vision", choices=["vision", "text"], help="vision: SOM screenshot (default); text: AXTree only (AGENT_GPT5 flags)")
     parser.add_argument("--no-sel-effects", action="store_true", help="Exclude candidates effect text descriptions from oracle selection prompt")
     parser.add_argument("--no-sel-images", action="store_true", help="Exclude candidate screenshots from oracle selection prompt")
+    parser.add_argument("--check-time", action="store_true", help="Collect per-step timing breakdown and write timing.json to run dir")
     args = parser.parse_args()
 
     save_path, reward = run_oracle_pipeline(
@@ -39,6 +40,7 @@ def main():
         agent_mode=args.agent_mode,
         sel_effects=not args.no_sel_effects,
         sel_images=not args.no_sel_images,
+        collect_timing=args.check_time,
     )
 
     print(f"Results saved to: {save_path}  reward={reward:.3f}")
