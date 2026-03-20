@@ -61,56 +61,53 @@ benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
 # Deterministic task selection and execution.
 # TASK_SEED controls both which task is picked and the task content (hashtags, users, etc.).
 # Set to None to use the curriculum-assigned seeds without overriding.
-TASK_SEED = 400
+TASK_SEED = 150000
 
 # ── Skip already-finished tasks ──
 # Set to a study directory path to skip tasks that already have summary_info.json
-SKIP_COMPLETED_FROM = "results_emu_fixed/2026-03-10_22-42-12_genericagent-gpt-5-2025-08-07-on-workarena-l3-single-seed"
-# SKIP_COMPLETED_FROM = None
+# SKIP_COMPLETED_FROM = "results_emu_fixed/2026-03-10_22-42-12_genericagent-gpt-5-2025-08-07-on-workarena-l3-single-seed"
+SKIP_COMPLETED_FROM = None
 
-# ── Task source ──
-# Option A: Load ordered task list from sampled_tasks.txt (written by run_parallel.py)
-TASK_FILE = "oracle_wm/parallel_logs/sampled_tasks.txt"
-# TASK_FILE = None
+# ── Tasks to run ──
+# Paste task names here to run specific tasks. Set to [] to use random sampling.
+SPECIFIC_TASKS = [
+    "workarena.servicenow.amount-based-expense-management-large-l3",
+    "workarena.servicenow.basic-expense-management-large-l3",
+    "workarena.servicenow.basic-filter-problems-and-mark-duplicates-large-l3",
+    "workarena.servicenow.basic-filter-problems-and-mark-duplicates-medium-l3",
+    "workarena.servicenow.date-based-expense-management-medium-l3",
+    "workarena.servicenow.workload-balancing-small-l3",
+]
+
+# Optional: Load tasks from a file instead (overrides SPECIFIC_TASKS)
+# TASK_FILE = "oracle_wm/parallel_logs/sampled_tasks.txt"
+TASK_FILE = None
 
 import random
 from pathlib import Path
 
 if TASK_FILE and Path(TASK_FILE).is_file():
-    # Parse ordered task names and seeds from the file
-    ordered_tasks = []  # list of (task_name, seed)
+    from agentlab.experiments.loop import EnvArgs
+    benchmark.env_args_list = []
     for line in Path(TASK_FILE).read_text().splitlines():
         line = line.strip()
         if not line:
             continue
-        parts = line.split()
-        task_name = parts[0]
-        seed = int(parts[1].split("=")[1]) if len(parts) > 1 and "seed=" in parts[1] else TASK_SEED
-        ordered_tasks.append((task_name, seed))
-    # Build env_args_list directly from file, creating EnvArgs for each task
-    from agentlab.experiments.loop import EnvArgs
-    benchmark.env_args_list = []
-    for task_name, seed in ordered_tasks:
-        benchmark.env_args_list.append(EnvArgs(task_name=task_name, task_seed=seed, max_steps=40))
-    print(f"Loaded {len(benchmark.env_args_list)} tasks from {TASK_FILE} (ordered, with per-task seeds)")
+        task_name = line.split()[0]
+        benchmark.env_args_list.append(EnvArgs(task_name=task_name, task_seed=TASK_SEED, max_steps=40))
+    print(f"Loaded {len(benchmark.env_args_list)} tasks from {TASK_FILE}")
+elif SPECIFIC_TASKS:
+    task_set = set(SPECIFIC_TASKS)
+    benchmark.env_args_list = [e for e in benchmark.env_args_list if e.task_name in task_set]
+    for i, env_args in enumerate(benchmark.env_args_list):
+        env_args.task_seed = TASK_SEED + i
+    print(f"Running {len(benchmark.env_args_list)} specific tasks")
 else:
-    # Option B: Random sampling (or specific-task override)
-    SPECIFIC_TASKS = [
-        "workarena.servicenow.filter-single-item-expenses-and-delete-wrong-investments-medium-l2",
-        "workarena.servicenow.dashboard-retrieve-incident-and-min-filter-asset-list-l2",
-    ]
-    # SPECIFIC_TASKS = None
-    if SPECIFIC_TASKS:
-        task_set = set(SPECIFIC_TASKS)
-        benchmark.env_args_list = [e for e in benchmark.env_args_list if e.task_name in task_set]
+    rng = random.Random(TASK_SEED)
+    benchmark.env_args_list = rng.sample(benchmark.env_args_list, 3)
+    if TASK_SEED is not None:
         for env_args in benchmark.env_args_list:
             env_args.task_seed = TASK_SEED
-    else:
-        rng = random.Random(TASK_SEED)
-        benchmark.env_args_list = rng.sample(benchmark.env_args_list, 3)
-        if TASK_SEED is not None:
-            for env_args in benchmark.env_args_list:
-                env_args.task_seed = TASK_SEED
 
 # ── Filter out completed tasks ──
 if SKIP_COMPLETED_FROM:
@@ -139,7 +136,7 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 4  # Sequential execution for testing
+n_jobs = 6  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend
