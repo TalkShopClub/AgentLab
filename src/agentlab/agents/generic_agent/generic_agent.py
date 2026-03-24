@@ -158,7 +158,10 @@ class GenericAgent(Agent):
             think=ans_dict.get("think", None),
             chat_messages=chat_messages,
             stats=stats,
-            extra_info={"chat_model_args": asdict(self.chat_model_args)},
+            extra_info={
+                "chat_model_args": asdict(self.chat_model_args),
+                "memory": ans_dict.get("memory", None),
+            },
         )
         return ans_dict["action"], agent_info
 

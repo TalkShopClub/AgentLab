@@ -766,6 +766,7 @@ def run_oracle_pipeline(
                 action=translated_chosen,
                 agent_info={
                     "think": reasoning,
+                    "memory": memory,
                     "oracle_candidates": [
                         {"action": c["action"], "action_text": c["action_text"], "rationale": c["rationale"]}
                         for c in candidates
