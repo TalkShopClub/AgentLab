@@ -7,6 +7,13 @@ repository.
 """
 
 import logging
+import os
+
+# Redirect Ray and Playwright temp dirs to /mnt/data (root volume is too small)
+os.environ.setdefault("RAY_TMPDIR", "/mnt/data/tmp/ray")
+os.environ.setdefault("TMPDIR", "/mnt/data/tmp")
+os.makedirs("/mnt/data/tmp/ray", exist_ok=True)
+os.makedirs("/mnt/data/tmp", exist_ok=True)
 
 from agentlab.agents.generic_agent import (
     AGENT_LLAMA3_70B,
@@ -34,7 +41,11 @@ from agentlab.experiments.study import Study
 from agentlab.llm.chat_api import OpenRouterModelArgs
 from agentlab.agents.generic_agent.generic_agent_prompt import GenericPromptFlags
 from agentlab.agents import dynamic_prompting as dp
-from agentlab.benchmarks.custom_workarena import workarena_l3_single_seed, workarena_l2_single_seed 
+from agentlab.benchmarks.custom_workarena import workarena_l3_single_seed, workarena_l2_single_seed
+from browsergym.experiments.benchmark.base import Benchmark
+from browsergym.experiments.benchmark.utils import make_env_args_list_from_workarena_curriculum
+from browsergym.experiments.benchmark.configs import DEFAULT_HIGHLEVEL_ACTION_SET_ARGS
+from browsergym.experiments.benchmark.metadata.utils import task_metadata
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -57,11 +68,28 @@ agent_args = [AGENT_GPT5]
 # Run on 5 random tasks
 # benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
 benchmark = workarena_l3_single_seed()  # Custom: only 1 seed per task type
+# benchmark = "workarena_l3_agent_curriculum_eval"
+# benchmark = Benchmark(
+#     name="workarena_l3_agent_curriculum_eval",
+#     high_level_action_set_args=DEFAULT_HIGHLEVEL_ACTION_SET_ARGS["workarena++"],
+#     is_multi_tab=True,
+#     supports_parallel_seeds=True,
+#     backends=["workarena"],
+#     env_args_list=make_env_args_list_from_workarena_curriculum(
+#         level="l3",
+#         task_category_filter=None,
+#         meta_seed=88000,
+#         max_steps=40,
+#         curriculum_type="agent",
+#     ),
+#     task_metadata=task_metadata("workarena"),
+# )
 
 # Deterministic task selection and execution.
 # TASK_SEED controls both which task is picked and the task content (hashtags, users, etc.).
 # Set to None to use the curriculum-assigned seeds without overriding.
-TASK_SEED = 150000
+TASK_SEED = 190000
+# TASK_SEED = None
 
 # ── Skip already-finished tasks ──
 # Set to a study directory path to skip tasks that already have summary_info.json
@@ -70,14 +98,15 @@ SKIP_COMPLETED_FROM = None
 
 # ── Tasks to run ──
 # Paste task names here to run specific tasks. Set to [] to use random sampling.
-SPECIFIC_TASKS = [
-    "workarena.servicenow.amount-based-expense-management-large-l3",
-    "workarena.servicenow.basic-expense-management-large-l3",
-    "workarena.servicenow.basic-filter-problems-and-mark-duplicates-large-l3",
-    "workarena.servicenow.basic-filter-problems-and-mark-duplicates-medium-l3",
-    "workarena.servicenow.date-based-expense-management-medium-l3",
-    "workarena.servicenow.workload-balancing-small-l3",
-]
+# SPECIFIC_TASKS = [
+#     "workarena.servicenow.amount-based-expense-management-large-l3",
+#     "workarena.servicenow.basic-expense-management-large-l3",
+#     "workarena.servicenow.basic-filter-problems-and-mark-duplicates-large-l3",
+#     "workarena.servicenow.basic-filter-problems-and-mark-duplicates-medium-l3",
+#     "workarena.servicenow.date-based-expense-management-medium-l3",
+#     "workarena.servicenow.workload-balancing-small-l3",
+# ]
+SPECIFIC_TASKS = []
 
 # Optional: Load tasks from a file instead (overrides SPECIFIC_TASKS)
 # TASK_FILE = "oracle_wm/parallel_logs/sampled_tasks.txt"
@@ -103,11 +132,11 @@ elif SPECIFIC_TASKS:
         env_args.task_seed = TASK_SEED + i
     print(f"Running {len(benchmark.env_args_list)} specific tasks")
 else:
-    rng = random.Random(TASK_SEED)
-    benchmark.env_args_list = rng.sample(benchmark.env_args_list, 3)
+    # rng = random.Random(TASK_SEED)
+    # benchmark.env_args_list = rng.sample(benchmark.env_args_list, 3)
     if TASK_SEED is not None:
-        for env_args in benchmark.env_args_list:
-            env_args.task_seed = TASK_SEED
+        for i, env_args in enumerate(benchmark.env_args_list):
+            env_args.task_seed = TASK_SEED + i
 
 # ── Filter out completed tasks ──
 if SKIP_COMPLETED_FROM:
@@ -136,7 +165,7 @@ reproducibility_mode = False
 relaunch = False
 
 ## Number of parallel jobs
-n_jobs = 6  # Sequential execution for testing
+n_jobs = 5  # Sequential execution for testing
 
 
 if __name__ == "__main__":  # necessary for dask backend
